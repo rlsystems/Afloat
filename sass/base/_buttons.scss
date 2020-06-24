@@ -1,0 +1,88 @@
+//Buttons
+.btn-round {
+  width: 7rem;
+  height: 7rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border: 0.1rem solid rgba($color-white, 0.6);
+  border-radius: 50%;
+  color: rgba($color-white, 0.6);
+  font-size: 1.2rem;
+  font-weight: 100;
+  cursor: pointer;
+
+  
+  svg:nth-child(1) { 
+    position: absolute;
+    color: transparent;
+    transition: all .5s;
+  }
+  svg:nth-child(2) {
+    color: rgba($color-white, 0.6);
+    transition: all .5s;
+  }
+
+  &:hover {
+    svg:nth-child(1) {
+      transform: translateX(0);
+      color: rgba($color-white, 0.6);
+    }
+    svg:nth-child(2) {
+      color: transparent;
+    }
+  }
+
+  &--left {
+    position: absolute;
+    top: 45%;
+    left: 3%;
+    z-index: 8;
+    svg:nth-child(1) {
+      transform: translateX(2rem);
+    }
+ 
+    &:hover {
+      svg:nth-child(1) {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &--right {
+    position: absolute;
+    top: 45%;
+    right: 3%;
+    z-index: 8;
+    svg:nth-child(1) {
+      transform: translateX(-2rem);
+    }
+ 
+    &:hover {
+      svg:nth-child(1) {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+
+.btn {
+  background-color: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+      background-color: $color-primary-dark;
+  }
+}
+

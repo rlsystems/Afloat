@@ -1,0 +1,36 @@
+.home-page {
+  display: grid;
+  grid-template-rows: [nav-start] max-content [nav-end] calc(100vh - 9rem) [hero-end content-start] repeat(
+      3,
+      min-content
+    ) [content-end footer-start] min-content [footer-end];
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 16rem) [col-end] 
+    ) [center-end] minmax(6rem, 1fr) [full-end]; //140px each column --now is 160px
+}
+
+.section-slider {
+  grid-row: nav-start / hero-end;
+  grid-column: full-start / -1;
+
+}
+
+.section-overview {
+  grid-column: full-start / -1;
+}
+
+.section-sites {
+  grid-column: full-start / -1;
+
+}
+
+.section-products {
+  grid-column: center-start / center-end;
+
+}
+
+
+
+
+

@@ -1,0 +1,26 @@
+.header {
+    grid-column: full-start / -1; 
+    grid-row: nav-start / nav-end; 
+    z-index: 5;
+    
+    
+    background-color: rgba($color-white, .1);
+    //background-color: transparent;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+
+    height: 9rem;
+    font-size: 1.4rem;
+    grid-gap: 5rem;
+    display: grid;
+    grid-template-columns: min-content min-content 1fr max-content;
+    align-content: center;
+    align-items: center;
+
+    &__logo {
+        margin-left: 7rem;
+        height: 4.5rem;
+        grid-column: 1 / span 1;
+    }
+}
+

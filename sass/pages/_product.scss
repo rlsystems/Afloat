@@ -1,0 +1,5 @@
+.product-page { 
+    display: grid;
+    grid-template-rows: [nav-start] max-content [nav-end] calc(80vh - 9rem) [hero-end tabs-start] min-content [ tabs-end content-start] min-content [content-end footer-start] min-content [footer-end];
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; //140px each column  
+}
