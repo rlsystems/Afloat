@@ -1,6 +1,6 @@
 .home-page {
   display: grid;
-  grid-template-rows: [nav-start] max-content [nav-end] calc(100vh - 9rem) [hero-end content-start] repeat(
+  grid-template-rows: [nav-start] 9rem [nav-end]  calc(100vh - 9rem) [hero-end content-start] repeat(
       3,
       min-content
     ) [content-end footer-start] min-content [footer-end];
