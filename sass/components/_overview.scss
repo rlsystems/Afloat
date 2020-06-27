@@ -55,14 +55,14 @@
         column-gap: 3rem;
 
         &__display{
-            background-image: url(../../img/river-cruise.jpg);
+            background-image: url(img/river-cruise.jpg);
             background-position: center;
             background-size: cover;
             box-shadow: $shadow-light;
         }
 
         &__next {
-            background-image: linear-gradient(rgba($color-white, .7), rgba($color-white, .7)), url(../../img/galapagos-home-square-1.jpg);
+            background-image: linear-gradient(rgba($color-white, .7), rgba($color-white, .7)), url(img/galapagos-home-square-1.jpg);
 
             background-position: left;
             background-size: cover;

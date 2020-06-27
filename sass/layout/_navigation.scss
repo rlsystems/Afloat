@@ -10,7 +10,7 @@
     grid-template-columns: repeat(auto-fit, minmax(14rem, 25rem));
 
     padding: 0 20%;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
 
 
     border-top: 1px solid rgba($color-grey-1, .4);
@@ -18,7 +18,7 @@
 
 
     &__sub-group {
-        padding-top: 3rem;
+        padding-top: 5rem;
         &__title:link,
         &__title:visited {
             color: $color-secondary;

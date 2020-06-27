@@ -326,7 +326,7 @@ p {
 
 .slider {
   height: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent 20%), linear-gradient(to top, rgba(30, 30, 30, 0.3), rgba(30, 30, 30, 0.1)), url("../../img/slider-images/mapi-01.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent 20%), linear-gradient(to top, rgba(30, 30, 30, 0.3), rgba(30, 30, 30, 0.1)), url("/img/slider-images/amazon-01.jpg");
   background-position: center;
   background-size: cover;
   display: grid;
@@ -424,12 +424,12 @@ p {
     grid-template-columns: 3fr 1fr;
     column-gap: 3rem; }
     .overview__imagery__display {
-      background-image: url(../../img/river-cruise.jpg);
+      background-image: url(img/river-cruise.jpg);
       background-position: center;
       background-size: cover;
       box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.13); }
     .overview__imagery__next {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(../../img/galapagos-home-square-1.jpg);
+      background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(img/galapagos-home-square-1.jpg);
       background-position: left;
       background-size: cover;
       box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.13); }
@@ -613,11 +613,11 @@ p {
   display: none;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 25rem));
   padding: 0 20%;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
   border-top: 1px solid rgba(158, 160, 164, 0.4);
   border-bottom: 1px solid rgba(158, 160, 164, 0.4); }
   .nav-mega__sub-group {
-    padding-top: 3rem; }
+    padding-top: 5rem; }
     .nav-mega__sub-group__title:link, .nav-mega__sub-group__title:visited {
       color: #142838;
       text-decoration: none;
