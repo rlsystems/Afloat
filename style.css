@@ -326,12 +326,12 @@ p {
 
 .slider {
   height: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent 20%), linear-gradient(to top, rgba(30, 30, 30, 0.3), rgba(30, 30, 30, 0.1)), url("img/slider-images/amazon-01.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 20%), linear-gradient(to top, rgba(30, 30, 30, 0.3), rgba(30, 30, 30, 0.1)), url("img/slider-images/amazon-01.jpg");
   background-position: center;
   background-size: cover;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-top: 20rem;
+  padding-top: 25rem;
   align-items: center;
   color: #fafafa; }
   .slider__title {

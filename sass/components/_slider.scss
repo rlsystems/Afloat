@@ -1,8 +1,8 @@
-.slider {
+.slider { //test
     height: 100%;
     background-image: linear-gradient(
         to bottom,
-        rgba(black, 0.3),
+        rgba(black, 0.4),
         transparent 20%
       ), linear-gradient(to top, rgba($color-black, .3), rgba($color-black, .1)),url("img/slider-images/amazon-01.jpg");
       background-position: center;
@@ -11,7 +11,7 @@
 
       display: grid;
       grid-template-columns: 1fr 1fr;
-      padding-top: 20rem;
+      padding-top: 25rem;
       align-items: center;
       color: $color-grey-light-1;
 
