@@ -1,5 +1,38 @@
 .product-page { 
     display: grid;
-    grid-template-rows: [nav-start] max-content [nav-end] calc(80vh - 9rem) [hero-end tabs-start] min-content [ tabs-end content-start] min-content [content-end footer-start] min-content [footer-end];
-    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; //140px each column  
+    grid-template-rows: [nav-start] 9rem [nav-end]  calc(75vh - 9rem) [hero-end content-start] repeat(
+        3,
+        min-content
+      ) [content-end footer-start] min-content [footer-end];
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(
+        8,
+        [col-start] minmax(min-content, 16rem) [col-end] 
+      ) [center-end] minmax(6rem, 1fr) [full-end]; //140px each column --now is 160px  
+   
+
 }
+
+
+.section-product-hero {
+    grid-row: nav-start / hero-end;
+    grid-column: full-start / -1;
+  
+  }
+
+  .section-product-first {
+    grid-column: full-start / -1;
+    // overflow: visible  !important;
+    // z-index: 7;
+  }
+
+  .section-product-deals {
+    grid-column: full-start / -1;
+  
+  }
+
+  .section-product-content {
+    grid-column: center-start / center-end;
+    height: 50vh;
+    padding-top: 6rem;
+  
+  }

@@ -1,0 +1,123 @@
+.product-first {
+    height: 45vh;
+    width: 100%;
+    background-color: $color-secondary;
+
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    //z-index: 2;
+
+    &__caption {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+        color: $color-grey-light-1;
+        max-width: 70%;
+        padding: 6rem;
+
+        &__title {
+            font-size: 6rem;
+            font-weight: 300;
+            letter-spacing: 0.3rem;
+
+            display: block;
+        }
+        &__subtitle {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.1rem;
+
+            display: block;
+        }
+    }
+
+    &__rotate {
+        grid-column: 2 / span 1;
+        width: 100%;
+        position: absolute;
+        top: 6rem;
+        left: -1.1vw;
+    }
+
+    &__slick {
+        display: grid;
+        align-items: center;
+        height: 50vh;
+
+        &__item {
+            height: 50vh !important;
+            width: 40rem !important;
+            margin-right: 4rem !important;
+            //background-color: yellowgreen;
+            color: white;
+            font-size: 2rem;
+            //transform: translateX(10vw);
+            position: relative;
+
+            display: grid !important;
+
+            img {
+                grid-row: 1 / -1;
+                grid-column: 1 / -1;
+                align-self: center;
+                height: 80%;
+                width: 100%;
+                object-fit: cover; //needs to set width and height
+                display: block;
+                z-index: 0;
+                transition: all 0.5s;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                align-self: center;
+                height: 80%;
+                width: 100%;
+                opacity: 0;
+                transition: all 0.4s;
+                background-image: linear-gradient(to right, rgba($color-secondary, 0.6), rgba($color-secondary, 0.6));
+            }
+        }
+    }
+}
+
+.product-slick-enlarge {
+    .product-first__slick__item {
+        img {
+            height: 100%;
+        }
+        &::after {
+          
+            height: 100%;
+            width: 100%;
+            object-fit: cover; //needs to set width and height
+        }
+    }
+}
+
+// .product-slick-darken {
+//     .product-first__slick__item::after {
+//             content: "";
+//             position: absolute;
+//             align-self: center;
+//             height: 80%;
+//             width: 100%;
+//             background-image: linear-gradient(
+//                 to right,
+//                 rgba($color-secondary, .6),
+//                 rgba($color-secondary, .6)
+//               );
+
+//     }
+// }
+
+.slick-slide:not(.slick-active) {
+    .product-first__slick__item::after {
+
+        opacity: 1;
+       
+    }
+}

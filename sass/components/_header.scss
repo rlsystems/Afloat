@@ -20,17 +20,24 @@
     grid-template-rows: min-content min-content;
     transition: all .4s;
 
+    &__logo-area {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        z-index: 5;
+        position: relative;
+        display: flex;
+    }
+
     &__logo {
         margin-left: 7rem;
         height: 4.5rem;
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1;
+     
         transition: all .4s;
         z-index: 9;
+        position: absolute;
 
         &--color {
-            grid-column: 1 / span 1;
-            grid-row: 1 / span 1;
+            
             z-index: 10;
             transition: all .4s;
             opacity: 0;

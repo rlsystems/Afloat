@@ -67,6 +67,43 @@
       }
     }
   }
+
+
+  &--left-product-first {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 50%;
+    left: -8rem;
+    z-index: 8;
+    svg:nth-child(1) {
+      transform: translateX(2rem);
+    }
+ 
+    &:hover {
+      svg:nth-child(1) {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &--right-product-first {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 50%;
+    right: 2rem;
+    z-index: 8;
+    svg:nth-child(1) {
+      transform: translateX(-2rem);
+    }
+ 
+    &:hover {
+      svg:nth-child(1) {
+        transform: translateX(0);
+      }
+    }
+  }
 }
 
 

@@ -1,0 +1,16 @@
+.product-deals  {
+    &__slick {
+        background-color: blueviolet;
+        color: white;
+        margin: 3rem 0;
+        width: 50%;
+
+        &__item {
+            background-color: yellowgreen;
+            width: 30rem;
+            height: 20rem;
+            //margin: 0 3rem;
+        }
+
+    }
+}

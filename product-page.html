@@ -1,73 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700,800"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Rainforest Cruises</title>
-  </head>
-  <body class="product-page">
-    <!-- Header -->
-    <header class="header">
-      <img src="img/logo-white.png" alt="logo" class="header__logo" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700,800" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lora:300,400,400i,500,600,700,800" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+  <link rel="stylesheet" href="style.css" />
 
-      <nav class="nav-main">
-        <ul class="nav-main__list">
-          <li class="nav-main__item">
-            <a href="#" class="nav-main__link">Destinations</a>
-          </li>
-          <li class="nav-main__item">
-            <a href="#" class="nav-main__link">Styles</a>
-          </li>
-          <li class="nav-main__item">
-            <a href="#" class="nav-main__link">Packages</a>
-          </li>
-        </ul>
-      </nav>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet" />
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
 
-      <nav class="nav-right">
-        <ul class="nav-right__list">
-          <li class="nav-right__item">
-            <a href="#" class="nav-right__link">Contact</a>
-          </li>
-          <li class="nav-right__item">
-            <span class="nav-right__phone">+1-888-454-1423</span>
-          </li>
+  <title>Rainforest Cruises</title>
+</head>
 
-        </ul>
-      </nav>
-    </header>
-    <!-- Product Hero -->
-    <div class="product-hero">
-      <h1 class="product-hero__title">Hero Title</h1>
-      <h2 class="product-hero__subtitle">Subtitle Text</h2>
-      <div class="product-hero__price">
-        <span class="product-hero__price--from">Price from</span>
-        <span class="product-hero__price--amount">$3,450</span>
-      </div>
-    </div>
-    <div class="product-tabs">
-      <ul class="product-tabs__list">
-        <li class="product-tabs__item">
-          <a href="#" class="product-tabs__link">Overview</a>
+<body class="product-page">
+  <!-- Header -->
+  <header class="header" id="header">
+    <!-- Logo -->
+    <a href="/index.html" class="header__logo-area">
+      <img src="img/logo/logo-white-new.png" alt="logo" class="header__logo" />
+      <img src="img/logo/logo-color-new.png" alt="logo" class="header__logo--color" />
+    </a>
+
+    <!-- Nav Main -->
+    <nav class="nav-main">
+      <ul class="nav-main__list">
+        <li class="nav-main__item">
+          <a href="/product-page.html" class="nav-main__link">Destinations</a>
         </li>
-        <li class="product-tabs__item">
-          <a href="#" class="product-tabs__link">4 Day</a>
+        <li class="nav-main__item">
+          <a href="#" class="nav-main__link">Experiences</a>
         </li>
-        <li class="product-tabs__item">
-          <a href="#" class="product-tabs__link">Cabins</a>
+        <li class="nav-main__item">
+          <a href="#" class="nav-main__link">Deals</a>
         </li>
       </ul>
+    </nav>
+
+    <nav class="nav-right">
+      <ul class="nav-right__list">
+        <li class="nav-right__item">
+          <a href="#" class="nav-right__link">Contact</a>
+        </li>
+        <li class="nav-right__item">
+          <span class="nav-right__phone">+1-888-454-1423</span>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-mega">
+      <div class="nav-mega__sub-group">
+        <a href="#" class="nav-mega__sub-group__title">Amazon</a>
+        <ul class="nav-mega__sub-group__list">
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Peru</a>
+          </li>
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Ecuador</a>
+          </li>
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Brazil</a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="nav-mega__sub-group">
+        <a href="#" class="nav-mega__sub-group__title">Galapagos</a>
+        <ul class="nav-mega__sub-group__list">
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Galapagos Islands</a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="nav-mega__sub-group">
+        <a href="#" class="nav-mega__sub-group__title">Asia</a>
+        <ul class="nav-mega__sub-group__list">
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Vietnam</a>
+          </li>
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Cambodia</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-mega__sub-group">
+        <a href="#" class="nav-mega__sub-group__title">Central America</a>
+        <ul class="nav-mega__sub-group__list">
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Panama</a>
+          </li>
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Belize</a>
+          </li>
+        </ul>
+      </div>
+
+
+
     </div>
-    <!-- Product Content -->
+
+
+
+
+
+
+  </header>
+  <!-- Product Hero -->
+  <section class="section-product-hero">
+    <div class="product-hero">
+      <div class="product-hero__title-group">
+        <h1 class="product-hero__title-group__title">Hero Title</h1>
+        <h2 class="product-hero__title-group__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Consectetur culpa porro a, facere quo labore reiciendis recusandae voluptatibus velit</h2>
+      </div>
+      <div class="product-hero__tabs">
+        <ul class="product-hero__tabs__list">
+          <li class="product-hero__tabs__item">
+            <a href="#" class="product-hero__tabs__link">Overview</a>
+          </li>
+          <li class="product-hero__tabs__item">
+            <a href="#" class="product-hero__tabs__link">Itineraries</a>
+          </li>
+          <li class="product-hero__tabs__item">
+            <a href="#" class="product-hero__tabs__link">Cabins</a>
+          </li>
+          <li class="product-hero__tabs__item">
+            <a href="#" class="product-hero__tabs__link">Prices</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-product-first">
+
+    <div class="product-first">
+      <div class="product-first__caption">
+        <h1 class="product-first__caption__title">Hero Title</h1>
+        <h2 class="product-first__caption__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Consectetur culpa porro a, facere quo labore reiciendis recusandae voluptatibus velit</h2>
+      </div>
+      <div class="product-first__rotate">
+        <!-- Slick Slider -->
+        <div class="product-first__slick" id="product-first__slick">
+          <!-- Item 1 -->
+          <div class="product-first__slick__item">
+            <img src="/img/galapagos-home-square-1.jpg" alt=""> 
+          </div>
+          <!-- Item 2 -->
+          <div class="product-first__slick__item">
+            <img src="/img/river-cruise.jpg" alt=""> 
+          </div>
+          <!-- Item 3 -->
+          <div class="product-first__slick__item">
+            <img src="/img/galapagos-home-square-1.jpg" alt=""> 
+          </div>
+          <!-- Item 4 -->
+          <div class="product-first__slick__item">
+            <img src="/img/river-cruise.jpg" alt=""> 
+          </div>
+          <div class="product-first__slick__item">
+            <img src="/img/river-cruise.jpg" alt=""> 
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+  <!-- Product Content -->
+  <section class="section-product-content">
     <div class="product-content">
       <div class="introduction">
         <h2 class="heading-2">Content H2</h2>
@@ -79,11 +191,83 @@
         </p>
       </div>
       <button class="btn">Click Me</button>
-      
+
     </div>
-    <footer class="footer">
-      
-      Footer
-    </footer>
-  </body>
+  </section>
+
+  <section class="section-product-deals">
+    <!-- Slick Slider -->
+    <div class="product-deals__slick" id="product-deals__slick">
+      <!-- Item 1 -->
+      <div class="product-deals__slick__item">
+        
+      </div>
+      <!-- Item 2 -->
+      <div class="product-deals__slick__item">
+        item 2
+      </div>
+      <!-- Item 3 -->
+      <div class="product-deals__slick__item">
+        item 3
+      </div>
+      <!-- Item 4 -->
+      <div class="product-deals__slick__item">
+        item 4
+      </div>
+      <!-- Item 5 -->
+      <div class="product-deals__slick__item">
+        item 5
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+
+    Footers
+  </footer>
+</body>
+
 </html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" />
+</script>
+
+<script>
+
+
+  $(document).ready(() => {
+    $('#product-deals__slick').slick({
+      //infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3
+    });
+
+    $('#product-first__slick').on('init', function (event, slick) {
+      $(this).find('.slick-slide[data-slick-index="' + 1 + '"]').addClass('product-slick-enlarge');
+      //$(this).find('.slick-slide[data-slick-index="' +  3 + '"]').addClass('product-slick-darken');
+    }).slick({
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      initialSlide: 1,
+      variableWidth: true,
+      arrows: true,
+      prevArrow: '<a class="btn-round btn-round--left-product-first"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>',
+      nextArrow: '<a class="btn-round btn-round--right-product-first"><i class="fas fa-arrow-right"></i><i class="fas fa-arrow-right"></i></a>',
+    })
+    .on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+        $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 0) + '"]').addClass('product-slick-enlarge');
+        $(this).find('.slick-slide[data-slick-index="' + (+currentSlide - 0) + '"]').removeClass('product-slick-enlarge');
+      });
+
+  })
+
+
+  $('#header').hover(
+    function () { $(this).addClass('header--active') },
+    function () { $(this).removeClass('header--active') }
+  )
+
+
+</script>
