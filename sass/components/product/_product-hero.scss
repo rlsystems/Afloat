@@ -11,40 +11,37 @@
       rgba($color-black, 0.1)
     ),
     linear-gradient(to top, rgba($color-secondary, 1), rgba(black, 0.1) 50%),
-    url("/img/iberostar-wide-1.jpg");
+    url("img/santacruz-wide-1.jpg");
   background-size: cover;
   background-position: center;
-  padding-bottom: 3rem;
+  align-content: end;
 
-  display: grid;
-  grid-template-rows: 1fr min-content;
-  grid-template-columns: 1fr 1fr;
+  //display: grid;
+  grid-column: full-start / -1;
+  grid-row: nav-start / hero-end;
 
-  align-items: center;
-  justify-items: center;
+  // &__title-group {
+  //   //padding-top: 16rem;
+  //   grid-row: 1 / span 1;
+  //   grid-column: 1 / span 1;
+  //   color: $color-grey-light-1;
+  //   //max-width: 50%;
 
-  &__title-group {
-    padding-top: 16rem;
-    grid-row: 1 / span 1;
-    grid-column: 1 / span 1;
-    color: $color-grey-light-1;
-    max-width: 50%;
-
-    &__title {
-      font-size: 6rem;
-      font-weight: 300;
-      letter-spacing: 0.3rem;
+  //   &__title {
+  //     font-size: 6rem;
+  //     font-weight: 300;
+  //     letter-spacing: 0.3rem;
       
-      display: block;
-    }
-    &__subtitle {
-      font-size: 1.8rem;
-      font-weight: 300;
-      letter-spacing: 0.1rem;
+  //     display: block;
+  //   }
+  //   &__subtitle {
+  //     font-size: 1.8rem;
+  //     font-weight: 300;
+  //     letter-spacing: 0.1rem;
   
-      display: block;
-    }
-  }
+  //     display: block;
+  //   }
+  // }
 
  
   
