@@ -10,7 +10,7 @@
       rgba($color-black, 0.1),
       rgba($color-black, 0.1)
     ),
-    linear-gradient(to top, rgba($color-secondary, 1), rgba(black, 0.1) 30%),
+    linear-gradient(to top, rgba($color-secondary, 1), rgba(black, 0.1) 50%),
     url("/img/iberostar-wide-1.jpg");
   background-size: cover;
   background-position: center;
@@ -47,41 +47,7 @@
   }
 
  
-  &__tabs {
-    grid-column: 1 / -1;
-    grid-row: 2 / span 1;
-    font-size: 1.4rem;
-    font-weight: 400;
-    letter-spacing: .3rem;
-    text-transform: uppercase;
-    
-
-    &__list {
-        display: grid;
-        grid-auto-flow: column;
-        list-style: none;
-        justify-content: start;
-        grid-gap: 12rem;
-        align-content: start; 
-        padding: 1rem 0;
-  }
-
-    &__item {
-        
-    }
-
-    &__link:link,
-    &__link:visited {
-        text-decoration: none;
-        transition: color .3s;
-        color: $color-grey-light-1;
-    }
-
-    &__link:active,
-    &__link:hover {
-      color: $color-white;
-    }
-  }
+  
 
 }
 

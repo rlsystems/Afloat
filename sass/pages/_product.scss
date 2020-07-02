@@ -21,8 +21,9 @@
 
   .section-product-first {
     grid-column: full-start / -1;
-    // overflow: visible  !important;
+  
     // z-index: 7;
+    //overflow:visible;
   }
 
   .section-product-deals {
@@ -36,3 +37,7 @@
     padding-top: 6rem;
   
   }
+
+
+
+  
