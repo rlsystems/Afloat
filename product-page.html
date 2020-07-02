@@ -111,75 +111,97 @@
 
 
   </header>
-  <!-- Product Hero -->
+
+  <!-- Hero -->
   <section class="product-hero">
-
-
-
   </section>
 
-
-  <div class="product-first">
+  <!-- First -->
+  <section class="product-first">
     <div class="product-first__caption">
       <h1 class="product-first__caption__title">Santa Cruz II</h1>
       <h2 class="product-first__caption__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
         Consectetur culpa porro a, facere quo labore reiciendis recusandae voluptatibus velit</h2>
-        <div class="product-first__tabs">
-          <ul class="product-first__tabs__list">
-            <li class="product-first__tabs__item">
-              <a href="#" class="product-first__tabs__link">Overview</a>
-            </li>
-            <li class="product-first__tabs__item">
-              <a href="#" class="product-first__tabs__link">Itineraries</a>
-            </li>
-            <li class="product-first__tabs__item">
-              <a href="#" class="product-first__tabs__link">Cabins</a>
-            </li>
-            <li class="product-first__tabs__item">
-              <a href="#" class="product-first__tabs__link">Prices</a>
-            </li>
-          </ul>
-        </div>
+      <div class="product-first__tabs">
+        <ul class="product-first__tabs__list">
+          <li class="product-first__tabs__item">
+            <a href="#" class="product-first__tabs__link">Overview</a>
+          </li>
+          <li class="product-first__tabs__item">
+            <a href="#" class="product-first__tabs__link">Itineraries</a>
+          </li>
+          <li class="product-first__tabs__item">
+            <a href="#" class="product-first__tabs__link">Cabins</a>
+          </li>
+          <li class="product-first__tabs__item">
+            <a href="#" class="product-first__tabs__link">Prices</a>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="product-first__rotate">
       <!-- Slick Slider -->
       <div class="product-first__slick" id="product-first__slick">
         <div class="product-first__slick__item">
-          <img src="/img/galapagos-home-square-1.jpg" alt=""> 
+          <img src="/img/galapagos-home-square-1.jpg" alt="">
         </div>
         <div class="product-first__slick__item">
-          <img src="/img/river-cruise.jpg" alt=""> 
+          <img src="/img/river-cruise.jpg" alt="">
         </div>
         <div class="product-first__slick__item">
-          <img src="/img/galapagos-home-square-1.jpg" alt=""> 
+          <img src="/img/galapagos-home-square-1.jpg" alt="">
         </div>
         <div class="product-first__slick__item">
-          <img src="/img/river-cruise.jpg" alt=""> 
+          <img src="/img/river-cruise.jpg" alt="">
         </div>
         <div class="product-first__slick__item">
-          <img src="/img/river-cruise.jpg" alt=""> 
+          <img src="/img/river-cruise.jpg" alt="">
         </div>
       </div>
 
     </div>
-  </div>
+  </section>
 
 
-  <!-- Product Content -->
-  <section class="section-product-content">
-    <div class="product-content">
-      <div class="introduction">
-        <h2 class="heading-2">Content H2</h2>
-        <h3 class="heading-3">Some catchy tagline H3</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti porro
-          non illo quis at quidem explicabo quibusdam nihil eum repellendus sit
-          facere magni et, recusandae dolore. Voluptas optio laboriosam ipsam.
-        </p>
-      </div>
-      <button class="btn">Click Me</button>
+  <!-- Content -->
+  <section class="product-content">
+      <h2 class="heading-2">Overview</h2>
+      <h3 class="heading-3">Some catchy tagline H3</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti porro
+        facere magni et Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Hic maiores nulla eligendi quibusdam asperiores eveniet dolor placeat, aut
+        libero eum repellendus incidunt itaque provident nihil similique ipsa, aliquid
+        exercitationem? Suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Nobis cupiditate sunt corrupti facilis quia consequatur expedita nisi, nam perferendis
+        ipsa eligendi facere inventore, asperiores id vel? Ipsam rem unde cumque?
+      </p>
+
+  </section>
+  
+
+  <!-- Content 2-->
+  <div class="product-content-background"></div>
+  <section class="product-content-2">
+    <img src="img/products/santa-cruz-ii-galapagos.jpg" class="product-content-2__img">
+    </img>
+    
+    <div class="product-content-2__text">
+      <h2 class="heading-2">Content 2</h2>
+      <h3 class="heading-3">Some catchy tagline H3</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti porro
+        non illo quis at quidem explicabo quibusdam nihil eum repellendus sit
+        facere magni et, recusandae dolore. Voluptas optio laboriosam ipsam.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, dolorum hic,
+        consequuntur, nihil quaerat corporis vitae totam voluptate ab fuga aliquam
+        excepturi minus repudiandae! Odio veritatis nobis cumque quae unde. Lorem ipsum,
+        dolor sit amet consectetur adipisicing elit. Maxime quibusdam explicabo reprehenderit
+        consequatur neque ea assumenda   
+      </p>
 
     </div>
+    
   </section>
 
   <section class="section-product-deals">
@@ -238,7 +260,7 @@
       prevArrow: '<a class="btn-round btn-round--left-product-first"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>',
       nextArrow: '<a class="btn-round btn-round--right-product-first"><i class="fas fa-arrow-right"></i><i class="fas fa-arrow-right"></i></a>',
     })
-    .on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      .on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 0) + '"]').addClass('product-slick-enlarge');
         $(this).find('.slick-slide[data-slick-index="' + (+currentSlide - 0) + '"]').removeClass('product-slick-enlarge');
       });
