@@ -1,0 +1,36 @@
+.product-overview {
+    display: grid;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end] 
+    ) [center-end] minmax(6rem, 1fr) [full-end]; //140px each column --now is 160px  
+  
+    grid-template-rows: 40vh 30vh;
+
+    &__intro {
+        grid-column: center-start / center-end;
+        grid-row: 1 / span 1;
+        width: 50%;
+        padding: 3rem 0;
+        &__bg {
+            grid-row: 1 / span 1;
+            grid-column: full-start / full-end;
+            background-color: $color-grey-light-1;
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+
+    &__second {
+        grid-column: center-start / center-end;
+        //grid-row: 1 / span 1;
+        background-color: indianred;
+    }
+
+}
+
+
+
+
+

@@ -14,9 +14,11 @@
 
 
 
-
+.product-content {
+  grid-row: content-start / span 1;
+  grid-column: full-start / -1;
  
-
+}
 
 
   

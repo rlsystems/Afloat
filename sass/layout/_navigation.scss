@@ -1,6 +1,6 @@
 .nav-mega {
     flex: 1;
-    z-index: 8;
+    z-index: 18;
 
     grid-row: 2 / span 1;
     grid-column: 1 / -1;
@@ -69,6 +69,7 @@
     font-size: 1.3rem;
     font-weight: 600;
     height: 9rem; //change
+    z-index: 18;
 
     &__list {
         display: flex;
