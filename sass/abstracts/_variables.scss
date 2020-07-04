@@ -22,6 +22,7 @@ $color-grey-2: #919598;
 // FONT VARIABLES
 $font-primary: 'Raleway', sans-serif;
 $font-secondary: 'Lora', serif;
+$font-tertiary: 'Montserrat', sans-serif;
 
 $shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
 $shadow-light: 0 2rem 5rem rgba(0,0,0,.13);
@@ -33,3 +34,10 @@ $bp-largest: 75em; // 1200px / 8px text
 $bp-large: 62.5em; // 1000px 
 $bp-medium: 50em; // 800px 
 $bp-small: 37.5em; // 600px 
+
+
+//GRID TEMPLATES
+$page-container: [full-start] minmax(6rem, 1fr) [center-start] repeat(
+    8,
+    [col-start] minmax(min-content, 14rem) [col-end] 
+  ) [center-end] minmax(6rem, 1fr) [full-end]; 

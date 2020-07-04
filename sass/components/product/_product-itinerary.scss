@@ -1,17 +1,15 @@
 .product-itineraries {
     display: grid;
-    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(
-      8,
-      [col-start] minmax(min-content, 14rem) [col-end] 
-    ) [center-end] minmax(6rem, 1fr) [full-end]; //140px each column --now is 160px  
-  
-    grid-template-rows: 40vh 30vh;
+    grid-template-columns: $page-container;
+    //grid-template-rows: 45vh;
 
     &__intro {
         grid-column: center-start / center-end;
         grid-row: 1 / span 1;
         width: 50%;
-        padding: 3rem 0;
+        //padding: 3em 0;
+        margin-top: 3rem;
+        margin-bottom: 6rem;
         &__bg {
             grid-row: 1 / span 1;
             grid-column: full-start / full-end;
@@ -19,13 +17,65 @@
             height: 100%;
             width: 100%;
         }
-
     }
 
-    &__second {
+    &__day {
         grid-column: center-start / center-end;
-        //grid-row: 1 / span 1;
-        background-color: purple;
-    }
+        display: grid;
+        grid-template-columns: 9rem 1fr;
+        grid-template-rows: min-content min-content;
+        column-gap: 3rem;
+        padding-bottom: 5rem;
 
+        &--first {
+            margin-top: 9rem;
+        }
+
+        &::after{
+            content: "";
+            
+            grid-row: 2 / span 1;
+            grid-column: 1 / span 1;
+            height: calc(100% + 5rem);
+            width: 1px;
+            background-color: $color-secondary;
+            justify-self: center;
+        }
+        &__number {
+
+            grid-column: 1 / span 1;
+            grid-template-rows: 1 / span 1;
+            align-self: center;
+            justify-self: center;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //line-height: 2;
+            //background-color: $color-primary;
+            color: $color-secondary;
+            font-family: $font-secondary;
+            font-size: 2rem;
+            font-weight: 500;
+            height: 6rem;
+            width: 6rem;
+            border-radius: 50%;
+            border: 1px solid $color-secondary;
+        }
+
+        &__title {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+            align-self: center;
+            margin-bottom: 0;
+        }
+
+        &__text {
+            grid-column: 2 / span 1;
+            grid-row: 2 / span 1;
+
+            font-size: 1.6rem;
+        }
+    }
 }

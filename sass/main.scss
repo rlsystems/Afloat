@@ -7,7 +7,9 @@
 @import "base/typography";
 @import "base/utilities";
 @import "base/buttons";
-@import "base/controls";
+
+@import "base/controls/select-box";
+@import "base/controls/tabs";
 
 
 @import "components/header";

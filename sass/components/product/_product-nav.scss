@@ -1,16 +1,10 @@
 .product-nav {
-    //height: 40vh;
-    //width: 100%;
-
-    //background-image: linear-gradient(to top, rgba($color-secondary, 1), rgba(black, 0.1));
-    //box-shadow: $shadow-bottom;
     position: relative;
 
     display: flex;
     flex-wrap: wrap;
     grid-row: first-start / hero-end;
     grid-column: center-start / -1;
-    //align-self: center;
 
     &__caption {
         color: $color-grey-light-1;
@@ -39,7 +33,8 @@
         }
     }
 
-    &__tabs {
+    
+    &__tabs { //--is child of caption
         grid-column: 1 / -1;
         grid-row: 3 / span 1;
         font-size: 1.2rem;
@@ -105,12 +100,11 @@
     }
 
     &__slick {
-        display: grid;
+        display: grid; 
         align-items: center;
         height: 50vh;
         position: absolute;
         top: 12rem;
-        //left: 2rem;
 
         &__item {
             height: 50vh !important;
@@ -168,12 +162,4 @@
     }
 }
 
-.tab-content {
-    display: none;
 
-
-}
-
-.tab-content.current {
-    display: inherit;
-}

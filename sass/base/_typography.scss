@@ -12,6 +12,7 @@
     letter-spacing: .4rem;
     font-weight: 300;
     
+    
 }
 
 .heading-2 {
@@ -19,6 +20,7 @@
     font-size: 3rem;
     //font-style: italic;
     color: $color-secondary;
+    margin-bottom: 2rem;
 
     &--light {
         color: $color-grey-1;
@@ -90,5 +92,6 @@ p {
     &:not(:last-child){
         margin-bottom: 3rem;
       }
-}
 
+
+}
