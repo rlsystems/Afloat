@@ -809,7 +809,7 @@ p {
       grid-row: 1 / span 1;
       grid-column: 1 / span 2; }
       .product-itineraries__intro__info__starting-price {
-        letter-spacing: .1rem;
+        letter-spacing: 0.1rem;
         color: #142838;
         font-size: 3rem; }
         .product-itineraries__intro__info__starting-price span {
@@ -852,7 +852,7 @@ p {
         cursor: pointer;
         display: block;
         align-self: end;
-        transition: all .3s; }
+        transition: all 0.3s; }
         .product-itineraries__intro__nav__item:not(:first-child)::after {
           content: "";
           width: 1px;
@@ -888,17 +888,56 @@ p {
     .product-itineraries__itinerary__map {
       grid-column: col-start 5 / center-end;
       grid-row: 1 / span 1;
-      justify-self: center; }
+      justify-self: center;
+      align-self: center;
+      margin-top: 6rem;
+      position: relative;
+      z-index: 1; }
       .product-itineraries__itinerary__map img {
         height: 30rem;
-        object-fit: cover;
-        margin-top: 2rem; }
+        object-fit: cover; }
+    .product-itineraries__itinerary__page {
+      color: #142838;
+      font-size: 2rem;
+      grid-row: 1/ span 1;
+      grid-column: col-start 5 / center-end;
+      align-self: start;
+      justify-self: end;
+      padding-top: 2rem; }
     .product-itineraries__itinerary__d2d {
+      margin-top: 6rem;
       grid-column: center-start / col-end 4;
-      grid-row: 2 / span 1; }
+      grid-row: 2 / span 1;
+      height: 70rem; }
+      .product-itineraries__itinerary__d2d__accordian-content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        align-items: center;
+        column-gap: 2rem; }
+        .product-itineraries__itinerary__d2d__accordian-content img {
+          grid-column: 1 / span 1;
+          width: 20rem;
+          object-fit: cover;
+          margin: 2rem 0; }
+        .product-itineraries__itinerary__d2d__accordian-content p {
+          width: 100%;
+          grid-column: 2 / span 1; }
+      .product-itineraries__itinerary__d2d__header {
+        font-size: 2.5rem;
+        color: #142838;
+        font-weight: 500;
+        margin-bottom: 2rem; }
     .product-itineraries__itinerary__detail {
       grid-column: col-start 5 / center-end;
-      grid-row: 2 / span 1; }
+      grid-row: 2 / span 1;
+      margin-left: 6rem; }
+      .product-itineraries__itinerary__detail__header {
+        font-size: 2.5rem;
+        color: #142838;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        margin-top: 6rem; }
   .product-itineraries__day {
     grid-column: center-start / center-end;
     display: grid;
@@ -941,6 +980,81 @@ p {
       grid-column: 2 / span 1;
       grid-row: 2 / span 1;
       font-size: 1.6rem; }
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #c2c6c9; }
+  .accordion .accordion-item button[aria-expanded="true"] {
+    border-bottom: 1px solid #3e7fff; }
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 2rem 0;
+  color: #142838;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none; }
+  .accordion button:hover, .accordion button:focus {
+    cursor: pointer;
+    color: #3e7fff; }
+    .accordion button:hover::after, .accordion button:focus::after {
+      cursor: pointer;
+      color: #3e7fff;
+      border: 1px solid #3e7fff; }
+  .accordion button .accordion-title {
+    font-size: 1.6rem;
+    font-family: "Raleway", sans-serif; }
+  .accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px; }
+    .accordion button .icon::before {
+      display: block;
+      position: absolute;
+      content: "";
+      top: 9px;
+      left: 5px;
+      width: 10px;
+      height: 2px;
+      background: currentColor; }
+    .accordion button .icon::after {
+      display: block;
+      position: absolute;
+      content: "";
+      top: 5px;
+      left: 9px;
+      width: 2px;
+      height: 10px;
+      background: currentColor; }
+
+.accordion button[aria-expanded="true"] {
+  color: #3e7fff; }
+  .accordion button[aria-expanded="true"] .icon::after {
+    width: 0; }
+  .accordion button[aria-expanded="true"] + .accordion-content {
+    opacity: 1;
+    max-height: 40rem;
+    transition: all 200ms linear;
+    will-change: opacity, max-height; }
+
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height; }
+  .accordion .accordion-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 2em 0; }
 
 .product-cabins {
   display: grid;

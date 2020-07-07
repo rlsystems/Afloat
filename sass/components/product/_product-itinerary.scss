@@ -2,10 +2,11 @@
     display: grid;
     grid-template-columns: $page-container;
 
-    grid-template-rows: minmax(35vh, min-content) ;
+    grid-template-rows: minmax(35vh, min-content);
     position: relative;
 
-    &::after { //intro background
+    &::after {
+        //intro background
         content: "";
         background-color: $color-grey-light-1;
         height: 100%;
@@ -15,11 +16,10 @@
         z-index: -10;
     }
 
-
     &__intro {
         grid-column: center-start / center-end;
         grid-row: 1 / span 1;
-        width: 50%;     
+        width: 50%;
         margin-top: 2rem;
         display: grid;
 
@@ -33,8 +33,8 @@
         &__info {
             grid-row: 1 / span 1;
             grid-column: 1 / span 2;
-            &__starting-price   {
-                letter-spacing: .1rem;
+            &__starting-price {
+                letter-spacing: 0.1rem;
                 color: $color-secondary;
                 font-size: 3rem;
                 span {
@@ -53,24 +53,19 @@
                 padding-bottom: 2rem;
                 border-bottom: 1px solid $color-grey-light-2;
             }
-
-            
         }
 
         &__cta {
-            grid-row: 1 / span 1; 
+            grid-row: 1 / span 1;
             grid-column: 2 / span 1;
             justify-self: end;
             align-self: center;
-        
         }
 
         &__caption {
             grid-row: 2 / span 1;
             grid-column: 1 / span 2;
         }
-
-
 
         &__nav {
             grid-row: 3 / span 1;
@@ -90,7 +85,7 @@
                 }
             }
 
-            &__item{
+            &__item {
                 font-size: 1.4rem;
                 font-weight: 500;
                 position: relative;
@@ -98,10 +93,10 @@
                 display: block;
                 //font-family: $font-tertiary;
                 align-self: end;
-                transition: all .3s;
+                transition: all 0.3s;
                 //border-right: 2px solid red;
-                
-                &:not(:first-child)::after{
+
+                &:not(:first-child)::after {
                     content: "";
                     width: 1px;
                     height: 2rem;
@@ -127,15 +122,15 @@
 
         grid-template-rows: min-content min-content;
         margin-top: 2rem;
+
         &__intro {
             grid-column: center-start / col-end 4;
             grid-row: 1 / span 1;
-            
 
             &__header {
-               margin-bottom: 3rem;
-               font-weight: 500;
-               font-size: 2.5rem;
+                margin-bottom: 3rem;
+                font-weight: 500;
+                font-size: 2.5rem;
                 &::after {
                     content: "";
                     height: 2px;
@@ -144,7 +139,7 @@
                     background-color: $color-grey-light-2;
                     margin: 1.5rem 0;
                     z-index: 9;
-                  }
+                }
             }
         }
 
@@ -152,27 +147,76 @@
             //background-color: seagreen;
             grid-column: col-start 5 / center-end;
             grid-row: 1 / span 1;
-            justify-self: center; 
+            justify-self: center;
+            align-self: center;
+            margin-top: 6rem;
+            position: relative;
+            z-index: 1;
             img {
-            height: 30rem; 
-            object-fit: cover;
-            margin-top: 2rem;
-                      
+                height: 30rem;
+                object-fit: cover;
+                //margin-top: 2rem;
+            }
+
+           
+
         }
+
+        &__page {
+            color: $color-secondary;
+            font-size: 2rem;
+            grid-row: 1/ span 1;
+            grid-column: col-start 5 / center-end;
+            align-self: start;
+            justify-self: end;
+            padding-top: 2rem;
         }
 
         &__d2d {
-            //background-color: aqua;
+            margin-top: 6rem;
             grid-column: center-start / col-end 4;
             grid-row: 2 / span 1;
+            height: 70rem;
+
+            &__accordian-content {
+                width: 100%;
+                display: grid;
+                grid-template-columns: min-content 1fr;
+                align-items: center;
+                column-gap: 2rem;
+                img {
+                    grid-column: 1 / span 1;
+                    width: 20rem;
+                    object-fit: cover;
+                    margin: 2rem 0;
+                }
+                p {
+                    width: 100%;
+                    grid-column: 2 / span 1;
+                }
+            }
+
+            &__header {
+                font-size: 2.5rem;
+                color: $color-secondary;
+                font-weight: 500;
+                margin-bottom: 2rem;
+            }
         }
 
         &__detail {
             //background-color: brown;
             grid-column: col-start 5 / center-end;
             grid-row: 2 / span 1;
+            margin-left: 6rem;
+            &__header {
+                font-size: 2.5rem;
+                color: $color-secondary;
+                font-weight: 500;
+                margin-bottom: 2rem;
+                margin-top: 6rem;
+            }
         }
-
     }
 
     &__day {
@@ -186,8 +230,6 @@
         &--first {
             margin-top: 9rem;
         }
-
-
 
         &::after {
             content: "";
@@ -232,6 +274,106 @@
             grid-row: 2 / span 1;
 
             font-size: 1.6rem;
+        }
+    }
+}
+
+.container {
+    //margin: 0 auto;
+    //padding: 4rem;
+    //width: 48rem;
+}
+
+.accordion {
+    .accordion-item {
+        //padding: 1rem 0 ;
+        border-bottom: 1px solid $color-grey-light-2;
+        button[aria-expanded="true"] {
+            border-bottom: 1px solid $color-primary;
+        }
+    }
+    button {
+        position: relative;
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 2rem 0;
+        color: $color-secondary;
+        font-size: 1.15rem;
+        font-weight: 400;
+        border: none;
+        background: none;
+        outline: none;
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            color: $color-primary;
+            &::after {
+                cursor: pointer;
+                color: $color-primary;
+                border: 1px solid $color-primary;
+            }
+        }
+        .accordion-title {
+            //padding: 2rem 2rem 2rem 0;
+            font-size: 1.6rem;
+            font-family: $font-primary;
+        }
+        .icon {
+            display: inline-block;
+            position: absolute;
+            //top: 18px;
+            right: 0;
+            width: 22px;
+            height: 22px;
+            border: 1px solid;
+            border-radius: 22px;
+            &::before {
+                display: block;
+                position: absolute;
+                content: "";
+                top: 9px;
+                left: 5px;
+                width: 10px;
+                height: 2px;
+                background: currentColor;
+            }
+            &::after {
+                display: block;
+                position: absolute;
+                content: "";
+                top: 5px;
+                left: 9px;
+                width: 2px;
+                height: 10px;
+                background: currentColor;
+            }
+        }
+    }
+    button[aria-expanded="true"] {
+        color: $color-primary;
+        .icon {
+            &::after {
+                width: 0;
+            }
+        }
+        + .accordion-content {
+            opacity: 1;
+            max-height: 40rem;
+            transition: all 200ms linear;
+            will-change: opacity, max-height;
+        }
+    }
+    .accordion-content {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 200ms linear, max-height 200ms linear;
+        will-change: opacity, max-height;
+        p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin: 2em 0;
         }
     }
 }
