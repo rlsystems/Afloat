@@ -225,6 +225,12 @@ p {
 .tab-content.current {
   display: inherit; }
 
+.tab-content-nested {
+  display: none; }
+
+.tab-content-nested.current {
+  display: inherit; }
+
 .header {
   grid-column: full-start / -1;
   grid-row: nav-start / nav-end;
@@ -714,17 +720,18 @@ p {
       height: 100%;
       width: 100%; }
   .product-overview__second {
-    grid-column: full-start / center-end;
+    grid-column: center-start / center-end;
     grid-row: 2 / span 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     column-gap: 6rem;
     margin: 3rem 0; }
     .product-overview__second__text {
       grid-column: 2 / span 1; }
     .product-overview__second__img {
       grid-column: 1 / span 1;
-      height: 40rem;
+      align-self: center;
+      height: 30rem;
       object-fit: cover;
       justify-self: end; }
   .product-overview__third {
@@ -759,18 +766,50 @@ p {
 .product-itineraries {
   display: grid;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  .product-itineraries__map img {
+    width: 40rem; }
   .product-itineraries__intro {
     grid-column: center-start / center-end;
     grid-row: 1 / span 1;
     width: 50%;
     margin-top: 3rem;
-    margin-bottom: 6rem; }
+    display: grid;
+    grid-template-rows: min-content min-content;
+    row-gap: 6rem; }
     .product-itineraries__intro__bg {
       grid-row: 1 / span 1;
       grid-column: full-start / full-end;
       background-color: #f8f8f8;
       height: 100%;
       width: 100%; }
+    .product-itineraries__intro__header {
+      grid-row: 1 / span 1;
+      grid-column: 1 / -1; }
+    .product-itineraries__intro__nav {
+      grid-row: 2 / span 1;
+      justify-self: start;
+      align-self: end; }
+      .product-itineraries__intro__nav__list {
+        list-style: none;
+        display: grid;
+        grid-auto-flow: column;
+        margin-bottom: 1.5rem;
+        column-gap: 4.5rem; }
+        .product-itineraries__intro__nav__list .current {
+          color: #142838; }
+      .product-itineraries__intro__nav__item {
+        font-size: 1.4rem;
+        font-weight: 500;
+        position: relative;
+        cursor: pointer;
+        display: block;
+        transition: all .3s; }
+        .product-itineraries__intro__nav__item:hover {
+          color: #142838; }
+  .product-itineraries__itinerary {
+    grid-column: full-start / full-end;
+    display: grid;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
   .product-itineraries__day {
     grid-column: center-start / center-end;
     display: grid;
@@ -813,6 +852,43 @@ p {
       grid-column: 2 / span 1;
       grid-row: 2 / span 1;
       font-size: 1.6rem; }
+
+.product-cabins {
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  .product-cabins__intro {
+    grid-column: center-start / center-end;
+    grid-row: 1 / span 1;
+    width: 50%;
+    margin-top: 3rem;
+    margin-bottom: 6rem; }
+    .product-cabins__intro__bg {
+      grid-row: 1 / span 1;
+      grid-column: full-start / full-end;
+      background-color: #f8f8f8;
+      height: 100%;
+      width: 100%; }
+  .product-cabins__second {
+    grid-column: center-start / center-end;
+    grid-row: 2 / span 1; }
+
+.product-prices {
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  .product-prices__intro {
+    grid-column: center-start / center-end;
+    grid-row: 1 / span 1;
+    width: 50%;
+    padding: 3rem 0; }
+    .product-prices__intro__bg {
+      grid-row: 1 / span 1;
+      grid-column: full-start / full-end;
+      background-color: #f8f8f8;
+      height: 100%;
+      width: 100%; }
+  .product-prices__second {
+    grid-column: center-start / center-end;
+    grid-row: 2 / span 1; }
 
 .nav-mega {
   flex: 1;

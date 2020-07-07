@@ -1,0 +1,27 @@
+.product-cabins {
+
+    display: grid;
+    grid-template-columns: $page-container;
+    //grid-template-rows: 45vh;
+
+    &__intro {
+        grid-column: center-start / center-end;
+        grid-row: 1 / span 1;
+        width: 50%;
+        //padding: 3em 0;
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+        &__bg {
+            grid-row: 1 / span 1;
+            grid-column: full-start / full-end;
+            background-color: $color-grey-light-1;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__second {
+        grid-column: center-start / center-end;
+        grid-row: 2 / span 1;
+    }
+}

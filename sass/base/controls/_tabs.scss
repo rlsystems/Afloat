@@ -1,7 +1,22 @@
 .tab-content {
     display: none;
+
 }
 
 .tab-content.current {
     display: inherit;
+
 }
+
+
+.tab-content-nested {
+    display: none;
+
+}
+
+.tab-content-nested.current {
+    display: inherit;
+
+}
+ 
+ 
