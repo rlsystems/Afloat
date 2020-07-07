@@ -1,40 +1,80 @@
 .product-itineraries {
     display: grid;
     grid-template-columns: $page-container;
-    //grid-template-rows: 45vh;
 
-    &__map {
-        img {
-            width: 40rem;
-        }
+    grid-template-rows: minmax(35vh, min-content) ;
+    position: relative;
+
+    &::after { //intro background
+        content: "";
+        background-color: $color-grey-light-1;
+        height: 100%;
+        width: 100%;
+        grid-column: full-start / full-end;
+        grid-row: 1 / span 1;
+        z-index: -10;
     }
+
 
     &__intro {
         grid-column: center-start / center-end;
         grid-row: 1 / span 1;
         width: 50%;     
-        margin-top: 3rem;
-        //margin-bottom: 6rem;
+        margin-top: 2rem;
         display: grid;
-        grid-template-rows: min-content min-content;
-        row-gap: 6rem;
-        &__bg {
-            grid-row: 1 / span 1;
-            grid-column: full-start / full-end;
-            background-color: $color-grey-light-1;
-            height: 100%;
-            width: 100%;
-        }
 
-        &__header {
-            //font-family: $font-secondary;
+        padding-right: 5rem;
+
+        display: grid;
+        grid-template-rows: min-content min-content 1fr;
+
+        row-gap: 2rem;
+
+        &__info {
             grid-row: 1 / span 1;
-            grid-column: 1 / -1;
+            grid-column: 1 / span 2;
+            &__starting-price   {
+                letter-spacing: .1rem;
+                color: $color-secondary;
+                font-size: 3rem;
+                span {
+                    color: royalblue;
+                    padding-left: 1rem;
+                }
+            }
+
+            &__length {
+                color: $color-secondary;
+                font-size: 1.8rem;
+                span {
+                    color: $color-grey-2;
+                    padding-left: 1rem;
+                }
+                padding-bottom: 2rem;
+                border-bottom: 1px solid $color-grey-light-2;
+            }
+
             
         }
 
-        &__nav {
+        &__cta {
+            grid-row: 1 / span 1; 
+            grid-column: 2 / span 1;
+            justify-self: end;
+            align-self: center;
+        
+        }
+
+        &__caption {
             grid-row: 2 / span 1;
+            grid-column: 1 / span 2;
+        }
+
+
+
+        &__nav {
+            grid-row: 3 / span 1;
+            grid-column: 1 / span 2;
             justify-self: start;
             align-self: end;
             &__list {
@@ -46,7 +86,7 @@
 
                 & .current {
                     color: $color-secondary;
-                    
+                    font-size: 2.5rem;
                 }
             }
 
@@ -57,9 +97,21 @@
                 cursor: pointer;
                 display: block;
                 //font-family: $font-tertiary;
-    
+                align-self: end;
                 transition: all .3s;
-
+                //border-right: 2px solid red;
+                
+                &:not(:first-child)::after{
+                    content: "";
+                    width: 1px;
+                    height: 2rem;
+                    background-color: $color-grey-light-2;
+                    //justify-self: end;
+                    position: absolute;
+                    left: -50%;
+                    bottom: 0;
+                    z-index: 3;
+                }
                 &:hover {
                     color: $color-secondary;
                 }
@@ -73,7 +125,53 @@
         display: grid;
         grid-template-columns: $page-container;
 
+        grid-template-rows: min-content min-content;
+        margin-top: 2rem;
+        &__intro {
+            grid-column: center-start / col-end 4;
+            grid-row: 1 / span 1;
+            
 
+            &__header {
+               margin-bottom: 3rem;
+               font-weight: 500;
+               font-size: 2.5rem;
+                &::after {
+                    content: "";
+                    height: 2px;
+                    width: 12rem;
+                    display: block;
+                    background-color: $color-grey-light-2;
+                    margin: 1.5rem 0;
+                    z-index: 9;
+                  }
+            }
+        }
+
+        &__map {
+            //background-color: seagreen;
+            grid-column: col-start 5 / center-end;
+            grid-row: 1 / span 1;
+            justify-self: center; 
+            img {
+            height: 30rem; 
+            object-fit: cover;
+            margin-top: 2rem;
+                      
+        }
+        }
+
+        &__d2d {
+            //background-color: aqua;
+            grid-column: center-start / col-end 4;
+            grid-row: 2 / span 1;
+        }
+
+        &__detail {
+            //background-color: brown;
+            grid-column: col-start 5 / center-end;
+            grid-row: 2 / span 1;
+        }
 
     }
 

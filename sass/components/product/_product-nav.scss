@@ -42,7 +42,7 @@
         letter-spacing: 0.3rem;
         text-transform: uppercase;
         align-self: center;
-        margin-bottom: 4rem;
+        margin-bottom: 1rem;
 
         &__list {
             display: grid;
@@ -51,7 +51,7 @@
             justify-content: start;
             grid-gap: 4rem;
             align-content: start;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
 
             & .current {
                 &::after {

@@ -124,3 +124,26 @@
   }
 }
 
+
+.btn-product-cta {
+  background-color: royalblue;
+  color: $color-grey-light-1;
+  border: none;
+  border-radius: 4rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all .2s;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+
+  &:hover {
+      background-color: $color-primary-dark;
+  }
+}
+

@@ -10,12 +10,12 @@
 
 
 .tab-content-nested {
-    display: none;
+    display: none !important;
 
 }
 
 .tab-content-nested.current {
-    display: inherit;
+    display: grid !important;
 
 }
  
