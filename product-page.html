@@ -307,13 +307,16 @@
           </div>
           <div class="product-itineraries__itinerary__map">
             <h3 class="heading-3 heading-3--underline">
-              Map
+              3 Day
             </h3>
             <img src="img/maps/map-02.png" alt="">
             <!-- Button Here -->
-            <a href="" class="btn-round btn-round--dark btn-round--left"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>
+            <button
+              class="btn-round btn-round--dark btn-round--right btn-round--medium product-itineraries__itinerary__map__btn"
+              id="next-itinerary" data-tab="tab-itinerary-2"><i class="fas fa-arrow-right"></i><i
+                class="fas fa-arrow-right"></i></button>
           </div>
-          
+
           <div class="product-itineraries__itinerary__d2d">
             <h3 class="heading-3 heading-3--underline">
               Itinerary
@@ -327,7 +330,8 @@
                       aria-hidden="true"></span></button>
                   <div class="accordion-content product-itineraries__itinerary__d2d__accordian-content">
                     <img src="img/d2d/d1.png" alt="">
-                    <p>We land at Baltra Island by plane in the morning and transfer to the dock to board the Santa Cruz II, where we receive a welcome introductory briefing, boat drill and lunch.</p>
+                    <p>We land at Baltra Island by plane in the morning and transfer to the dock to board the Santa Cruz
+                      II, where we receive a welcome introductory briefing, boat drill and lunch.</p>
                     <p>This beautiful visitor site is located on the north shore of Santa Cruz Island, a glorious white
                       beach with a couple of brackish lagoons only a few steps away from the sea. These lagoons are the
                       feeding grounds of various wading birds, from stilts to flamingos. You may enjoy swimming and or
@@ -370,54 +374,54 @@
             </div>
           </div>
           <div class="product-itineraries__itinerary__detail">
-            
+
             <div class="product-itineraries__itinerary__detail__availability">
               <div class="product-itineraries__itinerary__detail__availability__top-section">
                 <h3 class="heading-3 heading-3--underline">
                   Availability
                 </h3>
                 <!-- Select-Box -->
-          <div class="select-box select-box--outline">
-            <div class="select-box__current" id="travel-date" tabindex="2">
-              <!-- Select-Box Value Array (hidden) -->
-              <div class="select-box__value">
-                <input class="select-box__input" type="radio" id="0" value="1" name="hidden-check-input"
-                  checked="checked" />
-                <p class="select-box__input-text">2020</p>
-              </div>
-              <div class="select-box__value">
-                <input class="select-box__input" type="radio" id="1" value="2" name="hidden-check-input"
-                  checked="checked" />
-                <p class="select-box__input-text">2021</p>
-              </div>
-              <div class="select-box__value">
-                <input class="select-box__input" type="radio" id="2" value="3" name="hidden-check-input"
-                  checked="checked" />
-                <p class="select-box__input-text">2022</p>
+                <div class="select-box select-box--outline">
+                  <div class="select-box__current" id="travel-date" tabindex="2">
+                    <!-- Select-Box Value Array (hidden) -->
+                    <div class="select-box__value">
+                      <input class="select-box__input" type="radio" id="0" value="1" name="hidden-check-input"
+                        checked="checked" />
+                      <p class="select-box__input-text">2020</p>
+                    </div>
+                    <div class="select-box__value">
+                      <input class="select-box__input" type="radio" id="1" value="2" name="hidden-check-input"
+                        checked="checked" />
+                      <p class="select-box__input-text">2021</p>
+                    </div>
+                    <div class="select-box__value">
+                      <input class="select-box__input" type="radio" id="2" value="3" name="hidden-check-input"
+                        checked="checked" />
+                      <p class="select-box__input-text">2022</p>
+                    </div>
+
+                    <!-- Down Icon -->
+                    <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
+                      alt="Arrow Icon" aria-hidden="true" />
+                  </div>
+
+                  <!-- Select-Box List -->
+                  <ul class="select-box__list">
+                    <li>
+                      <label class="select-box__option" for="0" aria-hidden="aria-hidden">2020</label>
+                    </li>
+                    <li>
+                      <label class="select-box__option" for="1" aria-hidden="aria-hidden">2021</label>
+                    </li>
+                    <li>
+                      <label class="select-box__option" for="2" aria-hidden="aria-hidden">2022</label>
+                    </li>
+                  </ul>
+
+                </div>
+                <!-- End Select Box-->
               </div>
 
-              <!-- Down Icon -->
-              <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon"
-                aria-hidden="true" />
-            </div>
-
-            <!-- Select-Box List -->
-            <ul class="select-box__list">
-              <li>
-                <label class="select-box__option" for="0" aria-hidden="aria-hidden">2020</label>
-              </li>
-              <li>
-                <label class="select-box__option" for="1" aria-hidden="aria-hidden">2021</label>
-              </li>
-              <li>
-                <label class="select-box__option" for="2" aria-hidden="aria-hidden">2022</label>
-              </li>
-            </ul>
-
-          </div>
-          <!-- End Select Box-->
-              </div>
-              
               <ul class="date-grid">
                 <li class="date-grid__item">
                   JAN
@@ -456,7 +460,7 @@
                   DEC
                 </li>
               </ul>
-              
+
             </div>
             <div class="product-itineraries__itinerary__detail__cabin-prices">
               <h3 class="heading-3 heading-3--underline">
@@ -632,8 +636,8 @@
       initialSlide: 1,
       variableWidth: true,
       arrows: true,
-      prevArrow: '<a class="btn-round btn-round--left-product-nav"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>',
-      nextArrow: '<a class="btn-round btn-round--right-product-nav"><i class="fas fa-arrow-right"></i><i class="fas fa-arrow-right"></i></a>',
+      prevArrow: '<a class="btn-round btn-round--left btn-round--small btn-round--product-nav-left"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>',
+      nextArrow: '<a class="btn-round btn-round--right btn-round--small btn-round--product-nav-right"><i class="fas fa-arrow-right"></i><i class="fas fa-arrow-right"></i></a>',
     })
       .on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 0) + '"]').addClass('product-slick-enlarge');
@@ -641,10 +645,9 @@
       });
 
 
-    //Tabs
+    //Nav Primary (Overview, Itinerary, Prices ...)
     $('.product-nav__tabs__list li').click(function () {
       var tab_id = $(this).attr('data-tab');
-      console.log('click')
 
       $('.product-nav__tabs__item').removeClass('current');
       $('.tab-content').removeClass('current');
@@ -657,7 +660,6 @@
     //Itinerary Tabs
     $('.product-itineraries__intro__nav__list li').click(function () {
       var tab_id = $(this).attr('data-tab');
-      console.log('click 2')
 
       $('.product-itineraries__intro__nav__item').removeClass('current');
       $('.tab-content-nested').removeClass('current');
@@ -666,15 +668,23 @@
       $("#" + tab_id).addClass('current');
     })
 
-    //iNCLUSIONS Tabs
+
+
+    //Inclusions/Exclusions Tabs
     $('.product-itineraries__itinerary__inclusions__tabs__list li').click(function () {
       var tab_id = $(this).attr('data-tab');
-      console.log('click exc')
 
       $('.product-itineraries__itinerary__inclusions__tabs__item').removeClass('current');
       $('.product-itineraries__itinerary__inclusions__tab-pane.tab-content').removeClass('current');
 
       $(this).addClass('current');
+      $("#" + tab_id).addClass('current');
+    })
+
+    //Page Arrows
+    $('#next-itinerary').click(function () {
+      var tab_id = $(this).attr('data-tab');
+      $('.tab-content-nested').removeClass('current');
       $("#" + tab_id).addClass('current');
     })
 

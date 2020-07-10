@@ -536,8 +536,8 @@
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
-        prevArrow: '<a class="btn-round btn-round--left"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>',
-        nextArrow: '<a class="btn-round btn-round--right"><i class="fas fa-arrow-right"></i><i class="fas fa-arrow-right"></i></a>',
+        prevArrow: '<a class="btn-round btn-round--left  btn-round--slider-wide-left"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>',
+        nextArrow: '<a class="btn-round btn-round--right  btn-round--slider-wide-right"><i class="fas fa-arrow-right"></i><i class="fas fa-arrow-right"></i></a>',
       }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 1) + '"]').addClass('sites__side-overlay');
         $(this).find('.slick-slide[data-slick-index="' + (+currentSlide - 1) + '"]').removeClass('sites__side-overlay');

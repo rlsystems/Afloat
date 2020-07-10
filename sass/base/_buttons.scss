@@ -36,31 +36,40 @@
     }
   }
 
+  //dark
   &--dark {
-    border: 0.1rem solid rgba($color-secondary, 0.6);
-    color: rgba($color-secondary, 0.6);
+    border: 0.1rem solid rgba($color-secondary, .8);
+    color: rgba($color-secondary, .8);
 
     svg:nth-child(2) {
-      color: rgba($color-secondary, 0.6);
+      color: rgba($color-secondary, .8);
     }
 
     &.btn-round:hover {
       svg:nth-child(1) {
-        color: rgba($color-secondary, 0.6);
+        color: rgba($color-secondary, .8);
       }
 
     }
   }
 
+  //small
+  &--small {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &--medium {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+
+  //left / right
   &--left {
-    position: absolute;
-    top: 45%;
-    left: 3%;
-    z-index: 8;
     svg:nth-child(1) {
       transform: translateX(2rem);
-    }
- 
+    } 
     &:hover {
       svg:nth-child(1) {
         transform: translateX(0);
@@ -69,58 +78,50 @@
   }
 
   &--right {
+    svg:nth-child(1) {
+      transform: translateX(-2rem);
+    } 
+    &:hover {
+      svg:nth-child(1) {
+        transform: translateX(0);
+      }
+    }
+  }
+
+
+  //wide slider buttons
+  &--slider-wide-left {
+    position: absolute;
+    top: 45%;
+    left: 3%;
+    z-index: 8;
+
+  }
+
+  &--slider-wide-right {
     position: absolute;
     top: 45%;
     right: 3%;
     z-index: 8;
-    svg:nth-child(1) {
-      transform: translateX(-2rem);
-    }
- 
-    &:hover {
-      svg:nth-child(1) {
-        transform: translateX(0);
-      }
-    }
+    
   }
 
 
-  &--left-product-nav {
+  //product showcase
+  &--product-nav-left {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
     top: 0%;
     left: -6rem;
-    z-index: 8;
-    
-    svg:nth-child(1) {
-      transform: translateX(2rem);
-    }
- 
-    &:hover {
-      svg:nth-child(1) {
-        transform: translateX(0);
-      }
-    }
+    z-index: 8;     
   }
 
-  &--right-product-nav {
+  &--product-nav-right {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
     top: 0%;
     right: 0;
-    z-index: 8;
-    svg:nth-child(1) {
-      transform: translateX(-2rem);
-    }
- 
-    &:hover {
-      svg:nth-child(1) {
-        transform: translateX(0);
-      }
-    }
+    z-index: 8;  
   }
+
 }
 
 

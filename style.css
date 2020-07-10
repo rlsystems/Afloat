@@ -131,52 +131,46 @@ p {
   .btn-round:hover svg:nth-child(2) {
     color: transparent; }
   .btn-round--dark {
-    border: 0.1rem solid rgba(20, 40, 56, 0.6);
-    color: rgba(20, 40, 56, 0.6); }
+    border: 0.1rem solid rgba(20, 40, 56, 0.8);
+    color: rgba(20, 40, 56, 0.8); }
     .btn-round--dark svg:nth-child(2) {
-      color: rgba(20, 40, 56, 0.6); }
+      color: rgba(20, 40, 56, 0.8); }
     .btn-round--dark.btn-round:hover svg:nth-child(1) {
-      color: rgba(20, 40, 56, 0.6); }
-  .btn-round--left {
+      color: rgba(20, 40, 56, 0.8); }
+  .btn-round--small {
+    width: 3rem;
+    height: 3rem; }
+  .btn-round--medium {
+    width: 4.5rem;
+    height: 4.5rem; }
+  .btn-round--left svg:nth-child(1) {
+    transform: translateX(2rem); }
+  .btn-round--left:hover svg:nth-child(1) {
+    transform: translateX(0); }
+  .btn-round--right svg:nth-child(1) {
+    transform: translateX(-2rem); }
+  .btn-round--right:hover svg:nth-child(1) {
+    transform: translateX(0); }
+  .btn-round--slider-wide-left {
     position: absolute;
     top: 45%;
     left: 3%;
     z-index: 8; }
-    .btn-round--left svg:nth-child(1) {
-      transform: translateX(2rem); }
-    .btn-round--left:hover svg:nth-child(1) {
-      transform: translateX(0); }
-  .btn-round--right {
+  .btn-round--slider-wide-right {
     position: absolute;
     top: 45%;
     right: 3%;
     z-index: 8; }
-    .btn-round--right svg:nth-child(1) {
-      transform: translateX(-2rem); }
-    .btn-round--right:hover svg:nth-child(1) {
-      transform: translateX(0); }
-  .btn-round--left-product-nav {
+  .btn-round--product-nav-left {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
     top: 0%;
     left: -6rem;
     z-index: 8; }
-    .btn-round--left-product-nav svg:nth-child(1) {
-      transform: translateX(2rem); }
-    .btn-round--left-product-nav:hover svg:nth-child(1) {
-      transform: translateX(0); }
-  .btn-round--right-product-nav {
+  .btn-round--product-nav-right {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
     top: 0%;
     right: 0;
     z-index: 8; }
-    .btn-round--right-product-nav svg:nth-child(1) {
-      transform: translateX(-2rem); }
-    .btn-round--right-product-nav:hover svg:nth-child(1) {
-      transform: translateX(0); }
 
 .btn {
   background-color: #3e7fff;
@@ -304,7 +298,7 @@ p {
   display: none; }
 
 .tab-content.current {
-  display: inherit; }
+  display: grid !important; }
 
 .tab-content-nested {
   display: none !important; }
@@ -945,6 +939,10 @@ p {
         height: 30rem;
         object-fit: cover;
         display: block; }
+      .product-itineraries__itinerary__map__btn {
+        position: absolute;
+        top: 0;
+        right: 0; }
     .product-itineraries__itinerary__page {
       color: #142838;
       font-size: 2rem;
