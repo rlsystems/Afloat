@@ -137,6 +137,13 @@ p {
       color: rgba(20, 40, 56, 0.8); }
     .btn-round--dark.btn-round:hover svg:nth-child(1) {
       color: rgba(20, 40, 56, 0.8); }
+  .btn-round--grey {
+    border: 0.1rem solid rgba(145, 149, 152, 0.8);
+    color: rgba(145, 149, 152, 0.8); }
+    .btn-round--grey svg:nth-child(2) {
+      color: rgba(145, 149, 152, 0.8); }
+    .btn-round--grey.btn-round:hover svg:nth-child(1) {
+      color: rgba(145, 149, 152, 0.8); }
   .btn-round--small {
     width: 3rem;
     height: 3rem; }
@@ -295,15 +302,9 @@ p {
       font-size: 2.3rem; }
 
 .tab-content {
-  display: none; }
-
-.tab-content.current {
-  display: grid !important; }
-
-.tab-content-nested {
   display: none !important; }
 
-.tab-content-nested.current {
+.tab-content.current {
   display: grid !important; }
 
 .header {

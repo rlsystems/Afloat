@@ -44,14 +44,27 @@
     svg:nth-child(2) {
       color: rgba($color-secondary, .8);
     }
-
     &.btn-round:hover {
       svg:nth-child(1) {
         color: rgba($color-secondary, .8);
       }
-
     }
   }
+
+    //grey
+    &--grey {
+      border: 0.1rem solid rgba($color-grey-2, .8);
+      color: rgba($color-grey-2, .8);
+  
+      svg:nth-child(2) {
+        color: rgba($color-grey-2, .8);
+      }
+      &.btn-round:hover {
+        svg:nth-child(1) {
+          color: rgba($color-grey-2, .8);
+        }
+      }
+    }
 
   //small
   &--small {

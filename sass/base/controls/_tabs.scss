@@ -1,5 +1,5 @@
 .tab-content {
-    display: none;
+    display: none !important;
 
 }
 
@@ -8,16 +8,6 @@
     
 }
 
-
-.tab-content-nested {
-    display: none !important;
-
-}
-
-.tab-content-nested.current {
-    display: grid !important;
-
-}
 
 
 

@@ -167,7 +167,7 @@
   <section class="product-content">
 
     <!-- Overview Content -->
-    <div class=" tab-content  " id="tab-overview">
+    <div class="product-content__page tab-content  " id="tab-overview">
       <div class="product-overview">
         <div class="product-overview__intro__bg"></div>
         <div class="product-overview__intro">
@@ -255,8 +255,10 @@
     </div>
 
     <!-- Itineraries Content -->
-    <div class="tab-content current" id="tab-itineraries">
+    <div class="product-content__page tab-content current" id="tab-itineraries">
       <div class="product-itineraries">
+
+        <!-- Intro + Nav (starting at, length & 3/4/5 day nav) -->
         <div class="product-itineraries__intro">
           <div class="product-itineraries__intro__info">
             <div class="product-itineraries__intro__info__starting-price">Starting at: <span>$3,795</span></div>
@@ -273,13 +275,13 @@
           <!-- Itineraries Nav -->
           <div class="product-itineraries__intro__nav">
             <ul class="product-itineraries__intro__nav__list">
-              <li class="product-itineraries__intro__nav__item current" data-tab="tab-itinerary-1">
+              <li class="product-itineraries__intro__nav__item current" data-tab="tab-itinerary-1" id="tab-itinerary-1-nav">
                 3 Day
               </li>
-              <li class="product-itineraries__intro__nav__item" data-tab="tab-itinerary-2">
+              <li class="product-itineraries__intro__nav__item" data-tab="tab-itinerary-2" id="tab-itinerary-2-nav">
                 4 Day
               </li>
-              <li class="product-itineraries__intro__nav__item" data-tab="tab-itinerary-3">
+              <li class="product-itineraries__intro__nav__item" data-tab="tab-itinerary-3" id="tab-itinerary-3-nav">
                 8 Day
               </li>
             </ul>
@@ -287,8 +289,8 @@
 
         </div>
 
-        <!-- Itineraries Content -->
-        <div class="product-itineraries__itinerary u-margin-top-medium tab-content-nested current" id="tab-itinerary-1">
+        <!-- Itinerary -- 1 -->
+        <div class="product-itineraries__itinerary u-margin-top-medium tab-content current" id="tab-itinerary-1">
 
           <div class="product-itineraries__itinerary__intro">
             <div class="heading-3 heading-3--underline">
@@ -549,7 +551,8 @@
           </div>
         </div>
 
-        <div class="product-itineraries__itinerary tab-content-nested" id="tab-itinerary-2">
+        <!-- Itinerary -- 2 -->
+        <div class="product-itineraries__itinerary tab-content" id="tab-itinerary-2">
           Content 2
         </div>
       </div>
@@ -558,9 +561,9 @@
 
 
     </div>
-    </div>
 
-    <div class="tab-content" id="tab-cabins">
+    <!-- Cabins Content -->
+    <div class="product-content__page tab-content" id="tab-cabins">
       <div class="product-cabins">
         <div class="product-cabins__intro__bg"></div>
         <div class="product-cabins__intro">
@@ -580,7 +583,8 @@
       </div>
     </div>
 
-    <div class="tab-content" id="tab-prices">
+    <!-- Prices Content -->
+    <div class="product-content__page tab-content" id="tab-prices">
       <div class="product-prices">
         <div class="product-prices__intro__bg"></div>
         <div class="product-prices__intro">
@@ -605,7 +609,6 @@
   </section>
 
   <footer class="footer">
-
     Footers
   </footer>
 </body>
@@ -650,25 +653,33 @@
       var tab_id = $(this).attr('data-tab');
 
       $('.product-nav__tabs__item').removeClass('current');
-      $('.tab-content').removeClass('current');
+      $('.product-content__page.tab-content').removeClass('current');
 
       $(this).addClass('current');
       $("#" + tab_id).addClass('current');
     })
 
 
-    //Itinerary Tabs
+    //Nav Itinerary (3/4/5 day...)
     $('.product-itineraries__intro__nav__list li').click(function () {
       var tab_id = $(this).attr('data-tab');
+      //console.log(tab_id);
 
       $('.product-itineraries__intro__nav__item').removeClass('current');
-      $('.tab-content-nested').removeClass('current');
+      $('.product-itineraries__itinerary.tab-content').removeClass('current');
 
       $(this).addClass('current');
       $("#" + tab_id).addClass('current');
     })
 
-
+    //Page Arrows
+    $('#next-itinerary').click(function () {
+      var tab_id = $(this).attr('data-tab');
+      $('.product-itineraries__itinerary.tab-content').removeClass('current');
+      $(".product-itineraries__intro__nav__item").removeClass('current');
+      $("#" + tab_id + "-nav").addClass('current');
+      $("#" + tab_id).addClass('current');
+    })
 
     //Inclusions/Exclusions Tabs
     $('.product-itineraries__itinerary__inclusions__tabs__list li').click(function () {
@@ -681,12 +692,7 @@
       $("#" + tab_id).addClass('current');
     })
 
-    //Page Arrows
-    $('#next-itinerary').click(function () {
-      var tab_id = $(this).attr('data-tab');
-      $('.tab-content-nested').removeClass('current');
-      $("#" + tab_id).addClass('current');
-    })
+
 
 
   })
