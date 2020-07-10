@@ -114,58 +114,46 @@
         }
     }
 
+    //ITINERARY
     &__itinerary {
         grid-column: full-start / full-end;
 
         display: grid;
         grid-template-columns: $page-container;
 
-        grid-template-rows: min-content min-content;
-        margin-top: 2rem;
+        grid-template-rows: min-content min-content min-content;
+        //margin-top: 6rem;
+        row-gap: 6rem;
+        //column-gap: 6rem;
 
         &__intro {
             grid-column: center-start / col-end 4;
             grid-row: 1 / span 1;
 
-            &__header {
-                margin-bottom: 3rem;
-                font-weight: 500;
-                font-size: 2.5rem;
-                &::after {
-                    content: "";
-                    height: 2px;
-                    width: 12rem;
-                    display: block;
-                    background-color: $color-grey-light-2;
-                    margin: 1.5rem 0;
-                    z-index: 9;
-                }
-            }
         }
 
         &__map {
-            //background-color: seagreen;
+            margin-left: 6rem;
             grid-column: col-start 5 / center-end;
             grid-row: 1 / span 1;
-            justify-self: center;
-            align-self: center;
-            margin-top: 6rem;
+
             position: relative;
-            z-index: 1;
+            //z-index: 1;
+            //display: flex;
+            //flex-direction: column;
+           
+
             img {
                 height: 30rem;
                 object-fit: cover;
-                //margin-top: 2rem;
+                display: block;
             }
-
-           
-
         }
 
         &__page {
             color: $color-secondary;
             font-size: 2rem;
-            grid-row: 1/ span 1;
+            grid-row: 1 / span 1;
             grid-column: col-start 5 / center-end;
             align-self: start;
             justify-self: end;
@@ -173,22 +161,18 @@
         }
 
         &__d2d {
-            margin-top: 6rem;
             grid-column: center-start / col-end 4;
             grid-row: 2 / span 1;
-            height: 70rem;
 
             &__accordian-content {
                 width: 100%;
-                display: grid;
-                grid-template-columns: min-content 1fr;
-                align-items: center;
-                column-gap: 2rem;
+
                 img {
                     grid-column: 1 / span 1;
                     width: 20rem;
                     object-fit: cover;
-                    margin: 2rem 0;
+                    margin: 3rem 3rem 1rem 0;
+                    float: left;
                 }
                 p {
                     width: 100%;
@@ -196,88 +180,178 @@
                 }
             }
 
-            &__header {
-                font-size: 2.5rem;
-                color: $color-secondary;
-                font-weight: 500;
-                margin-bottom: 2rem;
-            }
         }
 
         &__detail {
-            //background-color: brown;
             grid-column: col-start 5 / center-end;
             grid-row: 2 / span 1;
             margin-left: 6rem;
-            &__header {
-                font-size: 2.5rem;
-                color: $color-secondary;
-                font-weight: 500;
-                margin-bottom: 2rem;
-                margin-top: 6rem;
+            display: grid;
+            grid-template-rows: repeat(2, min-content);
+
+            &__availability {
+                margin-bottom: 6rem;
+
+                &__top-section {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                
             }
+
+            &__cabin-prices {
+                //background-color: aqua;
+                margin-bottom: 6rem;
+            }
+
+        }
+
+        &__inclusions {
+            grid-column: center-start / col-end 4;
+            //grid-column: center-start / center-end;
+            grid-row: 3 / span 1;
+            display: grid;
+            grid-template-rows: min-content min-content;
+            margin-bottom: 6rem;
+            margin-top: 2rem;
+
+            &__tabs {
+                grid-row: 1 / span 1;
+                grid-template-columns: 1fr 1fr;
+                font-size: 1.8rem;
+                font-weight: 500;
+
+                &__list {
+                    display: grid;
+                    grid-auto-flow: column;
+                    list-style: none;  
+
+                    & .current {
+                        color: $color-secondary;
+                        border-bottom: 1px solid $color-secondary
+                   
+                    }         
+                }
+
+                &__item {                
+                    margin-bottom: 1.5rem;
+                    border-bottom: 1px solid $color-grey-light-2;
+                    width: 100%;
+                    cursor: pointer;
+                    transition: all .3s;
+                    text-align: center;
+                    &:hover{
+                        border-bottom: 1px solid $color-secondary;
+                        color: $color-secondary;
+                    }
+
+                }
+
+                
+            }
+
+            &__tab-pane {
+
+                font-size: 1.2rem;
+                         
+                ul {
+                    display: grid;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+                    
+                    li {
+                        display: flex;
+                        align-items: top;                  
+                        padding: .5rem 0;
+                        padding-right: 1rem;
+                        position relative
+
+                        svg {
+                            color: green !important; //??
+                            margin-top: 3px;
+                            
+                        }
+                        span {
+                            margin-left: 1rem;
+                        }
+
+                    }
+                }
+  
+            }
+        }
+    }  
+}
+
+
+//Price Grid
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        border: 1px solid $color-grey-light-2;
+        padding: 1rem;
+        color: $color-secondary;
+        font-size: 1.4rem;
+        text-align: center;
+
+
+        &__cabin{
+            margin-bottom: .3rem;
+            font-weight: 500;
+        }
+        &__price {
+            color: $color-grey-2;
         }
     }
 
-    &__day {
-        grid-column: center-start / center-end;
-        display: grid;
-        grid-template-columns: 9rem 1fr;
-        grid-template-rows: min-content min-content;
-        column-gap: 3rem;
-        padding-bottom: 5rem;
+    
+}
 
-        &--first {
-            margin-top: 9rem;
-        }
+//DATE GRID (ul)
+.date-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
 
-        &::after {
-            content: "";
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+   
+    //width: 80%;
 
-            grid-row: 2 / span 1;
-            grid-column: 1 / span 1;
-            height: calc(100% + 5rem);
-            width: 1px;
-            background-color: $color-secondary;
-            justify-self: center;
-        }
-        &__number {
-            grid-column: 1 / span 1;
-            grid-template-rows: 1 / span 1;
-            align-self: center;
-            justify-self: center;
+    &__item {
+        margin: .5rem 1rem .5rem 0;
+        //@extend: aqua;
+        border-radius: 15px;
+        border: 1px solid $color-grey-light-2;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        //cursor: pointer;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            //line-height: 2;
-            //background-color: $color-primary;
+        &--available {
             color: $color-secondary;
-            font-family: $font-secondary;
-            font-size: 2rem;
-            font-weight: 500;
-            height: 6rem;
-            width: 6rem;
-            border-radius: 50%;
-            border: 1px solid $color-secondary;
+            border-color: $color-secondary;
         }
 
-        &__title {
-            grid-column: 2 / span 1;
-            grid-row: 1 / span 1;
-            align-self: center;
-            margin-bottom: 0;
-        }
-
-        &__text {
-            grid-column: 2 / span 1;
-            grid-row: 2 / span 1;
-
-            font-size: 1.6rem;
+        &--sold-out {
+            color: $color-red;
+            border-color: $color-red;
         }
     }
 }
 
+
+
+//accordian
 .container {
     //margin: 0 auto;
     //padding: 4rem;
@@ -316,6 +390,7 @@
         }
         .accordion-title {
             //padding: 2rem 2rem 2rem 0;
+            padding-right: 3rem;
             font-size: 1.6rem;
             font-family: $font-primary;
         }
