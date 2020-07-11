@@ -302,10 +302,10 @@ p {
       font-size: 2.3rem; }
 
 .tab-content {
-  display: none !important; }
+  display: none; }
 
 .tab-content.current {
-  display: grid !important; }
+  display: grid; }
 
 .header {
   grid-column: full-start / -1;
@@ -924,7 +924,6 @@ p {
           color: #142838; }
   .product-itineraries__itinerary {
     grid-column: full-start / full-end;
-    display: grid;
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
     grid-template-rows: min-content min-content min-content;
     row-gap: 6rem; }

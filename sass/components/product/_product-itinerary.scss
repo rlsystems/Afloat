@@ -118,7 +118,7 @@
     &__itinerary {
         grid-column: full-start / full-end;
 
-        display: grid;
+        //display: grid;
         grid-template-columns: $page-container;
 
         grid-template-rows: min-content min-content min-content;
