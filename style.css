@@ -1,3 +1,15 @@
+@keyframes HideList {
+  from {
+    transform: scaleY(1); }
+  to {
+    transform: scaleY(0); } }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 *,
 *::before,
 *::after {
@@ -724,12 +736,14 @@ p {
         width: 100%; }
   .product-nav__rotate {
     width: 50%;
-    transform: translateX(-5rem); }
+    transform: translateX(-5rem);
+    z-index: 4; }
   .product-nav__slick {
     display: grid;
     align-items: center;
     height: 50vh;
     position: absolute;
+    z-index: 20;
     top: 12rem; }
     .product-nav__slick__item {
       height: 50vh !important;
@@ -924,6 +938,7 @@ p {
           color: #142838; }
   .product-itineraries__itinerary {
     grid-column: full-start / full-end;
+    animation: fadein .8s;
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
     grid-template-rows: min-content min-content min-content;
     row-gap: 6rem; }
@@ -1008,7 +1023,8 @@ p {
             border-bottom: 1px solid #142838;
             color: #142838; }
       .product-itineraries__itinerary__inclusions__tab-pane {
-        font-size: 1.2rem; }
+        font-size: 1.2rem;
+        animation: fadein .28s; }
         .product-itineraries__itinerary__inclusions__tab-pane ul {
           display: grid;
           flex-wrap: wrap;
@@ -1318,4 +1334,7 @@ p {
 
 .product-content {
   grid-row: content-start / span 1;
-  grid-column: full-start / -1; }
+  grid-column: full-start / -1;
+  z-index: 0; }
+  .product-content__page {
+    animation: fadein .8s; }

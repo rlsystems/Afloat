@@ -117,19 +117,16 @@
     //ITINERARY
     &__itinerary {
         grid-column: full-start / full-end;
-
-        //display: grid;
+        animation: fadein .8s;
+        
+        //display set by tab-content property
         grid-template-columns: $page-container;
-
         grid-template-rows: min-content min-content min-content;
-        //margin-top: 6rem;
         row-gap: 6rem;
-        //column-gap: 6rem;
 
         &__intro {
             grid-column: center-start / col-end 4;
             grid-row: 1 / span 1;
-
         }
 
         &__map {
@@ -247,14 +244,15 @@
                         color: $color-secondary;
                     }
 
-                }
-
-                
+                }              
             }
+
+            
 
             &__tab-pane {
 
                 font-size: 1.2rem;
+                animation: fadein .28s;
                          
                 ul {
                     display: grid;
@@ -285,6 +283,7 @@
         }
     }  
 }
+
 
 
 //Price Grid

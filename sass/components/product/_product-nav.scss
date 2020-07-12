@@ -97,6 +97,7 @@
     &__rotate {
         width: 50%; // change with media query to 100% - min-width: 50rem;
         transform: translateX(-5rem);
+        z-index: 4;
     }
 
     &__slick {
@@ -104,6 +105,7 @@
         align-items: center;
         height: 50vh;
         position: absolute;
+        z-index: 20;
         top: 12rem;
 
         &__item {

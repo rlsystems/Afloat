@@ -17,8 +17,9 @@
 .product-content {
   grid-row: content-start / span 1;
   grid-column: full-start / -1;
- 
+  z-index: 0;
   &__page {
+    animation: fadein .8s;
     
   }
 }
