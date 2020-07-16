@@ -2,7 +2,17 @@
     display: grid;
     grid-template-columns: $page-container;
     grid-template-rows: repeat(3, min-content);
+    position: relative;
 
+    &::after { //intro background       
+        content: "";
+        background-color: $color-grey-light-1;
+        height: 100%;
+        width: 100%;
+        grid-column: full-start / full-end;
+        grid-row: 1 / span 1;
+        z-index: -10;
+    }
     &__intro {
         grid-column: center-start / center-end;
         grid-row: 1 / span 1;
@@ -12,13 +22,6 @@
 
 
 
-        &__bg {
-            grid-row: 1 / span 1;
-            grid-column: full-start / full-end;
-            background-color: $color-grey-light-1;
-            height: 100%;
-            width: 100%;
-        }
 
     }
 

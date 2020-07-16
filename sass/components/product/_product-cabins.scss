@@ -1,8 +1,20 @@
 .product-cabins {
-
     display: grid;
     grid-template-columns: $page-container;
-    //grid-template-rows: 45vh;
+    grid-template-rows: minmax(35vh, min-content);
+    position: relative;
+
+    &::after {
+        //intro background
+
+        content: "";
+        background-color: $color-grey-light-1;
+        height: 100%;
+        width: 100%;
+        grid-column: full-start / full-end;
+        grid-row: 1 / span 1;
+        z-index: -10;
+    }
 
     &__intro {
         grid-column: center-start / center-end;
@@ -10,7 +22,7 @@
         width: 50%;
         //padding: 3em 0;
         margin-top: 3rem;
-        margin-bottom: 6rem;
+        //margin-bottom: 6rem;
         &__bg {
             grid-row: 1 / span 1;
             grid-column: full-start / full-end;
@@ -20,8 +32,155 @@
         }
     }
 
-    &__second {
+    &__title-divider {
         grid-column: center-start / center-end;
-        grid-row: 2 / span 1;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        height: 14vh;
+        //background-color: goldenrod;
+        //margin-bottom: 6rem;
+
+        &__text {
+            color: $color-grey-light-2;
+            font-family: $font-secondary;
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 0.3rem;
+            transform: translateX(-25%);
+            position: relative;
+
+            &::before {
+                content: "";
+                height: 1px;
+                width: 15rem;
+                position: absolute;
+                background-color: $color-grey-light-2;
+                right: -80%;
+                top: 60%;
+            }
+
+            &::after {
+                content: "";
+                height: 1px;
+                width: 15rem;
+                position: absolute;
+                background-color: $color-grey-light-2;
+                left: -80%;
+                top: 60%;
+            }
+        }
+    }
+
+    &__cabin {
+        grid-column: full-start / full-end;
+        display: grid;
+        grid-template-columns: $page-container;
+
+        position: relative;
+        overflow-x: hidden;
+        padding: 6rem 0;
+
+        &__picture {
+            grid-column: center-start / col-end 4;
+            grid-row: 1 / span 1;
+
+            display: flex;
+            justify-content: end;
+            transform: translateX(-14rem);
+            
+
+            &--flipped {
+                grid-column: col-start 5 / center-end;
+                justify-content: start;
+                transform: translateX(14rem);
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: auto;
+                box-shadow: $shadow-light;
+            }
+        }
+
+        &__content {
+            grid-column: col-start 4 / center-end;
+            margin: 6rem;
+            grid-row: 1 / span 1;
+
+            &__feature-grid {
+                display: grid;
+                grid-template-rows: min-content min-content;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 2rem;
+                position: relative;
+            }
+
+            &__feature-item {
+                span {
+                    display: block;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                }
+            }
+
+            &__cta {
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+                color: $color-secondary;
+                border-bottom: 1px solid $color-secondary;
+                letter-spacing: 0.1rem;
+                display: inline-block;
+            }
+
+            &--flipped {
+                grid-column: center-start / col-end 5;
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__deckplan {
+        grid-column: center-start / center-end;
+
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        //justify-content: center;
+        column-gap: 6rem;
+
+        &__picture {
+            img {
+                object-fit: cover;
+                width: 50rem;
+            }
+        }
+        &__content {
+            ul {
+                list-style: none;
+            }
+    
+            li {
+                font-size: 1.6rem;
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr 2fr;
+                font-weight: 600;
+                margin: 1rem;
+                margin-left: 0;
+                span {
+                    
+                    color: $color-secondary;
+                    margin-right: 1rem;
+                }
+                svg {
+                    height: 2rem;
+                    width: 2rem;
+                    fill: $color-secondary;
+                }
+            }
+        }
+        
     }
 }
+

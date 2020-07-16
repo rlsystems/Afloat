@@ -117,8 +117,8 @@
     //ITINERARY
     &__itinerary {
         grid-column: full-start / full-end;
-        animation: fadein .8s;
-        
+        animation: fadein 0.8s;
+
         //display set by tab-content property
         grid-template-columns: $page-container;
         grid-template-rows: min-content min-content min-content;
@@ -178,7 +178,6 @@
                     grid-column: 2 / span 1;
                 }
             }
-
         }
 
         &__detail {
@@ -195,14 +194,12 @@
                     display: flex;
                     justify-content: space-between;
                 }
-                
             }
 
             &__cabin-prices {
                 //background-color: aqua;
                 margin-bottom: 6rem;
             }
-
         }
 
         &__inclusions {
@@ -223,68 +220,69 @@
                 &__list {
                     display: grid;
                     grid-auto-flow: column;
-                    list-style: none;  
+                    list-style: none;
 
                     & .current {
                         color: $color-secondary;
-                        border-bottom: 1px solid $color-secondary
-                   
-                    }         
+                        border-bottom: 1px solid $color-secondary;
+                    }
                 }
 
-                &__item {                
+                &__item {
                     margin-bottom: 1.5rem;
                     border-bottom: 1px solid $color-grey-light-2;
                     width: 100%;
                     cursor: pointer;
-                    transition: all .3s;
+                    transition: all 0.3s;
                     text-align: center;
-                    &:hover{
+                    &:hover {
                         border-bottom: 1px solid $color-secondary;
                         color: $color-secondary;
                     }
-
-                }              
+                }
             }
-
-            
 
             &__tab-pane {
-
                 font-size: 1.2rem;
-                animation: fadein .28s;
-                         
-                ul {
+                animation: fadein 0.28s;
+
+                &__list {
                     display: grid;
-                    flex-wrap: wrap;
+                    
                     list-style: none;
                     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-                    
-                    li {
-                        display: flex;
-                        align-items: top;                  
-                        padding: .5rem 0;
-                        padding-right: 1rem;
-                        position relative
+                    grid-auto-flow: row;
+                    column-gap: 1rem;
+                    row-gap: 1rem;
+                }
 
+                &__item {
+                    display: grid;
+                    grid-template-columns: min-content 1fr;
+
+                    svg {
+                        height: 1.8rem;
+                        width: 1.8rem;
+                        fill: $color-green;
+                        //margin-top: 3px;
+                    }
+
+                    &--exclusion {
                         svg {
-                            color: green !important; //??
-                            margin-top: 3px;
-                            
+                            height: 1.8rem;
+                            width: 1.8rem;
+                            fill: $color-red;
+                            //margin-top: 3px;
                         }
-                        span {
-                            margin-left: 1rem;
-                        }
-
+                    }
+                    span {
+                        margin-left: 1rem;
                     }
                 }
-  
             }
         }
-    }  
+    }
 }
-
-
 
 //Price Grid
 .price-grid {
@@ -302,16 +300,15 @@
         background-color: $color-white;
         font-size: 1.4rem;
         text-align: center;
-        transition: all .2s;
+        transition: all 0.2s;
         cursor: pointer;
-        &__cabin{
-            margin-bottom: .3rem;
+        &__cabin {
+            margin-bottom: 0.3rem;
             font-weight: 500;
         }
         &__price {
             color: $color-grey-2;
         }
-
 
         &:hover {
             color: $color-white;
@@ -321,8 +318,6 @@
             }
         }
     }
-
-    
 }
 
 //DATE GRID (ul)
@@ -334,12 +329,12 @@
     font-size: 1.2rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: .1rem;
-   
+    letter-spacing: 0.1rem;
+
     //width: 80%;
 
     &__item {
-        margin: .5rem 1rem .5rem 0;
+        margin: 0.5rem 1rem 0.5rem 0;
         //@extend: aqua;
         border-radius: 15px;
         border: 1px solid $color-grey-light-2;
@@ -359,8 +354,6 @@
         }
     }
 }
-
-
 
 //accordian
 .container {
