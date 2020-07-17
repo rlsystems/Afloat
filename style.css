@@ -1051,56 +1051,6 @@ p {
           .product-itineraries__itinerary__inclusions__tab-pane__item span {
             margin-left: 1rem; }
 
-.price-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1rem; }
-  .price-grid__item {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    border: 1px solid #c2c6c9;
-    padding: 1rem;
-    color: #142838;
-    background-color: #fff;
-    font-size: 1.4rem;
-    text-align: center;
-    transition: all 0.2s;
-    cursor: pointer; }
-    .price-grid__item__cabin {
-      margin-bottom: 0.3rem;
-      font-weight: 500; }
-    .price-grid__item__price {
-      color: #919598; }
-    .price-grid__item:hover {
-      color: #fff;
-      background-color: #142838; }
-      .price-grid__item:hover .price-grid__item__price {
-        color: #f8f8f8; }
-
-.date-grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem; }
-  .date-grid__item {
-    margin: 0.5rem 1rem 0.5rem 0;
-    border-radius: 15px;
-    border: 1px solid #c2c6c9;
-    display: flex;
-    align-content: center;
-    justify-content: center; }
-    .date-grid__item--available {
-      color: #142838;
-      border-color: #142838; }
-    .date-grid__item--sold-out {
-      color: #a80032;
-      border-color: #a80032; }
-
 .accordion .accordion-item {
   border-bottom: 1px solid #c2c6c9; }
   .accordion .accordion-item button[aria-expanded="true"] {
@@ -1195,12 +1145,6 @@ p {
     grid-row: 1 / span 1;
     width: 50%;
     margin-top: 3rem; }
-    .product-cabins__intro__bg {
-      grid-row: 1 / span 1;
-      grid-column: full-start / full-end;
-      background-color: #f8f8f8;
-      height: 100%;
-      width: 100%; }
   .product-cabins__title-divider {
     grid-column: center-start / center-end;
     display: flex;
@@ -1257,6 +1201,17 @@ p {
       grid-column: col-start 4 / center-end;
       margin: 6rem;
       grid-row: 1 / span 1; }
+      .product-cabins__cabin__content__title {
+        position: relative;
+        z-index: 1; }
+        .product-cabins__cabin__content__title span {
+          position: absolute;
+          top: -5rem;
+          left: -.5rem;
+          font-family: "Lora", serif;
+          color: rgba(20, 40, 56, 0.1);
+          font-size: 3.5rem;
+          z-index: -1; }
       .product-cabins__cabin__content__feature-grid {
         display: grid;
         grid-template-rows: min-content min-content;
@@ -1305,21 +1260,160 @@ p {
 
 .product-prices {
   display: grid;
-  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-rows: minmax(35vh, min-content);
+  position: relative; }
+  .product-prices::after {
+    content: "";
+    background-color: #f8f8f8;
+    height: 100%;
+    width: 100%;
+    grid-column: full-start / full-end;
+    grid-row: 1 / span 1;
+    z-index: -10; }
   .product-prices__intro {
     grid-column: center-start / center-end;
     grid-row: 1 / span 1;
     width: 50%;
     padding: 3rem 0; }
-    .product-prices__intro__bg {
-      grid-row: 1 / span 1;
-      grid-column: full-start / full-end;
-      background-color: #f8f8f8;
-      height: 100%;
-      width: 100%; }
-  .product-prices__second {
-    grid-column: center-start / center-end;
-    grid-row: 2 / span 1; }
+  .product-prices__price-group {
+    grid-column: full-start / full-end;
+    display: grid;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    grid-template-rows: repeat(2, min-content); }
+    .product-prices__price-group__name {
+      grid-column: center-start / center-end;
+      grid-row: 1 / span 1; }
+    .product-prices__price-group__card-group {
+      grid-column: center-start / center-end;
+      grid-row: 2 / span 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+      column-gap: 6rem;
+      row-gap: 6rem;
+      margin: 6rem 0; }
+      .product-prices__price-group__card-group__card {
+        background-color: #fff;
+        width: 100%;
+        position: relative;
+        border: 10px solid transparent;
+        box-shadow: inset 0px 0px 0px 2px rgba(20, 40, 56, 0.2), 0 2rem 5rem rgba(0, 0, 0, 0.13);
+        box-sizing: border-box;
+        /* Include padding and border in element's width and height */
+        padding: 1rem 2rem;
+        display: grid;
+        grid-template-rows: min-content min-content; }
+        .product-prices__price-group__card-group__card__year {
+          justify-self: center;
+          font-size: 3rem;
+          padding: 1rem;
+          letter-spacing: .2rem; }
+        .product-prices__price-group__card-group__card__season {
+          justify-self: center;
+          font-size: 1.4rem;
+          font-family: "Lora", serif;
+          letter-spacing: 0.2rem;
+          padding-top: 1rem;
+          padding-bottom: 3rem;
+          font-weight: 300;
+          color: #9ea0a4;
+          width: 60%;
+          display: grid;
+          grid-template-columns: 1fr max-content 1fr;
+          align-items: center;
+          column-gap: 15px; }
+          .product-prices__price-group__card-group__card__season::before {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: #e6e6e6; }
+          .product-prices__price-group__card-group__card__season::after {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: #e6e6e6; }
+        .product-prices__price-group__card-group__card__cabin-list {
+          display: grid;
+          justify-items: center;
+          grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+          .product-prices__price-group__card-group__card__cabin-list__item {
+            margin-bottom: 3rem;
+            font-size: 1.5rem; }
+            .product-prices__price-group__card-group__card__cabin-list__item__cabin {
+              display: flex;
+              justify-content: center;
+              text-align: center;
+              color: #142838;
+              font-weight: 500;
+              position: relative;
+              margin-bottom: 1rem;
+              display: inline-block; }
+              .product-prices__price-group__card-group__card__cabin-list__item__cabin::after {
+                content: "";
+                height: 1px;
+                width: 100%;
+                background-color: #e6e6e6;
+                position: absolute;
+                bottom: -0.5rem;
+                left: 0; }
+            .product-prices__price-group__card-group__card__cabin-list__item__prices {
+              display: flex;
+              align-items: center;
+              flex-direction: column; }
+              .product-prices__price-group__card-group__card__cabin-list__item__prices .single-info {
+                display: block;
+                font-size: 1.2rem;
+                font-style: italic; }
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem; }
+  .price-grid__item {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    border: 1px solid #c2c6c9;
+    padding: 1rem;
+    color: #142838;
+    background-color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer; }
+    .price-grid__item__cabin {
+      margin-bottom: 0.3rem;
+      font-weight: 500; }
+    .price-grid__item__price {
+      color: #919598; }
+    .price-grid__item:hover {
+      color: #fff;
+      background-color: #142838; }
+      .price-grid__item:hover .price-grid__item__price {
+        color: #f8f8f8; }
+
+.date-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem; }
+  .date-grid__item {
+    margin: 0.5rem 1rem 0.5rem 0;
+    border-radius: 15px;
+    border: 1px solid #c2c6c9;
+    display: flex;
+    align-content: center;
+    justify-content: center; }
+    .date-grid__item--available {
+      color: #142838;
+      border-color: #142838; }
+    .date-grid__item--sold-out {
+      color: #a80032;
+      border-color: #a80032; }
 
 .nav-mega {
   flex: 1;

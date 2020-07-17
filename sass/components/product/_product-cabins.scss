@@ -6,7 +6,6 @@
 
     &::after {
         //intro background
-
         content: "";
         background-color: $color-grey-light-1;
         height: 100%;
@@ -20,16 +19,8 @@
         grid-column: center-start / center-end;
         grid-row: 1 / span 1;
         width: 50%;
-        //padding: 3em 0;
         margin-top: 3rem;
-        //margin-bottom: 6rem;
-        &__bg {
-            grid-row: 1 / span 1;
-            grid-column: full-start / full-end;
-            background-color: $color-grey-light-1;
-            height: 100%;
-            width: 100%;
-        }
+
     }
 
     &__title-divider {
@@ -38,8 +29,7 @@
         justify-content: center;
         align-items: end;
         height: 14vh;
-        //background-color: goldenrod;
-        //margin-bottom: 6rem;
+
 
         &__text {
             color: $color-grey-light-2;
@@ -108,6 +98,21 @@
             grid-column: col-start 4 / center-end;
             margin: 6rem;
             grid-row: 1 / span 1;
+            
+
+            &__title {
+                position: relative;
+                z-index: 1;
+                span {
+                    position: absolute;
+                    top: -5rem;
+                    left: -.5rem;
+                    font-family: $font-secondary;
+                    color: rgba($color-secondary, $alpha: .10);
+                    font-size: 3.5rem;
+                    z-index: -1;
+                }
+            }
 
             &__feature-grid {
                 display: grid;

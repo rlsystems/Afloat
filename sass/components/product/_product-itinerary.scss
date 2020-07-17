@@ -284,76 +284,7 @@
     }
 }
 
-//Price Grid
-.price-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1rem;
-    &__item {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        border: 1px solid $color-grey-light-2;
-        padding: 1rem;
-        color: $color-secondary;
-        background-color: $color-white;
-        font-size: 1.4rem;
-        text-align: center;
-        transition: all 0.2s;
-        cursor: pointer;
-        &__cabin {
-            margin-bottom: 0.3rem;
-            font-weight: 500;
-        }
-        &__price {
-            color: $color-grey-2;
-        }
 
-        &:hover {
-            color: $color-white;
-            background-color: $color-secondary;
-            .price-grid__item__price {
-                color: $color-grey-light-1;
-            }
-        }
-    }
-}
-
-//DATE GRID (ul)
-.date-grid {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-
-    //width: 80%;
-
-    &__item {
-        margin: 0.5rem 1rem 0.5rem 0;
-        //@extend: aqua;
-        border-radius: 15px;
-        border: 1px solid $color-grey-light-2;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        //cursor: pointer;
-
-        &--available {
-            color: $color-secondary;
-            border-color: $color-secondary;
-        }
-
-        &--sold-out {
-            color: $color-red;
-            border-color: $color-red;
-        }
-    }
-}
 
 //accordian
 .container {
