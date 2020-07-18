@@ -54,10 +54,7 @@
     font-size: 1.8rem;
     font-weight: 500;
     color: $color-secondary;
-
 }
-
-
 
 .heading-5 {
     @extend %heading;
@@ -89,5 +86,78 @@ p {
     font-size: 1.6rem;
     &:not(:last-child) {
         margin-bottom: 3rem;
+    }
+}
+
+.attention-box {
+    text-align: center;
+    margin: 12rem 15rem;
+    margin-bottom: 8rem;
+    padding: 4rem 6rem;
+    font-family: $font-secondary;
+    border: 1px solid $color-grey-light-1a;
+    letter-spacing: 0.15rem;
+    font-size: 1.4rem;
+
+    ul {
+        margin: 0 5rem;
+    }
+    li {
+        text-align: start;
+        font-family: $font-primary;
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+}
+
+.page-divider {
+    text-align: center;
+
+    padding: 4rem 6rem;
+    font-family: $font-secondary;
+    color: $color-grey-light-2;
+    font-size: 6rem;
+    letter-spacing: 0.3rem;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    column-gap: 25px;
+
+    //lines on both sides effect
+    &::before {
+        content: "";
+        height: 1px;
+        display: block;
+        background-color: $color-grey-light-1a;
+    }
+
+    &::after {
+        content: "";
+        height: 1px;
+        display: block;
+        background-color: $color-grey-light-1a;
+    }
+}
+
+.list-svg {
+    display: grid;
+    list-style: none;
+    row-gap: 1rem;
+
+    li {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+
+        svg {
+            margin-top: 2px;
+            height: 1.8rem;
+            width: 1.8rem;
+            fill: $color-secondary;
+        }
+
+        span {
+            margin-left: 1rem;
+        }
     }
 }

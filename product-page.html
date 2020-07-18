@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700,800" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Lora:300,400,400i,500,600,700,800" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:300,400,400i,500,600,700,800" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
@@ -977,37 +978,57 @@
             <!-- Inclusions tab pane -->
             <div class="product-itineraries__itinerary__inclusions__tab-pane tab-content current inclusions-tab">
               <ul class="product-itineraries__itinerary__inclusions__tab-pane__list">
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-check'
-                    aria-hidden='true'></i> <span>Transfers to/from cruise port
+                <li class="product-itineraries__itinerary__inclusions__tab-pane__item">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-check-circle"></use>
+                  </svg>
+                  <span>Transfers to/from cruise port
                     when arriving on recommended flights</span></li>
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-check'
-                    aria-hidden='true'></i> <span>Transfers to/from cruise port
-                    when arriving on recommended flights</span></li>
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-check'
-                    aria-hidden='true'></i> <span>Transfers to/from cruise port
-                    when arriving on recommended flights</span></li>
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-check'
-                    aria-hidden='true'></i> <span>Transfers to/from cruise port
-                    when arriving on recommended flights</span></li>
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-check'
-                    aria-hidden='true'></i> <span>Transfers to/from cruise port
-                    when arriving on recommended flights</span></li>
+                <li class="product-itineraries__itinerary__inclusions__tab-pane__item">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-check-circle"></use>
+                  </svg>
+                  <span>Bottled drinks and snacks</span></li>
+                <li class="product-itineraries__itinerary__inclusions__tab-pane__item">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-check-circle"></use>
+                  </svg>
+                  <span>Free use of Wi-Fi on common areas</span></li>
+                <li class="product-itineraries__itinerary__inclusions__tab-pane__item">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-check-circle"></use>
+                  </svg>
+                  <span>Free everything</span></li>
+                <li class="product-itineraries__itinerary__inclusions__tab-pane__item">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-check-circle"></use>
+                  </svg>
+                  <span>Chinese speaking sidekick</span></li>
               </ul>
             </div>
 
             <!-- Exclusions tab pane -->
             <div class="product-itineraries__itinerary__inclusions__tab-pane tab-content exclusions-tab">
               <ul class="product-itineraries__itinerary__inclusions__tab-pane__list">
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-times'
-                    aria-hidden='true'></i> <span>ex 1</span></li>
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-times'
-                    aria-hidden='true'></i> <span>ex 2</span></li>
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-times'
-                    aria-hidden='true'></i> <span>ex 3</span></li>
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-times'
-                    aria-hidden='true'></i> <span>ex 4</span></li>
-                <li class="product-itineraries__itinerary__inclusions__tab-pane__item"><i class='fa fa-times'
-                    aria-hidden='true'></i> <span>ex 5</span></li>
+                <li
+                  class="product-itineraries__itinerary__inclusions__tab-pane__item product-itineraries__itinerary__inclusions__tab-pane__item--exclusion">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-x"></use>
+                  </svg>
+                  <span>Something that is excluded</span></li>
+                <li
+                  class="product-itineraries__itinerary__inclusions__tab-pane__item product-itineraries__itinerary__inclusions__tab-pane__item--exclusion">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-x"></use>
+                  </svg>
+                  <span>Alcoholic beverages</span></li>
+                <li
+                  class="product-itineraries__itinerary__inclusions__tab-pane__item product-itineraries__itinerary__inclusions__tab-pane__item--exclusion">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-x"></use>
+                  </svg>
+                  <span>Spa appointments and yoga classes</span></li>
+
               </ul>
             </div>
           </div>
@@ -1214,12 +1235,30 @@
           <p>All prices listed are per person in double occupancy unless otherwise specified </p>
         </div>
 
-        <div class="product-prices__price-group">
-          <div class="product-prices__price-group__name">
-            <h3 class="heading-3">
-              3 Day
-            </h3>
+        <!-- Note Top-->
+        <div class="product-prices__note">
+          <div class="attention-box">
+            <p>All prices listed are per person in double occupancy unless otherwise specified </p>
           </div>
+        </div>
+
+        <!-- Price Group 1-->
+        <div class="product-prices__price-group u-margin-bottom-huge">
+          <div class="product-prices__price-group__picture">
+            <img src="img/pricing-page/galapagos-otters.jpg" alt="">
+          </div>
+
+          <div class="product-prices__price-group__name">
+            <div class="product-prices__price-group__name__length">
+              4 Day / 3 Night
+            </div>
+            <div class="product-prices__price-group__name__subtitle">
+              <h3 class="heading-3 heading-3--underline">
+                Northern Islands Route
+              </h3>
+            </div>
+          </div>
+
 
           <div class="product-prices__price-group__card-group">
             <!-- Card 2020 -->
@@ -1309,8 +1348,8 @@
               </div>
             </div>
 
-             <!-- Card 2021 -->
-             <div class="product-prices__price-group__card-group__card">
+            <!-- Card 2021 -->
+            <div class="product-prices__price-group__card-group__card">
               <!-- Reg Season -->
               <h4 class="product-prices__price-group__card-group__card__year heading-4">
                 2021
@@ -1399,6 +1438,318 @@
           </div>
 
 
+        </div>
+
+        <!-- Price Group 2-->
+        <div class="product-prices__price-group">
+          <div class="product-prices__price-group__picture product-prices__price-group__picture--flipped">
+            <img src="img/pricing-page/galapagos-crabs.jpg" alt="">
+          </div>
+
+          <!-- Name / Subtitle -->
+          <div class="product-prices__price-group__name product-prices__price-group__name--flipped">
+            <div class="product-prices__price-group__name__length">
+              5 Day / 4 Night
+            </div>
+            <div class="product-prices__price-group__name__subtitle">
+              <h3 class="heading-3 heading-3--underline">
+                Southern Islands Route
+              </h3>
+            </div>
+          </div>
+
+          <!-- Price Group -->
+          <div class="product-prices__price-group__card-group product-prices__price-group__card-group--flipped">
+            <!-- Card 2020 -->
+            <div class="product-prices__price-group__card-group__card">
+              <!-- Reg Season -->
+              <h4 class="product-prices__price-group__card-group__card__year heading-4">
+                2020
+              </h4>
+              <h5 class="product-prices__price-group__card-group__card__season">
+                Regular Season
+              </h5>
+              <div class="product-prices__price-group__card-group__card__cabin-list">
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Upper Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $3,000
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Lower Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $2,000
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Other Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $1,800
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Single Cabin
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $2,100
+                    <span class="single-info">Single Pricing</span>
+                  </div>
+                </div>
+
+              </div>
+              <!-- High Season -->
+              <h5 class="product-prices__price-group__card-group__card__season">
+                High Season
+              </h5>
+              <div class="product-prices__price-group__card-group__card__cabin-list">
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Upper Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $3,000
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Lower Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $2,000
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Other Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $1,800
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Single Cabin
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $2,100
+                    <span class="single-info">Single Pricing</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Card 2021 -->
+            <div class="product-prices__price-group__card-group__card">
+              <!-- Reg Season -->
+              <h4 class="product-prices__price-group__card-group__card__year heading-4">
+                2021
+              </h4>
+              <h5 class="product-prices__price-group__card-group__card__season">
+                Regular Season
+              </h5>
+              <div class="product-prices__price-group__card-group__card__cabin-list">
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Upper Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $3,000
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Lower Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $2,000
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Other Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $1,800
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Single Cabin
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $2,100
+                    <span class="single-info">Single Pricing</span>
+                  </div>
+                </div>
+
+              </div>
+              <!-- High Season -->
+              <h5 class="product-prices__price-group__card-group__card__season">
+                High Season
+              </h5>
+              <div class="product-prices__price-group__card-group__card__cabin-list">
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Upper Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $3,000
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Lower Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $2,000
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Other Suite
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $1,800
+                  </div>
+                </div>
+                <div class="product-prices__price-group__card-group__card__cabin-list__item">
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__cabin">
+                    Single Cabin
+                  </div>
+                  <div class="product-prices__price-group__card-group__card__cabin-list__item__prices">
+                    $2,100
+                    <span class="single-info">Single Pricing</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <!-- Note Bot-->
+        <div class="product-prices__note">
+          <div class="attention-box">
+            <p>Additional drinks packages may be added for unlimited beverages throughout your cruise. This will be charged per night, per person. The final price will be determined by the total number of nights spent on the boat. Please remember to drink responsibly. The prices are as follows: </p>
+            <ul>
+              <li>
+                $15pp, per day for unlimited soft drinks. This includes a variety of non-alcoholic beverages and speciality drinks 
+              </li>
+              <li>
+                $39pp, per day for unlimited wine and beer. This classic package includes a choice selection of wines and beers
+              </li>
+              <li>
+                $55pp, per day for unlimited alcoholic beverages and non-alcoholic beverages. This classic package includes a choice selection of wines, beers, cocktails and non-alcoholic drinks
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider Policies -->
+        <div class="product-prices__policies-divider">
+          <div class="page-divider">
+            Policies
+          </div>
+        </div>
+        <div class="product-prices__policies u-margin-bottom-huge">
+
+          <div class="product-prices__policies__overall-list">
+            <div class="product-prices__policies__title heading-3 heading-3--underline">
+              Pricing Policies
+            </div>
+            <ul class="list-svg">
+              <li>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>Explorer Family Cabins for DBL use incur a 50% surcharge per person</span>
+              </li>
+              <li>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>In case of increase in fuel prices, fuel surcharge will apply.</span>
+              </li>
+              <li>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>Visa, Mastercard, and US Dollars are accepted on board.</span>
+              </li>
+              <li>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>Minimum age allowed on board is 6 years.</span>
+              </li>
+            </ul>
+          </div>
+         
+
+          <div class="product-prices__policies__first-list">
+            <div class="product-prices__policies__title-overall heading-3 heading-3--underline">
+              2020
+            </div>
+            <ul class="list-svg">
+              <li>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>Single Supplement 15% in explorer cabin, or 100% in alternative cabins, in  addition to adult rate </span>
+              </li>
+              <li>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>Children < 12 yrs receive 25% child discount (not valid during peak season)</span>
+              </li>
+              <li>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>High Season Supplements (+$203 per adult, +$122 per child)</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="product-prices__policies__second-list">
+            <div class="product-prices__policies__title heading-3 heading-3--underline">
+              2021
+            </div>
+            <ul class="list-svg">
+              <li >
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>Single Supplement 15% in explorer cabin, or 100% in alternative cabins, in  addition to adult rate  </span>
+              </li>
+              <li >
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>Children < 12 yrs receive 10% child discount (not valid during peak season)</span>
+              </li>
+              <li >
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                </svg>
+                <span>High Season Supplements (+$251 per adult, +$151 per child)</span>
+              </li>
+            </ul>
+          </div>
+          
         </div>
 
       </div>

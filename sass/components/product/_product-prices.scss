@@ -23,7 +23,11 @@
         padding: 3rem 0;
     }
 
- 
+    //Note
+    &__note {
+        grid-column: center-start / center-end;
+    }
+
     &__price-group {
         grid-column: full-start / full-end;
 
@@ -31,9 +35,51 @@
         grid-template-columns: $page-container;
         grid-template-rows: repeat(2, min-content);
 
+        &__picture {
+            width: 30rem;
+            height: 90%;
+            grid-column: full-start / span 2;
+            grid-row: 1 / -1;
+            align-self: center;
+            justify-self: end;
+
+            img {
+                object-fit: cover;
+            }
+
+            &--flipped {
+                grid-column: col-start 6 / span 2;
+                justify-self: start;
+            }
+        }
+
         &__name {
             grid-column: center-start / center-end;
             grid-row: 1 / span 1;
+            width: 70%;
+            justify-self: end;
+
+            display: grid;
+            grid-template-rows: repeat(2, min-content);
+            align-items: center;
+            column-gap: 3rem;
+
+            &--flipped {
+                grid-column: col-start 2 / center-end;
+                justify-self: start;
+            }
+
+            &__length {
+                font-size: 4rem;
+                font-family: $font-secondary;
+                color: $color-grey-light-2;
+                letter-spacing: 0.3rem;
+                grid-row: 1 / span 1;
+            }
+            &__subtitle {
+                grid-row: 2 / span 1;
+            }
+          
         }
 
         &__card-group {
@@ -41,10 +87,16 @@
             grid-row: 2 / span 1;
 
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
             column-gap: 6rem;
             row-gap: 6rem;
-            margin: 6rem 0;
+            margin-bottom: 6rem;
+            justify-self: end;
+            width: 80%;
+
+            &--flipped {
+                justify-self: start;
+            }
 
             &__card {
                 background-color: $color-white;
@@ -62,7 +114,7 @@
                     justify-self: center;
                     font-size: 3rem;
                     padding: 1rem;
-                    letter-spacing: .2rem;
+                    letter-spacing: 0.2rem;
                 }
                 &__season {
                     justify-self: center;
@@ -80,7 +132,6 @@
                     align-items: center;
                     column-gap: 15px;
 
-
                     //lines on both sides effect
                     &::before {
                         content: "";
@@ -88,21 +139,19 @@
                         display: block;
                         background-color: $color-grey-light-1a;
                     }
-                    
+
                     &::after {
                         content: "";
                         height: 1px;
                         display: block;
                         background-color: $color-grey-light-1a;
                     }
-
-                   
                 }
 
                 &__cabin-list {
                     display: grid;
                     justify-items: center;
-                    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 
                     &__item {
                         margin-bottom: 3rem;
@@ -144,4 +193,20 @@
             }
         }
     }
+
+    &__policies-divider {
+        grid-column: center-start / center-end;
+    }
+
+    &__policies {
+        grid-column: center-start / center-end;
+        font-size: 1.4rem;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 4rem;
+ 
+    }
 }
+
+

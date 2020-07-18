@@ -92,6 +92,60 @@ p {
   p:not(:last-child) {
     margin-bottom: 3rem; }
 
+.attention-box {
+  text-align: center;
+  margin: 12rem 15rem;
+  margin-bottom: 8rem;
+  padding: 4rem 6rem;
+  font-family: "Old Standard TT", serif;
+  border: 1px solid #e6e6e6;
+  letter-spacing: 0.15rem;
+  font-size: 1.4rem; }
+  .attention-box ul {
+    margin: 0 5rem; }
+  .attention-box li {
+    text-align: start;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.2rem;
+    padding: 1rem; }
+
+.page-divider {
+  text-align: center;
+  padding: 4rem 6rem;
+  font-family: "Old Standard TT", serif;
+  color: #c2c6c9;
+  font-size: 6rem;
+  letter-spacing: 0.3rem;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  column-gap: 25px; }
+  .page-divider::before {
+    content: "";
+    height: 1px;
+    display: block;
+    background-color: #e6e6e6; }
+  .page-divider::after {
+    content: "";
+    height: 1px;
+    display: block;
+    background-color: #e6e6e6; }
+
+.list-svg {
+  display: grid;
+  list-style: none;
+  row-gap: 1rem; }
+  .list-svg li {
+    display: grid;
+    grid-template-columns: min-content 1fr; }
+    .list-svg li svg {
+      margin-top: 2px;
+      height: 1.8rem;
+      width: 1.8rem;
+      fill: #142838; }
+    .list-svg li span {
+      margin-left: 1rem; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -1153,7 +1207,7 @@ p {
     height: 14vh; }
     .product-cabins__title-divider__text {
       color: #c2c6c9;
-      font-family: "Lora", serif;
+      font-family: "Old Standard TT", serif;
       font-size: 4rem;
       font-weight: 300;
       letter-spacing: 0.3rem;
@@ -1208,7 +1262,7 @@ p {
           position: absolute;
           top: -5rem;
           left: -.5rem;
-          font-family: "Lora", serif;
+          font-family: "Old Standard TT", serif;
           color: rgba(20, 40, 56, 0.1);
           font-size: 3.5rem;
           z-index: -1; }
@@ -1276,22 +1330,57 @@ p {
     grid-row: 1 / span 1;
     width: 50%;
     padding: 3rem 0; }
+  .product-prices__note {
+    grid-column: center-start / center-end; }
   .product-prices__price-group {
     grid-column: full-start / full-end;
     display: grid;
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
     grid-template-rows: repeat(2, min-content); }
+    .product-prices__price-group__picture {
+      width: 30rem;
+      height: 90%;
+      grid-column: full-start / span 2;
+      grid-row: 1 / -1;
+      align-self: center;
+      justify-self: end; }
+      .product-prices__price-group__picture img {
+        object-fit: cover; }
+      .product-prices__price-group__picture--flipped {
+        grid-column: col-start 6 / span 2;
+        justify-self: start; }
     .product-prices__price-group__name {
       grid-column: center-start / center-end;
-      grid-row: 1 / span 1; }
+      grid-row: 1 / span 1;
+      width: 70%;
+      justify-self: end;
+      display: grid;
+      grid-template-rows: repeat(2, min-content);
+      align-items: center;
+      column-gap: 3rem; }
+      .product-prices__price-group__name--flipped {
+        grid-column: col-start 2 / center-end;
+        justify-self: start; }
+      .product-prices__price-group__name__length {
+        font-size: 4rem;
+        font-family: "Old Standard TT", serif;
+        color: #c2c6c9;
+        letter-spacing: 0.3rem;
+        grid-row: 1 / span 1; }
+      .product-prices__price-group__name__subtitle {
+        grid-row: 2 / span 1; }
     .product-prices__price-group__card-group {
       grid-column: center-start / center-end;
       grid-row: 2 / span 1;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
       column-gap: 6rem;
       row-gap: 6rem;
-      margin: 6rem 0; }
+      margin-bottom: 6rem;
+      justify-self: end;
+      width: 80%; }
+      .product-prices__price-group__card-group--flipped {
+        justify-self: start; }
       .product-prices__price-group__card-group__card {
         background-color: #fff;
         width: 100%;
@@ -1307,11 +1396,11 @@ p {
           justify-self: center;
           font-size: 3rem;
           padding: 1rem;
-          letter-spacing: .2rem; }
+          letter-spacing: 0.2rem; }
         .product-prices__price-group__card-group__card__season {
           justify-self: center;
           font-size: 1.4rem;
-          font-family: "Lora", serif;
+          font-family: "Old Standard TT", serif;
           letter-spacing: 0.2rem;
           padding-top: 1rem;
           padding-bottom: 3rem;
@@ -1335,7 +1424,7 @@ p {
         .product-prices__price-group__card-group__card__cabin-list {
           display: grid;
           justify-items: center;
-          grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+          grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
           .product-prices__price-group__card-group__card__cabin-list__item {
             margin-bottom: 3rem;
             font-size: 1.5rem; }
@@ -1364,6 +1453,14 @@ p {
                 display: block;
                 font-size: 1.2rem;
                 font-style: italic; }
+  .product-prices__policies-divider {
+    grid-column: center-start / center-end; }
+  .product-prices__policies {
+    grid-column: center-start / center-end;
+    font-size: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4rem; }
 
 .price-grid {
   display: grid;
