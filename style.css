@@ -94,7 +94,7 @@ p {
 
 .attention-box {
   text-align: center;
-  margin: 12rem 15rem;
+  margin: 10rem;
   margin-bottom: 8rem;
   padding: 4rem 6rem;
   font-family: "Old Standard TT", serif;
@@ -172,6 +172,9 @@ p {
 
 .u-margin-top-huge {
   margin-top: 10rem !important; }
+
+.u-bold-600 {
+  font-weight: 600; }
 
 .btn-round {
   width: 7rem;
@@ -862,7 +865,8 @@ p {
     width: 100%;
     grid-column: full-start / full-end;
     grid-row: 1 / span 1;
-    z-index: -10; }
+    z-index: -10;
+    border-bottom: 1px solid #e6e6e6; }
   .product-overview__intro {
     grid-column: center-start / center-end;
     grid-row: 1 / span 1;
@@ -925,7 +929,8 @@ p {
     width: 100%;
     grid-column: full-start / full-end;
     grid-row: 1 / span 1;
-    z-index: -10; }
+    z-index: -10;
+    border-bottom: 1px solid #e6e6e6; }
   .product-itineraries__intro {
     grid-column: center-start / center-end;
     grid-row: 1 / span 1;
@@ -1193,7 +1198,8 @@ p {
     width: 100%;
     grid-column: full-start / full-end;
     grid-row: 1 / span 1;
-    z-index: -10; }
+    z-index: -10;
+    border-bottom: 1px solid #e6e6e6; }
   .product-cabins__intro {
     grid-column: center-start / center-end;
     grid-row: 1 / span 1;
@@ -1324,12 +1330,29 @@ p {
     width: 100%;
     grid-column: full-start / full-end;
     grid-row: 1 / span 1;
-    z-index: -10; }
+    z-index: -10;
+    border-bottom: 1px solid #e6e6e6; }
   .product-prices__intro {
     grid-column: center-start / center-end;
     grid-row: 1 / span 1;
     width: 50%;
-    padding: 3rem 0; }
+    padding: 3rem 0;
+    padding-right: 5rem;
+    display: grid; }
+    .product-prices__intro__info-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); }
+      .product-prices__intro__info-list__item {
+        color: #142838;
+        font-size: 1.5rem;
+        letter-spacing: .03rem;
+        font-weight: 600;
+        display: grid;
+        grid-template-columns: 15rem 1fr; }
+        .product-prices__intro__info-list__item .list-info {
+          margin-left: 1rem;
+          color: #919598; }
   .product-prices__note {
     grid-column: center-start / center-end; }
   .product-prices__price-group {
@@ -1365,7 +1388,7 @@ p {
         font-size: 4rem;
         font-family: "Old Standard TT", serif;
         color: #c2c6c9;
-        letter-spacing: 0.3rem;
+        letter-spacing: 0.2rem;
         grid-row: 1 / span 1; }
       .product-prices__price-group__name__subtitle {
         grid-row: 2 / span 1; }

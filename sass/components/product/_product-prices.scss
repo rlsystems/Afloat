@@ -6,7 +6,6 @@
 
     &::after {
         //intro background
-
         content: "";
         background-color: $color-grey-light-1;
         height: 100%;
@@ -14,6 +13,7 @@
         grid-column: full-start / full-end;
         grid-row: 1 / span 1;
         z-index: -10;
+        border-bottom: 1px solid $color-grey-light-1a;
     }
 
     &__intro {
@@ -21,6 +21,28 @@
         grid-row: 1 / span 1;
         width: 50%;
         padding: 3rem 0;
+        padding-right: 5rem;
+        display: grid;
+
+        &__info-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            &__item {
+                color: $color-secondary;
+                font-size: 1.5rem;
+                letter-spacing: .03rem;
+                font-weight: 600;
+                display: grid;
+                grid-template-columns: 15rem 1fr;
+               
+                //column-gap: 1rem;
+                .list-info {
+                    margin-left: 1rem;
+                    color: $color-grey-2;
+                }
+            }
+        }
     }
 
     //Note
@@ -73,7 +95,7 @@
                 font-size: 4rem;
                 font-family: $font-secondary;
                 color: $color-grey-light-2;
-                letter-spacing: 0.3rem;
+                letter-spacing: 0.2rem;
                 grid-row: 1 / span 1;
             }
             &__subtitle {
