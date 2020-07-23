@@ -161,3 +161,17 @@ p {
         }
     }
 }
+
+
+.link-social {
+    svg {
+        margin-top: 2px;
+        height: 1.8rem;
+        width: 1.8rem;
+        fill: $color-grey-light-2;
+        transition: all .2s;
+        &:hover{
+            fill: $color-white;
+        }
+    }
+}

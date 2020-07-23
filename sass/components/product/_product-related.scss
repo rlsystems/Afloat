@@ -1,21 +1,32 @@
 .product-related {
     grid-column: full-start / -1;
-    margin: 6rem 12rem;
+    //background-color: $color-beige-1;
+    background-image: linear-gradient(to top, rgba($color-white, 0) 70%, rgba($color-white, 1)), url("img/bg/background-topo.jpg");
+    background-position: center;
+    background-size: cover;
     position: relative;
+
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 3rem;
+    
     &__title {
         position: absolute;
-        left: 3rem;
+        left: 12.5%;
+        
     }
 
     &__slick {
+        width: 75%;
+
         .slick-track {
            padding: 6rem 0;
-           width: 80%;
+           width: 100%;
         }
         .slick-slide {
-            margin: 3rem;
+            margin: 2.5rem;
             box-shadow: $shadow-dark-bottom;
-            width: 30rem;
         }
 
         &__item {
@@ -127,7 +138,7 @@
                 &__description {
                     text-align: center;
                     grid-column: 1 / -1;
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
                     color: $color-secondary;
                     padding: .5rem;
                 }

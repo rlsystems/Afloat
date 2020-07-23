@@ -191,3 +191,20 @@
     background-color: $color-primary-dark;
   }
 }
+
+
+
+.btn-rect {
+  background-color: $color-supporting;
+  color: $color-grey-light-2;
+  padding: 1rem 3rem;
+  border-radius: 4px;
+  border: none;
+
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+      background-color: $color-supporting-light;
+  }
+}

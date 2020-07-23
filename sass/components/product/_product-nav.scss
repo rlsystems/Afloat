@@ -5,7 +5,6 @@
     flex-wrap: wrap;
     grid-row: first-start / hero-end;
     grid-column: center-start / -1;
-
     &__caption {
         color: $color-grey-light-1;
         width: 50%; // change with media query to 100% - min-width: 50rem;

@@ -4,6 +4,10 @@ $color-primary-dark: #3f78e9;
 
 $color-secondary: #142838;
 $color-secondary-light: #1f3f5a;
+$color-tertiary: #108054;
+
+$color-supporting: #305a7c;
+$color-supporting-light: #40739c;
 
 $color-green: #00a84b;
 $color-red: #a80032;
@@ -22,7 +26,7 @@ $color-beige-2: #f6f4f0;
 
 $color-grey-1: #9ea0a4;
 $color-grey-2: #919598;
-
+$color-grey-3: #747474;
 // FONT VARIABLES
 $font-primary: 'Raleway', sans-serif;
 $font-secondary: 'Old Standard TT', serif;
@@ -32,7 +36,7 @@ $shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
 $shadow-light: 0 2rem 5rem rgba(0,0,0,.13);
 $shadow-bottom: 0 2rem 5rem -4rem rgba(0,0,0,.3);
 
-$shadow-dark-bottom: 0 3rem 4rem -1rem rgba(0,0,0,.2);
+$shadow-dark-bottom: 0 3rem 3rem -1rem rgba(0,0,0,.25);
 
 
 //RESPONSIVE BREAKPOINTS (use em unit)
