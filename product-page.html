@@ -1782,6 +1782,65 @@
   </section>
 
 
+  <section class="product-reviews">
+
+    <div class="review__slick" id="review__slick">
+      <div class="review">
+        <div class="review__content">
+          <svg class="review__content__quote">
+            <use xlink:href="img/sprite.svg#icon-quote"></use>
+          </svg>
+          <p class="review__content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab a saepe autem ea
+            dignissimos
+            ullam perspiciatis amet, repudiandae reprehenderit nemo qui consectetur, sequi aspernatur fugit dolorum,
+            cumque
+            mollitia dolor id.</p>
+          <h3 class="review__content__date">March 2020</h3>
+          <div class="review__content__profile">
+            <img src="/img/reviews/user-1.jpg" alt="" class="review__content__profile__img">
+            <div class="review__content__profile__user">
+              <div class="review__content__profile__name">
+                Barbara Green
+              </div>
+              <div class="review__content__profile__location">
+                Houston, TX
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <img src="img/reviews/review-1.png" alt="" class="review__image">
+      </div>
+      <div class="review">
+        <div class="review__content">
+          <svg class="review__content__quote">
+            <use xlink:href="img/sprite.svg#icon-quote"></use>
+          </svg>
+          <p class="review__content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab a saepe autem ea
+            dignissimos
+            ullam perspiciatis amet, repudiandae reprehenderit nemo qui consectetur, sequi aspernatur fugit dolorum,
+            cumque
+            mollitia dolor id.</p>
+          <h3 class="review__content__date">March 2022</h3>
+          <div class="review__content__profile">
+            <img src="/img/reviews/user-2.jpg" alt="" class="review__content__profile__img">
+            <div class="review__content__profile__user">
+              <div class="review__content__profile__name">
+                Joan Swanson
+              </div>
+              <div class="review__content__profile__location">
+                Ontatio, CA
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <img src="img/reviews/review-2.png" alt="" class="review__image">
+      </div>
+     
+    </div>
+    
+  </section>
 
 
 
@@ -2022,7 +2081,8 @@
         <form action="#" class="footer__nav__subscribe__form">
           <!-- Destination Search -->
           <div class="footer__nav__subscribe__form-group">
-            <input type="text" class="footer__nav__subscribe__input" id="destination" tabindex="1" placeholder="Email Address" />
+            <input type="text" class="footer__nav__subscribe__input" id="destination" tabindex="1"
+              placeholder="Email Address" />
           </div>
           <button class="footer__nav__subscribe__btn btn-rect" tabindex="4">
             Subscribe
@@ -2099,7 +2159,16 @@
 
 
 
-
+    //reviews 
+    $('#review__slick').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      arrows: true,
+      prevArrow: '<a class="btn-round btn-round--dark btn-round--left btn-round--small review__slick__btn-left"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>',
+      nextArrow: '<a class="btn-round btn-round--dark btn-round--right btn-round--small review__slick__btn-right"><i class="fas fa-arrow-right"></i><i class="fas fa-arrow-right"></i></a>',
+    });
 
 
 
@@ -2143,14 +2212,6 @@
         // instead of a settings object
       ]
     });
-
-
-
-
-
-
-
-
 
     setYearDetails(2020); //set year selections onload
 

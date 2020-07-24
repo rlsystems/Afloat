@@ -208,3 +208,40 @@
       background-color: $color-supporting-light;
   }
 }
+
+.slick-disabled {
+  opacity: 0;
+  pointer-events:none;
+}
+
+//arrows 
+
+// .slick-arrow {
+//   position: absolute;
+//   bottom: 2em;
+//   right: 2em;
+//   z-index: 2;
+//   background: $bg-gradient;
+//   background-size: 100%;
+//   border: 0;
+//   width: 30px;
+//   height: 25px;
+//   text-indent: -9999px;
+//   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+//   cursor: pointer;
+//   transition: all .5s ease;
+
+//   &:hover {
+//     background-size: 190%;
+//   }
+
+//   &.slick-prev {
+//     right: 5em;
+//     transform: rotate(-90deg);
+//   }
+
+//   &.slick-next {
+//     transform: rotate(90deg);
+
+//   }
+// }

@@ -317,6 +317,10 @@ p {
   .btn-rect:hover {
     background-color: #40739c; }
 
+.slick-disabled {
+  opacity: 0;
+  pointer-events: none; }
+
 .select-box {
   position: relative;
   display: block;
@@ -1697,6 +1701,77 @@ p {
       color: #a80032;
       border-color: #a80032; }
 
+.product-reviews {
+  grid-column: full-start / -1;
+  background-position: top;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around; }
+
+.review__slick {
+  max-width: 114rem;
+  margin: 8rem auto;
+  position: relative; }
+  .review__slick__btn-left {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 8rem; }
+  .review__slick__btn-right {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 12rem; }
+
+.review {
+  display: grid !important;
+  grid-template-columns: 50% 50%; }
+  .review__content {
+    grid-column: 1 / span 1;
+    padding: 4rem 8rem;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background-color: white; }
+    .review__content__quote {
+      position: absolute;
+      height: 5rem;
+      width: 5rem;
+      top: 15rem;
+      left: 5rem;
+      fill: #e6e6e6; }
+    .review__content__text {
+      line-height: 3rem;
+      font-style: italic;
+      margin-bottom: 1.5rem !important; }
+    .review__content__date {
+      font-weight: 600;
+      color: #142838; }
+    .review__content__profile {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      column-gap: 2rem;
+      align-items: center; }
+      .review__content__profile__img {
+        height: 8rem;
+        width: 8rem;
+        border-radius: 50%;
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.13); }
+      .review__content__profile__name {
+        font-weight: 600;
+        color: #142838; }
+      .review__content__profile__location {
+        font-size: 1.4rem; }
+  .review__image {
+    grid-column: 2 / span 1;
+    object-fit: cover;
+    height: 55rem;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.2);
+    margin: 8rem auto; }
+
 .nav-mega {
   flex: 1;
   z-index: 18;
@@ -1931,7 +2006,7 @@ p {
 
 .product-page {
   display: grid;
-  grid-template-rows: [nav-start] 9rem [nav-end top-content-start] calc(39.5vh - 4.5rem) [top-content-end first-start] calc(39.5vh - 4.5rem) [hero-end content-start] repeat(2, min-content) [content-end footer-start] min-content [footer-end];
+  grid-template-rows: [nav-start] 9rem [nav-end top-content-start] calc(39.5vh - 4.5rem) [top-content-end first-start] calc(39.5vh - 4.5rem) [hero-end content-start] repeat(3, min-content) [content-end footer-start] min-content [footer-end];
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
 
 .product-content {

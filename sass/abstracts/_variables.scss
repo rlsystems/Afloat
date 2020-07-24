@@ -27,12 +27,18 @@ $color-beige-2: #f6f4f0;
 $color-grey-1: #9ea0a4;
 $color-grey-2: #919598;
 $color-grey-3: #747474;
+
+
+$bg-gradient: linear-gradient(151deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+
 // FONT VARIABLES
 $font-primary: 'Raleway', sans-serif;
 $font-secondary: 'Old Standard TT', serif;
 $font-tertiary: 'Montserrat', sans-serif;
 
 $shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+$shadow-medium: 0 2rem 6rem rgba(0,0,0,.2);
 $shadow-light: 0 2rem 5rem rgba(0,0,0,.13);
 $shadow-bottom: 0 2rem 5rem -4rem rgba(0,0,0,.3);
 

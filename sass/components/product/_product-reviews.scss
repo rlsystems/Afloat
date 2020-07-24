@@ -1,0 +1,106 @@
+
+.product-reviews {
+    grid-column: full-start / -1;
+    //background-image: linear-gradient(to top, rgba($color-secondary, .3), rgba($color-secondary, .3)),url("img/bg/background-bamboo.jpg");
+    background-position: top;
+    background-size: cover;
+    //background-color: $color-beige-1;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.review__slick  {
+  max-width: 114rem;
+  margin: 8rem auto;
+  position: relative;
+
+  &__btn-left {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 8rem;
+  }
+
+  &__btn-right {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 12rem;
+  }
+
+}
+
+.review {
+  
+  display: grid !important;
+  grid-template-columns: 50% 50%;
+  
+
+  &__content {
+    grid-column: 1 / span 1;
+    padding: 4rem 8rem;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background-color: rgba($color-white, $alpha: 1);
+
+    &__quote {
+      position: absolute;
+      height: 5rem;
+      width: 5rem;
+      top: 15rem;
+      left: 5rem;
+      fill: $color-grey-light-1a;
+    }
+
+    &__text {
+      line-height: 3rem;
+      font-style: italic;
+      margin-bottom: 1.5rem !important;
+    }
+
+    &__date {
+     
+      font-weight: 600;
+      color: $color-secondary;
+    }
+
+    &__profile {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      column-gap: 2rem;
+      align-items: center;
+
+      &__img {
+        height: 8rem;
+        width: 8rem;
+        border-radius: 50%;
+        box-shadow: $shadow-light;
+      }
+      &__name {
+        font-weight: 600;
+        color: $color-secondary;
+      }
+
+      &__location {
+        font-size: 1.4rem;
+
+
+      }
+
+    }
+  }
+
+  &__image {
+    grid-column: 2 / span 1;
+    object-fit: cover;
+    //width: 90%;
+    height: 55rem;
+    box-shadow: $shadow-medium;
+    margin: 8rem auto;
+  }
+}
