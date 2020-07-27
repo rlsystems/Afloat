@@ -111,14 +111,20 @@ p {
 }
 
 .page-divider {
-    text-align: center;
 
-    padding: 4rem 6rem;
+    grid-column: center-start / center-end;
+    text-align: center;
+    padding: 0 6rem;
+    margin: 4rem 0;
+
     font-family: $font-secondary;
     color: $color-grey-light-2;
-    font-size: 6rem;
+    font-size: 4rem;
     letter-spacing: 0.3rem;
+    font-weight: 300;
 
+    
+    
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     align-items: center;

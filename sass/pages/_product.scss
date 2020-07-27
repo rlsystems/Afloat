@@ -1,7 +1,7 @@
 .product-page { 
     display: grid;
     grid-template-rows: [nav-start] 9rem [nav-end top-content-start] calc(39.5vh - 4.5rem) [top-content-end first-start] calc(39.5vh - 4.5rem) [hero-end content-start]  repeat(
-        5,
+        7,
         min-content
       ) [content-end footer-start] min-content [footer-end];
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(

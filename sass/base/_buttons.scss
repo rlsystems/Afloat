@@ -92,12 +92,7 @@
 
   //left / right
   &--left {
-    &--related {
-      position: absolute;
-      top: 0;
-      right: 12rem;
-      z-index: 40;
-    }
+
     svg:nth-child(1) {
       transform: translateX(2rem);
     }
@@ -106,14 +101,24 @@
         transform: translateX(0);
       }
     }
-  }
 
-  &--right {
     &--related {
       position: absolute;
       top: 0;
-      right: 3rem;
+      right: 12rem;
+      z-index: 40;
     }
+
+    &--areas {
+      position: absolute;
+      top: 45%;
+      left: 0;
+      z-index: 40;
+    }
+  }
+
+  &--right {
+
     svg:nth-child(1) {
       transform: translateX(-2rem);
     }
@@ -121,6 +126,19 @@
       svg:nth-child(1) {
         transform: translateX(0);
       }
+    }
+
+    &--related {
+      position: absolute;
+      top: 0;
+      right: 3rem;
+    }
+
+    &--areas {
+      position: absolute;
+      top: 45%;
+      right: 0;
+      z-index: 40;
     }
   }
 
@@ -193,7 +211,7 @@
 }
 
 
-
+//email subscribe
 .btn-rect {
   background-color: $color-supporting;
   color: $color-grey-light-2;
@@ -213,35 +231,3 @@
   opacity: 0;
   pointer-events:none;
 }
-
-//arrows 
-
-// .slick-arrow {
-//   position: absolute;
-//   bottom: 2em;
-//   right: 2em;
-//   z-index: 2;
-//   background: $bg-gradient;
-//   background-size: 100%;
-//   border: 0;
-//   width: 30px;
-//   height: 25px;
-//   text-indent: -9999px;
-//   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-//   cursor: pointer;
-//   transition: all .5s ease;
-
-//   &:hover {
-//     background-size: 190%;
-//   }
-
-//   &.slick-prev {
-//     right: 5em;
-//     transform: rotate(-90deg);
-//   }
-
-//   &.slick-next {
-//     transform: rotate(90deg);
-
-//   }
-// }

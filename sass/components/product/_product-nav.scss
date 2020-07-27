@@ -32,8 +32,8 @@
         }
     }
 
-    
-    &__tabs { //--is child of caption
+    &__tabs {
+        //--is child of caption
         grid-column: 1 / -1;
         grid-row: 3 / span 1;
         font-size: 1.2rem;
@@ -85,12 +85,11 @@
             &:hover {
                 &::after {
                     content: "";
-    
+
                     width: 100%;
                 }
             }
         }
-
     }
 
     &__rotate {
@@ -100,7 +99,7 @@
     }
 
     &__slick {
-        display: grid; 
+        display: grid;
         align-items: center;
         height: 50vh;
         position: absolute;
@@ -139,6 +138,20 @@
                 transition: all 0.4s;
                 background-image: linear-gradient(to right, rgba($color-secondary, 0.6), rgba($color-secondary, 0.6));
             }
+            &__title {
+                opacity: 0;
+                width: 100%;
+                padding: 1rem 2rem;
+                color: $color-white;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: block;
+                background-color: rgba($color-secondary, 0.2);
+                transition: opacity .2s;
+                transition-delay: .5s;
+
+            }
         }
     }
 }
@@ -146,6 +159,10 @@
 .product-slick-enlarge {
     //applied by js
     .product-nav__slick__item {
+        &__title {
+            opacity: 1;
+            //height: 100%;
+        }
         img {
             height: 100%;
         }
@@ -162,5 +179,3 @@
         opacity: 1;
     }
 }
-
-

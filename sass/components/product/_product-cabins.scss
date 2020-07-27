@@ -25,44 +25,7 @@
 
     }
 
-    &__title-divider {
-        grid-column: center-start / center-end;
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        height: 14vh;
-
-
-        &__text {
-            color: $color-grey-light-2;
-            font-family: $font-secondary;
-            font-size: 4rem;
-            font-weight: 300;
-            letter-spacing: 0.3rem;
-            transform: translateX(-25%);
-            position: relative;
-
-            &::before {
-                content: "";
-                height: 1px;
-                width: 15rem;
-                position: absolute;
-                background-color: $color-grey-light-2;
-                right: -80%;
-                top: 60%;
-            }
-
-            &::after {
-                content: "";
-                height: 1px;
-                width: 15rem;
-                position: absolute;
-                background-color: $color-grey-light-2;
-                left: -80%;
-                top: 60%;
-            }
-        }
-    }
+ 
 
     &__cabin {
         grid-column: full-start / full-end;
