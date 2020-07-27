@@ -1176,12 +1176,12 @@ p {
       grid-column: center-start / col-end 4;
       grid-row: 1 / span 1; }
     .product-itineraries__itinerary__map {
-      margin-left: 6rem;
       grid-column: col-start 5 / center-end;
       grid-row: 1 / span 1;
-      position: relative; }
+      position: relative;
+      justify-self: center; }
       .product-itineraries__itinerary__map img {
-        height: 30rem;
+        height: 40rem;
         object-fit: cover;
         display: block; }
       .product-itineraries__itinerary__map__btn {
@@ -1773,45 +1773,27 @@ p {
     margin: 8rem auto; }
 
 .product-areas {
-  grid-column: full-start / -1; }
-  .product-areas__slick {
-    height: 60vh;
-    width: 100%;
-    margin: auto; }
-    .product-areas__slick__item {
-      display: flex !important;
-      align-content: center;
-      justify-content: center;
-      height: 50rem;
-      width: 70rem;
-      margin: 8rem 0;
-      margin-bottom: 12rem;
-      transition: all 0.5s; }
-      .product-areas__slick__item img {
-        align-self: center;
-        height: 70%;
-        width: 70%;
-        object-fit: cover;
-        display: block;
-        z-index: 0;
-        transition: all 0.5s;
-        box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2); }
-  .product-areas__btn-left {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 12rem; }
-  .product-areas__btn-right {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    right: 12rem; }
+  grid-column: full-start / -1;
+  background-color: sandybrown;
+  height: 60vh;
+  color: black;
+  font-size: 2rem; }
 
-.areas-slick-enlarge .product-areas__slick__item {
-  z-index: 40; }
-  .areas-slick-enlarge .product-areas__slick__item img {
-    height: 90%;
-    width: 100%; }
+.slider-wrapper {
+  max-width: 100rem;
+  margin: 4rem auto; }
+
+.slider-for {
+  width: 100%;
+  background-color: seagreen; }
+  .slider-for__item {
+    height: 45vh; }
+
+.slider-nav {
+  width: 100%; }
+  .slider-nav__item {
+    display: flex !important;
+    justify-content: center; }
 
 .nav-mega {
   flex: 1;
@@ -2047,7 +2029,7 @@ p {
 
 .product-page {
   display: grid;
-  grid-template-rows: [nav-start] 9rem [nav-end top-content-start] calc(39.5vh - 4.5rem) [top-content-end first-start] calc(39.5vh - 4.5rem) [hero-end content-start] repeat(4, min-content) [content-end footer-start] min-content [footer-end];
+  grid-template-rows: [nav-start] 9rem [nav-end top-content-start] calc(39.5vh - 4.5rem) [top-content-end first-start] calc(39.5vh - 4.5rem) [hero-end content-start] repeat(5, min-content) [content-end footer-start] min-content [footer-end];
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
 
 .product-content {

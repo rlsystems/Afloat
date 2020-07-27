@@ -1,61 +1,32 @@
 .product-areas {
   grid-column: full-start / -1;
-  //background-color: $color-beige-1;
-  //height: 40rem;
 
-  &__slick {
-    //display: flex;
-    //width: 100%;
-    height: 60vh;
-    width: 100%;
-    margin: auto;
+  background-color: sandybrown;
+  height: 60vh;
+  color: black;
+  font-size: 2rem;
+ 
+}
+.slider-wrapper {
+  max-width: 100rem;
+  margin: 4rem auto;
+}
+.slider-for {
+  //height: 30rem;
+  width: 100%;
+  background-color: seagreen;
 
-    &__item {
-      display: flex !important;
-      align-content: center;
-      justify-content: center;
-      height: 50rem;
-      width: 70rem;
-      margin: 8rem 0;
-      margin-bottom: 12rem;
-      transition: all 0.5s;
-
-      img {
-        align-self: center;
-        height: 70%;
-        width: 70%;
-        object-fit: cover; //needs to set width and height
-        display: block;
-        z-index: 0;
-        transition: all 0.5s;
-        box-shadow: $shadow-medium-short;
-      }
-    }
-  }
-
-  &__btn-left {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 12rem;
-  }
-
-  &__btn-right {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    right: 12rem;
+  &__item {
+    height: 45vh;
   }
 }
 
-.areas-slick-enlarge {
-  .product-areas__slick__item {
-    //transform: scale(1.25);
-    z-index: 40;
-    img {
-      //transform: scale(1);
-      height: 90%;
-      width: 100%;
-    }
+.slider-nav {
+  width: 100%;
+  &__item{
+    display: flex !important;
+    justify-content: center;
+    //text-align: center;
+
   }
 }

@@ -324,7 +324,7 @@
             <h3 class="heading-3 heading-3--underline">
               3 Day
             </h3>
-            <img src="img/maps/map-02.png" alt="">
+            <img src="img/maps/SantaCruzII_5D_Northern.jpg" alt="">
             <!-- Button -->
             <button
               class="btn-round btn-round--dark btn-round--right btn-round--medium product-itineraries__itinerary__map__btn"
@@ -696,7 +696,7 @@
             <h3 class="heading-3 heading-3--underline">
               4 Day
             </h3>
-            <img src="img/maps/map-02.png" alt="">
+            <img src="img/maps/SantaCruzII_5D_Western.jpg" alt="">
             <!-- Button -->
             <button
               class="btn-round btn-round--dark btn-round--right btn-round--medium product-itineraries__itinerary__map__btn"
@@ -1789,26 +1789,37 @@
 
   </section>
 
+
   <section class="product-areas">
-    <div class="product-areas__slick" id="product-areas__slick">
-      <div class="product-areas__slick__item">
-        <img src="img/slider-images/lux-01.jpg" alt="" class="product-areas__slick__item__img">
+    <div class="slider-wrapper">
+      <div class="slider-nav">
+        <div class="slider-nav__item">
+          Nav 1
+        </div>
+        <div class="slider-nav__item">
+          Nav 2
+        </div>
+        <div class="slider-nav__item">
+          Nav 3
+        </div>  
       </div>
-      <div class="product-areas__slick__item">
-        <img src="img/product-areas/area-2.jpg" alt="" class="product-areas__slick__item__img">
-      </div>
-      <div class="product-areas__slick__item">
-        <img src="img/product-areas/area-3.jpg" alt="" class="product-areas__slick__item__img">
-      </div>
-      <div class="product-areas__slick__item">
-        <img src="img/product-areas/area-4.jpg" alt="" class="product-areas__slick__item__img">
-      </div>
-      <div class="product-areas__slick__item">
-        <img src="img/product-areas/area-3.jpg" alt="" class="product-areas__slick__item__img">
+      <div class="slider-for">
+        <div class="slider-for__item">
+          Item 1
+        </div>
+        <div class="slider-for__item">
+          Item 2
+        </div>
+        <div class="slider-for__item">
+          Item 3
+        </div>
       </div>
     </div>
-  </section> 
+    
+    
 
+  
+  </section> 
 
   <section class="product-reviews">
 
@@ -2181,25 +2192,21 @@
 
   var years = [2020, 2021, 2022, 2023];
 
-
-
-        //areas 
-    $('#product-areas__slick').on('init', function (event, slick) {
-      $(this).find('.slick-current').addClass('areas-slick-enlarge');
-    }).slick({
-      //infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      centerMode: true,
-      fade: false,
-      arrows: true,
-      prevArrow: '<a class="btn-round btn-round--dark btn-round--medium btn-round--left product-areas__btn-left"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>',
-      nextArrow: '<a class="btn-round btn-round--dark btn-round--medium btn-round--right product-areas__btn-right"><i class="fas fa-arrow-right"></i><i class="fas fa-arrow-right"></i></a>',
-     
-    }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 0) + '"]').addClass('areas-slick-enlarge');
-        $(this).find('.slick-slide[data-slick-index="' + (+currentSlide - 0) + '"]').removeClass('areas-slick-enlarge');
-    });
+  $('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  dots: false,
+  centerMode: true,
+  focusOnSelect: true
+});
 
 
     //reviews 
@@ -2212,9 +2219,6 @@
       prevArrow: '<a class="btn-round btn-round--dark btn-round--left btn-round--small review__slick__btn-left"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></a>',
       nextArrow: '<a class="btn-round btn-round--dark btn-round--right btn-round--small review__slick__btn-right"><i class="fas fa-arrow-right"></i><i class="fas fa-arrow-right"></i></a>',
     });
-
-
-
 
 
     //related products slick
