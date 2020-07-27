@@ -26,58 +26,69 @@
         grid-column: full-start / full-end;
         display: grid;
         grid-template-columns: $page-container;
-        grid-template-rows: min-content min-content;
         position: relative;
         overflow-x: hidden;
 
         margin-top: 4rem;
-        &__picture {
-            grid-column: full-start / col-end 3;
-            grid-row: 1 / span 1;
-            display: flex;
+
+        &__detail {
+            grid-column: full-start / col-end 4;
             justify-self: end;
-            max-width: 60rem;
-            max-height: 40rem;
-            position: relative;
 
-            //overlay gradient  --subtle for title text
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                height: 20rem;
-                z-index: 1;
-                background-image: linear-gradient(to top, rgba($color-secondary, 0.8), rgba($color-secondary, 0));
-            }
-            & img {
-                //margin: 0 6rem;
-                object-fit: cover;
-                width: 100%;
-                height: auto;
-                box-shadow: $shadow-medium-short;
-                z-index: 0;
+            display: grid;
+            grid-template-rows: 40rem min-content;
+            row-gap: 3rem;
+
+            &__picture {        
+                max-width: 60rem;
+                max-height: 40rem;
+                margin-right: 4rem;
+                position: relative;
+                display: flex;
+                //overlay gradient  --subtle for title text
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 20rem;
+                    z-index: 1;
+                    background-image: linear-gradient(to top, rgba($color-secondary, 0.8), rgba($color-secondary, 0));
+                }
+                & img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: auto;
+                    box-shadow: $shadow-medium-short;
+                    z-index: 0;
+                }
+    
+                &__title {
+                    font-size: 2rem;
+                    position: absolute;
+                    bottom: 2rem;
+                    left: 3rem;
+                    color: $color-white;
+                    z-index: 2;
+                  }
             }
 
-            &__title {
-                font-size: 2rem;
-                position: absolute;
-                bottom: 2rem;
-                left: 3rem;
-                color: $color-white;
-                z-index: 2;
-              }
+            &__highlights {
+                max-width: 48rem;
+                justify-self: end;
+                grid-row: 2 / span 1;
+                margin: 0 4rem;
+                font-size: 1.4rem;
+            }
         }
+      
 
         &__text {
             grid-column: col-start 5 / center-end;
             grid-row: 1 / span 2;
         }
 
-        &__highlights {
-            grid-column: center-start / center-col-end3;
-            grid-row: 2 / span 1;
-        }
+        
     }
     &__third {
         grid-column: center-start / center-end;
