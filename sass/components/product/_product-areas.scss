@@ -1,10 +1,31 @@
 .product-areas {
   grid-column: full-start / -1;
+  
+  &__btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
 }
 
 .areas-slider {
   max-width: 114rem;
   margin: 0 auto;
+
+  &__btn {
+    &--left {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        z-index: 40;    
+    }
+    &--right {
+      position: absolute;
+      top: 40%;
+      right: 0;
+      z-index: 40;    
+  }
+  }
 
   &__slider-for {
     width: 100%;

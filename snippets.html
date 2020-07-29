@@ -1,154 +1,188 @@
-<!-- snippet collection -->
+//Buttons
+.btn-round {
+  width: 7rem;
+  height: 7rem;
 
-        <!-- Day 1 -->
-        <div class="product-itineraries__day product-itineraries__day--first">
-            <div class="product-itineraries__day__number">1</div>
-            <div class="product-itineraries__day__title heading-2">Baltra Island & Mosquera</div>
-            <div class="product-itineraries__day__text">
-              <p>
-                We arrive by plane at Baltra Island and transfer to the dock to board the Santa Cruz II where we receive
-                our welcome introductory briefing and lunch.
-              </p>
-              <p>
-                After lunch and your introductory briefing on board, Santa Cruz II will relocate only four nautical miles
-                from Baltra, next to Mosquera Islet, a small volcanic uplift between Baltra and North Seymour. The island
-                is a long and narrow sand bank surrounded by lava reefs. Our groups will approach the island from its
-                western shore, a long shallow reef, the perfect rookery for young sea lions. After a wet landing, our
-                guides will lead you past the sea lion colonies, where you will learn more about the fragile marine and
-                terrestrial ecosystems of Galapagos. The walk is easy as it is restricted to a few hundred metres of flat
-                sandy dunes. This will also be a great opportunity for an introduction to snorkelling.
-              </p>
-            </div>
-          </div>
-          <!-- Day 2 -->
-          <div class="product-itineraries__day">
-            <div class="product-itineraries__day__number">2</div>
-            <div class="product-itineraries__day__title heading-2">Puerto Baquerizo Moreno & Punta Pitt</div>
-            <div class="product-itineraries__day__text">
-              <p>
-                After breakfast, we disembark (dry landing) at Puerto Baquerizo Moreno, the island’s capital, and drive 40
-                minutes to the island’s southern shore. At Cerro Colorado, we visit the breeding centre for highly
-                endangered giant tortoises in the midst of a fantastic deciduous forest, home to dozens of bird species,
-                including the San Cristobal mockingbird, and the San Cristobal lava lizard, both island endemics.
-              </p>
-              <p>
-                In the afternoon, we disembark (wet landing) on the eastern tip of the island at Punta Pitt, an eroded
-                tuff cone, whose trail provides spectacular views of the shoreline. This is the only site in the Galapagos
-                where the three species of boobies can be found together. We can walk or enjoy a panga ride along the
-                coast. Opportunity for snorkelling, swimming and kayaking.
-              </p>
-            </div>
-          </div>
-          <!-- Day 3 -->
-          <div class="product-itineraries__day product-itineraries__day--last">
-            <div class="product-itineraries__day__number">3</div>
-            <div class="product-itineraries__day__title heading-2">Santa Fe & South Plaza Islands</div>
-            <div class="product-itineraries__day__text">
-              <p>
-                After breakfast, we take the dinghy over to this idyllic sandy-white beach populated by many sea lions
-                (wet landing). The endemic land iguana, unique to this island, may be spotted during the morning walk amid
-                the giant prickly pear cactus. Snorkelling and swimming from the panga rounds off our rewarding
-                experience, or if guests prefer, the glass bottom boat is available for non-snorkelers. Opportunity for
-                kayaking.
-              </p>
-              <p>
-                Following lunch and a rest, we disembark (dry landing) in this channel, whose turquoise waters contrast
-                brilliantly with the white sand and black lava of the shoreline. Beyond, a carpet of scarlet sesuvium
-                succulents serves as groundcover for a grove of luminescent green prickly-pear cactus. Yellow-grey land
-                iguanas sit beneath these, waiting patiently for pears to drop. Along the coastline one finds sea lion
-                colonies, while frigates, swallow-tailed gulls and shearwaters glide, playing with the thermals.
-              </p>
-            </div>
-          </div>
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  background-color: transparent;
+  border: 0.1rem solid rgba($color-white, 0.6);
+  border-radius: 50%;
+  color: rgba($color-white, 0.6);
+  font-size: 1.2rem;
+  font-weight: 100;
+  cursor: pointer;
 
+  svg:nth-child(1) {
+    position: absolute;
+    color: transparent;
+    transition: all 0.5s;
+  }
+  svg:nth-child(2) {
+    color: rgba($color-white, 0.6);
+    transition: all 0.5s;
+  }
 
+  &:hover {
+    svg:nth-child(1) {
+      transform: translateX(0);
+      color: rgba($color-white, 0.6);
+    }
+    svg:nth-child(2) {
+      color: transparent;
+    }
+  }
 
+  &--borderless {
+    border: none;
+    color: rgba($color-secondary, 0.8);
 
-
-          <div class="product-cabins__ship-info__content">
-            <div class="product-cabins__ship-info__title">
-              <div class="heading-3 heading-3--underline">Darwin Suite</div>
-            </div>
-            <ul class="product-cabins__ship-info__content__list">
-              <li class="product-cabins__ship-info__content__item">Item</li>
-              <li class="product-cabins__ship-info__content__item">Item</li>
-              <li class="product-cabins__ship-info__content__item">Item</li>
-            </ul>
-          </div>
-
-          
-        &__content {
-
-          &__list {
-              list-style: none;
-          }
-
-          &__item {
-              font-size: 1.4rem;
-          }
+    svg:nth-child(2) {
+      color: rgba($color-secondary, 0.8);
+    }
+    &.btn-round:hover {
+      svg:nth-child(1) {
+        color: rgba($color-secondary, 0.8);
       }
+    }
+  }
 
+  //dark
+  &--dark {
+    border: 0.1rem solid rgba($color-secondary, 0.8);
+    color: rgba($color-secondary, 0.8);
 
+    svg:nth-child(2) {
+      color: rgba($color-secondary, 0.8);
+    }
+    &.btn-round:hover {
+      svg:nth-child(1) {
+        color: rgba($color-secondary, 0.8);
+      }
+    }
+  }
 
+  //grey
+  &--grey {
+    border: 0.1rem solid rgba($color-grey-2, 0.8);
+    color: rgba($color-grey-2, 0.8);
 
+    svg:nth-child(2) {
+      color: rgba($color-grey-2, 0.8);
+    }
+    &.btn-round:hover {
+      svg:nth-child(1) {
+        color: rgba($color-grey-2, 0.8);
+      }
+    }
+  }
 
+  //small
+  &--small {
+    width: 3rem;
+    height: 3rem;
+  }
 
+  &--medium {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
 
-          // &__day {
-            //     grid-column: center-start / center-end;
-            //     display: grid;
-            //     grid-template-columns: 9rem 1fr;
-            //     grid-template-rows: min-content min-content;
-            //     column-gap: 3rem;
-            //     padding-bottom: 5rem;
-        
-            //     &--first {
-            //         margin-top: 9rem;
-            //     }
-        
-            //     &::after {
-            //         content: "";
-        
-            //         grid-row: 2 / span 1;
-            //         grid-column: 1 / span 1;
-            //         height: calc(100% + 5rem);
-            //         width: 1px;
-            //         background-color: $color-secondary;
-            //         justify-self: center;
-            //     }
-            //     &__number {
-            //         grid-column: 1 / span 1;
-            //         grid-template-rows: 1 / span 1;
-            //         align-self: center;
-            //         justify-self: center;
-        
-            //         display: flex;
-            //         justify-content: center;
-            //         align-items: center;
-            //         //line-height: 2;
-            //         //background-color: $color-primary;
-            //         color: $color-secondary;
-            //         font-family: $font-secondary;
-            //         font-size: 2rem;
-            //         font-weight: 500;
-            //         height: 6rem;
-            //         width: 6rem;
-            //         border-radius: 50%;
-            //         border: 1px solid $color-secondary;
-            //     }
-        
-            //     &__title {
-            //         grid-column: 2 / span 1;
-            //         grid-row: 1 / span 1;
-            //         align-self: center;
-            //         margin-bottom: 0;
-            //     }
-        
-            //     &__text {
-            //         grid-column: 2 / span 1;
-            //         grid-row: 2 / span 1;
-        
-            //         font-size: 1.6rem;
-            //     }
-            // }
+  //left / right
+  &--left {
+    svg:nth-child(1) {
+      transform: translateX(2rem);
+    }
+    &:hover {
+      svg:nth-child(1) {
+        transform: translateX(0);
+      }
+    }
+
+    &--related {
+      position: absolute;
+      top: 0;
+      right: 12rem;
+      z-index: 40;
+    }
+
+    &--areas {
+      position: absolute;
+      top: 45%;
+      left: 0;
+      z-index: 40;
+    }
+  }
+
+  &--right {
+    svg:nth-child(1) {
+      transform: translateX(-2rem);
+    }
+    &:hover {
+      svg:nth-child(1) {
+        transform: translateX(0);
+      }
+    }
+
+    &--related {
+      position: absolute;
+      top: 0;
+      right: 3rem;
+    }
+
+    &--areas {
+      position: absolute;
+      top: 45%;
+      right: 0;
+      z-index: 40;
+    }
+  }
+
+  //wide slider buttons
+  &--slider-wide-left {
+    position: absolute;
+    top: 45%;
+    left: 3%;
+    z-index: 8;
+  }
+
+  &--slider-wide-right {
+    position: absolute;
+    top: 45%;
+    right: 3%;
+    z-index: 8;
+  }
+
+  //product showcase
+  &--product-nav-left {
+    position: absolute;
+    top: 0%;
+    left: -6rem;
+    z-index: 8;
+  }
+
+  &--product-nav-right {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    z-index: 8;
+  }
+}
+
+.btn {
+  background-color: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}

@@ -144,15 +144,29 @@
                 font-size: 1.5rem;
                 padding: 1rem 2rem;
                 color: $color-white;
-                letter-spacing: .1rem;
+                letter-spacing: 0.1rem;
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 display: block;
                 background-color: rgba($color-secondary, 0.2);
-                transition: opacity .2s;
-                transition-delay: .5s;
+                transition: opacity 0.2s;
+                transition-delay: 0.5s;
+            }
+        }
 
+        &__btn {
+            &--left {
+                position: absolute;
+                top: -1rem;
+                left: -6rem;
+                z-index: 8;
+            }
+            &--right {
+                position: absolute;
+                top: -1rem;
+                right: 0;
+                z-index: 8;
             }
         }
     }

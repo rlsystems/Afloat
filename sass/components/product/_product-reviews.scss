@@ -71,36 +71,36 @@
         }
   
         &__location {
-          font-size: 1.4rem;
-  
-  
+          font-size: 1.4rem; 
         }
-  
+ 
       }
     }
   
     &__image {
       object-fit: cover;
-      //width: 90%;
       height: 55rem;
       box-shadow: $shadow-medium;
       margin: 8rem auto;
     }
   }
 
-  &__btn-left {
-    position: absolute;
-    z-index: 10;
-    bottom: 10rem;
-    left: 8rem;
+  &__btn {
+    &--right {
+      position: absolute;
+      z-index: 10;
+      bottom: 10rem;
+      left: 12rem;
+    }
+    &--left {
+      position: absolute;
+      z-index: 10;
+      bottom: 10rem;
+      left: 8rem;
+    }
+
   }
 
-  &__btn-right {
-    position: absolute;
-    z-index: 10;
-    bottom: 10rem;
-    left: 12rem;
-  }
 
 }
 

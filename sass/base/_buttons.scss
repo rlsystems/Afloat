@@ -1,193 +1,4 @@
-//Buttons
-.btn-round {
-  width: 7rem;
-  height: 7rem;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: transparent;
-  border: 0.1rem solid rgba($color-white, 0.6);
-  border-radius: 50%;
-  color: rgba($color-white, 0.6);
-  font-size: 1.2rem;
-  font-weight: 100;
-  cursor: pointer;
-
-  svg:nth-child(1) {
-    position: absolute;
-    color: transparent;
-    transition: all 0.5s;
-  }
-  svg:nth-child(2) {
-    color: rgba($color-white, 0.6);
-    transition: all 0.5s;
-  }
-
-  &:hover {
-    svg:nth-child(1) {
-      transform: translateX(0);
-      color: rgba($color-white, 0.6);
-    }
-    svg:nth-child(2) {
-      color: transparent;
-    }
-  }
-
-  &--borderless {
-    border: none;
-    color: rgba($color-secondary, 0.8);
-
-    svg:nth-child(2) {
-      color: rgba($color-secondary, 0.8);
-    }
-    &.btn-round:hover {
-      svg:nth-child(1) {
-        color: rgba($color-secondary, 0.8);
-      }
-    }
-  }
-
-  //dark
-  &--dark {
-    border: 0.1rem solid rgba($color-secondary, 0.8);
-    color: rgba($color-secondary, 0.8);
-
-    svg:nth-child(2) {
-      color: rgba($color-secondary, 0.8);
-    }
-    &.btn-round:hover {
-      svg:nth-child(1) {
-        color: rgba($color-secondary, 0.8);
-      }
-    }
-  }
-
-  //grey
-  &--grey {
-    border: 0.1rem solid rgba($color-grey-2, 0.8);
-    color: rgba($color-grey-2, 0.8);
-
-    svg:nth-child(2) {
-      color: rgba($color-grey-2, 0.8);
-    }
-    &.btn-round:hover {
-      svg:nth-child(1) {
-        color: rgba($color-grey-2, 0.8);
-      }
-    }
-  }
-
-  //small
-  &--small {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  &--medium {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
-
-  //left / right
-  &--left {
-
-    svg:nth-child(1) {
-      transform: translateX(2rem);
-    }
-    &:hover {
-      svg:nth-child(1) {
-        transform: translateX(0);
-      }
-    }
-
-    &--related {
-      position: absolute;
-      top: 0;
-      right: 12rem;
-      z-index: 40;
-    }
-
-    &--areas {
-      position: absolute;
-      top: 45%;
-      left: 0;
-      z-index: 40;
-    }
-  }
-
-  &--right {
-
-    svg:nth-child(1) {
-      transform: translateX(-2rem);
-    }
-    &:hover {
-      svg:nth-child(1) {
-        transform: translateX(0);
-      }
-    }
-
-    &--related {
-      position: absolute;
-      top: 0;
-      right: 3rem;
-    }
-
-    &--areas {
-      position: absolute;
-      top: 45%;
-      right: 0;
-      z-index: 40;
-    }
-  }
-
-  //wide slider buttons
-  &--slider-wide-left {
-    position: absolute;
-    top: 45%;
-    left: 3%;
-    z-index: 8;
-  }
-
-  &--slider-wide-right {
-    position: absolute;
-    top: 45%;
-    right: 3%;
-    z-index: 8;
-  }
-
-  //product showcase
-  &--product-nav-left {
-    position: absolute;
-    top: 0%;
-    left: -6rem;
-    z-index: 8;
-  }
-
-  &--product-nav-right {
-    position: absolute;
-    top: 0%;
-    right: 0;
-    z-index: 8;
-  }
-}
-
-.btn {
-  background-color: $color-primary;
-  color: #fff;
-  border: none;
-  border-radius: 0;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  padding: 1.8rem 3rem;
-  cursor: pointer;
-  transition: all 0.2s;
-
-  &:hover {
-    background-color: $color-primary-dark;
-  }
-}
 
 .btn-product-cta {
   background-color: royalblue;
@@ -210,7 +21,6 @@
   }
 }
 
-
 //email subscribe
 .btn-rect {
   background-color: $color-supporting;
@@ -220,14 +30,213 @@
   border: none;
 
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
 
   &:hover {
-      background-color: $color-supporting-light;
+    background-color: $color-supporting-light;
   }
 }
 
 .slick-disabled {
   opacity: 0;
-  pointer-events:none;
+  pointer-events: none;
 }
+
+
+// Text Outline Button 
+.btn-outline {
+  color: $color-grey-light-2;
+  background-color: transparent;
+  padding: 1.5rem 3rem;
+  border: none;
+  margin: 0.5rem;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  outline: none; 
+
+  position: relative;
+
+  &::after {
+    content: "";
+    transition: all 0.15s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 100%;
+    width: 100%;
+    border-radius: 2.5rem;
+    border: 1px solid $color-grey-light-2;
+  }
+
+
+  &:hover::after {
+    height: 95%;
+    width: 95%;
+  }
+}
+
+
+//Icon Outline Button
+.btn-icon {
+  width: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  border: none;
+  margin: 1rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  outline: none;
+
+  color: $color-secondary;
+
+  svg {
+    height: 40%;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    fill: currentColor;
+  }
+
+    //border -----------
+    &::after {
+      content: "";
+      transition: all 0.15s;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      transform-origin: center;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      border: 1px solid $color-secondary;
+    }
+  
+    &:hover::after {
+      height: 90%;
+      width: 90%;
+    }
+}
+
+
+// Arrow Outline Button 
+.btn-circle {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: transparent;
+  border: none;
+  margin: 1rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  outline: none;
+
+  color: $color-secondary;
+
+  svg {
+    height: 40%;
+    width: 40%;
+  }
+
+  &--small {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &--arrow-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    fill: currentColor;
+    z-index: 1;
+
+    opacity: 1;
+
+    transition: all 0.2s;
+  }
+
+  &--arrow-animate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-120%) translateY(-50%);
+    fill: currentColor;
+    z-index: 2;
+    opacity: 0;
+
+    transition: all 0.4s;
+  }
+
+  //arrow movement (default right)
+  &:hover {
+    .btn-circle--arrow-main {
+      opacity: 0;
+    }
+    .btn-circle--arrow-animate {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  &--left .btn-circle--arrow-animate {
+    transform: translateX(50%) translateY(-50%);
+  }
+
+  &--down .btn-circle--arrow-animate {
+    transform: translateX(-50%) translateY(-150%);
+  }
+
+  &--up .btn-circle--arrow-animate {
+    transform: translateX(-50%) translateY(50%);
+  }
+
+  //border -----------
+  &::after {
+    content: "";
+    transition: all 0.15s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transform-origin: center;
+    height: 95%;
+    width: 95%;
+    border-radius: 50%;
+    border: 1px solid $color-secondary;
+  }
+
+  &:hover::after {
+    height: 85%;
+    width: 85%;
+  }
+}
+
+
+// Outline Modifiers
+.btn-dark {
+  color: $color-secondary;
+  &::after {
+    border-color: $color-secondary;
+  }
+}
+
+.btn-grey {
+  color: $color-grey-2 !important;
+  &::after {
+    border-color: $color-grey-2 !important;
+  }
+}
+
+
+.btn-white {
+  color: rgba($color-white, 0.8) !important;
+  &::after {
+    border-color: rgba($color-white, 0.8) !important;
+  }
+}
+
