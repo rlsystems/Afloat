@@ -42,8 +42,16 @@
         grid-template-columns: 2fr 1fr 2fr;
         column-gap: 5rem;
 
+
+
         &__about {
             margin-bottom: 2rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                grid-column: 1 / -1; 
+                 
+            }
+
             &__img {
                 width: 28rem;
                 height: auto;
@@ -57,8 +65,8 @@
 
             &__list {
                 list-style: none;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                display: flex;
+                
 
                 &__item {
                     padding-bottom: 0.5rem;
@@ -75,6 +83,8 @@
                     }
                 }
             }
+
+            
         }
 
         &__col {
@@ -86,10 +96,20 @@
                     padding-bottom: 0.5rem;
                 }
             }
+
+            @media only screen and (max-width: $bp-medium) {
+                margin-left: 0;
+                grid-column: 1 / span 1; 
+            }
         }
 
         &__subscribe {
             letter-spacing: .1rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                grid-column: 2 / span 2;
+            }
+
             &__text {
                 font-size: 1.2rem;
                 
@@ -203,4 +223,11 @@
             }
         }
     }
+
+
+    // @media only screen and (max-width: $bp-medium) {
+    //     grid-column: 1 / 5; //full start to full end
+    //     grid-row: 1 / -1;
+  
+    // }
 }

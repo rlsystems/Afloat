@@ -1,6 +1,6 @@
 .product-areas {
   grid-column: full-start / -1;
-  
+
   &__btn {
     display: flex;
     justify-content: center;
@@ -10,33 +10,34 @@
 
 .areas-slider {
   max-width: 114rem;
-  margin: 0 auto;
+  margin: 6rem auto;
 
-  &__btn {
-    &--left {
-        position: absolute;
-        top: 40%;
-        left: 0;
-        z-index: 40;    
-    }
-    &--right {
-      position: absolute;
-      top: 40%;
-      right: 0;
-      z-index: 40;    
+  @media only screen and (max-width: $bp-largest) {
+    margin: 2rem auto;
   }
+
+  @media only screen and (max-width: $bp-medium) {
+    margin: 0 auto;
   }
+
 
   &__slider-for {
-    width: 100%;
+    
+    
     .slick-slide {
       margin: 8rem 8rem;
       margin-top: 2rem;
     }
+
+
     &__item {
       height: 65vh;
       box-shadow: $shadow-medium-short;
       position: relative;
+
+      @media only screen and (max-width: $bp-medium) {
+        height: 45vh;
+      }
 
       //overlay gradient  --subtle for title text
       display: flex !important;
@@ -72,13 +73,14 @@
   &__slider-nav {
     color: $color-secondary;
     font-size: 1.6rem;
-    
+    overflow-x: hidden;
+
     & .slick-slide {
       outline: none; // this one
     }
 
     & .slick-current {
-      color: $color-supporting-light ;
+      color: $color-supporting-light;
     }
     &__item {
       display: flex !important;
@@ -87,10 +89,23 @@
       cursor: pointer;
       font-weight: 700;
       letter-spacing: 0.1rem;
-      
-      transition: all .5s;
-      
-     
+
+      transition: all 0.5s;
+    }
+  }
+
+  &__btn {
+    &--left {
+      position: absolute;
+      top: 40%;
+      left: 0;
+      z-index: 40;
+    }
+    &--right {
+      position: absolute;
+      top: 40%;
+      right: 0;
+      z-index: 40;
     }
   }
 }

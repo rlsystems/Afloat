@@ -32,13 +32,11 @@
 <body class="product-page">
   <!-- Header -->
   <header class="header" id="header">
-    <!-- Logo -->
     <a href="/index.html" class="header__logo-area">
       <img src="img/logo/logo-white-new.png" alt="logo" class="header__logo" />
       <img src="img/logo/logo-color-new.png" alt="logo" class="header__logo--color" />
     </a>
 
-    <!-- Nav Main -->
     <nav class="nav-main">
       <ul class="nav-main__list">
         <li class="nav-main__item">
@@ -53,7 +51,7 @@
       </ul>
     </nav>
 
-    <nav class="nav-right">
+    <!-- <nav class="nav-right">
       <ul class="nav-right__list">
         <li class="nav-right__item">
           <a href="#" class="nav-right__link">Contact</a>
@@ -62,7 +60,7 @@
           <span class="nav-right__phone">+1-888-454-1423</span>
         </li>
       </ul>
-    </nav>
+    </nav> -->
 
     <div class="nav-mega">
       <div class="nav-mega__sub-group">
@@ -152,7 +150,7 @@
       </div>
     </div>
     <div class="product-nav__rotate">
-      <!-- Slick Slider -->
+
       <div class="product-nav__slick" id="product-nav__slick">
         <div class="product-nav__slick__item">
           <img src="img/galapagos-home-square-1.jpg" alt="">
@@ -183,10 +181,9 @@
           <div class="product-nav__slick__item__title">
             Scuba Diving
           </div>
-        </div>
-        
+        </div>     
       </div>
-
+      
     </div>
   </section>
 
@@ -1890,6 +1887,7 @@
   </section>
 
 
+  <!-- Areas -->
   <div class="page-divider">
     Explore the Santa Cruise II
   </div>
@@ -1943,6 +1941,8 @@
 
 
   </section>
+
+  <!-- Reviews -->
   <div class="page-divider">
     Guest Reviews
   </div>
@@ -2008,6 +2008,8 @@
     </div>
 
   </section>
+
+  <!-- Related Travel -->
   <div class="page-divider">
     Related Travel
   </div>
@@ -2192,6 +2194,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <nav class="footer__nav">
       <div class="footer__nav__about">
@@ -2307,10 +2310,12 @@
 </body>
 
 </html>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" />
-</script>
 
+<!-- JS Imports -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" /></script>
+
+<!-- Scripts -->
 <script>
 
   var years = [2020, 2021, 2022, 2023];
@@ -2325,7 +2330,15 @@
     asNavFor: '.areas-slider__slider-nav',
     prevArrow: '<button class="btn-circle btn-dark btn-circle--left areas-slider__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
     nextArrow: '<button class="btn-circle btn-dark btn-circle--right areas-slider__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
+    responsive: [
+      {
+        breakpoint: 700,
+        settings: {
+          arrows: false,
 
+        }
+      }
+    ]
     
   });
   $('.areas-slider__slider-nav').slick({
@@ -2335,6 +2348,7 @@
     dots: false,
     centerMode: true,
     focusOnSelect: true
+    
   });
 
 
@@ -2383,9 +2397,6 @@
           slidesToScroll: 1
         }
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ]
   });
 

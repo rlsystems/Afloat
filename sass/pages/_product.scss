@@ -1,19 +1,24 @@
 .product-page { 
     display: grid;
+
+
     grid-template-rows: [nav-start] 9rem [nav-end top-content-start] calc(39.5vh - 4.5rem) [top-content-end first-start] calc(39.5vh - 4.5rem) [hero-end content-start]  repeat(
         7,
         min-content
       ) [content-end footer-start] min-content [footer-end];
+
+
+
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(
         8,
         [col-start] minmax(min-content, 14rem) [col-end] 
-      ) [center-end] minmax(6rem, 1fr) [full-end]; //140px each column --now is 160px  
+      ) [center-end] minmax(6rem, 1fr) [full-end]; //140px each column -- 1120px / 8 col
    
 
 }
 
 
-
+//Tab Child Content
 .product-content {
   grid-row: content-start / span 1;
   grid-column: full-start / -1;
