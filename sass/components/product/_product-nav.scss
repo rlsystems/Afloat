@@ -2,17 +2,17 @@
     position: relative;
 
     display: flex;
-    flex-wrap: wrap;
-    grid-row: first-start / hero-end;
+    grid-row: nav-end/ hero-end;
     grid-column: center-start / -1;
+
     &__caption {
         color: $color-grey-light-1;
-        width: 50%; // change with media query to 100% - min-width: 50rem;
+        //width: 50%; 
 
-        display: grid;
+        display: grid; //for tabs
         grid-template-rows: 1fr min-content [nav-start] min-content [nav-end];
         max-height: 100%;
-        padding-right: 6rem;
+        margin-right: 4rem;
 
         &__title {
             font-size: 6rem;
@@ -93,8 +93,9 @@
     }
 
     &__rotate {
-        width: 50%; // change with media query to 100% - min-width: 50rem;
-        transform: translateX(-5rem);
+        width: 100%; // change with media query to 100% - min-width: 50rem;
+        align-self: flex-end;
+        transform: translateY(50%);
         z-index: 4;
     }
 
@@ -102,9 +103,9 @@
         display: grid;
         align-items: center;
         height: 50vh;
-        position: absolute;
+        //position: absolute;
         z-index: 20;
-        top: 12rem;
+        //top: 12rem;
 
         &__item {
             height: 50vh !important;
@@ -165,7 +166,7 @@
             &--right {
                 position: absolute;
                 top: -1rem;
-                right: 0;
+                left: 50%;
                 z-index: 8;
             }
         }
