@@ -1,7 +1,7 @@
 .product-cabins {
     display: grid;
     grid-template-columns: $page-container;
-    grid-template-rows: minmax(35vh, min-content);
+    //grid-template-rows: minmax(35vh, min-content);
     position: relative;
 
     &::after {
@@ -14,18 +14,14 @@
         grid-row: 1 / span 1;
         z-index: -10;
         border-bottom: 1px solid $color-grey-light-1a;
-
     }
 
     &__intro {
         grid-column: center-start / center-end;
         grid-row: 1 / span 1;
         width: 50%;
-        margin-top: 3rem;
-
+        margin: 3rem 0;
     }
-
- 
 
     &__cabin {
         grid-column: full-start / full-end;
@@ -34,21 +30,44 @@
 
         position: relative;
         overflow-x: hidden;
-        padding: 6rem 0;
+        padding-top: 4rem;
+        padding-bottom: 8rem;
+        row-gap: 8rem;
+
+        align-items: center;
 
         &__picture {
-            grid-column: center-start / col-end 4;
-            grid-row: 1 / span 1;
+            grid-column: full-start / col-end 4;
+            justify-self: end;
 
+            max-width: 60rem;
+            height: 40rem;
+            margin-right: 4rem;
+            margin-left: 4rem;
+            position: relative;
             display: flex;
-            justify-content: end;
-            transform: translateX(-14rem);
-            
+
+            @media only screen and (max-width: $bp-large) {
+                height: 30rem;
+            }
+
+            //stack
+            @media only screen and (max-width: $bp-medium) {
+                grid-column: center-start / center-end;
+                grid-row: 1 / span 1;
+                justify-self: center;
+
+                max-width: 100%;
+                height: 45rem;
+            }
 
             &--flipped {
-                grid-column: col-start 5 / center-end;
-                justify-content: start;
-                transform: translateX(14rem);
+                grid-column: col-start 5 / full-end;
+
+                //stack
+                @media only screen and (max-width: $bp-medium) {
+                    grid-column: center-start / center-end;
+                }
             }
 
             img {
@@ -60,10 +79,28 @@
         }
 
         &__content {
-            grid-column: col-start 4 / center-end;
-            margin: 6rem;
+            grid-column: col-start 5 / center-end;
+
             grid-row: 1 / span 1;
-            
+            //margin: 6rem 0;
+
+            @media only screen and (max-width: $bp-medium) {
+                grid-column: center-start / center-end;
+                grid-row: 2 / span 1;
+                margin-left: 6rem;
+                margin-right: 6rem;
+            }
+
+            &--flipped {
+                grid-column: center-start / col-end 4;
+                margin-left: 0;
+
+                //stack
+                @media only screen and (max-width: $bp-medium) {
+                    grid-column: center-start / center-end;
+                    margin: 0 6rem;
+                }
+            }
 
             &__title {
                 position: relative;
@@ -71,11 +108,22 @@
                 span {
                     position: absolute;
                     top: -5rem;
-                    left: -.5rem;
+                    left: -0.5rem;
                     font-family: $font-secondary;
-                    color: rgba($color-secondary, $alpha: .10);
+                    color: rgba($color-secondary, $alpha: 0.1);
                     font-size: 3.5rem;
                     z-index: -1;
+
+                    @media only screen and (max-width: $bp-large) {
+                        top: 0rem;
+                        right: 0rem;
+                        transform: translateX(80%);
+                    }
+                    @media only screen and (max-width: $bp-medium) {
+                        top: -5rem;
+                        left: -0.5rem;
+                        transform: translateX(0%);
+                    }
                 }
             }
 
@@ -103,11 +151,6 @@
                 letter-spacing: 0.1rem;
                 display: inline-block;
             }
-
-            &--flipped {
-                grid-column: center-start / col-end 5;
-                margin-left: 0;
-            }
         }
     }
 
@@ -116,20 +159,51 @@
 
         display: grid;
         grid-template-columns: min-content 1fr;
-        //justify-content: center;
-        column-gap: 6rem;
+        column-gap: 8rem;
+        //margin-top: 2rem;
+
+        row-gap: 4rem;
 
         &__picture {
-            img {
-                object-fit: cover;
+            &__img {
+                object-fit: contain;
                 width: 50rem;
+                height: auto;
+            }
+
+            @media only screen and (max-width: $bp-large) {
+                display: flex;
+                flex-direction: column;
+
+                &__title {
+                    margin-bottom: 2rem;
+                    display: inline-block;
+                    margin-left: 6rem;
+                }
+
+                &__img {
+                    height: 70rem;
+                    width: auto;
+                }
+            }
+
+            @media only screen and (max-width: $bp-large) {
+                grid-column: 1 / -1;
+                justify-content: center;
             }
         }
+
         &__content {
+            @media only screen and (max-width: $bp-large) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                width: 85%;
+                margin: 0 auto;
+            }
             ul {
                 list-style: none;
             }
-    
+
             li {
                 font-size: 1.6rem;
                 display: grid;
@@ -139,7 +213,6 @@
                 margin: 1rem;
                 margin-left: 0;
                 span {
-                    
                     color: $color-secondary;
                     margin-right: 1rem;
                 }
@@ -150,7 +223,5 @@
                 }
             }
         }
-        
     }
 }
-

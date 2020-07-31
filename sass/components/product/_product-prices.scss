@@ -31,11 +31,11 @@
             &__item {
                 color: $color-secondary;
                 font-size: 1.5rem;
-                letter-spacing: .03rem;
+                letter-spacing: 0.03rem;
                 font-weight: 600;
                 display: grid;
                 grid-template-columns: 15rem 1fr;
-               
+
                 //column-gap: 1rem;
                 .list-info {
                     margin-left: 1rem;
@@ -56,7 +56,7 @@
         display: grid;
         grid-template-columns: $page-container;
         grid-template-rows: repeat(2, min-content);
-
+        overflow: hidden;
         &__picture {
             width: 30rem;
             height: 90%;
@@ -76,10 +76,21 @@
         }
 
         &__name {
-            grid-column: center-start / center-end;
+            grid-column: col-start 3 / center-end;
+            margin-left: 5rem;
             grid-row: 1 / span 1;
-            width: 70%;
-            justify-self: end;
+            // width: 70%;
+            //justify-self: start;
+
+            @media only screen and (max-width: $bp-largest) {
+                margin-left: 16rem;
+            }
+            @media only screen and (max-width: $bp-large) {
+                margin-left: 20rem;
+            }
+            @media only screen and (max-width: $bp-medium) {
+                margin-left: 24rem;
+            }
 
             display: grid;
             grid-template-rows: repeat(2, min-content);
@@ -87,8 +98,13 @@
             column-gap: 3rem;
 
             &--flipped {
+                margin-left: 0;
                 grid-column: col-start 2 / center-end;
                 justify-self: start;
+
+                @media only screen and (max-width: $bp-medium) {
+                    grid-column: center-start / center-end;
+                }
             }
 
             &__length {
@@ -101,7 +117,6 @@
             &__subtitle {
                 grid-row: 2 / span 1;
             }
-          
         }
 
         &__card-group {
@@ -227,8 +242,41 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 4rem;
- 
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-template-columns: 1fr;
+            margin: 0 4rem;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 4rem;
+                height: 1px;
+                width: 70%;
+                justify-self: center;
+                background-color: $color-grey-light-1a;
+            }
+        }
+
+        &__list-group {
+            @media only screen and (max-width: $bp-medium) {
+                margin-bottom: 5rem;
+                & ul {
+                    margin-left: 2rem;
+                }
+            }
+
+            &__title {
+            }
+
+            &--overall {
+            }
+
+            &--first {
+            }
+
+            &--second {
+            }
+        }
     }
 }
-
-

@@ -108,10 +108,13 @@ p {
         font-size: 1.2rem;
         padding: 1rem;
     }
+
+    @media only screen and (max-width: $bp-medium) {
+        margin: 10rem 2rem;
+    }
 }
 
 .page-divider {
-
     grid-column: center-start / center-end;
     text-align: center;
     padding: 0 6rem;
@@ -123,8 +126,6 @@ p {
     letter-spacing: 0.3rem;
     font-weight: 300;
 
-    
-    
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     align-items: center;
@@ -168,18 +169,94 @@ p {
     }
 }
 
-
 .link-social {
     svg {
         margin-top: 2px;
         height: 1.8rem;
         width: 1.8rem;
         fill: $color-grey-light-2;
-        transition: all .2s;
-        &:hover{
+        transition: all 0.2s;
+        &:hover {
             fill: $color-white;
         }
     }
 }
 
+//Icon Outline Button
+.badge {
+    color: $color-grey-light-2;
+    background-color: transparent;
+    padding: 1rem 2rem;
+    border: none;
+    margin: 0.5rem;
+    letter-spacing: 0.1rem;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
 
+    &::after {
+        content: "";
+        transition: all 0.15s;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        height: 100%;
+        width: 100%;
+        border-radius: 2.5rem;
+        border: 1px solid currentColor;
+    }
+
+    &--small {
+        padding: 0.75rem 1.15rem;
+        font-size: 1.2rem;
+    }
+
+    &--dark {
+        color: $color-secondary;
+    }
+}
+
+.drop-cap-1 {
+    p:first-child:first-letter {
+        font-size: 400%;
+        border: 1px solid #d4d5d7;
+        padding: 0 2rem;
+        display: inline-block;
+        top: 0px;
+        float: left;
+        line-height: 1;
+        margin-right: 1rem;
+        font-weight: 300;
+    }
+}
+
+.drop-cap-2 {
+    p:first-child:first-letter {
+        font-weight: 400;
+        font-size: 5em;
+        float: left;
+        line-height: 0.5;
+        margin-top: -0.08em;
+        margin-left: -0.02em;
+        margin-right: 0.05em;
+    }
+}
+
+.drop-cap-3 {
+    p:first-child:first-letter {
+        font-weight: 400;
+        font-size: 5em;
+        float: left;
+        line-height: 0.5;
+        margin-top: -0.08em;
+        margin-left: -0.02em;
+        margin-right: 0.05em;
+    }
+
+    p:first-child:first-line {
+        font-weight: 600;
+    }
+}
