@@ -5,10 +5,11 @@
     grid-row: nav-end/ hero-end;
     grid-column: center-start / -1;
 
+
+
     &__caption {
         color: $color-grey-light-1;
-        //width: 50%; 
-
+        width: 100%;
         display: grid; //for tabs
         grid-template-rows: 1fr min-content [nav-start] min-content [nav-end];
         max-height: 100%;
@@ -29,6 +30,18 @@
             display: block;
             max-width: 80%;
             padding-bottom: 3rem;
+        }
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        display: grid;
+        align-self: end;
+        
+        grid-column: center-start / center-end;
+
+        &__caption {
+            justify-items: center;
+            text-align: center;
         }
     }
 
@@ -95,17 +108,24 @@
     &__rotate {
         width: 100%; // change with media query to 100% - min-width: 50rem;
         align-self: flex-end;
-        transform: translateY(50%);
+        transform: translateY(55%);
         z-index: 4;
     }
 
     &__slick {
         display: grid;
         align-items: center;
+
+        @media only screen and (max-width: $bp-large) {
+            display: none;
+        }
+
         height: 50vh;
-        //position: absolute;
         z-index: 20;
-        //top: 12rem;
+
+        .slick-slide {
+            outline: none
+        }
 
         &__item {
             height: 50vh !important;
@@ -160,14 +180,16 @@
             &--left {
                 position: absolute;
                 top: -1rem;
-                left: -6rem;
+                left: -8rem;
                 z-index: 8;
             }
             &--right {
                 position: absolute;
                 top: -1rem;
-                left: 50%;
+                left: 43rem;
                 z-index: 8;
+
+             
             }
         }
     }

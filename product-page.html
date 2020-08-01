@@ -114,11 +114,6 @@
 
     </div>
 
-
-
-
-
-
   </header>
 
   <!-- Hero -->
@@ -204,7 +199,6 @@
             wonders of the Galapagos. Guides will adjust daily expeditions to the personal needs and interests of the
             guests, with activities ranging from land treks to aquatic activities.
           </p>
-
 
 
         </div>
@@ -776,13 +770,11 @@
             <div class="product-itineraries__itinerary__content-group__intro drop-cap-2">
 
 
-              <p>Cruise aboard the Santa Cruz II yacht to the glorious white beach of Las Bachas, Santiago Island
-                (Buccaneer Cove and Puerto Egas), Rabida, Bartolome Island, and the sunken crater of Genovesa
-                Island, Galapagos’ best natural aviary. End the trip on a high note watching
+              <p>Begin your adventure at Dragon Hill on Santa Cruz Island, home to Galapagos land iguanas. The next day is spent at Isabela Island (Punta Vicente Roca) and Fernandina Island, the pristine jewel of the national park. From there, you will 
 
-                Galapagos giant tortoises stroll through their natural habitat in the highlands of Santa Cruz
-                Island before heading to the airport at Baltra. This itinerary visits the following islands:
-                Baltra, Santa Cruz, Santiago, Rabida, Bartolome, Genovesa and Baltra</p>
+                jewel of the national park. From there, you will
+                
+                 visit the world-famous Charles Darwin Research Station and its captive tortoise breeding program. Floreana Island’s Post Office Bay and Punta Cormorant round off the trip with insights into human presence on the islands. This itinerary visits the following islands: Baltra, Isabela, Fernandina, Santa Cruz and Floreana</p>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolorum qui reiciendis velit
                 commodi
                 maiores assumenda iusto aspernatur fugit id sint deleniti culpa architecto sequi, eveniet quod ipsam?
@@ -2033,7 +2025,6 @@
   <section class="product-related">
 
     <div class="related-slider" id="related-slider">
-      <!-- Related Item -->
       <div class="related-slider__item">
         <div class="related-slider__item__title-group">
           <div class="related-slider__item__title-group__name">
@@ -2068,7 +2059,6 @@
 
         </div>
       </div>
-      <!-- Related Item -->
       <div class="related-slider__item">
         <div class="related-slider__item__title-group">
           <div class="related-slider__item__title-group__name">
@@ -2103,7 +2093,6 @@
 
         </div>
       </div>
-      <!-- Related Item -->
       <div class="related-slider__item">
         <div class="related-slider__item__title-group">
           <div class="related-slider__item__title-group__name">
@@ -2138,7 +2127,6 @@
 
         </div>
       </div>
-      <!-- Related Item -->
       <div class="related-slider__item">
         <div class="related-slider__item__title-group">
           <div class="related-slider__item__title-group__name">
@@ -2173,7 +2161,6 @@
 
         </div>
       </div>
-      <!-- Related Item -->
       <div class="related-slider__item">
         <div class="related-slider__item__title-group">
           <div class="related-slider__item__title-group__name">
@@ -2261,7 +2248,6 @@
           Enter your email to receive news and updates related to our featured cruises and promotions
         </p>
         <form action="#" class="footer__nav__subscribe__form">
-          <!-- Destination Search -->
           <div class="footer__nav__subscribe__form-group">
             <input type="text" class="footer__nav__subscribe__input" id="destination" tabindex="1"
               placeholder="Email Address" />
@@ -2277,7 +2263,6 @@
       <ul class="footer__bottom__list">
         <li class="footer__bottom__list__item">
           © 2020 Rainforest Cruises. All rights reserved. </li>
-
         <li class="footer__bottom__list__item">
           <a href="#" class="footer__link footer__bottom__list__item__link">Privacy Policy</a>
         </li>
@@ -2337,7 +2322,7 @@
 <script>
 
   var years = [2020, 2021, 2022, 2023];
-
+  setYearDetails(2020); //set year selections onload
 
   //Areas Slider (must select class for chained sliders)
   $('.areas-slider__slider-for').slick({
@@ -2418,25 +2403,43 @@
     ]
   });
 
-  setYearDetails(2020); //set year selections onload
+ 
 
-  //gallery nav slick
+
+  //Nav Rotate slick
   $('#product-nav__slick').on('init', function (event, slick) {
-    $(this).find('.slick-slide[data-slick-index="' + 1 + '"]').addClass('product-slick-enlarge');
+    $(this).find('.slick-slide[data-slick-index="' + 0 + '"]').addClass('product-slick-enlarge');
   }).slick({
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide: 1,
+    initialSlide: 0,
     variableWidth: true,
+    focusOnSelect:true,
     arrows: true,
     prevArrow: '<button class="btn-circle btn-circle--small btn-white btn-circle--left product-nav__slick__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
     nextArrow: '<button class="btn-circle btn-circle--small btn-white btn-circle--right product-nav__slick__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
-  })
-    .on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+  }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 0) + '"]').addClass('product-slick-enlarge');
       $(this).find('.slick-slide[data-slick-index="' + (+currentSlide - 0) + '"]').removeClass('product-slick-enlarge');
     });
+  // //Nav Rotate slick
+  // $('#product-nav__slick').on('init', function (event, slick) {
+  //   $(this).find('.slick-slide[data-slick-index="' + 1 + '"]').addClass('product-slick-enlarge');
+  // }).slick({
+  //   infinite: true,
+  //   slidesToShow: 2,
+  //   slidesToScroll: 1,
+  //   initialSlide: 1,
+  //   variableWidth: true,
+  //   arrows: true,
+  //   prevArrow: '<button class="btn-circle btn-circle--small btn-white btn-circle--left product-nav__slick__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
+  //   nextArrow: '<button class="btn-circle btn-circle--small btn-white btn-circle--right product-nav__slick__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
+  // })
+  //   .on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+  //     $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 0) + '"]').addClass('product-slick-enlarge');
+  //     $(this).find('.slick-slide[data-slick-index="' + (+currentSlide - 0) + '"]').removeClass('product-slick-enlarge');
+  //   });
 
 
 

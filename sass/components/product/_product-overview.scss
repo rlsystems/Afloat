@@ -4,6 +4,16 @@
     grid-template-rows: minmax(35vh, min-content);
     position: relative;
 
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows: minmax(22vh, min-content);
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-columns:
+        [full-start] minmax(6rem, 1fr) [center-start] min-content
+        [center-end] minmax(6rem, 1fr) [full-end]; //140px each column -- 1120px / 8 col
+      }
+
     &__btn {
         grid-column: full-start / -1;
         display: flex;
@@ -28,9 +38,19 @@
     &__intro {
         grid-column: center-start / center-end;
         grid-row: 1 / span 1;
+
         width: 50%;
-        padding: 3rem 0;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
         padding-right: 5rem;
+
+        @media only screen and (max-width: $bp-large) {
+            width: 80%;
+            padding-right: 0;
+            padding-bottom: 5rem;
+            text-align: center;
+            margin: auto;
+        }
     }
 
     //Description
@@ -42,6 +62,8 @@
         overflow-x: hidden;
 
         margin-top: 4rem;
+
+        
 
         &__detail {
             grid-column: full-start / col-end 4;
