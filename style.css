@@ -123,7 +123,7 @@ p {
   letter-spacing: 0.3rem;
   font-weight: 300;
   display: grid;
-  grid-template-columns: 1fr max-content 1fr;
+  grid-template-columns: minmax(6rem, 1fr) minmax(min-content, max-content) minmax(6rem, 1fr);
   align-items: center;
   column-gap: 25px; }
   .page-divider::before {
@@ -1182,9 +1182,6 @@ p {
   @media only screen and (max-width: 62.5em) {
     .product-overview {
       grid-template-rows: minmax(22vh, min-content); } }
-  @media only screen and (max-width: 50em) {
-    .product-overview {
-      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] min-content [center-end] minmax(6rem, 1fr) [full-end]; } }
   .product-overview__btn {
     grid-column: full-start / -1;
     display: flex;
@@ -1205,13 +1202,13 @@ p {
     grid-row: 1 / span 1;
     width: 50%;
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
     padding-right: 5rem; }
     @media only screen and (max-width: 62.5em) {
       .product-overview__intro {
-        width: 80%;
+        width: 100%;
         padding-right: 0;
-        padding-bottom: 5rem;
+        margin: 0 6rem;
         text-align: center;
         margin: auto; } }
   .product-overview__description {
@@ -1323,19 +1320,11 @@ p {
     grid-column: center-start / center-end;
     grid-row: 1 / span 1;
     width: 50%;
-    margin-top: 2rem;
-    display: grid;
+    padding-top: 3rem;
     padding-right: 5rem;
     display: grid;
     grid-template-rows: min-content min-content 1fr;
     row-gap: 2rem; }
-    @media only screen and (max-width: 62.5em) {
-      .product-itineraries__intro {
-        width: 80%;
-        padding-right: 0;
-        padding-bottom: 5rem;
-        text-align: center;
-        margin: auto; } }
     .product-itineraries__intro__info {
       grid-row: 1 / span 1;
       grid-column: 1 / span 2; }
@@ -1374,11 +1363,10 @@ p {
         margin-bottom: 1.5rem;
         column-gap: 4.5rem; }
         .product-itineraries__intro__nav__list .current {
-          color: #142838;
-          font-size: 2.5rem; }
+          color: #142838; }
       .product-itineraries__intro__nav__item {
-        font-size: 1.4rem;
-        font-weight: 500;
+        font-size: 2rem;
+        font-weight: 600;
         position: relative;
         cursor: pointer;
         display: block;
@@ -1395,6 +1383,16 @@ p {
           z-index: 3; }
         .product-itineraries__intro__nav__item:hover {
           color: #142838; }
+    @media only screen and (max-width: 62.5em) {
+      .product-itineraries__intro {
+        width: 100%;
+        max-width: 60rem;
+        padding-right: 0;
+        margin: 0 6rem;
+        text-align: center;
+        margin: auto; }
+        .product-itineraries__intro__nav {
+          justify-self: center; } }
   .product-itineraries__itinerary {
     grid-column: full-start / full-end;
     animation: fadein 0.8s;
@@ -2506,9 +2504,6 @@ p {
   @media only screen and (max-width: 62.5em) {
     .product-page {
       grid-template-rows: [nav-start] 9rem [nav-end top-content-start] calc(50vh - 9rem) [hero-end content-start] repeat(7, min-content) [content-end footer-start] min-content [footer-end]; } }
-  @media only screen and (max-width: 50em) {
-    .product-page {
-      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] min-content [center-end] minmax(6rem, 1fr) [full-end]; } }
 
 .product-content {
   grid-row: content-start / span 1;
