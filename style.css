@@ -1701,7 +1701,8 @@ p {
           margin-left: 6rem; }
         .product-cabins__deckplan__picture__img {
           height: 70rem;
-          width: auto; } }
+          width: auto;
+          margin: 0 6rem; } }
     @media only screen and (max-width: 62.5em) {
       .product-cabins__deckplan__picture {
         grid-column: 1 / -1;
@@ -2243,10 +2244,20 @@ p {
     grid-template-columns: 2fr 1fr 2fr;
     column-gap: 5rem; }
     .footer__nav__about {
-      margin-bottom: 2rem; }
+      margin-bottom: 2rem;
+      position: relative; }
       @media only screen and (max-width: 50em) {
         .footer__nav__about {
-          grid-column: 1 / -1; } }
+          grid-column: 1 / -1;
+          margin-bottom: 8rem; }
+          .footer__nav__about::after {
+            content: "";
+            position: absolute;
+            bottom: -4rem;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background-color: #747474; } }
       .footer__nav__about__img {
         width: 28rem;
         height: auto;
