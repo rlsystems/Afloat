@@ -238,15 +238,7 @@
             grid-template-columns: 1fr;
             margin: 0 4rem;
 
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 4rem;
-                height: 1px;
-                width: 70%;
-                justify-self: center;
-                background-color: $color-grey-light-1a;
-            }
+           
         }
 
         &__list-group {
