@@ -4,19 +4,16 @@
     grid-template-rows: minmax(35vh, min-content);
     position: relative;
 
+
+    @media only screen and (max-width: $bp-largest) {
+        grid-template-rows: minmax(30vh, min-content);
+    }
+
     @media only screen and (max-width: $bp-large) {
         grid-template-rows: minmax(22vh, min-content);
     }
 
 
-
-    &__btn {
-        grid-column: full-start / -1;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 4rem;
-        margin-top: 4rem;
-      }
 
     &::after {
         //intro background
@@ -30,24 +27,7 @@
         border-bottom: 1px solid $color-grey-light-1a;
     }
 
-    //Intro
-    &__intro {
-        grid-column: center-start / center-end;
-        grid-row: 1 / span 1;
-
-        width: 50%;
-        padding-top: 3rem;
-        padding-bottom: 5rem;
-        padding-right: 5rem;
-
-        @media only screen and (max-width: $bp-large) {
-            width: 100%;
-            padding-right: 0;
-            margin: 0 6rem;
-            text-align: center;
-            margin: auto;
-        }
-    }
+ 
 
     //Description
     &__description {
@@ -171,6 +151,11 @@
         }
 
         
+    }
+
+    &__btn {
+        grid-column: center-start / center-end;
+        justify-self: center;
     }
     
 }

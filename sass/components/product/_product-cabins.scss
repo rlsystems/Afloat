@@ -20,20 +20,6 @@
         border-bottom: 1px solid $color-grey-light-1a;
     }
 
-    &__intro {
-        grid-column: center-start / center-end;
-        grid-row: 1 / span 1;
-        width: 50%;
-        margin: 3rem 0;
-
-        @media only screen and (max-width: $bp-large) {
-            width: 80%;
-            padding-right: 0;
-            padding-bottom: 5rem;
-            text-align: center;
-            margin: auto;
-        }
-    }
 
     &__cabin {
         grid-column: full-start / full-end;

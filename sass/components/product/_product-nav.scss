@@ -22,6 +22,11 @@
             display: block;
             align-self: end;
             max-width: 80%;
+
+            @media only screen and (max-width: $bp-medium) {
+                font-size: 4rem;
+               
+              }
         }
         &__subtitle {
             font-size: 1.4rem;
