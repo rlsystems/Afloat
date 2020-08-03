@@ -127,6 +127,10 @@ p {
     align-items: center;
     column-gap: 25px;
 
+    @media only screen and (max-width: $bp-medium) { 
+        font-size: 3rem;
+    }
+
     //lines on both sides effect
     &::before {
         content: "";

@@ -122,6 +122,9 @@ p {
   grid-template-columns: minmax(6rem, 1fr) minmax(min-content, max-content) minmax(6rem, 1fr);
   align-items: center;
   column-gap: 25px; }
+  @media only screen and (max-width: 50em) {
+    .page-divider {
+      font-size: 3rem; } }
   .page-divider::before {
     content: "";
     height: 1px;
