@@ -29,40 +29,30 @@
   <title>Rainforest Cruises</title>
 </head>
 
-<body class="product-page">
+<body class="product-page body" id="body-container">
   <!-- Header -->
   <header class="header" id="header">
-    <a href="/index.html" class="header__logo-area">
-      <img src="img/logo/logo-white-new.png" alt="logo" class="header__logo" />
-      <img src="img/logo/logo-color-new.png" alt="logo" class="header__logo--color" />
+    <a href="/index.html" class="logo-area">
+      <img src="img/logo/logo-white-new.png" alt="logo" class="logo-area__logo" />
+      <img src="img/logo/logo-color-new.png" alt="logo" class="logo-area__logo--color" />
     </a>
 
     <nav class="nav-main">
       <ul class="nav-main__list">
-        <li class="nav-main__item">
-          <a href="/product-page.html" class="nav-main__link">Destinations</a>
+        <li class="nav-main__list__item" id="mega--destinations">
+          Destinations
         </li>
-        <li class="nav-main__item">
-          <a href="#" class="nav-main__link">Experiences</a>
+        <li class="nav-main__list__item">
+          Experiences
         </li>
-        <li class="nav-main__item">
-          <a href="#" class="nav-main__link">Deals</a>
+        <li class="nav-main__list__item">
+          Deals
         </li>
       </ul>
     </nav>
 
-    <!-- <nav class="nav-right">
-      <ul class="nav-right__list">
-        <li class="nav-right__item">
-          <a href="#" class="nav-right__link">Contact</a>
-        </li>
-        <li class="nav-right__item">
-          <span class="nav-right__phone">+1-888-454-1423</span>
-        </li>
-      </ul>
-    </nav> -->
 
-    <div class="nav-mega">
+    <!-- <div class="nav-mega">
       <div class="nav-mega__sub-group">
         <a href="#" class="nav-mega__sub-group__title">Amazon</a>
         <ul class="nav-mega__sub-group__list">
@@ -110,9 +100,7 @@
         </ul>
       </div>
 
-
-
-    </div>
+    </div>  -->
 
   </header>
 
@@ -1449,7 +1437,7 @@
 
         </div>
 
-  
+
 
         <!-- Price Group 1-->
         <div class="product-prices__price-group">
@@ -1848,12 +1836,12 @@
 
         </div>
 
-              <!-- Note Top-->
-      <div class="product-prices__note">
-        <div class="attention-box">
-          <p>All prices listed are per person in double occupancy unless otherwise specified </p>
+        <!-- Note Top-->
+        <div class="product-prices__note">
+          <div class="attention-box">
+            <p>All prices listed are per person in double occupancy unless otherwise specified </p>
+          </div>
         </div>
-      </div>
 
         <!-- Note Bot-->
         <div class="product-prices__note">
@@ -2406,6 +2394,41 @@
 <!-- Scripts -->
 <script>
 
+  //Header --------------
+  $('#header').hover(
+    function () { $('#body-container').addClass('product-page--opaque-nav'); },
+    function () {
+      if ($('#body-container').hasClass('product-page--small-nav') != true) {
+        $('#body-container').removeClass('product-page--opaque-nav');
+      }
+
+    }
+  )
+
+  const nav = document.querySelector('#header');
+  const topOfNav = 180; //change to 0 for absolute top of page
+
+  function fixNav() {
+    if (window.scrollY >= topOfNav) {
+      $('#body-container').addClass('product-page--small-nav product-page--opaque-nav');
+    } else {
+      $('#body-container').removeClass('product-page--small-nav product-page--opaque-nav');
+    }
+  }
+
+  window.addEventListener('scroll', fixNav);
+
+
+  //nav-main--destinations
+  // $('#mega--destinations').hover(
+    
+  //   function () { $('.nav-mega').addClass('nav-mega--expanded'); },
+  //   function () { $('.nav-mega').removeClass('nav-mega--expanded');}
+  // )
+
+
+  //End Header ----------------
+
   var years = [2020, 2021, 2022, 2023];
   setYearDetails(2020); //set year selections onload
 
@@ -2439,7 +2462,6 @@
 
   });
 
-
   //Reviews Slider
   $('#reviews-slider').slick({
     infinite: true,
@@ -2450,7 +2472,6 @@
     prevArrow: '<button class="btn-circle btn-circle--small btn-dark btn-circle--left reviews-slider__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
     nextArrow: '<button class="btn-circle btn-circle--small btn-dark btn-circle--right reviews-slider__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
   });
-
 
   //Related Products Slider
   $('#related-slider').slick({
@@ -2488,9 +2509,6 @@
     ]
   });
 
-
-
-
   //Nav Rotate slick
   $('#product-nav__slick').on('init', function (event, slick) {
     $(this).find('.slick-slide[data-slick-index="' + 0 + '"]').addClass('product-slick-enlarge');
@@ -2508,24 +2526,6 @@
     $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 0) + '"]').addClass('product-slick-enlarge');
     $(this).find('.slick-slide[data-slick-index="' + (+currentSlide - 0) + '"]').removeClass('product-slick-enlarge');
   });
-  // //Nav Rotate slick
-  // $('#product-nav__slick').on('init', function (event, slick) {
-  //   $(this).find('.slick-slide[data-slick-index="' + 1 + '"]').addClass('product-slick-enlarge');
-  // }).slick({
-  //   infinite: true,
-  //   slidesToShow: 2,
-  //   slidesToScroll: 1,
-  //   initialSlide: 1,
-  //   variableWidth: true,
-  //   arrows: true,
-  //   prevArrow: '<button class="btn-circle btn-circle--small btn-white btn-circle--left product-nav__slick__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
-  //   nextArrow: '<button class="btn-circle btn-circle--small btn-white btn-circle--right product-nav__slick__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
-  // })
-  //   .on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-  //     $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 0) + '"]').addClass('product-slick-enlarge');
-  //     $(this).find('.slick-slide[data-slick-index="' + (+currentSlide - 0) + '"]').removeClass('product-slick-enlarge');
-  //   });
-
 
 
   //radio select change (all itineraries)
@@ -2601,10 +2601,6 @@
 
 
 
-  $('#header').hover(
-    function () { $(this).addClass('header--active') },
-    function () { $(this).removeClass('header--active') }
-  )
 
   const items = document.querySelectorAll(".accordion button");
 

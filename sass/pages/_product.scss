@@ -2,7 +2,7 @@
   display: grid;
 
   grid-template-rows:
-    [nav-start] 9rem [nav-end top-content-start] calc(80vh - 9rem) [hero-end content-start] repeat(7, min-content)
+    [nav-start] min-content [nav-end top-content-start] calc(80vh - 9rem) [hero-end content-start] repeat(7, min-content)
     [content-end footer-start] min-content [footer-end];
 
   grid-template-columns:
@@ -15,6 +15,51 @@
       [content-end footer-start] min-content [footer-end];
   }
 
+  //fixed
+  &--small-nav {
+
+
+    & .nav-main__list__item {
+      height: 7rem;
+    }
+  }
+
+  &--opaque-nav {
+    & .header {
+      background-color: rgba($color-white, 0.9);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
+      
+
+      & .logo-area__logo {
+        opacity: 0;
+
+        &--color {
+          opacity: 1;
+        }
+      }
+    }
+    & .nav-main {
+      &__list {
+
+        &__item {
+          color: $color-secondary;
+          &:hover {
+            color: $color-supporting-light;
+          }
+
+         
+        }
+      }
+    }
+  }
+
+  &--mega-destinations {
+    & .header {
+      //height: 17rem;
+    }
+  }
 }
 
 //Tab Child Content
@@ -46,8 +91,6 @@
     width: 100%;
     justify-content: space-between;
 
-
-
     &__starting-price {
       display: block;
       letter-spacing: 0.1rem;
@@ -71,12 +114,11 @@
       }
     }
 
-
     @media only screen and (max-width: $bp-large) {
       justify-content: center;
       flex-direction: column;
 
-      &__starting-price  {
+      &__starting-price {
         margin-bottom: 1.5rem;
         margin-right: 0;
         &::after {
@@ -88,8 +130,6 @@
       }
 
       &__cta {
-
-
         .btn-product-cta {
           transform: scale(1.3);
           margin: 1rem 0;
@@ -116,8 +156,6 @@
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
       margin-bottom: 2rem;
 
-     
-
       &__item {
         color: $color-secondary;
         font-size: 1.5rem;
@@ -126,7 +164,6 @@
         display: grid;
         grid-template-columns: 15rem 1fr;
 
-  
         .list-info {
           margin-left: 1rem;
           color: $color-grey-2;
@@ -134,7 +171,6 @@
           @media only screen and (max-width: $bp-large) {
             justify-self: start;
           }
-
         }
       }
     }
@@ -163,7 +199,7 @@
         display: block;
         align-self: end;
         transition: all 0.3s;
-  
+
         &:not(:first-child)::after {
           content: "";
           width: 1px;
@@ -179,10 +215,7 @@
         }
       }
     }
-   
   }
-
-  
 
   @media only screen and (max-width: $bp-large) {
     width: 80%;
@@ -190,13 +223,11 @@
     margin: 0 6rem;
     text-align: center;
     margin: auto;
-      &__nav {
-        justify-self: center;
+    &__nav {
+      justify-self: center;
     }
   }
   @media only screen and (max-width: $bp-medium) {
     width: 100%;
-   
   }
-
 }

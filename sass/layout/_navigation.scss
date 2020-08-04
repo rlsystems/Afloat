@@ -1,127 +1,152 @@
-.nav-mega {
-    flex: 1;
-    z-index: 18;
+.header {
+    grid-column: full-start / -1;
+    grid-row: nav-start / nav-end;
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    background-color: rgba($color-white, 0.1);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba($color-grey-light-2, 0); //alpha 0 to prevent pixel jump
 
-    grid-row: 2 / span 1;
-    grid-column: 1 / -1;
+    font-size: 1.4rem;
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(max-content, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+        [center-end] minmax(6rem, 1fr) [full-end];
 
-    display: none;
-    //grid-template-columns: repeat(4, minmax(14rem, max-content));
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 25rem));
+    align-content: center;
+    align-items: center;
 
-    padding: 0 20%;
-    padding-bottom: 5rem;
+    grid-template-rows: min-content min-content;
 
-
-    border-top: 1px solid rgba($color-grey-1, .4);
-    border-bottom: 1px solid rgba($color-grey-1, .4);;
+    //height: 9rem;
+}
 
 
-    &__sub-group {
-        padding-top: 5rem;
-        &__title:link,
-        &__title:visited {
-            color: $color-secondary;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: .3rem;
-        }
+//child of header
+.logo-area {
+    grid-column: full-start / span 1;
+    grid-row: 1 / span 1;
+    z-index: 5;
+    position: relative;
+    display: flex;
+    margin-right: 4rem;
+    justify-self: end;
 
-        &__title:hover,
-        &__title:active {
-            color: $color-secondary-light;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: .3rem;
-        }
+    &__logo {
+        margin-left: 7rem;
+        height: 4.5rem;
 
-        &__list {
-            margin-top: 1.5rem;
-            list-style: none;
-        }
+        transition: all 0.4s;
+        z-index: 9;
+        position: absolute;
 
-        &__item {
-        }
-
-        &__link:link,
-        &__link:visited {
-            text-decoration: none;
-            color: $color-secondary;
-        }
-
-        &__link:hover,
-        &__link:active {
-            text-decoration: none;
-            color: $color-secondary-light;
+        &--color {
+            z-index: 10;
+            transition: all 0.4s;
+            opacity: 0;
+            height: 4.5rem;
+            margin-left: 7rem;
         }
     }
 }
 
 .nav-main {
-    display: grid;
-    align-content: center;
+    grid-column: center-start / span 4;
+
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-size: 1.3rem;
     font-weight: 600;
-    height: 9rem; //change
     z-index: 18;
 
     &__list {
         display: flex;
         list-style: none;
-    }
+        height: 100%;
+        align-items: center;
 
-    &__link:link,
-    &__link:visited {
-        color: $color-grey-light-1;
-        text-decoration: none;
-        padding: 0 2rem;
-        transition: color 0.3s;
-    }
+        &__item {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            height: 9rem;
+            cursor: pointer;
+            transition: all 0.4s;
 
-    &__link:active,
-    &__link:hover {
-        color: $color-secondary;
-        padding: 0 2rem;
-    }
-}
+            color: $color-grey-light-1;
+            text-decoration: none;
+            padding-right: 4rem;
 
-.nav-right {
-    justify-self: end;
-
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-
-    &__list {
-        display: flex;
-        list-style: none;
-    }
-
-    &__link:link,
-    &__link:visited {
-        color: $color-grey-light-1;
-        text-decoration: none;
-        padding: 0 2rem;
-        transition: color 0.3s;
-    }
-
-    &__link:active,
-    &__link:hover {
-        color: $color-secondary;
-        padding: 0 2rem;
-    }
-
-    &__phone {
-
-        color: $color-grey-light-1;
-        text-decoration: none;
-        text-transform: uppercase;
+            &:hover {
+                color: $color-secondary;
+                padding-right: 4rem;
+            }
+        }
     }
 }
+
+// .nav-mega {
+//     flex: 1;
+//     z-index: 18;
+
+//     grid-row: 2 / span 1;
+//     grid-column: 1 / -1;
+
+//     display: none;
+//     grid-template-columns: repeat(auto-fit, minmax(14rem, 25rem));
+
+//     padding: 0 20%;
+//     padding-bottom: 5rem;
+
+//     border-top: 1px solid rgba($color-grey-1, .4);
+//     border-bottom: 1px solid rgba($color-grey-1, .4);
+
+//     &--expanded {
+//         display: grid;
+//     }
+
+//     &__sub-group {
+//         padding-top: 5rem;
+//         &__title:link,
+//         &__title:visited {
+//             color: $color-secondary;
+//             text-decoration: none;
+//             font-weight: 600;
+//             font-size: 1.5rem;
+//             text-transform: uppercase;
+//             letter-spacing: .3rem;
+//         }
+
+//         &__title:hover,
+//         &__title:active {
+//             color: $color-secondary-light;
+//             text-decoration: none;
+//             font-weight: 600;
+//             font-size: 1.5rem;
+//             text-transform: uppercase;
+//             letter-spacing: .3rem;
+//         }
+
+//         &__list {
+//             margin-top: 1.5rem;
+//             list-style: none;
+//         }
+
+//         &__item {
+//         }
+
+//         &__link:link,
+//         &__link:visited {
+//             text-decoration: none;
+//             color: $color-secondary;
+//         }
+
+//         &__link:hover,
+//         &__link:active {
+//             text-decoration: none;
+//             color: $color-secondary-light;
+//         }
+//     }
+// }
