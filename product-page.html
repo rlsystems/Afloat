@@ -51,7 +51,7 @@
       </ul>
     </nav>
 
-  
+
   </header>
 
   <!-- Hero -->
@@ -64,23 +64,21 @@
       <h1 class="product-nav__caption__title">Santa Cruz II</h1>
       <h2 class="product-nav__caption__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
         Consectetur culpa porro a, facere quo labore reiciendis recusandae voluptatibus velit</h2>
-      <div class="product-nav__tabs">
-        <ul class="product-nav__tabs__list">
-          <li class="product-nav__tabs__item current" data-tab="tab-overview">
-            Overview
-          </li>
-          <li class="product-nav__tabs__item " data-tab="tab-itineraries">
-            Itineraries
-          </li>
-          <li class="product-nav__tabs__item" data-tab="tab-cabins">
-            Cabins
-          </li>
-          <li class="product-nav__tabs__item" data-tab="tab-prices">
-            Prices
-          </li>
+      <ul class="product-nav__tab-list">
+        <li class="product-nav__tab-list__item tab-overview current" data-tab="tab-overview">
+          Overview
+        </li>
+        <li class="product-nav__tab-list__item tab-itineraries " data-tab="tab-itineraries">
+          Itineraries
+        </li>
+        <li class="product-nav__tab-list__item tab-cabins" data-tab="tab-cabins">
+          Cabins
+        </li>
+        <li class="product-nav__tab-list__item tab-prices" data-tab="tab-prices">
+          Prices
+        </li>
 
-        </ul>
-      </div>
+      </ul>
     </div>
     <div class="product-nav__rotate">
 
@@ -278,7 +276,7 @@
         </div>
 
         <div class="product-overview__btn">
-          <button class="btn-outline goto-itineraries" data-tab="tab-itineraries">View Itineraries</button>
+          <button class="btn-outline" data-tab="tab-itineraries" id="goto-itineraries">View Itineraries</button>
 
         </div>
 
@@ -1967,7 +1965,7 @@
       </div>
     </div>
     <div class="product-areas__btn">
-      <button class="btn-outline goto-cabins" data-tab="tab-cabins">View Cabins</button>
+      <button class="btn-outline" data-tab="tab-cabins" id="goto-cabins">View Cabins</button>
 
     </div>
 
@@ -2370,32 +2368,70 @@
 
 
   //SubNav
+  var navbar = document.querySelector('.product-nav__tab-list');
+  var subnavTitle = document.querySelector('.product-nav__caption__title');
+  var offsetY = navbar.offsetTop - 65;
 
-
-  var navbar = document.querySelector('.product-nav__tabs');
-  var offsetY = navbar.offsetTop -  65;
-
-  window.onscroll = function() {myFunction()};
+  window.onscroll = function () { myFunction() };
   function myFunction() {
-  if (window.pageYOffset >= offsetY) {
-    //navbar.classList.add("sticky")
+    if (window.pageYOffset >= offsetY) {
+
+      var elementExists = document.getElementById("stuckNav");
+      if (elementExists == null) {
+        var newNav = $(navbar).clone(true); //pass true to clone events also
+        newNav.attr('id', 'stuckNav');
+
+        $(newNav).addClass('product-nav__tab-list--sticky');
+        $('#header').append(newNav);
+      }
+
+      var elementExists = document.getElementById("stuckNavTitle");
+      if (elementExists == null) {
+        var newTitle = $(subnavTitle).clone(true);
+        newTitle.attr('id', 'stuckNavTitle')
+        $(newTitle).addClass('product-nav__caption__title--sticky');
+        $('#header').append(newTitle);
+      }
+
+    } else {
+      $('#stuckNav').remove();
+      $('#stuckNavTitle').remove();
+    }
+  }
+
+
+  //End Header ---------------- var elementExists = document.getElementById("stuckNav");
+
+
+
+  //Product Nav - (Overview, Itinerary, Prices ...)
+  $('.product-nav__tab-list li, #goto-cabins, #goto-itineraries').click(function () {
+    var tab_id = $(this).attr('data-tab');
+    $('.product-nav__tab-list__item').removeClass('current');
+    $('.product-content__page.tab-content').removeClass('current');
+
+    $("." + tab_id).addClass('current'); //by class to get both original / clone (sticky) -- class is same name as data-tab id
+    $("#" + tab_id).addClass('current'); //by id for tab content
+
+
+    var offset = 220
+    if (tab_id == "tab-itineraries") {
+      offset = 150
+    }
 
     var elementExists = document.getElementById("stuckNav");
-    if(elementExists == null){
-      var newNav = $(navbar).clone();
-      newNav.attr('id', 'stuckNav');
-      
-      $(newNav).addClass('product-nav__tabs--sticky');
-      $('#header').append(newNav);
-
+    if (elementExists != null) {
+      $('html, body').animate({
+        scrollTop: $("#" + tab_id).offset().top + offset
+      }, 300);
     }
-    
-  } else {
-    $('#stuckNav').remove();
-  }
-}
+  })
+  //End Product Nav
 
-  //End Header ----------------
+
+    
+
+// });
 
   var years = [2020, 2021, 2022, 2023];
   setYearDetails(2020); //set year selections onload
@@ -2517,33 +2553,14 @@
     $('.price-grid__' + year).show();
   }
 
-  //Tabs Nav Primary (Overview, Itinerary, Prices ...)
-  $('.product-nav__tabs__list li, .goto-itineraries, .goto-cabins').click(function () { //fix -- needs to apply classes to tab nav element
-    var tab_id = $(this).attr('data-tab');
-    $('.product-nav__tabs__item').removeClass('current');
-    $('.product-content__page.tab-content').removeClass('current');
 
-    $(this).addClass('current');
-    $("#" + tab_id).addClass('current');
-  })
-  
-  //Tabs Nav Primary 2
-  $('#stuckNav').click(function () { //fix -- needs to apply classes to tab nav element
-    //var tab_id = $(this).attr('data-tab');
-    console.log('zzz');
-    //console.log(tab_id);
-    // $('.product-nav__tabs__item').removeClass('current');
-    // $('.product-content__page.tab-content').removeClass('current');
 
-    // $(this).addClass('current');
-    // $("#" + tab_id).addClass('current');
-  })
 
 
   //Tabs Nav Itinerary (3/4/5 day...)
   $('.product-intro__nav__list li').click(function () {
     var tab_id = $(this).attr('data-tab');
-    
+
 
     $('.product-intro__nav__list__item').removeClass('current');
     $('.product-itineraries__itinerary.tab-content').removeClass('current');
