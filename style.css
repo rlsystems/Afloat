@@ -266,7 +266,8 @@ p {
   padding: 1rem 2rem;
   cursor: pointer;
   transition: all 0.2s;
-  height: 4rem; }
+  height: 4rem;
+  outline: none; }
   .btn-product-cta:hover {
     background-color: #4381b3; }
 
@@ -847,14 +848,29 @@ p {
         justify-items: center;
         text-align: center; } }
   .product-nav__tabs {
-    grid-column: 1 / -1;
     grid-row: 3 / span 1;
     font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 0.3rem;
     text-transform: uppercase;
     align-self: center;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    width: 100%; }
+    .product-nav__tabs--sticky {
+      position: relative;
+      grid-column: 1 / -1;
+      font-weight: 500;
+      margin-bottom: 0rem;
+      opacity: 1;
+      transition: all .5s;
+      display: grid;
+      grid-template-columns: [full-start] minmax(max-content, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+      align-content: center;
+      align-items: center; }
+      .product-nav__tabs--sticky .product-nav__tabs__subtitle {
+        grid-column: 1 / center-start; }
+      .product-nav__tabs--sticky .product-nav__tabs__list {
+        grid-column: center-start / -1; }
     .product-nav__tabs__list {
       display: grid;
       grid-auto-flow: column;
@@ -2088,6 +2104,13 @@ p {
   align-content: center;
   align-items: center;
   grid-template-rows: min-content min-content; }
+
+.sticky {
+  position: fixed;
+  top: 7rem;
+  width: 100%;
+  background-color: aqua;
+  z-index: 50; }
 
 .logo-area {
   grid-column: full-start / span 1;

@@ -12,7 +12,7 @@
   cursor: pointer;
   transition: all 0.2s;
   height: 4rem;
-
+  outline: none; 
   &:hover {
     background-color: $color-supporting-light-2;
   }

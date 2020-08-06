@@ -51,57 +51,7 @@
       </ul>
     </nav>
 
-
-    <!-- <div class="nav-mega">
-      <div class="nav-mega__sub-group">
-        <a href="#" class="nav-mega__sub-group__title">Amazon</a>
-        <ul class="nav-mega__sub-group__list">
-          <li class="nav-mega__sub-group__item">
-            <a href="#" class="nav-mega__sub-group__link">Peru</a>
-          </li>
-          <li class="nav-mega__sub-group__item">
-            <a href="#" class="nav-mega__sub-group__link">Ecuador</a>
-          </li>
-          <li class="nav-mega__sub-group__item">
-            <a href="#" class="nav-mega__sub-group__link">Brazil</a>
-          </li>
-
-        </ul>
-      </div>
-      <div class="nav-mega__sub-group">
-        <a href="#" class="nav-mega__sub-group__title">Galapagos</a>
-        <ul class="nav-mega__sub-group__list">
-          <li class="nav-mega__sub-group__item">
-            <a href="#" class="nav-mega__sub-group__link">Galapagos Islands</a>
-          </li>
-
-        </ul>
-      </div>
-      <div class="nav-mega__sub-group">
-        <a href="#" class="nav-mega__sub-group__title">Asia</a>
-        <ul class="nav-mega__sub-group__list">
-          <li class="nav-mega__sub-group__item">
-            <a href="#" class="nav-mega__sub-group__link">Vietnam</a>
-          </li>
-          <li class="nav-mega__sub-group__item">
-            <a href="#" class="nav-mega__sub-group__link">Cambodia</a>
-          </li>
-        </ul>
-      </div>
-      <div class="nav-mega__sub-group">
-        <a href="#" class="nav-mega__sub-group__title">Central America</a>
-        <ul class="nav-mega__sub-group__list">
-          <li class="nav-mega__sub-group__item">
-            <a href="#" class="nav-mega__sub-group__link">Panama</a>
-          </li>
-          <li class="nav-mega__sub-group__item">
-            <a href="#" class="nav-mega__sub-group__link">Belize</a>
-          </li>
-        </ul>
-      </div>
-
-    </div>  -->
-
+  
   </header>
 
   <!-- Hero -->
@@ -2419,13 +2369,31 @@
   window.addEventListener('scroll', fixNav);
 
 
-  //nav-main--destinations
-  // $('#mega--destinations').hover(
-    
-  //   function () { $('.nav-mega').addClass('nav-mega--expanded'); },
-  //   function () { $('.nav-mega').removeClass('nav-mega--expanded');}
-  // )
+  //SubNav
 
+
+  var navbar = document.querySelector('.product-nav__tabs');
+  var offsetY = navbar.offsetTop -  65;
+
+  window.onscroll = function() {myFunction()};
+  function myFunction() {
+  if (window.pageYOffset >= offsetY) {
+    //navbar.classList.add("sticky")
+
+    var elementExists = document.getElementById("stuckNav");
+    if(elementExists == null){
+      var newNav = $(navbar).clone();
+      newNav.attr('id', 'stuckNav');
+      
+      $(newNav).addClass('product-nav__tabs--sticky');
+      $('#header').append(newNav);
+
+    }
+    
+  } else {
+    $('#stuckNav').remove();
+  }
+}
 
   //End Header ----------------
 
@@ -2552,19 +2520,30 @@
   //Tabs Nav Primary (Overview, Itinerary, Prices ...)
   $('.product-nav__tabs__list li, .goto-itineraries, .goto-cabins').click(function () { //fix -- needs to apply classes to tab nav element
     var tab_id = $(this).attr('data-tab');
-
     $('.product-nav__tabs__item').removeClass('current');
     $('.product-content__page.tab-content').removeClass('current');
 
     $(this).addClass('current');
     $("#" + tab_id).addClass('current');
   })
+  
+  //Tabs Nav Primary 2
+  $('#stuckNav').click(function () { //fix -- needs to apply classes to tab nav element
+    //var tab_id = $(this).attr('data-tab');
+    console.log('zzz');
+    //console.log(tab_id);
+    // $('.product-nav__tabs__item').removeClass('current');
+    // $('.product-content__page.tab-content').removeClass('current');
+
+    // $(this).addClass('current');
+    // $("#" + tab_id).addClass('current');
+  })
 
 
   //Tabs Nav Itinerary (3/4/5 day...)
   $('.product-intro__nav__list li').click(function () {
     var tab_id = $(this).attr('data-tab');
-    //console.log(tab_id);
+    
 
     $('.product-intro__nav__list__item').removeClass('current');
     $('.product-itineraries__itinerary.tab-content').removeClass('current');
