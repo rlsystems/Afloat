@@ -51,6 +51,57 @@
       </ul>
     </nav>
 
+    <div class="nav-mega">
+      <div class="nav-mega__sub-group">
+        <a href="#" class="nav-mega__sub-group__title">Amazon</a>
+        <ul class="nav-mega__sub-group__list">
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Peru</a>
+          </li>
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Ecuador</a>
+          </li>
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Brazil</a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="nav-mega__sub-group">
+        <a href="#" class="nav-mega__sub-group__title">Galapagos</a>
+        <ul class="nav-mega__sub-group__list">
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Galapagos Islands</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div class="nav-mega__sub-group">
+        <a href="#" class="nav-mega__sub-group__title">Asia</a>
+        <ul class="nav-mega__sub-group__list">
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Vietnam</a>
+          </li>
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Cambodia</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-mega__sub-group">
+        <a href="#" class="nav-mega__sub-group__title">Central America</a>
+        <ul class="nav-mega__sub-group__list">
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Panama</a>
+          </li>
+          <li class="nav-mega__sub-group__item">
+            <a href="#" class="nav-mega__sub-group__link">Belize</a>
+          </li>
+        </ul>
+      </div>
+
+      
+      
+    </div>
 
   </header>
 
@@ -2342,16 +2393,18 @@
 <!-- Scripts -->
 <script>
 
-  //Header --------------
-  $('#header').hover(
-    function () { $('#body-container').addClass('product-page--opaque-nav'); },
-    function () {
-      if ($('#body-container').hasClass('product-page--small-nav') != true) {
-        $('#body-container').removeClass('product-page--opaque-nav');
-      }
 
-    }
-  )
+
+  //Header --------------
+  // $('#header').hover(
+  //   function () { $('#header').addClass('header--opaque-nav'); },
+  //   function () {
+  //     if ($('#header').hasClass('header--small-nav') != true) {
+  //       $('#header').removeClass('header--opaque-nav');
+  //     }
+
+  //   }
+  // )
 
   const nav = document.querySelector('#header');
   const topOfNav = 180; //change to 0 for absolute top of page
@@ -2365,6 +2418,17 @@
   }
 
   window.addEventListener('scroll', fixNav);
+
+  //MEGA
+  $('#mega--destinations').hover(
+    function () { $('.nav-mega').addClass('nav-mega--active'); },
+    function () {$('.nav-mega').removeClass('nav-mega--active');}
+  );
+
+  $('.nav-mega').hover(
+    function () { $('.nav-mega').addClass('nav-mega--active'); },
+    function () {$('.nav-mega').removeClass('nav-mega--active');}
+  )
 
 
   //SubNav
