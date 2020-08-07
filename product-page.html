@@ -32,24 +32,27 @@
 <body class="product-page body" id="body-container">
   <!-- Header -->
   <header class="header" id="header">
-    <a href="/index.html" class="logo-area">
-      <img src="img/logo/logo-white-new.png" alt="logo" class="logo-area__logo" />
-      <img src="img/logo/logo-color-new.png" alt="logo" class="logo-area__logo--color" />
-    </a>
+    <div class="header__main">
+      <a href="/index.html" class="header__main__logo-area">
+        <img src="img/logo/logo-white-new.png" alt="logo" class="header__main__logo-area__logo" />
+        <img src="img/logo/logo-color-new.png" alt="logo" class="header__main__logo-area__logo--color" />
+      </a>
 
-    <nav class="nav-main">
-      <ul class="nav-main__list">
-        <li class="nav-main__list__item" id="mega--destinations">
-          Destinations
-        </li>
-        <li class="nav-main__list__item">
-          Experiences
-        </li>
-        <li class="nav-main__list__item">
-          Deals
-        </li>
-      </ul>
-    </nav>
+      <nav class="header__main__nav">
+        <ul class="header__main__nav__list">
+          <li class="header__main__nav__list__item" id="mega--destinations">
+            Destinations
+          </li>
+          <li class="header__main__nav__list__item">
+            Experiences
+          </li>
+          <li class="header__main__nav__list__item">
+            Deals
+          </li>
+        </ul>
+      </nav>
+    </div>
+
 
     <div class="nav-mega">
       <div class="nav-mega__sub-group">
@@ -73,7 +76,7 @@
           <li class="nav-mega__sub-group__item">
             <a href="#" class="nav-mega__sub-group__link">Galapagos Islands</a>
           </li>
-         
+
         </ul>
       </div>
       <div class="nav-mega__sub-group">
@@ -99,8 +102,8 @@
         </ul>
       </div>
 
-      
-      
+
+
     </div>
 
   </header>
@@ -115,21 +118,24 @@
       <h1 class="product-nav__caption__title">Santa Cruz II</h1>
       <h2 class="product-nav__caption__subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
         Consectetur culpa porro a, facere quo labore reiciendis recusandae voluptatibus velit</h2>
-      <ul class="product-nav__tab-list">
-        <li class="product-nav__tab-list__item tab-overview current" data-tab="tab-overview">
-          Overview
-        </li>
-        <li class="product-nav__tab-list__item tab-itineraries " data-tab="tab-itineraries">
-          Itineraries
-        </li>
-        <li class="product-nav__tab-list__item tab-cabins" data-tab="tab-cabins">
-          Cabins
-        </li>
-        <li class="product-nav__tab-list__item tab-prices" data-tab="tab-prices">
-          Prices
-        </li>
+      <div class="product-nav__sticky-wrapper">
+        <ul class="product-nav__tab-list">
+          <li class="product-nav__tab-list__item tab-overview current" data-tab="tab-overview">
+            Overview
+          </li>
+          <li class="product-nav__tab-list__item tab-itineraries " data-tab="tab-itineraries">
+            Itineraries
+          </li>
+          <li class="product-nav__tab-list__item tab-cabins" data-tab="tab-cabins">
+            Cabins
+          </li>
+          <li class="product-nav__tab-list__item tab-prices" data-tab="tab-prices">
+            Prices
+          </li>
 
-      </ul>
+        </ul>
+      </div>
+
     </div>
     <div class="product-nav__rotate">
 
@@ -2396,43 +2402,67 @@
 
 
   //Header --------------
-  // $('#header').hover(
-  //   function () { $('#header').addClass('header--opaque-nav'); },
-  //   function () {
-  //     if ($('#header').hasClass('header--small-nav') != true) {
-  //       $('#header').removeClass('header--opaque-nav');
-  //     }
-
-  //   }
-  // )
 
   const nav = document.querySelector('#header');
   const topOfNav = 180; //change to 0 for absolute top of page
 
   function fixNav() {
     if (window.scrollY >= topOfNav) {
-      $('#header').addClass('header--small-nav header--opaque-nav');
+      $('.header__main').addClass('header__main--small-nav header__main--opaque-nav');
     } else {
-      $('#header').removeClass('header--small-nav header--opaque-nav');
+      //if mega not active
+      if ($('.nav-mega').hasClass('nav-mega--active') != true) {
+
+
+
+        $('.header__main').removeClass('header__main--small-nav header__main--opaque-nav');
+      }
+
     }
   }
-
   window.addEventListener('scroll', fixNav);
 
-  //MEGA
-  $('#mega--destinations').hover(
-    function () { $('.nav-mega').addClass('nav-mega--active'); },
-    function () {$('.nav-mega').removeClass('nav-mega--active');}
-  );
 
-  $('.nav-mega').hover(
-    function () { $('.nav-mega').addClass('nav-mega--active'); },
-    function () {$('.nav-mega').removeClass('nav-mega--active');}
+
+  $('.header__main').hover(
+    function () { $('.header__main').addClass('header__main--opaque-nav'); },
+    function () {
+
+      //if not small and mega active
+      if ($('.header__main').hasClass('header__main--small-nav') != true) {
+
+        if ($('.nav-mega').hasClass('nav-mega--active') != true) {
+          $('.header__main').removeClass('header__main--opaque-nav');
+        }
+      }
+    }
   )
 
 
+
+  //MEGA
+  //--hover behavior
+  $('.nav-mega').hover(
+    function () { $('.nav-mega').addClass('nav-mega--active'); },
+    function () {
+      $('.nav-mega').removeClass('nav-mega--active');
+
+      //if not header small -- remove opaque from header__main
+      if ($('.header__main').hasClass('header__main--small-nav') != true) {
+        $('.header__main').removeClass('header__main--opaque-nav');
+      }
+    }
+  )
+
+  $('#mega--destinations').hover(
+    function () { $('.nav-mega').addClass('nav-mega--active'); },
+  );
+
+
+
+
   //SubNav
-  var navbar = document.querySelector('.product-nav__tab-list');
+  var navbar = document.querySelector('.product-nav__sticky-wrapper');
   var subnavTitle = document.querySelector('.product-nav__caption__title');
   var offsetY = navbar.offsetTop - 65;
 
@@ -2445,7 +2475,7 @@
         var newNav = $(navbar).clone(true); //pass true to clone events also
         newNav.attr('id', 'stuckNav');
 
-        $(newNav).addClass('product-nav__tab-list--sticky');
+        $(newNav).addClass('product-nav__sticky-wrapper--active');
         $('#header').append(newNav);
       }
 
@@ -2454,12 +2484,11 @@
         var newTitle = $(subnavTitle).clone(true);
         newTitle.attr('id', 'stuckNavTitle')
         $(newTitle).addClass('product-nav__caption__title--sticky');
-        $('#header').append(newTitle);
+        $('#stuckNav').append(newTitle);
       }
 
     } else {
       $('#stuckNav').remove();
-      $('#stuckNavTitle').remove();
     }
   }
 
@@ -2493,9 +2522,9 @@
   //End Product Nav
 
 
-    
 
-// });
+
+  // });
 
   var years = [2020, 2021, 2022, 2023];
   setYearDetails(2020); //set year selections onload

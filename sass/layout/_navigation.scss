@@ -5,120 +5,143 @@
     position: fixed;
 
     width: 100%;
-    background-color: rgba($color-white, 0.1);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba($color-grey-light-2, 0); //alpha 0 to prevent pixel jump
+
 
     font-size: 1.4rem;
+
     display: grid;
-    grid-template-columns:
+    grid-template-columns: $page-container;
+
+    //grid-template-rows: max-content max-content;
+
+    &__main {
+        display: grid;
+        grid-column: 1 / -1;
+        grid-template-columns:
         [full-start] minmax(max-content, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
         [center-end] minmax(6rem, 1fr) [full-end];
 
-    align-content: center;
-    align-items: center;
-    grid-template-rows: min-content min-content;
+        align-content: center;
+        align-items: center;
 
+        box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+        border-bottom: 1px solid rgba($color-grey-light-2, 0.1);
 
-    //FIXED MAIN NAV -----------------------------------------
-    &--small-nav { //reduce height of nav from 9 to 7rem
-        & .nav-main {
-            height: 7rem;
-        }
-    }
+        background-color: rgba($color-white, 0.1);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
 
-    &--opaque-nav {
-        background-color: rgba($color-white, 0.9); //make background opaque
-        border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
-
-        & .logo-area__logo { //transition to dark logo
-            opacity: 0;
-
-            &--color {
-                opacity: 1;
+        &--opaque-nav {
+            background-color: rgba($color-white, 0.9); //make background opaque
+            border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
+    
+            & .header__main__logo-area__logo { //transition to dark logo
+                opacity: 0;
+    
+                &--color {
+                    opacity: 1;
+                }
             }
-        }
-
-        & .nav-main { //change links to dark colors
-            &__list {
-                &__item {
-                    color: $color-secondary;
-                    &:hover {
-                        color: $color-supporting-light;
+    
+            & .header__main__nav { //change links to dark colors
+                &__list {
+                    &__item {
+                        color: $color-secondary;
+                        &:hover {
+                            color: $color-supporting-light;
+                        }
                     }
                 }
             }
         }
-    }
-}
 
-.nav-main {
-    grid-column: center-start / span 4;
-
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-    z-index: 18;
-    height: 9rem;
-    color: $color-grey-light-1;
-    transition: all 0.3s;
-
-    &__list {
-        display: flex;
-        list-style: none;
-        height: 100%;
-        align-items: center;
-
-        &__item {
-            display: flex;
-            height: 100%;
-            align-items: center;
-            height: 100%;
-            cursor: pointer;
-            transition: all 0.4s;
-
-            text-decoration: none;
-            padding-right: 4rem;
-
-            &:hover {
-                color: $color-secondary;
-                padding-right: 4rem;
+        &--small-nav { //reduce height of nav from 9 to 7rem
+            & .header__main__nav {
+                height: 7rem;
             }
         }
-    }
-}
 
-
-
-//child of header
-.logo-area {
-    grid-column: full-start / span 1;
-    grid-row: 1 / span 1;
-    z-index: 5;
-    position: relative;
-    display: flex;
-    margin-right: 4rem;
-    justify-self: end;
-
-    &__logo {
-        margin-left: 7rem;
-        height: 4.5rem;
-
-        transition: all 0.4s;
-        z-index: 9;
-        position: absolute;
-
-        &--color {
-            z-index: 10;
-            transition: all 0.4s;
-            opacity: 0;
-            height: 4.5rem;
-            margin-left: 7rem;
+        &__logo-area {
+            grid-column: full-start / span 1;
+            grid-row: 1 / span 1;
+            z-index: 5;
+            position: relative;
+            display: flex;
+            margin-right: 4rem;
+            justify-self: end;
+        
+            &__logo {
+                margin-left: 7rem;
+                height: 4.5rem;
+        
+                transition: all 0.4s;
+                z-index: 9;
+                position: absolute;
+        
+                &--color {
+                    z-index: 10;
+                    transition: all 0.4s;
+                    opacity: 0;
+                    height: 4.5rem;
+                    margin-left: 7rem;
+                }
+            }
         }
+
+        &__nav {
+            grid-column: center-start / span 4;
+        
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            z-index: 18;
+            height: 9rem;
+            color: $color-grey-light-1;
+            transition: all 0.3s;
+        
+            &__list {
+                display: flex;
+                list-style: none;
+                height: 100%;
+                align-items: center;
+        
+                &__item {
+                    display: flex;
+                    height: 100%;
+                    align-items: center;
+                    height: 100%;
+                    cursor: pointer;
+                    transition: all 0.4s;
+        
+                    text-decoration: none;
+                    padding-right: 4rem;
+        
+                    &:hover {
+                        color: $color-secondary;
+                        padding-right: 4rem;
+                    }
+                }
+            }
+
+            
+        }
+
     }
+
+    //FIXED MAIN NAV -----------------------------------------
+    
+
+
 }
+
+
+
+
+
+
 
 
 .nav-mega {
@@ -135,9 +158,13 @@
     padding: 0 20%;
     padding-bottom: 5rem;
 
+    background-color: rgba($color-white, 0.9); //make background opaque
 
-    border-top: 1px solid rgba($color-grey-1, .4);
-    border-bottom: 1px solid rgba($color-grey-1, .4);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
+
     transition: all .5s;
     opacity: 0;
 
