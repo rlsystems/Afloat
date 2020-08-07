@@ -1,10 +1,9 @@
 .header {
     grid-column: full-start / -1;
     grid-row: nav-start / nav-end;
-    z-index: 5;
+    z-index: 100;
     position: fixed;
-    //position: sticky;
-    //top: 0;
+
     width: 100%;
     background-color: rgba($color-white, 0.1);
     -webkit-backdrop-filter: blur(8px);
@@ -19,19 +18,79 @@
 
     align-content: center;
     align-items: center;
-
     grid-template-rows: min-content min-content;
 
-    //height: 9rem;
+
+    //FIXED MAIN NAV -----------------------------------------
+    &--small-nav { //reduce height of nav from 9 to 7rem
+        & .nav-main {
+            height: 7rem;
+        }
+    }
+
+    &--opaque-nav {
+        background-color: rgba($color-white, 0.9); //make background opaque
+        border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
+
+        & .logo-area__logo { //transition to dark logo
+            opacity: 0;
+
+            &--color {
+                opacity: 1;
+            }
+        }
+
+        & .nav-main { //change links to dark colors
+            &__list {
+                &__item {
+                    color: $color-secondary;
+                    &:hover {
+                        color: $color-supporting-light;
+                    }
+                }
+            }
+        }
+    }
 }
 
-.sticky {
-    position: fixed;
-    top: 7rem;
-    width: 100%;
-    background-color: aqua;
-    z-index: 50;
-  }
+.nav-main {
+    grid-column: center-start / span 4;
+
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    z-index: 18;
+    height: 9rem;
+    color: $color-grey-light-1;
+    transition: all 0.3s;
+
+    &__list {
+        display: flex;
+        list-style: none;
+        height: 100%;
+        align-items: center;
+
+        &__item {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            height: 100%;
+            cursor: pointer;
+            transition: all 0.4s;
+
+            text-decoration: none;
+            padding-right: 4rem;
+
+            &:hover {
+                color: $color-secondary;
+                padding-right: 4rem;
+            }
+        }
+    }
+}
+
+
 
 //child of header
 .logo-area {
@@ -57,41 +116,6 @@
             opacity: 0;
             height: 4.5rem;
             margin-left: 7rem;
-        }
-    }
-}
-
-.nav-main {
-    grid-column: center-start / span 4;
-
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-    z-index: 18;
-
-    &__list {
-        display: flex;
-        list-style: none;
-        height: 100%;
-        align-items: center;
-
-        &__item {
-            display: flex;
-            height: 100%;
-            align-items: center;
-            height: 9rem;
-            cursor: pointer;
-            transition: all 0.4s;
-
-            color: $color-grey-light-1;
-            text-decoration: none;
-            padding-right: 4rem;
-
-            &:hover {
-                color: $color-secondary;
-                padding-right: 4rem;
-            }
         }
     }
 }

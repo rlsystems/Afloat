@@ -15,51 +15,7 @@
       [content-end footer-start] min-content [footer-end];
   }
 
-  //fixed
-  &--small-nav {
 
-
-    & .nav-main__list__item {
-      height: 7rem;
-    }
-  }
-
-  &--opaque-nav {
-    & .header {
-      background-color: rgba($color-white, 0.9);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
-      
-
-      & .logo-area__logo {
-        opacity: 0;
-
-        &--color {
-          opacity: 1;
-        }
-      }
-    }
-    & .nav-main {
-      &__list {
-
-        &__item {
-          color: $color-secondary;
-          &:hover {
-            color: $color-supporting-light;
-          }
-
-         
-        }
-      }
-    }
-  }
-
-  &--mega-destinations {
-    & .header {
-      //height: 17rem;
-    }
-  }
 }
 
 //Tab Child Content
