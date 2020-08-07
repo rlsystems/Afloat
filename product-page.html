@@ -51,31 +51,58 @@
           </li>
         </ul>
       </nav>
+      <!-- <nav class="header__main__right">
+        <ul class="header__main__right__list">
+          <li class="header__main__right__list__item">
+            <a href="#" class="header__main__right__list__link">Contact</a>
+          </li>
+          <li class="header__main__right__list__item">
+            <span class="header__main__right__list__phone">+1-888-454-1423</span>
+          </li>
+        </ul>
+      </nav> -->
     </div>
 
 
     <div class="nav-mega">
       <div class="nav-mega__nav">
         <div class="nav-mega__nav__sub-group">
-          <a href="#" class="nav-mega__nav__sub-group__title">Amazon</a>
+          <a href="#" class="nav-mega__nav__sub-group__title">Adventure Cruises</a>
           <ul class="nav-mega__nav__sub-group__list">
             <li class="nav-mega__nav__sub-group__item">
-              <a href="#" class="nav-mega__nav__sub-group__link">Peru</a>
+              <a href="#" class="nav-mega__nav__sub-group__link">Amazon River</a>
             </li>
             <li class="nav-mega__nav__sub-group__item">
-              <a href="#" class="nav-mega__nav__sub-group__link">Ecuador</a>
+              <a href="#" class="nav-mega__nav__sub-group__link">Galapagos Islands</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Indonesian Archipelego</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Irrawaddy River</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Mekong River</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-mega__nav__sub-group">
+          <a href="#" class="nav-mega__nav__sub-group__title">South America</a>
+          <ul class="nav-mega__nav__sub-group__list">
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Argentina</a>
             </li>
             <li class="nav-mega__nav__sub-group__item">
               <a href="#" class="nav-mega__nav__sub-group__link">Brazil</a>
             </li>
-  
-          </ul>
-        </div>
-        <div class="nav-mega__nav__sub-group">
-          <a href="#" class="nav-mega__nav__sub-group__title">Galapagos</a>
-          <ul class="nav-mega__nav__sub-group__list">
             <li class="nav-mega__nav__sub-group__item">
-              <a href="#" class="nav-mega__nav__sub-group__link">Galapagos Islands</a>
+              <a href="#" class="nav-mega__nav__sub-group__link">Peru</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Amazon</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Galapagos</a>
             </li>
   
           </ul>
@@ -84,22 +111,44 @@
           <a href="#" class="nav-mega__nav__sub-group__title">Asia</a>
           <ul class="nav-mega__nav__sub-group__list">
             <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Cambodia</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Indonesia</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Laos</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Myanmar</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
               <a href="#" class="nav-mega__nav__sub-group__link">Vietnam</a>
             </li>
             <li class="nav-mega__nav__sub-group__item">
-              <a href="#" class="nav-mega__nav__sub-group__link">Cambodia</a>
+              <a href="#" class="nav-mega__nav__sub-group__link">Thailand</a>
             </li>
           </ul>
         </div>
         <div class="nav-mega__nav__sub-group">
-          <a href="#" class="nav-mega__nav__sub-group__title">Central America</a>
+          <a href="#" class="nav-mega__nav__sub-group__title">Bucket List</a>
           <ul class="nav-mega__nav__sub-group__list">
             <li class="nav-mega__nav__sub-group__item">
-              <a href="#" class="nav-mega__nav__sub-group__link">Panama</a>
+              <a href="#" class="nav-mega__nav__sub-group__link">Angkor Wat</a>
             </li>
             <li class="nav-mega__nav__sub-group__item">
-              <a href="#" class="nav-mega__nav__sub-group__link">Belize</a>
+              <a href="#" class="nav-mega__nav__sub-group__link">Machu Picchu</a>
             </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Halong Bay</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Iguazu Falls</a>
+            </li>
+            <li class="nav-mega__nav__sub-group__item">
+              <a href="#" class="nav-mega__nav__sub-group__link">Pantanal</a>
+            </li>
+   
           </ul>
         </div>
       </div>
@@ -2444,11 +2493,18 @@
 
 
   //MEGA
+
   //--hover behavior
   $('.nav-mega').hover(
-    function () { $('.nav-mega').addClass('nav-mega--active'); },
+    function () {},
     function () {
-      $('.nav-mega').removeClass('nav-mega--active');
+
+      //if stuckNav then dont do (sticky wrapper)
+      var elementExists = document.getElementById("stuckNav");
+      if (elementExists == null) {
+        $('.nav-mega').removeClass('nav-mega--active');
+      }
+      
 
       //if not header small -- remove opaque from header__main
       if ($('.header__main').hasClass('header__main--small-nav') != true) {
@@ -2457,12 +2513,17 @@
     }
   )
 
+  //main link -expand mega
   $('#mega--destinations').hover(
     function () { $('.nav-mega').addClass('nav-mega--active'); },
   );
 
 
-
+  //product-nav
+  $('.product-nav__sticky-wrapper').hover(
+    function () {}, //enter
+    function () { $('.nav-mega').removeClass('nav-mega--active');} //exit
+  );
 
   //SubNav
   var navbar = document.querySelector('.product-nav__sticky-wrapper');

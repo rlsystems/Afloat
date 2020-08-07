@@ -6,27 +6,25 @@
 
     width: 100%;
 
-
-    font-size: 1.4rem;
-
     display: grid;
     grid-template-columns: $page-container;
-
-    //grid-template-rows: max-content max-content;
 
     &__main {
         display: grid;
         grid-column: 1 / -1;
         grid-template-columns:
-        [full-start] minmax(max-content, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
-        [center-end] minmax(6rem, 1fr) [full-end];
+            [full-start] minmax(max-content, 1fr) [center-start] repeat(
+                8,
+                [col-start] minmax(min-content, 14rem) [col-end]
+            )
+            [center-end] minmax(6rem, 1fr) [full-end];
 
         align-content: center;
         align-items: center;
 
         box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
         border-bottom: 1px solid rgba($color-grey-light-2, 0.1);
 
         background-color: rgba($color-white, 0.1);
@@ -36,16 +34,18 @@
         &--opaque-nav {
             background-color: rgba($color-white, 0.9); //make background opaque
             border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
-    
-            & .header__main__logo-area__logo { //transition to dark logo
+
+            & .header__main__logo-area__logo {
+                //transition to dark logo
                 opacity: 0;
-    
+
                 &--color {
                     opacity: 1;
                 }
             }
-    
-            & .header__main__nav { //change links to dark colors
+
+            & .header__main__nav {
+                //change links to dark colors
                 &__list {
                     &__item {
                         color: $color-secondary;
@@ -57,7 +57,8 @@
             }
         }
 
-        &--small-nav { //reduce height of nav from 9 to 7rem
+        &--small-nav {
+            //reduce height of nav from 9 to 7rem
             & .header__main__nav {
                 height: 7rem;
             }
@@ -71,15 +72,15 @@
             display: flex;
             margin-right: 4rem;
             justify-self: end;
-        
+
             &__logo {
                 margin-left: 7rem;
                 height: 4.5rem;
-        
+
                 transition: all 0.4s;
                 z-index: 9;
                 position: absolute;
-        
+
                 &--color {
                     z-index: 10;
                     transition: all 0.4s;
@@ -92,7 +93,7 @@
 
         &__nav {
             grid-column: center-start / span 4;
-        
+
             text-transform: uppercase;
             letter-spacing: 0.2rem;
             font-size: 1.3rem;
@@ -101,13 +102,13 @@
             height: 9rem;
             color: $color-grey-light-1;
             transition: all 0.3s;
-        
+
             &__list {
                 display: flex;
                 list-style: none;
                 height: 100%;
                 align-items: center;
-        
+
                 &__item {
                     display: flex;
                     height: 100%;
@@ -115,34 +116,59 @@
                     height: 100%;
                     cursor: pointer;
                     transition: all 0.4s;
-        
+
                     text-decoration: none;
                     padding-right: 4rem;
-        
+
                     &:hover {
                         color: $color-secondary;
                         padding-right: 4rem;
                     }
                 }
             }
-
-            
         }
 
+        // &__right {
+        //     grid-column: col-end 4 / center-end;
+
+        //     height: 100%;
+        //     width: 100%;
+        //     text-transform: uppercase;
+        //     letter-spacing: 0.2rem;
+        //     font-size: 1.3rem;
+        //     font-weight: 600;
+
+        //     display: flex;
+        //     justify-content: flex-end;
+        //     align-items: center;
+
+        //     &__list {
+        //         display: flex;
+        //         list-style: none;
+
+        //         &__link:link,
+        //         &__link:visited {
+        //             color: $color-grey-light-1;
+        //             text-decoration: none;
+        //             padding: 0 2rem;
+        //             transition: color 0.3s;
+        //         }
+
+        //         &__link:active,
+        //         &__link:hover {
+        //             color: $color-secondary;
+        //             padding: 0 2rem;
+        //         }
+
+        //         &__phone {
+        //             color: $color-grey-light-1;
+        //             text-decoration: none;
+        //             text-transform: uppercase;
+        //         }
+        //     }
+        // }
     }
-
-    //FIXED MAIN NAV -----------------------------------------
-    
-
-
 }
-
-
-
-
-
-
-
 
 .nav-mega {
     flex: 1;
@@ -159,16 +185,19 @@
     //padding-bottom: 5rem;
 
     background-color: rgba($color-white, 0.9); //make background opaque
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
 
-    transition: all .5s;
+    transition: all 0.5s;
     opacity: 1;
 
-    &--active { //need transition
+    &--active {
+        //need transition
         display: grid;
         opacity: 1;
     }
@@ -179,48 +208,62 @@
         grid-template-columns: repeat(4, minmax(max-content, 1fr));
         margin: 3rem 0;
         &__sub-group {
-            //padding-top: 5rem;
-            &__title:link,
+            &:not(:last-child) {
+                margin-right: 6rem;
+            }
+
+            &__title:link, //titles
             &__title:visited {
                 color: $color-secondary;
                 text-decoration: none;
                 font-weight: 600;
-                font-size: 1.5rem;
+                font-size: 1.32rem;
                 text-transform: uppercase;
-                letter-spacing: .3rem;
+                letter-spacing: 0.3rem;
+                position: relative;
+
+                position: relative;
+                transition: all 0.2s;
             }
-    
+
             &__title:hover,
             &__title:active {
-                color: $color-secondary-light;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1.5rem;
-                text-transform: uppercase;
-                letter-spacing: .3rem;
+                color: $color-supporting-light;
+                position: relative;
+                &::after {
+                    opacity: 1;
+                    width: 100%;
+                }
             }
-    
+
             &__list {
-                margin-top: 1.5rem;
+                margin-top: 0.75rem;
                 list-style: none;
+                font-size: 1.4rem;
+                letter-spacing: 0.1rem;
             }
-    
+
             &__item {
+                margin: 0.5rem;
+
+                margin-left: 0;
             }
-    
-            &__link:link,
+
+            &__link:link, //links
             &__link:visited {
                 text-decoration: none;
-                color: $color-secondary;
+                font-weight: 400;
+                color: $color-grey-3;
+
+                transition: all 0.2s;
             }
-    
+
             &__link:hover,
             &__link:active {
-                text-decoration: none;
-                color: $color-secondary-light;
+                font-weight: 500;
+
+                color: $color-supporting-light;
             }
         }
     }
-
-    
 }
