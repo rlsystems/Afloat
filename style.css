@@ -2236,42 +2236,44 @@ p {
   grid-row: 2 / span 1;
   grid-column: 1 / -1;
   display: none;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 25rem));
-  padding: 0 20%;
-  padding-bottom: 5rem;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  padding: 0 6rem;
   background-color: rgba(255, 255, 255, 0.9);
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   border-bottom: 1px solid rgba(194, 198, 201, 0.9);
   transition: all .5s;
-  opacity: 0; }
+  opacity: 1; }
   .nav-mega--active {
     display: grid;
     opacity: 1; }
-  .nav-mega__sub-group {
-    padding-top: 5rem; }
-    .nav-mega__sub-group__title:link, .nav-mega__sub-group__title:visited {
+  .nav-mega__nav {
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(max-content, 1fr));
+    margin: 3rem 0; }
+    .nav-mega__nav__sub-group__title:link, .nav-mega__nav__sub-group__title:visited {
       color: #142838;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.5rem;
       text-transform: uppercase;
       letter-spacing: .3rem; }
-    .nav-mega__sub-group__title:hover, .nav-mega__sub-group__title:active {
+    .nav-mega__nav__sub-group__title:hover, .nav-mega__nav__sub-group__title:active {
       color: #1f3f5a;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.5rem;
       text-transform: uppercase;
       letter-spacing: .3rem; }
-    .nav-mega__sub-group__list {
+    .nav-mega__nav__sub-group__list {
       margin-top: 1.5rem;
       list-style: none; }
-    .nav-mega__sub-group__link:link, .nav-mega__sub-group__link:visited {
+    .nav-mega__nav__sub-group__link:link, .nav-mega__nav__sub-group__link:visited {
       text-decoration: none;
       color: #142838; }
-    .nav-mega__sub-group__link:hover, .nav-mega__sub-group__link:active {
+    .nav-mega__nav__sub-group__link:hover, .nav-mega__nav__sub-group__link:active {
       text-decoration: none;
       color: #1f3f5a; }
 
