@@ -57,6 +57,58 @@
       </div>
     </div>
 
+    <nav class="header__collapse">
+      <button class="header__collapse__accordion">Destinations</button>
+      <div class="header__collapse__accordion__panel">
+        <div class="header__collapse__accordion__panel__title">Adventure Cruises</div>
+        <ul class="header__collapse__accordion__panel__list">
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">Amazon River</a>
+          </li>
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">Galapagos Islands</a>
+          </li>
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">Indonesian Archipelego</a>
+          </li>
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">Irrawaddy River</a>
+          </li>
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">Mekong River</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+
+      <button class="header__collapse__accordion">Experiences</button>
+      <div class="header__collapse__accordion__panel">
+        <ul class="header__collapse__accordion__panel__list">
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">AAA</a>
+          </li>
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">BVB</a>
+          </li>
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">CC</a>
+          </li>
+        </ul>
+      </div>
+
+      <button class="header__collapse__accordion">Deals</button>
+      <div class="header__collapse__accordion__panel">
+        <ul class="header__collapse__accordion__panel__list">
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">Deal 1</a>
+          </li>
+          <li class="header__collapse__accordion__panel__item">
+            <a href="#" class="header__collapse__accordion__panel__link">Deal 2</a>
+          </li>
+   
+        </ul>
+      </div>
+    </nav>
 
     <div class="nav-mega">
       <div class="nav-mega__nav">
@@ -2463,7 +2515,13 @@
 
 
 
-        $('.header__main').removeClass('header__main--small-nav header__main--opaque-nav');
+        $('.header__main').removeClass('header__main--small-nav ');
+
+        if ($('.burger-menu').hasClass('burger-menu--active') != true) {
+          $('.header__main').removeClass('header__main--opaque-nav');
+
+        }
+
       }
 
     }
@@ -2479,8 +2537,14 @@
       //if not small and mega active
       if ($('.header__main').hasClass('header__main--small-nav') != true) {
 
-        if ($('.nav-mega').hasClass('nav-mega--active') != true) {
-          $('.header__main').removeClass('header__main--opaque-nav');
+        // if ($('.nav-mega').hasClass('nav-mega--active') != true) {
+        //   $('.header__main').removeClass('header__main--opaque-nav');
+        // }
+
+        if ($('.burger-menu').hasClass('burger-menu--active') != true) {
+          if ($('.nav-mega').hasClass('nav-mega--active') != true) {
+            $('.header__main').removeClass('header__main--opaque-nav');
+          }
         }
       }
     }
@@ -2490,10 +2554,19 @@
   $(".burger-menu ").on("click", function () {
 
     $(".burger-menu").toggleClass('burger-menu--active');
-    $('.nav-mega').toggleClass('nav-mega--active');
+    $('.header__collapse').toggleClass('header__collapse--active');
 
   });
 
+  $(window).resize(function () {
+    if ($(window).width() > 1000) {
+      $('.header__collapse').removeClass('header__collapse--active');
+      $(".burger-menu").removeClass('burger-menu--active');
+    }
+    if ($(window).width() <= 1000) {
+      $('.nav-mega').removeClass('nav-mega--active');
+    }
+  });
 
 
   //MEGA
@@ -2533,13 +2606,13 @@
   //product-nav
   $('.product-nav__sticky-wrapper').hover(
     function () { }, //enter
-    function () { 
+    function () {
       if ($(".burger-menu").hasClass('burger-menu--active') != true) {
-        $('.nav-mega').removeClass('nav-mega--active'); 
+        $('.nav-mega').removeClass('nav-mega--active');
       }
-      
-      
-      } //exit
+
+
+    } //exit
   );
 
   //SubNav
@@ -2575,6 +2648,27 @@
 
 
   //End Header ---------------- var elementExists = document.getElementById("stuckNav");
+
+  //collapse 
+  var acc = document.getElementsByClassName("header__collapse__accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      /* Toggle between adding and removing the "active" class,
+      to highlight the button that controls the panel */
+      this.classList.toggle("header__collapse__accordion--active");
+
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  //end collapse
 
 
 

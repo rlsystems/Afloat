@@ -33,7 +33,7 @@
         -webkit-backdrop-filter: blur(8px);
         backdrop-filter: blur(8px);
 
-        transition: height .3s;
+        transition: height 0.3s;
 
         &--opaque-nav {
             background-color: rgba($color-white, 0.9); //make background opaque
@@ -61,7 +61,6 @@
             }
 
             & .burger-menu {
-
                 &__bar {
                     background-color: $color-secondary;
                 }
@@ -70,8 +69,7 @@
 
         &--small-nav {
             //reduce height of nav from 9 to 7rem
-                height: 7rem;
-            
+            height: 7rem;
         }
 
         &__logo-area {
@@ -141,8 +139,111 @@
                 }
             }
         }
+    }
 
+    &__collapse {
+        grid-column: 1 / -1;
+        background-color: rgba($color-white, 0.9); //make background opaque
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
         
+        display: none;
+        justify-items: center;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
+
+        &--active {
+            display: grid;
+        }
+        &__accordion { //main link title
+            color: $color-secondary;
+            font-size: 1.8rem;
+            letter-spacing: .3rem;
+            font-weight: 600;
+            background-color: transparent;
+            padding: 1rem 0;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            outline: none;
+            width: 40rem;
+            position: relative;
+
+            &::after {
+                content: "";
+                background-color: $color-grey-light-2;
+                position: absolute;
+                bottom: .4rem;
+                width: 0%;
+                height: 1px;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: width .3s;
+            }
+
+            &--active {
+                color: $color-supporting-light;
+
+                &::after {        
+                    width: 50%;         
+                }
+            }
+            &__panel {
+                display: none;
+                overflow: hidden;
+                &__title {
+                    cursor: pointer;
+                    color: $color-secondary;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 1.32rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.3rem;
+
+                    position: relative;
+                    transition: all 0.2s;
+                }
+
+                &__title:hover {
+                    color: $color-supporting-light;
+                    position: relative;
+                    &::after {
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+
+                &__list {
+                    margin-top: 0.75rem;
+                    list-style: none;
+                    font-size: 1.4rem;
+                    letter-spacing: 0.1rem;
+                    //max-height: 0rem;
+                }
+
+                &__item {
+                    margin: 0.5rem;
+
+                    margin-left: 0;
+                }
+
+                &__link:link, //links
+            &__link:visited {
+                    text-decoration: none;
+                    font-weight: 400;
+                    color: $color-grey-3;
+
+                    transition: all 0.2s;
+                }
+
+                &__link:hover,
+                &__link:active {
+                    font-weight: 500;
+
+                    color: $color-supporting-light;
+                }
+            }
+        }
     }
 }
 
@@ -157,8 +258,6 @@
     grid-template-columns: $page-container;
 
     padding: 0 6rem;
-    //padding: 0 20%;
-    //padding-bottom: 5rem;
 
     background-color: rgba($color-white, 0.9); //make background opaque
     -webkit-backdrop-filter: blur(8px);
@@ -195,18 +294,6 @@
 
         &__sub-group {
             position: relative;
-
-            // &__radio {
-            //     position: absolute;
-            //     opacity: 0;
-            //     z-index: -1;
-
-            //     &:checked {
-            //         + .nav-mega__nav__sub-group__list {
-            //             max-height: 40rem;
-            //         }
-            //     }
-            // }
 
             &:not(:last-child) {
                 margin-right: 6rem;
@@ -268,13 +355,12 @@
     }
 }
 
-
-.burger-menu { 
+.burger-menu {
     grid-column: col-end 8 / -1;
-    cursor:pointer;
-    
+    cursor: pointer;
+
     transform: translateX(-3rem);
-    
+
     display: none;
     height: 100%;
     width: 100%;
@@ -285,10 +371,8 @@
         display: flex;
     }
 
-    &:hover{
-
+    &:hover {
         & .burger-menu__bar {
-
             &::before {
                 transform: translateY(-1.3rem);
             }
@@ -307,34 +391,30 @@
         &::before {
             content: "";
             position: absolute;
-            transform: translateY( -1rem);
+            transform: translateY(-1rem);
             width: 4rem;
             height: 2px;
             background-color: inherit;
             display: block;
 
-            transition: transform .3s;
+            transition: transform 0.3s;
         }
 
         &::after {
             content: "";
             position: absolute;
-            transform: translateY( 1rem);
-
+            transform: translateY(1rem);
 
             width: 4rem;
             height: 2px;
             background-color: inherit;
             display: block;
 
-            transition: transform .3s;
+            transition: transform 0.3s;
         }
-
-
     }
 
     &--active {
-        
         & .burger-menu__bar {
             visibility: hidden;
             &::before {
@@ -345,12 +425,9 @@
                 transform: rotate(45deg) translateY(0);
                 visibility: visible;
             }
-
-            
         }
 
-        &:hover{
-
+        &:hover {
             & .burger-menu__bar {
                 visibility: hidden;
                 &::before {
@@ -363,27 +440,19 @@
                 }
             }
         }
-
-        
     }
-  
-  }
-  
-  
+}
 
-  
- 
-  
-  
-  .change .bar-1 {
-  
-  -webkit-transform: rotate(-45deg) translate(-10px, 5px);
-      transform: rotate(-45deg) translate(-10px, 8px);
-  }
-  
-  .change .bar-2 {opacity:0;}
-  
-  .change .bar-3 {
-      -webkit-transform: rotate(45deg) translate(-10px, 5px);
-      transform: rotate(45deg) translate(-10px, -5px);
-  }
+.change .bar-1 {
+    -webkit-transform: rotate(-45deg) translate(-10px, 5px);
+    transform: rotate(-45deg) translate(-10px, 8px);
+}
+
+.change .bar-2 {
+    opacity: 0;
+}
+
+.change .bar-3 {
+    -webkit-transform: rotate(45deg) translate(-10px, 5px);
+    transform: rotate(45deg) translate(-10px, -5px);
+}

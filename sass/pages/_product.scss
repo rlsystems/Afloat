@@ -15,6 +15,12 @@
       [content-end footer-start] min-content [footer-end];
   }
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows:
+      [nav-start] 9rem [nav-end top-content-start] calc(45vh - 9rem) [hero-end content-start] repeat(7, min-content)
+      [content-end footer-start] min-content [footer-end];
+  }
+
 
 }
 
