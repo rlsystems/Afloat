@@ -51,22 +51,18 @@
           </li>
         </ul>
       </nav>
-      <!-- <nav class="header__main__right">
-        <ul class="header__main__right__list">
-          <li class="header__main__right__list__item">
-            <a href="#" class="header__main__right__list__link">Contact</a>
-          </li>
-          <li class="header__main__right__list__item">
-            <span class="header__main__right__list__phone">+1-888-454-1423</span>
-          </li>
-        </ul>
-      </nav> -->
+      <!-- Burger Menu -->
+      <div class="burger-menu">
+        <span class="burger-menu__bar "></span>
+      </div>
     </div>
 
 
     <div class="nav-mega">
       <div class="nav-mega__nav">
         <div class="nav-mega__nav__sub-group">
+          <!-- Input , Label, Content -->
+          <!-- <input class="nav-mega__nav__sub-group__radio" type="radio" id="dest-1"> -->
           <a href="#" class="nav-mega__nav__sub-group__title">Adventure Cruises</a>
           <ul class="nav-mega__nav__sub-group__list">
             <li class="nav-mega__nav__sub-group__item">
@@ -104,7 +100,7 @@
             <li class="nav-mega__nav__sub-group__item">
               <a href="#" class="nav-mega__nav__sub-group__link">Galapagos</a>
             </li>
-  
+
           </ul>
         </div>
         <div class="nav-mega__nav__sub-group">
@@ -148,11 +144,11 @@
             <li class="nav-mega__nav__sub-group__item">
               <a href="#" class="nav-mega__nav__sub-group__link">Pantanal</a>
             </li>
-   
+
           </ul>
         </div>
       </div>
-     
+
 
 
 
@@ -2490,26 +2486,41 @@
     }
   )
 
+  //Burger Menu
+  $(".burger-menu ").on("click", function () {
+
+    $(".burger-menu").toggleClass('burger-menu--active');
+    $('.nav-mega').toggleClass('nav-mega--active');
+
+  });
+
 
 
   //MEGA
 
   //--hover behavior
   $('.nav-mega').hover(
-    function () {},
+    function () { },
     function () {
 
-      //if stuckNav then dont do (sticky wrapper)
-      var elementExists = document.getElementById("stuckNav");
-      if (elementExists == null) {
-        $('.nav-mega').removeClass('nav-mega--active');
-      }
-      
+      //if no active burger
+      if ($(".burger-menu").hasClass('burger-menu--active') != true) {
 
-      //if not header small -- remove opaque from header__main
-      if ($('.header__main').hasClass('header__main--small-nav') != true) {
-        $('.header__main').removeClass('header__main--opaque-nav');
+        //if stuckNav then dont do (sticky wrapper)
+        var elementExists = document.getElementById("stuckNav");
+        if (elementExists == null) {
+
+          $('.nav-mega').removeClass('nav-mega--active');
+        }
+
+        //if not header small -- remove opaque from header__main
+        if ($('.header__main').hasClass('header__main--small-nav') != true) {
+          $('.header__main').removeClass('header__main--opaque-nav');
+        }
+
       }
+
+
     }
   )
 
@@ -2521,8 +2532,14 @@
 
   //product-nav
   $('.product-nav__sticky-wrapper').hover(
-    function () {}, //enter
-    function () { $('.nav-mega').removeClass('nav-mega--active');} //exit
+    function () { }, //enter
+    function () { 
+      if ($(".burger-menu").hasClass('burger-menu--active') != true) {
+        $('.nav-mega').removeClass('nav-mega--active'); 
+      }
+      
+      
+      } //exit
   );
 
   //SubNav
