@@ -125,6 +125,10 @@ p {
   @media only screen and (max-width: 50em) {
     .page-divider {
       font-size: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .page-divider {
+      font-size: 2rem;
+      letter-spacing: 0.1rem; } }
   .page-divider::before {
     content: "";
     height: 1px;
@@ -874,6 +878,9 @@ p {
       .product-nav__caption {
         justify-items: center;
         text-align: center; } }
+  @media only screen and (max-width: 37.5em) {
+    .product-nav {
+      grid-column: 1 / -1; } }
   .product-nav__sticky-wrapper--active {
     display: grid;
     grid-column: 1 / -1;
@@ -1064,12 +1071,16 @@ p {
 .related-slider {
   max-width: 80%;
   margin: 0 auto; }
+  @media only screen and (max-width: 37.5em) {
+    .related-slider {
+      max-width: 70%; } }
   .related-slider .slick-track {
     padding-bottom: 8rem;
     width: 100%; }
   .related-slider .slick-slide {
     margin: 2.5rem;
-    box-shadow: 0 3rem 3rem -1rem rgba(0, 0, 0, 0.25); }
+    box-shadow: 0 3rem 3rem -1rem rgba(0, 0, 0, 0.25);
+    min-width: 0; }
   .related-slider__item {
     display: grid !important;
     align-content: center;
@@ -2003,6 +2014,9 @@ p {
     .reviews-slider__item .slick-slide {
       margin: 8rem 8rem;
       margin-top: 2rem; }
+    @media only screen and (max-width: 37.5em) {
+      .reviews-slider__item {
+        grid-template-columns: 1fr; } }
     .reviews-slider__item__content {
       padding: 4rem 8rem;
       font-size: 1.6rem;
@@ -2015,6 +2029,10 @@ p {
         .reviews-slider__item__content {
           margin: 4rem auto;
           padding: 4rem 4rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .reviews-slider__item__content {
+          margin: 0rem auto;
+          padding: 0rem 3rem; } }
       .reviews-slider__item__content__quote {
         position: absolute;
         height: 5rem;
@@ -2027,11 +2045,18 @@ p {
           .reviews-slider__item__content__quote {
             top: 0;
             left: 3rem; } }
+        @media only screen and (max-width: 37.5em) {
+          .reviews-slider__item__content__quote {
+            top: -.5rem;
+            left: 3rem; } }
       .reviews-slider__item__content__text {
         line-height: 3rem;
         font-style: italic;
         margin-bottom: 1.5rem !important;
         z-index: 1; }
+        @media only screen and (max-width: 37.5em) {
+          .reviews-slider__item__content__text {
+            margin-top: 4rem; } }
       .reviews-slider__item__content__date {
         font-weight: 600;
         color: #142838; }
@@ -2058,8 +2083,14 @@ p {
       margin: 8rem 4rem; }
       @media only screen and (max-width: 50em) {
         .reviews-slider__item__image {
-          height: 35rem;
-          margin: 2rem auto; } }
+          height: 40rem;
+          margin: 2rem 3rem;
+          align-self: center; } }
+      @media only screen and (max-width: 37.5em) {
+        .reviews-slider__item__image {
+          height: 45rem;
+          margin: 5rem 4rem;
+          justify-self: center; } }
   .reviews-slider__btn--right {
     position: absolute;
     z-index: 10;
@@ -2522,7 +2553,7 @@ p {
           margin-left: 0;
           grid-column: 1 / span 1; } }
     .footer__nav__subscribe {
-      letter-spacing: .1rem; }
+      letter-spacing: 0.1rem; }
       @media only screen and (max-width: 50em) {
         .footer__nav__subscribe {
           grid-column: 2 / span 2; } }
@@ -2571,6 +2602,9 @@ p {
     justify-content: space-between;
     align-items: center;
     display: flex; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__bottom {
+        flex-direction: column; } }
     .footer__bottom::after {
       content: "";
       position: absolute;
@@ -2600,6 +2634,9 @@ p {
     .footer__bottom__list-social {
       display: flex;
       list-style: none; }
+      @media only screen and (max-width: 37.5em) {
+        .footer__bottom__list-social {
+          margin-top: 2rem; } }
       .footer__bottom__list-social__item {
         margin-left: 2rem; }
 

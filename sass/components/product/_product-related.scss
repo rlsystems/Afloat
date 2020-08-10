@@ -19,6 +19,10 @@
     max-width: 80%; //media query
     margin: 0 auto;
 
+    @media only screen and (max-width: $bp-small) {
+        max-width: 70%; //media query       
+    }
+
     .slick-track {
         padding-bottom: 8rem; //for shadow
 
@@ -27,6 +31,9 @@
     .slick-slide {
         margin: 2.5rem;
         box-shadow: $shadow-dark-bottom;
+        min-width: 0;
+
+     
     }
 
     //break this out into common element
