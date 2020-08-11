@@ -150,7 +150,7 @@
         display: none;
         justify-items: center;
         //padding: 1.5rem 0;
-        border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
+        //border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
 
         &--active {
             display: grid;
@@ -175,84 +175,63 @@
             padding: 3rem 0;
             padding-left: 6rem;
 
-            &:not(:last-child)::after {
-                content: "";
-                background-color: $color-grey-light-2;
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                height: 1px;
-                left: 50%;
-                transform: translateX(-50%);
-                transition: width 0.3s;
+            &:not(:last-child){
+                border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
+
+            }
+
+            &__sub-group {
+                padding: 2rem 0;
+                padding-left: 6rem;
+
+                font-size: 1.5rem;
+                letter-spacing: 0.3rem;
+                font-weight: 600;
             }
 
             &--active {
                 color: $color-supporting-light;
-
-                &::after {
-                    width: 50%;
-                }
             }
+
             &__panel {
                 display: none;
                 overflow: hidden;
-                border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
+                &:not(:last-child){
+                    border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
+                }
                 width: 100%;
 
                 text-align: left;
-                padding: 3rem 0;
-                padding-left: 6rem;
 
-                &__title {
-                    cursor: pointer;
-                    color: $color-secondary;
-                    text-decoration: none;
-                    font-weight: 600;
-                    font-size: 1.32rem;
-                    text-transform: uppercase;
-                    letter-spacing: 0.3rem;
-
-                    position: relative;
-                    transition: all 0.2s;
-                }
-
-                &__title:hover {
-                    color: $color-supporting-light;
-                    position: relative;
-                    &::after {
-                        opacity: 1;
-                        width: 100%;
-                    }
-                }
 
                 &__list {
-                    margin-top: 0.75rem;
                     list-style: none;
-                    font-size: 1.4rem;
-                    letter-spacing: 0.1rem;
-                    //max-height: 0rem;
                 }
 
                 &__item {
-                    margin: 0.5rem;
+                    padding: 0;
+                    padding-top: 2rem;
+                    padding-left: 9rem;
 
-                    margin-left: 0;
+                    &:last-child {
+                        padding-bottom: 2rem;
+                    }
+
+                    font-size: 1.6rem;
+                    letter-spacing: 0.3rem;
                 }
 
-                &__link:link, //links
-            &__link:visited {
+                &__link:link, 
+                &__link:visited {
                     text-decoration: none;
                     font-weight: 400;
                     color: $color-grey-3;
-
                     transition: all 0.2s;
                 }
 
                 &__link:hover,
                 &__link:active {
                     font-weight: 500;
-
                     color: $color-supporting-light;
                 }
             }

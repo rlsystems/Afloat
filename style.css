@@ -2278,8 +2278,7 @@ p {
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     display: none;
-    justify-items: center;
-    border-bottom: 1px solid rgba(194, 198, 201, 0.9); }
+    justify-items: center; }
     .header__collapse--active {
       display: grid; }
     .header__collapse__accordion {
@@ -2298,52 +2297,33 @@ p {
       text-align: left;
       padding: 3rem 0;
       padding-left: 6rem; }
-      .header__collapse__accordion:not(:last-child)::after {
-        content: "";
-        background-color: #c2c6c9;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 1px;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: width 0.3s; }
+      .header__collapse__accordion:not(:last-child) {
+        border-bottom: 1px solid rgba(194, 198, 201, 0.9); }
+      .header__collapse__accordion__sub-group {
+        padding: 2rem 0;
+        padding-left: 6rem;
+        font-size: 1.5rem;
+        letter-spacing: 0.3rem;
+        font-weight: 600; }
       .header__collapse__accordion--active {
         color: #40739c; }
-        .header__collapse__accordion--active::after {
-          width: 50%; }
       .header__collapse__accordion__panel {
         display: none;
         overflow: hidden;
-        border-bottom: 1px solid rgba(194, 198, 201, 0.9);
         width: 100%;
-        text-align: left;
-        padding: 3rem 0;
-        padding-left: 6rem; }
-        .header__collapse__accordion__panel__title {
-          cursor: pointer;
-          color: #142838;
-          text-decoration: none;
-          font-weight: 600;
-          font-size: 1.32rem;
-          text-transform: uppercase;
-          letter-spacing: 0.3rem;
-          position: relative;
-          transition: all 0.2s; }
-        .header__collapse__accordion__panel__title:hover {
-          color: #40739c;
-          position: relative; }
-          .header__collapse__accordion__panel__title:hover::after {
-            opacity: 1;
-            width: 100%; }
+        text-align: left; }
+        .header__collapse__accordion__panel:not(:last-child) {
+          border-bottom: 1px solid rgba(194, 198, 201, 0.9); }
         .header__collapse__accordion__panel__list {
-          margin-top: 0.75rem;
-          list-style: none;
-          font-size: 1.4rem;
-          letter-spacing: 0.1rem; }
+          list-style: none; }
         .header__collapse__accordion__panel__item {
-          margin: 0.5rem;
-          margin-left: 0; }
+          padding: 0;
+          padding-top: 2rem;
+          padding-left: 9rem;
+          font-size: 1.6rem;
+          letter-spacing: 0.3rem; }
+          .header__collapse__accordion__panel__item:last-child {
+            padding-bottom: 2rem; }
         .header__collapse__accordion__panel__link:link, .header__collapse__accordion__panel__link:visited {
           text-decoration: none;
           font-weight: 400;
