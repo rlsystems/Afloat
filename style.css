@@ -314,6 +314,8 @@ p {
   .btn-outline:hover::after {
     height: 95%;
     width: 95%; }
+  .btn-outline--small {
+    padding: 1rem 2rem; }
 
 .btn-icon {
   width: 5rem;
@@ -832,7 +834,8 @@ p {
       letter-spacing: 0.3rem;
       display: block;
       align-self: end;
-      max-width: 80%; }
+      max-width: 80%;
+      user-select: none; }
       @media only screen and (max-width: 50em) {
         .product-nav__caption__title {
           font-size: 4rem; } }
@@ -1356,6 +1359,12 @@ p {
         transform: translateX(-50%);
         border-top: 1px solid #e6e6e6;
         padding-top: .5rem; }
+        @media only screen and (max-width: 50em) {
+          .product-itineraries__itinerary__title__subtitle {
+            padding-top: .2rem; } }
+        @media only screen and (max-width: 37.5em) {
+          .product-itineraries__itinerary__title__subtitle {
+            padding-top: 0; } }
     .product-itineraries__itinerary__content-group {
       grid-column: center-start / col-mid;
       grid-row: 2 / span 1;
@@ -1655,11 +1664,17 @@ p {
           justify-self: center;
           max-width: 100%;
           height: 45rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .product-cabins__cabin__picture {
+          grid-column: full-start / full-end; } }
       .product-cabins__cabin__picture--flipped {
         grid-column: col-start 5 / full-end; }
         @media only screen and (max-width: 50em) {
           .product-cabins__cabin__picture--flipped {
             grid-column: center-start / center-end; } }
+        @media only screen and (max-width: 37.5em) {
+          .product-cabins__cabin__picture--flipped {
+            grid-column: full-start / full-end; } }
       .product-cabins__cabin__picture img {
         object-fit: cover;
         width: 100%;
@@ -1713,12 +1728,12 @@ p {
         font-size: 1.4rem;
         font-weight: 600; }
       .product-cabins__cabin__content__cta {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-        color: #142838;
-        border-bottom: 1px solid #142838;
-        letter-spacing: 0.1rem;
         display: inline-block; }
+        @media only screen and (max-width: 50em) {
+          .product-cabins__cabin__content__cta {
+            padding-top: 3.5rem;
+            display: flex;
+            justify-content: center; } }
   .product-cabins__deckplan {
     grid-column: center-start / center-end;
     display: grid;
@@ -1741,6 +1756,12 @@ p {
           height: 70rem;
           width: auto;
           margin: 0 6rem; } }
+    @media only screen and (max-width: 50em) {
+      .product-cabins__deckplan__picture__img {
+        height: 50rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .product-cabins__deckplan__picture__img {
+        height: 40rem; } }
     @media only screen and (max-width: 62.5em) {
       .product-cabins__deckplan__picture {
         grid-column: 1 / -1;
@@ -1813,7 +1834,12 @@ p {
         object-fit: cover; }
       .product-prices__price-group__picture--flipped {
         grid-column: col-start 6 / span 2;
+        transform: translateX(10rem);
         justify-self: start; }
+        @media only screen and (max-width: 37.5em) {
+          .product-prices__price-group__picture--flipped {
+            grid-column: col-start 7 / span 2;
+            transform: translateX(18rem); } }
     .product-prices__price-group__name {
       grid-column: col-start 3 / center-end;
       margin-left: 5rem;
@@ -1844,6 +1870,9 @@ p {
         color: #c2c6c9;
         letter-spacing: 0.2rem;
         grid-row: 1 / span 1; }
+        @media only screen and (max-width: 50em) {
+          .product-prices__price-group__name__length {
+            font-size: 3rem; } }
       .product-prices__price-group__name__subtitle {
         grid-row: 2 / span 1; }
     .product-prices__price-group__card-group {
@@ -1937,11 +1966,13 @@ p {
     font-size: 1.4rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 4rem; }
+    column-gap: 4rem;
+    margin-bottom: 6rem; }
     @media only screen and (max-width: 50em) {
       .product-prices__policies {
         grid-template-columns: 1fr;
-        margin: 0 4rem; } }
+        margin: 0 4rem;
+        margin-bottom: 2rem; } }
     @media only screen and (max-width: 50em) {
       .product-prices__policies__list-group {
         margin-bottom: 5rem; }
@@ -2230,6 +2261,11 @@ p {
       display: flex;
       margin-right: 4rem;
       justify-self: end; }
+      @media only screen and (max-width: 50em) {
+        .header__main__logo-area {
+          justify-self: center;
+          margin-right: 4rem;
+          grid-column: center-start / center-end; } }
       .header__main__logo-area__logo {
         margin-left: 7rem;
         height: 4.5rem;
@@ -2282,7 +2318,17 @@ p {
     user-select: none;
     /* Standard */ }
     .header__collapse--active {
-      display: grid; }
+      display: grid;
+      position: relative; }
+      .header__collapse--active::after {
+        content: "";
+        position: absolute;
+        height: 1000%;
+        width: 100%;
+        background-color: rgba(30, 30, 30, 0.3);
+        bottom: -1000%;
+        left: 0;
+        z-index: 40; }
     .header__collapse__accordion {
       color: #142838;
       font-size: 1.8rem;

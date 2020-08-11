@@ -300,7 +300,9 @@
           <li class="product-nav__tab-list__item tab-prices" data-tab="tab-prices">
             Prices
           </li>
-
+          <li class="product-nav__tab-list__item tab-dates" >
+            Dates
+          </li>
         </ul>
       </div>
 
@@ -347,7 +349,7 @@
 
 
     <!-- 1. Overview Content -->
-    <div class="product-content__page tab-content  current" id="tab-overview">
+    <div class="product-content__page tab-content  " id="tab-overview">
       <div class="product-overview">
         <!-- Intro -->
         <div class="product-intro">
@@ -1350,7 +1352,7 @@
     </div>
 
     <!-- 3. Cabins Content -->
-    <div class="product-content__page tab-content " id="tab-cabins">
+    <div class="product-content__page tab-content current" id="tab-cabins">
       <div class="product-cabins">
         <!-- Intro -->
         <div class="product-intro">
@@ -1430,7 +1432,7 @@
               Inventore, quasi.
             </p>
             <div class="product-cabins__cabin__content__cta">
-              Check Prices &rarr;
+              <button class="btn-outline" data-tab="tab-prices" id="goto-prices">Check Prices</button>
             </div>
 
           </div>
@@ -1473,7 +1475,8 @@
               Inventore, quasi.
             </p>
             <div class="product-cabins__cabin__content__cta">
-              Check Prices &rarr;
+              <button class="btn-outline" data-tab="tab-prices" id="goto-prices">Check Prices</button>
+
             </div>
           </div>
         </div>
@@ -1515,7 +1518,8 @@
               Inventore, quasi.
             </p>
             <div class="product-cabins__cabin__content__cta">
-              Check Prices &rarr;
+              <button class="btn-outline" data-tab="tab-prices" id="goto-prices">Check Prices</button>
+
             </div>
           </div>
         </div>
@@ -2047,7 +2051,7 @@
             Policies
           </div>
         </div>
-        <div class="product-prices__policies u-margin-bottom-huge">
+        <div class="product-prices__policies">
 
           <div class="product-prices__policies__list-group product-prices__policies__list-group--overall">
             <div class="product-prices__policies__list-group__title heading-3 heading-3--underline">

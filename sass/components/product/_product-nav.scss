@@ -21,6 +21,7 @@
             display: block;
             align-self: end;
             max-width: 80%;
+            user-select: none;
             @media only screen and (max-width: $bp-medium) {
                 font-size: 4rem;
             }

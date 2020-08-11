@@ -8,6 +8,8 @@
     display: grid;
     grid-template-columns: $page-container;
 
+   
+
     &__main {
         display: grid;
         grid-column: 1 / -1;
@@ -33,6 +35,8 @@
         backdrop-filter: blur(8px);
 
         transition: height 0.3s;
+
+
 
         &--opaque-nav {
             background-color: rgba($color-white, 0.9); //make background opaque
@@ -79,6 +83,12 @@
             display: flex;
             margin-right: 4rem;
             justify-self: end;
+
+            @media only screen and (max-width: $bp-medium) {
+                justify-self: center;
+                margin-right: 4rem;
+                grid-column: center-start / center-end;
+            }
 
             &__logo {
                 margin-left: 7rem;
@@ -150,12 +160,27 @@
         justify-items: center;
         user-select: none; /* Standard */
 
+       
+
         &--active {
             display: grid;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 1000%;
+                width: 100%;
+                background-color: rgba($color-black, 0.3);
+                bottom: -1000%;
+                left: 0;
+                z-index: 40;
+            }
+           
         }
 
         //main link title
-        &__accordion {          
+        &__accordion {
             color: $color-secondary;
             font-size: 1.8rem;
             letter-spacing: 0.3rem;
@@ -174,9 +199,8 @@
             padding: 3rem 0;
             padding-left: 6rem;
 
-            &:not(:last-child){
+            &:not(:last-child) {
                 border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
-
             }
 
             &__sub-group {
@@ -186,8 +210,6 @@
                 font-size: 1.5rem;
                 letter-spacing: 0.3rem;
                 font-weight: 600;
-
-                
             }
 
             &--active {
@@ -197,11 +219,10 @@
             &__panel {
                 display: none;
                 overflow: hidden;
-               
+
                 width: 100%;
 
                 text-align: left;
-
 
                 &__list {
                     list-style: none;
@@ -221,7 +242,7 @@
                     letter-spacing: 0.3rem;
                 }
 
-                &__link:link, 
+                &__link:link,
                 &__link:visited {
                     text-decoration: none;
                     font-weight: 400;
@@ -262,7 +283,6 @@
 
     transition: all 0.5s;
     opacity: 1;
-
 
     @media only screen and (max-width: $bp-large) {
         grid-template-columns: 1fr;

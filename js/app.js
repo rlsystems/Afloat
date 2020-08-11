@@ -2,7 +2,7 @@
 
 
 //Product Nav - (Overview, Itinerary, Prices ...)
-$('.product-nav__tab-list li, #goto-cabins, #goto-itineraries').click(function () {
+$('.product-nav__tab-list li, #goto-cabins, #goto-itineraries, #goto-prices').click(function () {
   var tab_id = $(this).attr('data-tab');
   $('.product-nav__tab-list__item').removeClass('current');
   $('.product-content__page.tab-content').removeClass('current');
@@ -135,12 +135,12 @@ $('#related-slider').slick({
 
 //Nav Rotate slick
 $('#product-nav__slick').on('init', function (event, slick) {
-  $(this).find('.slick-slide[data-slick-index="' + 0 + '"]').addClass('product-slick-enlarge');
+  $(this).find('.slick-slide[data-slick-index="' + 2 + '"]').addClass('product-slick-enlarge');
 }).slick({
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  initialSlide: 0,
+  initialSlide: 2,
   variableWidth: true,
   focusOnSelect: true,
   arrows: true,
