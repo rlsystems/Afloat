@@ -43,32 +43,7 @@ $('.header__main').hover(
   }
 )
 
-//Burger Menu
 
-//Burger Menu -- click
-$(".burger-menu ").on("click", function () {
-
-  $(".burger-menu").toggleClass('burger-menu--active');
-  $('.header__collapse').toggleClass('header__collapse--active');
-
-  //hide while burger active
-  if ($(".header__collapse").hasClass('header__collapse--active') == true) {
-    $('#stuckNav').hide();
-  } else {
-    $('#stuckNav').show();
-  }
-});
-
-//Burger Menu -- resize window
-$(window).resize(function () {
-  if ($(window).width() > 1000) {
-    $('.header__collapse').removeClass('header__collapse--active');
-    $(".burger-menu").removeClass('burger-menu--active');
-  }
-  if ($(window).width() <= 1000) {
-    $('.nav-mega').removeClass('nav-mega--active');
-  }
-});
 
 
 //MEGA
@@ -105,50 +80,32 @@ $('#mega--destinations').hover(
 );
 
 
-//Product Nav
+//Burger Menu
 
-//Product Nav -- Hover
-$('.product-nav__sticky-wrapper').hover(
-  function () { }, 
-  function () {
-    if ($(".burger-menu").hasClass('burger-menu--active') != true) {
-      $('.nav-mega').removeClass('nav-mega--active');
-    }
-  } 
-);
+//Burger Menu -- click
+$(".burger-menu ").on("click", function () {
 
+  $(".burger-menu").toggleClass('burger-menu--active');
+  $('.header__collapse').toggleClass('header__collapse--active');
 
-
-//Product Nav -- Scroll
-var navbar = document.querySelector('.product-nav__sticky-wrapper');
-var subnavTitle = document.querySelector('.product-nav__caption__title');
-var offsetY = navbar.offsetTop - 65;
-
-window.onscroll = function () { myFunction() };
-function myFunction() {
-  if (window.pageYOffset >= offsetY) {
-
-    var elementExists = document.getElementById("stuckNav");
-    if (elementExists == null) {
-      var newNav = $(navbar).clone(true); //pass true to clone events also
-      newNav.attr('id', 'stuckNav');
-
-      $(newNav).addClass('product-nav__sticky-wrapper--active');
-      $('#header').append(newNav);
-    }
-
-    var elementExists = document.getElementById("stuckNavTitle");
-    if (elementExists == null) {
-      var newTitle = $(subnavTitle).clone(true);
-      newTitle.attr('id', 'stuckNavTitle')
-      $(newTitle).addClass('product-nav__caption__title--sticky');
-      $('#stuckNav').append(newTitle);
-    }
-
+  //hide while burger active
+  if ($(".header__collapse").hasClass('header__collapse--active') == true) {
+    $('#stuckNav').hide();
   } else {
-    $('#stuckNav').remove();
+    $('#stuckNav').show();
   }
-}
+});
+
+//Burger Menu -- resize window
+$(window).resize(function () {
+  if ($(window).width() > 1000) {
+    $('.header__collapse').removeClass('header__collapse--active');
+    $(".burger-menu").removeClass('burger-menu--active');
+  }
+  if ($(window).width() <= 1000) {
+    $('.nav-mega').removeClass('nav-mega--active');
+  }
+});
 
 
 //Collapse Menu
@@ -163,21 +120,21 @@ for (i = 0; i < acc.length; i++) {
 
     //see if currently open
     var open = false;
-    if($(this).next().css('display') == 'block') {
+    if ($(this).next().css('display') == 'block') {
       open = true;
-    } 
+    }
 
     //hide all others
     var x = 0
     $(acc).each(function () {
-        $(acc[x]).removeClass('header__collapse__accordion--active');
-        var panel = $(acc[x]).next();
-        $(panel).css('display', 'none');  
+      $(acc[x]).removeClass('header__collapse__accordion--active');
+      var panel = $(acc[x]).next();
+      $(panel).css('display', 'none');
       x = x + 1;
     })
 
     //display / hide current one
-    if(open == true) {
+    if (open == true) {
       $(this).removeClass("header__collapse__accordion--active");
       var panelCurrent = $(this).next();
       $(panelCurrent).css('display', 'none');
@@ -186,7 +143,7 @@ for (i = 0; i < acc.length; i++) {
       var panelCurrent = $(this).next();
       $(panelCurrent).css('display', 'block');
     }
-     
+
   });
 }
 
@@ -200,21 +157,21 @@ for (i = 0; i < accDestinations.length; i++) {
 
     //see if currently open
     var open = false;
-    if($(this).next().css('display') == 'block') {
+    if ($(this).next().css('display') == 'block') {
       open = true;
-    } 
+    }
 
     //hide all others
     var x = 0
     $(accDestinations).each(function () {
-        $(accDestinations[x]).removeClass('header__collapse__accordion--active');
-        var panel = $(accDestinations[x]).next();
-        $(panel).css('display', 'none');  
+      $(accDestinations[x]).removeClass('header__collapse__accordion--active');
+      var panel = $(accDestinations[x]).next();
+      $(panel).css('display', 'none');
       x = x + 1;
     })
 
     //display / hide current one
-    if(open == true) {
+    if (open == true) {
       $(this).removeClass("header__collapse__accordion--active");
       var panelCurrent = $(this).next();
       $(panelCurrent).css('display', 'none');
@@ -223,7 +180,70 @@ for (i = 0; i < accDestinations.length; i++) {
       var panelCurrent = $(this).next();
       $(panelCurrent).css('display', 'block');
     }
-     
+
   });
 }
- //end collapse
+//end collapse
+
+
+//Product Nav
+//Product Nav -- Hover
+$('.product-nav__sticky-wrapper').hover(
+  function () { },
+  function () {
+    if ($(".burger-menu").hasClass('burger-menu--active') != true) {
+      $('.nav-mega').removeClass('nav-mega--active');
+    }
+  }
+);
+
+
+
+//Product Nav -- Scroll
+var navbar = document.querySelector('.product-nav__sticky-wrapper');
+var subnavTitle = document.querySelector('.product-nav__caption__title');
+var offsetY = navbar.offsetTop;
+
+window.onscroll = function () { myFunction() };
+function myFunction() {
+
+  var isElementInView = Utils.isElementInView($('#template-nav'), false);
+
+  if (isElementInView) {
+    $('#stuckNav').remove();
+  } else { //if template nav is out of view
+
+
+    //and if burger menu isnt active
+    if ($(".burger-menu").hasClass('burger-menu--active') != true) {
+
+      var elementExists = document.getElementById("stuckNav"); //and not already there
+      if (elementExists == null) {
+        var newNav = $(navbar).clone(true); //clone the nav and append it to header (pass true to clone events also)
+        newNav.attr('id', 'stuckNav');
+
+        $(newNav).addClass('product-nav__sticky-wrapper--active');
+        $('#header').append(newNav);
+      }
+
+      var elementExists = document.getElementById("stuckNavTitle"); //clone / append title
+      if (elementExists == null) {
+        var newTitle = $(subnavTitle).clone(true);
+        newTitle.attr('id', 'stuckNavTitle')
+        $(newTitle).addClass('product-nav__caption__title--sticky');
+        $('#stuckNav').append(newTitle);
+      }
+    }
+
+
+
+  }
+
+}
+
+
+
+
+
+
+

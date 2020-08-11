@@ -148,7 +148,8 @@
 
         display: none; //toggle active (js)
         justify-items: center;
-       
+        user-select: none; /* Standard */
+
         &--active {
             display: grid;
         }

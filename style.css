@@ -2278,7 +2278,9 @@ p {
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     display: none;
-    justify-items: center; }
+    justify-items: center;
+    user-select: none;
+    /* Standard */ }
     .header__collapse--active {
       display: grid; }
     .header__collapse__accordion {
