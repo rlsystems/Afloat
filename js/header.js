@@ -53,6 +53,15 @@
    $(".burger-menu").toggleClass('burger-menu--active');
    $('.header__collapse').toggleClass('header__collapse--active');
 
+   //hide while burger active
+   if($(".header__collapse").hasClass('header__collapse--active') == true) {
+        $('#stuckNav').hide();
+   } else {
+    $('#stuckNav').show();
+   }
+
+    
+   
  });
 
  $(window).resize(function () {
