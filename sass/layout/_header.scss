@@ -185,6 +185,8 @@
                 font-size: 1.5rem;
                 letter-spacing: 0.3rem;
                 font-weight: 600;
+
+                
             }
 
             &--active {
@@ -259,6 +261,7 @@
 
     transition: all 0.5s;
     opacity: 1;
+
 
     @media only screen and (max-width: $bp-large) {
         grid-template-columns: 1fr;
