@@ -3,7 +3,6 @@
     grid-row: nav-start / nav-end;
     z-index: 100;
     position: fixed;
-
     width: 100%;
 
     display: grid;
@@ -147,16 +146,15 @@
         -webkit-backdrop-filter: blur(8px);
         backdrop-filter: blur(8px);
 
-        display: none;
+        display: none; //toggle active (js)
         justify-items: center;
-        //padding: 1.5rem 0;
-        //border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
-
+       
         &--active {
             display: grid;
         }
-        &__accordion {
-            //main link title
+
+        //main link title
+        &__accordion {          
             color: $color-secondary;
             font-size: 1.8rem;
             letter-spacing: 0.3rem;
@@ -182,7 +180,7 @@
 
             &__sub-group {
                 padding: 2rem 0;
-                padding-left: 6rem;
+                padding-left: 9rem;
 
                 font-size: 1.5rem;
                 letter-spacing: 0.3rem;
@@ -196,9 +194,7 @@
             &__panel {
                 display: none;
                 overflow: hidden;
-                &:not(:last-child){
-                    border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
-                }
+               
                 width: 100%;
 
                 text-align: left;
@@ -211,10 +207,11 @@
                 &__item {
                     padding: 0;
                     padding-top: 2rem;
-                    padding-left: 9rem;
+                    padding-left: 12rem;
 
                     &:last-child {
                         padding-bottom: 2rem;
+                        border-bottom: 1px solid rgba($color-grey-light-2, 0.9);
                     }
 
                     font-size: 1.6rem;

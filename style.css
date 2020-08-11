@@ -2301,7 +2301,7 @@ p {
         border-bottom: 1px solid rgba(194, 198, 201, 0.9); }
       .header__collapse__accordion__sub-group {
         padding: 2rem 0;
-        padding-left: 6rem;
+        padding-left: 9rem;
         font-size: 1.5rem;
         letter-spacing: 0.3rem;
         font-weight: 600; }
@@ -2312,18 +2312,17 @@ p {
         overflow: hidden;
         width: 100%;
         text-align: left; }
-        .header__collapse__accordion__panel:not(:last-child) {
-          border-bottom: 1px solid rgba(194, 198, 201, 0.9); }
         .header__collapse__accordion__panel__list {
           list-style: none; }
         .header__collapse__accordion__panel__item {
           padding: 0;
           padding-top: 2rem;
-          padding-left: 9rem;
+          padding-left: 12rem;
           font-size: 1.6rem;
           letter-spacing: 0.3rem; }
           .header__collapse__accordion__panel__item:last-child {
-            padding-bottom: 2rem; }
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(194, 198, 201, 0.9); }
         .header__collapse__accordion__panel__link:link, .header__collapse__accordion__panel__link:visited {
           text-decoration: none;
           font-weight: 400;
