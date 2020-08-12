@@ -139,41 +139,55 @@
   }
 
   &__nav {
-    grid-row: 3 / span 1;
+    grid-row: 3 / -1;
     justify-self: start;
     align-self: end;
     &__list {
       list-style: none;
       display: grid;
       grid-auto-flow: column;
-      margin-bottom: 1.5rem;
-      column-gap: 4.5rem;
 
       & .current {
-        color: $color-secondary;
+        
+          background-color: $color-white;
+          border: 1px solid $color-grey-light-1a;
+          border-bottom: 1px solid $color-white;
+          color: $color-supporting;
+          height: 100%;
+        
       }
 
       &__item {
-        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        font-size: 1.32rem;
         font-weight: 600;
         position: relative;
         cursor: pointer;
         display: block;
         align-self: end;
-        transition: all 0.3s;
+        transition: all 0.2s;
+        padding: 1rem 4rem;
 
-        &:not(:first-child)::after {
-          content: "";
-          width: 1px;
-          height: 2rem;
-          background-color: $color-grey-light-2;
-          position: absolute;
-          left: -50%;
-          bottom: 0;
-          z-index: 3;
-        }
+        height: 95%;
+
+        box-sizing: border-box;
+        //margin: 1px;
+        
+        border: 1px solid transparent;
+
+       
         &:hover {
-          color: $color-secondary;
+
+          background-color: $color-white;
+
+        
+
+          &:not( .current) {
+            border: 1px solid $color-grey-light-1a;
+          }
+          color: $color-supporting-light;
+
         }
       }
     }
