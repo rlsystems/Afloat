@@ -1763,10 +1763,10 @@ p {
           margin: 0 6rem; } }
     @media only screen and (max-width: 50em) {
       .product-cabins__deckplan__picture__img {
-        height: 50rem; } }
+        height: 60rem; } }
     @media only screen and (max-width: 37.5em) {
       .product-cabins__deckplan__picture__img {
-        height: 40rem; } }
+        height: 50rem; } }
     @media only screen and (max-width: 62.5em) {
       .product-cabins__deckplan__picture {
         grid-column: 1 / -1;
