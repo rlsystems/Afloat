@@ -1,7 +1,7 @@
 
 
 
-//Product Nav - (Overview, Itinerary, Prices ...)
+//Product Navigation
 $('.product-nav__tab-list li, #goto-cabins, #goto-itineraries, #goto-prices').click(function () {
   var tab_id = $(this).attr('data-tab');
   $('.product-nav__tab-list__item').removeClass('current');
@@ -11,8 +11,10 @@ $('.product-nav__tab-list li, #goto-cabins, #goto-itineraries, #goto-prices').cl
   $("#" + tab_id).addClass('current'); //by id for tab content
 
 
-  //responsive offset + itineraries differences
+  //tab jump marks and offsets
   var offset = 0;
+
+  //responsive @ 1000
   if ($(window).width() > 1000) {
     offset = 120;
     if (tab_id == "tab-itineraries") {
@@ -29,7 +31,7 @@ $('.product-nav__tab-list li, #goto-cabins, #goto-itineraries, #goto-prices').cl
   
 
   //if the sticky nav is visible
-  var elementExists = document.getElementById("stuckNav");
+  var elementExists = document.getElementById("product-nav");
   if (elementExists != null) {
 
     $([document.documentElement, document.body]).animate({

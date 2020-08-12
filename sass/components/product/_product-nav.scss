@@ -5,6 +5,7 @@
     grid-row: nav-end/ hero-end;
     grid-column: center-start / -1;
     
+    user-select: none;
 
     &__caption {
         color: $color-grey-light-1;
@@ -90,7 +91,7 @@
     }
 
     &__sticky-wrapper {
-        
+        user-select: none;
         &--active {
             display: grid;
             grid-column: 1 / -1;

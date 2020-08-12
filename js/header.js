@@ -56,8 +56,8 @@ $('.nav-mega').hover(
     //if no active burger
     if ($(".burger-menu").hasClass('burger-menu--active') != true) {
 
-      //if stuckNav then dont do (sticky wrapper)
-      var elementExists = document.getElementById("stuckNav");
+      //if product-nav then dont do (sticky wrapper)
+      var elementExists = document.getElementById("product-nav");
       if (elementExists == null) {
 
         $('.nav-mega').removeClass('nav-mega--active');
@@ -90,9 +90,9 @@ $(".burger-menu ").on("click", function () {
 
   //hide while burger active
   if ($(".header__collapse").hasClass('header__collapse--active') == true) {
-    $('#stuckNav').hide();
+    $('#product-nav').hide();
   } else {
-    $('#stuckNav').show();
+    $('#product-nav').show();
   }
 });
 
@@ -210,28 +210,28 @@ function myFunction() {
   var isElementInView = Utils.isElementInView($('#template-nav'), false);
 
   if (isElementInView) {
-    $('#stuckNav').remove();
+    $('#product-nav').remove();
   } else { //if template nav is out of view
 
 
     //and if burger menu isnt active
     if ($(".burger-menu").hasClass('burger-menu--active') != true) {
 
-      var elementExists = document.getElementById("stuckNav"); //and not already there
+      var elementExists = document.getElementById("product-nav"); //and not already there
       if (elementExists == null) {
         var newNav = $(navbar).clone(true); //clone the nav and append it to header (pass true to clone events also)
-        newNav.attr('id', 'stuckNav');
+        newNav.attr('id', 'product-nav');
 
         $(newNav).addClass('product-nav__sticky-wrapper--active');
         $('#header').append(newNav);
       }
 
-      var elementExists = document.getElementById("stuckNavTitle"); //clone / append title
+      var elementExists = document.getElementById("product-nav-title"); //clone / append title
       if (elementExists == null) {
         var newTitle = $(subnavTitle).clone(true);
-        newTitle.attr('id', 'stuckNavTitle')
+        newTitle.attr('id', 'product-nav-title')
         $(newTitle).addClass('product-nav__caption__title--sticky');
-        $('#stuckNav').append(newTitle);
+        $('#product-nav').append(newTitle);
       }
     }
 
