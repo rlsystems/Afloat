@@ -107,6 +107,10 @@ p {
     font-family: "Raleway", sans-serif;
     font-size: 1.2rem;
     padding: 1rem; }
+  @media only screen and (max-width: 50em) {
+    .attention-box {
+      padding: 2rem 3rem;
+      margin: 2rem; } }
 
 .page-divider {
   grid-column: center-start / center-end;
@@ -240,6 +244,9 @@ p {
 
 .u-margin-bottom-none {
   margin-bottom: 0 !important; }
+
+.u-margin-top-none {
+  margin-top: 0 !important; }
 
 .u-margin-top-small {
   margin-top: 2rem !important; }
@@ -1835,6 +1842,15 @@ p {
       justify-self: end; }
       .product-prices__price-group__picture img {
         object-fit: cover; }
+      @media only screen and (max-width: 62.5em) {
+        .product-prices__price-group__picture {
+          transform: translateX(-4rem); } }
+      @media only screen and (max-width: 50em) {
+        .product-prices__price-group__picture {
+          align-self: start; } }
+      @media only screen and (max-width: 37.5em) {
+        .product-prices__price-group__picture {
+          grid-column: full-start / span 1; } }
       .product-prices__price-group__picture--flipped {
         grid-column: col-start 6 / span 2;
         transform: translateX(10rem);
@@ -1868,7 +1884,7 @@ p {
           .product-prices__price-group__name--flipped {
             grid-column: center-start / center-end; } }
       .product-prices__price-group__name__length {
-        font-size: 4rem;
+        font-size: 3rem;
         font-family: "Old Standard TT", serif;
         color: #c2c6c9;
         letter-spacing: 0.2rem;
@@ -1888,6 +1904,9 @@ p {
       margin-bottom: 6rem;
       justify-self: end;
       width: 80%; }
+      @media only screen and (max-width: 50em) {
+        .product-prices__price-group__card-group {
+          width: 100%; } }
       .product-prices__price-group__card-group--flipped {
         justify-self: start; }
       .product-prices__price-group__card-group__card {
@@ -2100,6 +2119,9 @@ p {
         grid-template-columns: min-content 1fr;
         column-gap: 2rem;
         align-items: center; }
+        @media only screen and (max-width: 37.5em) {
+          .reviews-slider__item__content__profile {
+            margin-bottom: 4rem; } }
         .reviews-slider__item__content__profile__img {
           height: 8rem;
           width: 8rem;
@@ -2122,6 +2144,7 @@ p {
           align-self: center; } }
       @media only screen and (max-width: 37.5em) {
         .reviews-slider__item__image {
+          display: none !important;
           height: 45rem;
           margin: 5rem 4rem;
           justify-self: center; } }

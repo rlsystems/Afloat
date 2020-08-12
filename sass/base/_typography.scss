@@ -108,6 +108,11 @@ p {
         padding: 1rem;
     }
 
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem 3rem;
+        margin: 2rem;
+    }
+
 }
 
 .page-divider {
