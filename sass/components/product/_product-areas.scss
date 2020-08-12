@@ -28,6 +28,12 @@
     .slick-slide {
       margin: 8rem 8rem;
       margin-top: 2rem;
+
+      @media only screen and (max-width: $bp-small) {
+        margin: 2rem 4rem;
+        margin-bottom: 8rem;
+      }
+
     }
 
 
@@ -74,7 +80,7 @@
   &__slider-nav {
     color: $color-secondary;
     font-size: 1.6rem;
-    overflow-x: hidden;
+    overflow: hidden;
 
     & .slick-slide {
       outline: none; // this one

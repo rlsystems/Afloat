@@ -1423,7 +1423,7 @@ p {
           grid-column: center-start / center-end; }
           .product-itineraries__itinerary__side-content__map {
             height: 60rem;
-            margin-bottom: 12rem; }
+            margin-bottom: 3rem; }
             .product-itineraries__itinerary__side-content__map__title {
               display: block; } }
       .product-itineraries__itinerary__side-content__detail {
@@ -1438,7 +1438,6 @@ p {
           margin-bottom: 6rem; }
         @media only screen and (max-width: 50em) {
           .product-itineraries__itinerary__side-content__detail {
-            width: 80%;
             margin: auto; } }
       .product-itineraries__itinerary__side-content__inclusions {
         display: grid;
@@ -1501,7 +1500,6 @@ p {
       @media only screen and (max-width: 50em) {
         .product-itineraries__itinerary__inclusions {
           grid-column: center-start / center-end;
-          width: 80%;
           margin: auto;
           margin-bottom: 6rem; } }
       .product-itineraries__itinerary__inclusions__tabs {
@@ -1669,20 +1667,14 @@ p {
           height: 30rem; } }
       @media only screen and (max-width: 50em) {
         .product-cabins__cabin__picture {
-          grid-column: center-start / center-end;
+          grid-column: full-start / full-end;
           grid-row: 1 / span 1;
           justify-self: center;
           max-width: 100%;
           height: 45rem; } }
-      @media only screen and (max-width: 37.5em) {
-        .product-cabins__cabin__picture {
-          grid-column: full-start / full-end; } }
       .product-cabins__cabin__picture--flipped {
         grid-column: col-start 5 / full-end; }
         @media only screen and (max-width: 50em) {
-          .product-cabins__cabin__picture--flipped {
-            grid-column: center-start / center-end; } }
-        @media only screen and (max-width: 37.5em) {
           .product-cabins__cabin__picture--flipped {
             grid-column: full-start / full-end; } }
       .product-cabins__cabin__picture img {
@@ -1695,7 +1687,7 @@ p {
       grid-row: 1 / span 1; }
       @media only screen and (max-width: 50em) {
         .product-cabins__cabin__content {
-          grid-column: center-start / center-end;
+          grid-column: full-start / full-end;
           grid-row: 2 / span 1;
           margin-left: 6rem;
           margin-right: 6rem; } }
@@ -1704,7 +1696,7 @@ p {
         margin-left: 0; }
         @media only screen and (max-width: 50em) {
           .product-cabins__cabin__content--flipped {
-            grid-column: center-start / center-end;
+            grid-column: full-start / full-end;
             margin: 0 6rem; } }
       .product-cabins__cabin__content__title {
         position: relative;
@@ -1750,6 +1742,9 @@ p {
     grid-template-columns: min-content 1fr;
     column-gap: 8rem;
     row-gap: 4rem; }
+    @media only screen and (max-width: 50em) {
+      .product-cabins__deckplan {
+        grid-column: full-start / full-end; } }
     .product-cabins__deckplan__picture__img {
       object-fit: contain;
       width: 50rem;
@@ -2142,12 +2137,12 @@ p {
           height: 40rem;
           margin: 2rem 3rem;
           align-self: center; } }
+      @media only screen and (max-width: 700px) {
+        .reviews-slider__item__image {
+          height: 30rem; } }
       @media only screen and (max-width: 37.5em) {
         .reviews-slider__item__image {
-          display: none !important;
-          height: 45rem;
-          margin: 5rem 4rem;
-          justify-self: center; } }
+          display: none !important; } }
   .reviews-slider__btn--right {
     position: absolute;
     z-index: 10;
@@ -2186,6 +2181,10 @@ p {
   .areas-slider__slider-for .slick-slide {
     margin: 8rem 8rem;
     margin-top: 2rem; }
+    @media only screen and (max-width: 37.5em) {
+      .areas-slider__slider-for .slick-slide {
+        margin: 2rem 4rem;
+        margin-bottom: 8rem; } }
   .areas-slider__slider-for__item {
     height: 65vh;
     box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
@@ -2218,7 +2217,7 @@ p {
   .areas-slider__slider-nav {
     color: #142838;
     font-size: 1.6rem;
-    overflow-x: hidden; }
+    overflow: hidden; }
     .areas-slider__slider-nav .slick-slide {
       outline: none; }
     .areas-slider__slider-nav .slick-current {

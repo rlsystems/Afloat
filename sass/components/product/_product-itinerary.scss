@@ -131,7 +131,7 @@
 
                 &__map {
                     height: 60rem;
-                    margin-bottom: 12rem;
+                    margin-bottom: 3rem;
                     &__title {
                         display: block;
                     }
@@ -156,7 +156,6 @@
                 }
 
                 @media only screen and (max-width: $bp-medium) {
-                    width: 80%;
                     margin: auto;
                 }
             }
@@ -252,7 +251,6 @@
 
             @media only screen and (max-width: $bp-medium) {
                 grid-column: center-start / center-end;
-                width: 80%;
                 margin: auto;
                 margin-bottom: 6rem;
             }

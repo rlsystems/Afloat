@@ -74,7 +74,7 @@ $('.areas-slider__slider-nav').slick({
   slidesToScroll: 1,
   asNavFor: '.areas-slider__slider-for',
   dots: false,
-  centerMode: true,
+  centerMode: false,
   focusOnSelect: true
 
 });
