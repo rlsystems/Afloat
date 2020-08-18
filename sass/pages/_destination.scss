@@ -1,0 +1,27 @@
+.destination-page {
+    display: grid;
+    grid-template-rows:
+        [nav-start] 9rem [nav-end] calc(100vh - 9rem) [hero-end content-start]
+        repeat(5, [row-start] min-content [row-end]) [content-end footer-start] min-content [footer-end];
+
+    grid-template-columns: $page-container;
+
+    &__section-hero {
+        grid-row: nav-start / hero-end;
+        grid-column: full-start / -1;
+        background-color: $color-black;
+    }
+
+    &__section-tours {
+        grid-column: full-start / -1;
+        background-color: lightblue;
+        height: 50vh;
+    }
+
+    &__section-cruises {
+        grid-column: full-start / -1;
+        height: 50vh;
+    }
+}
+
+

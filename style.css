@@ -376,6 +376,9 @@ p {
   .btn-circle--small {
     width: 3rem;
     height: 3rem; }
+  .btn-circle--xsmall {
+    width: 2rem;
+    height: 2rem; }
   .btn-circle--arrow-main {
     position: absolute;
     top: 50%;
@@ -535,7 +538,7 @@ p {
 
 .slider {
   height: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 20%), linear-gradient(to top, rgba(30, 30, 30, 0.3), rgba(30, 30, 30, 0.1)), url("img/slider-images/amazon-01.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 20%), linear-gradient(to top, rgba(30, 30, 30, 0.3), rgba(30, 30, 30, 0.1)), url("img/slider-images/peru-01.jpg");
   background-position: center;
   background-size: cover;
   display: grid;
@@ -2240,6 +2243,184 @@ p {
     right: 0;
     z-index: 40; }
 
+.destination-slider {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-rows: 1fr min-content 1fr; }
+  .destination-slider__bg {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1; }
+    .destination-slider__bg__slide {
+      height: 100vh;
+      position: relative; }
+      .destination-slider__bg__slide img {
+        background-position: center center;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        z-index: 0; }
+      .destination-slider__bg__slide:after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to left, rgba(30, 30, 30, 0.7), transparent), linear-gradient(to right, rgba(30, 30, 30, 0.35), transparent 30%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2; }
+  .destination-slider__content {
+    grid-column: 6 / -1;
+    grid-row: 2 / span 1;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.6rem;
+    margin-right: 15vw; }
+    .destination-slider__content__slide__subtitle {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      letter-spacing: .4rem;
+      padding-left: .5rem; }
+    .destination-slider__content__slide__title {
+      font-family: "Old Standard TT", serif;
+      font-size: 7rem;
+      letter-spacing: 1rem;
+      text-transform: uppercase;
+      font-weight: 200;
+      margin-top: .5rem;
+      line-height: 7rem; }
+    .destination-slider__content__slide__text {
+      line-height: 3rem; }
+    .destination-slider__content__slide__cta {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      grid-gap: 6rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: .3rem;
+      font-size: 1.32rem; }
+      .destination-slider__content__slide__cta__explore:link, .destination-slider__content__slide__cta__explore:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: currentColor;
+        display: flex;
+        transition: all .3s; }
+        .destination-slider__content__slide__cta__explore:link svg, .destination-slider__content__slide__cta__explore:visited svg {
+          margin-left: 1rem;
+          height: 2rem;
+          width: 2rem;
+          fill: currentColor; }
+      .destination-slider__content__slide__cta__explore:hover, .destination-slider__content__slide__cta__explore:active {
+        color: #fff; }
+      .destination-slider__content__slide__cta__more:link, .destination-slider__content__slide__cta__more:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: #9ea0a4;
+        transition: all .3s;
+        display: flex; }
+      .destination-slider__content__slide__cta__more:hover, .destination-slider__content__slide__cta__more:active {
+        color: #fff; }
+  .destination-slider__nav {
+    grid-column: 6 / -1;
+    grid-row: 3 / span 1;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2rem;
+    margin-right: 15vw;
+    display: flex;
+    align-items: center;
+    margin-top: 12rem; }
+    .destination-slider__nav__slide {
+      text-align: center;
+      letter-spacing: .3rem;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: currentColor;
+      transition: all .5s;
+      display: block; }
+      .destination-slider__nav__slide span {
+        display: block;
+        cursor: pointer;
+        transition: all .3s; }
+        .destination-slider__nav__slide span:hover {
+          color: #fff; }
+    .destination-slider__nav .slick-list {
+      margin: 0 1.5rem; }
+    .destination-slider__nav .slick-current {
+      color: #fff; }
+
+.destination-breadcrumb {
+  grid-row: nav-end / span 1;
+  grid-column: full-start / span 4;
+  align-self: start;
+  margin-top: 4rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.6rem;
+  letter-spacing: .3rem;
+  font-weight: 500;
+  z-index: 10;
+  margin-left: 10vw;
+  user-select: none; }
+  .destination-breadcrumb__path {
+    display: inline-block;
+    position: relative; }
+    .destination-breadcrumb__path::after {
+      content: "";
+      position: absolute;
+      bottom: -.3rem;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.8); }
+
+.destination-nav {
+  user-select: none;
+  grid-row: nav-end / span 1;
+  grid-column: full-start / span 2;
+  align-self: end;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.6rem;
+  letter-spacing: .3rem;
+  font-weight: 300;
+  line-height: 3rem;
+  z-index: 10;
+  margin-left: 10vw; }
+  .destination-nav__title {
+    font-weight: 800;
+    position: relative;
+    margin-bottom: 1rem;
+    text-transform: uppercase; }
+    .destination-nav__title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 5rem;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.8); }
+  .destination-nav__list {
+    list-style: none; }
+    .destination-nav__list__item__link:link, .destination-nav__list__item__link:visited {
+      text-decoration: none;
+      color: currentColor;
+      position: relative; }
+      .destination-nav__list__item__link:link::after, .destination-nav__list__item__link:visited::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 0%;
+        bottom: -0.5rem;
+        left: 0;
+        background-color: #f8f8f8;
+        transition: all .3s; }
+    .destination-nav__list__item__link:hover, .destination-nav__list__item__link:active {
+      color: white; }
+      .destination-nav__list__item__link:hover::after, .destination-nav__list__item__link:active::after {
+        width: 100%; }
+  .destination-nav__arrow {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    transform: translateX(-1rem); }
+
 .header {
   grid-column: full-start / -1;
   grid-row: nav-start / nav-end;
@@ -2264,6 +2445,11 @@ p {
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     transition: height 0.3s; }
+    .header__main--clear {
+      border-bottom: 1px solid rgba(194, 198, 201, 0);
+      background-color: rgba(255, 255, 255, 0);
+      -webkit-backdrop-filter: blur(0);
+      backdrop-filter: blur(0); }
     .header__main--opaque-nav {
       background-color: rgba(255, 255, 255, 0.9);
       border-bottom: 1px solid rgba(194, 198, 201, 0.9); }
@@ -2855,3 +3041,33 @@ p {
   @media only screen and (max-width: 50em) {
     .product-intro {
       width: 100%; } }
+
+.search-page {
+  display: grid;
+  grid-template-rows: [nav-start] min-content [nav-end top-content-start] min-content [hero-end content-start] repeat(7, min-content) [content-end footer-start] min-content [footer-end];
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+
+.search-hero {
+  grid-column: 1 / -1;
+  grid-row: nav-start / hero-end;
+  height: 15vh; }
+
+.search-content {
+  height: 90vh;
+  grid-column: 1 / -1; }
+
+.destination-page {
+  display: grid;
+  grid-template-rows: [nav-start] 9rem [nav-end] calc(100vh - 9rem) [hero-end content-start] repeat(5, [row-start] min-content [row-end]) [content-end footer-start] min-content [footer-end];
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  .destination-page__section-hero {
+    grid-row: nav-start / hero-end;
+    grid-column: full-start / -1;
+    background-color: #1e1e1e; }
+  .destination-page__section-tours {
+    grid-column: full-start / -1;
+    background-color: lightblue;
+    height: 50vh; }
+  .destination-page__section-cruises {
+    grid-column: full-start / -1;
+    height: 50vh; }

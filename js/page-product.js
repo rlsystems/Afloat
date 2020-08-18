@@ -75,7 +75,7 @@ $('.areas-slider__slider-nav').slick({
   asNavFor: '.areas-slider__slider-for',
   dots: false,
   centerMode: false,
-  focusOnSelect: true
+  focusOnSelect: true,
 
 });
 

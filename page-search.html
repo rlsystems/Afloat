@@ -8,26 +8,32 @@
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700,800" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Lora:300,400,400i,500,600,700,800" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:300,400,400i,500,600,700,800" rel="stylesheet" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
   <link rel="stylesheet" href="style.css" />
 
-
-
-
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet" />
   <script src="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <title>Rainforest Cruises</title>
 </head>
 
-<body class="destination-page">
+<body class="search-page body" id="body-container">
   <!-- Header -->
   <header class="header" id="header">
-    <div class="header__main ">
-      <a href="/page-product.html" class="header__main__logo-area">
+    <div class="header__main header__main--opaque-nav">
+      <a href="/index.html" class="header__main__logo-area">
         <img src="img/logo/logo-white-new.png" alt="logo" class="header__main__logo-area__logo" />
         <img src="img/logo/logo-color-new.png" alt="logo" class="header__main__logo-area__logo--color" />
       </a>
@@ -58,9 +64,7 @@
       <div class="header__collapse__accordion__panel ">
 
         <!-- Sub Panel -->
-        <div
-          class="header__collapse__accordion header__collapse__accordion__sub-group header__collapse__accordion--destinations">
-          Adventure Cruises</div>
+        <div class="header__collapse__accordion header__collapse__accordion__sub-group header__collapse__accordion--destinations">Adventure Cruises</div>
         <ul class="header__collapse__accordion__panel header__collapse__accordion__list">
           <li class="header__collapse__accordion__panel__item">
             <a href="#" class="header__collapse__accordion__panel__link">Amazon River</a>
@@ -80,9 +84,7 @@
         </ul>
 
         <!-- Sub Panel -->
-        <div
-          class="header__collapse__accordion header__collapse__accordion__sub-group header__collapse__accordion--destinations">
-          South America</div>
+        <div class="header__collapse__accordion header__collapse__accordion__sub-group header__collapse__accordion--destinations">South America</div>
         <ul class="header__collapse__accordion__panel header__collapse__accordion__list">
           <li class="header__collapse__accordion__panel__item">
             <a href="#" class="header__collapse__accordion__panel__link">Argentina</a>
@@ -102,9 +104,7 @@
         </ul>
 
         <!-- Sub Panel -->
-        <div
-          class="header__collapse__accordion header__collapse__accordion__sub-group header__collapse__accordion--destinations">
-          Asia</div>
+        <div class="header__collapse__accordion header__collapse__accordion__sub-group header__collapse__accordion--destinations">Asia</div>
         <ul class="header__collapse__accordion__panel header__collapse__accordion__list">
           <li class="header__collapse__accordion__panel__item">
             <a href="#" class="header__collapse__accordion__panel__link">Cambodia</a>
@@ -127,9 +127,7 @@
         </ul>
 
         <!-- Sub Panel -->
-        <div
-          class="header__collapse__accordion header__collapse__accordion__sub-group header__collapse__accordion--destinations">
-          Bucket List</div>
+        <div class="header__collapse__accordion header__collapse__accordion__sub-group header__collapse__accordion--destinations">Bucket List</div>
         <ul class="header__collapse__accordion__panel header__collapse__accordion__list">
           <li class="header__collapse__accordion__panel__item">
             <a href="#" class="header__collapse__accordion__panel__link">Angkor Wat</a>
@@ -146,7 +144,7 @@
           <li class="header__collapse__accordion__panel__item">
             <a href="#" class="header__collapse__accordion__panel__link">Pantanal</a>
           </li>
-
+       
         </ul>
       </div>
       </div>
@@ -278,255 +276,95 @@
 
   </header>
 
-  <!-- Hero -->
-  <section class="destination-page__section-hero">
-
-    <!-- Destination Hero -->
-    <div class="destination-slider">
-
-      <!-- BG Slider -->
-      <div class="destination-slider__bg" id="destination-slider__bg">
-        <div class="destination-slider__bg__slide">
-          <img src="img/slider-images/peru-01.jpg" alt="">
-        </div>
-        <div class="destination-slider__bg__slide">
-          <img src="img/slider-images/mapi-01.jpg" alt="">
-        </div>
-        <div class="destination-slider__bg__slide">
-          <img src="img/slider-images/ica-02.jpg" alt="">
-        </div>
-        <div class="destination-slider__bg__slide">
-          <img src="img/slider-images/titicaca-02.jpg" alt="">
-        </div>
-        <div class="destination-slider__bg__slide">
-          <img src="img/slider-images/lima-03.jpg" alt="">
-        </div>
-      </div>
-
-      <!-- Content Slider -->
-      <div class="destination-slider__content" id="destination-slider__content">
-        <!-- Content -->
-        <div class="destination-slider__content__slide">
-          <div class="destination-slider__content__slide__subtitle">
-            The Pristine Rainforest
+    <!-- Hero -->
+    <div class="section-slider">
+      <div class="slider">
+        <div class="slider__title">
+          <div class="slider__title--large">
+            The Amazon
           </div>
-          <div class="destination-slider__content__slide__title">
-            Amazon
-          </div>
-          <p class="destination-slider__content__slide__text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi suscipit repellat maxime velit dolor nobis
-            amet sint veritatis, veniam nulla, enim obcaecati doloribus maiores, aliquam doloremque voluptatem modi
-            consequatur? Sapiente?
-          </p>
-          <div class="destination-slider__content__slide__cta">
-            <a href="#" class="destination-slider__content__slide__cta__explore">
-              <span>Explore Amazon</span>
-              <svg>
-                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
-              </svg>
-            </a>
-            <a href="#" class="destination-slider__content__slide__cta__more">
-              <span>
-                More Peru
-              </span>
-            </a>
+          <div class="slider__title--subtext">
+            Cruise the worlds greatest river
           </div>
         </div>
-        <!-- Content -->
-        <div class="destination-slider__content__slide">
-          <div class="destination-slider__content__slide__subtitle">
-            Incan Citadel
+        <form action="#" class="slider__form">
+          <!-- Destination Search -->
+          <div class="slider__form-group">
+            <label for="destination" class="slider__label">Destination</label>
+            <input type="text" class="slider__input" id="destination" tabindex="1" />
           </div>
-          <div class="destination-slider__content__slide__title">
-            Machu Picchu
+          <!-- Travel Date -->
+          <div class="slider__form-group">
+            <label for="travel-date" class="slider__label">Travel Date</label>
+            <!-- Select-Box -->
+            <div class="select-box">
+              <div class="select-box__current" id="travel-date" tabindex="2">
+                <!-- Select-Box Value Array (hidden) -->
+                <div class="select-box__value">
+                  <input class="select-box__input" type="radio" id="0" value="1" name="hidden-check-input"
+                    checked="checked" />
+                  <p class="select-box__input-text">June 2020</p>
+                </div>
+                <div class="select-box__value">
+                  <input class="select-box__input" type="radio" id="1" value="2" name="hidden-check-input"
+                    checked="checked" />
+                  <p class="select-box__input-text">July 2020</p>
+                </div>
+                <div class="select-box__value">
+                  <input class="select-box__input" type="radio" id="2" value="3" name="hidden-check-input"
+                    checked="checked" />
+                  <p class="select-box__input-text">August 2020</p>
+                </div>
+  
+                <!-- Down Icon -->
+                <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon"
+                  aria-hidden="true" />
+              </div>
+  
+              <!-- Select-Box List -->
+              <ul class="select-box__list">
+                <li>
+                  <label class="select-box__option" for="0" aria-hidden="aria-hidden">June 2020</label>
+                </li>
+                <li>
+                  <label class="select-box__option" for="1" aria-hidden="aria-hidden">July 2020</label>
+                </li>
+                <li>
+                  <label class="select-box__option" for="2" aria-hidden="aria-hidden">August 2020</label>
+                </li>
+              </ul>
+  
+            </div>
+            <!-- End Select Box-->
+  
+  
           </div>
-          <p class="destination-slider__content__slide__text">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-          </p>
-          <div class="destination-slider__content__slide__cta">
-            <a href="#" class="destination-slider__content__slide__cta__explore">
-              <span>Explore Machu Picchu</span>
-              <svg>
-                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
-              </svg>
-            </a>
-            <a href="#" class="destination-slider__content__slide__cta__more">
-              <span>
-                More Peru
-              </span>
-
-            </a>
+  
+          <!-- Style -->
+          <!-- <div class="slider__form-group">
+              <label for="travel-style" class="slider__label">Style</label>
+              <input type="text" class="slider__input" id="travel-style" tabindex="3" />
+            </div> -->
+  
+          <div class="slider__form-group">
+            <button class="slider__button" tabindex="4">
+              Search
+            </button>
           </div>
-        </div>
-        <!-- Content -->
-        <div class="destination-slider__content__slide">
-          <div class="destination-slider__content__slide__subtitle">
-            Desert Oasis
-          </div>
-          <div class="destination-slider__content__slide__title">
-            Ica
-          </div>
-          <p class="destination-slider__content__slide__text">
-            Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-          </p>
-          <div class="destination-slider__content__slide__cta">
-            <a href="#" class="destination-slider__content__slide__cta__explore">
-              <span>Explore Ica</span>
-              <svg>
-                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
-              </svg>
-            </a>
-            <a href="#" class="destination-slider__content__slide__cta__more">
-              <span>
-                More Peru
-              </span>
-            </a>
-          </div>
-        </div>
-        <!-- Content -->
-        <div class="destination-slider__content__slide">
-          <div class="destination-slider__content__slide__subtitle">
-            World's Highest Lake
-          </div>
-          <div class="destination-slider__content__slide__title">
-            Lake Titicaca
-          </div>
-          <p class="destination-slider__content__slide__text">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi
-          </p>
-          <div class="destination-slider__content__slide__cta">
-            <a href="#" class="destination-slider__content__slide__cta__explore">
-              <span>Explore Lake Titicaca</span>
-              <svg>
-                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
-              </svg>
-            </a>
-            <a href="#" class="destination-slider__content__slide__cta__more">
-              <span>
-                More Peru
-              </span>
-            </a>
-          </div>
-        </div>
-        <!-- Content -->
-        <div class="destination-slider__content__slide">
-          <div class="destination-slider__content__slide__subtitle">
-            Capital City
-          </div>
-          <div class="destination-slider__content__slide__title">
-            Lima
-          </div>
-          <p class="destination-slider__content__slide__text">
-            Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus
-          </p>
-          <div class="destination-slider__content__slide__cta">
-            <a href="#" class="destination-slider__content__slide__cta__explore">
-              <span>Explore Lima</span>
-              <svg>
-                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
-              </svg>
-            </a>
-            <a href="#" class="destination-slider__content__slide__cta__more">
-              <span>
-                More Peru
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nav Slider -->
-      <div class="destination-slider__nav" id="destination-slider__nav">
-        <div class="destination-slider__nav__slide">
-          <span>Amazon</span>
-
-        </div>
-        <div class="destination-slider__nav__slide">
-          <span>
-            Machu Picchu
-          </span>
-
-        </div>
-        <div class="destination-slider__nav__slide">
-          <span>
-            Ica
-          </span>
-
-        </div>
-        <div class="destination-slider__nav__slide">
-          <span>
-            Lake Titicaca
-          </span>
-        </div>
-        <div class="destination-slider__nav__slide">
-          <span>
-            Lima
-          </span>
-        </div>
+        </form>
       </div>
     </div>
 
-  </section>
-  <div class="destination-breadcrumb">
-    <div class="destination-breadcrumb__path">
-      Destinations > Peru
-    </div>
+  <section class="search-hero">
 
-  </div>
-  <nav class="destination-nav">
-    <div class="destination-nav__title">Peru</div>
-    <ul class="destination-nav__list">
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Tours</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Cruises</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Accommodations</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link"> Regions</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Travel Guides</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Reviews</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">FAQ</a>
-      </div>
-    </ul>
-    <div class="destination-nav__arrow">
-      <button
-        class="btn-circle btn-circle--small btn-white btn-circle--down">
-        <svg class="btn-circle--arrow-main">
-          <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
-        </svg>
-        <svg class="btn-circle--arrow-animate">
-          <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
-        </svg></button>
-    </div>
-  </nav>
+</section>
 
-  <!-- Tours-->
-  <section class="destination-page__section-tours">
-    Tours
+  <section class="search-content">
+
   </section>
 
-  <!-- Cruises-->
-  <section class="destination-page__section-cruises">
-    Cruises
-  </section>
-
-
-
-
-
-   <!-- Footer -->
-   <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer">
     <nav class="footer__nav">
       <div class="footer__nav__about">
         <img src="img/logo/logo-blue-horizontal.png" alt="" class="footer__nav__about__img">
@@ -638,11 +476,17 @@
   </footer>
 </body>
 
-
 </html>
 
+<!-- JS Imports -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" />
 </script>
-<script type="text/javascript" src="js/header.js"></script>
-<script type="text/javascript" src="js/page-destination.js"></script>
+
+<script type="text/javascript" src="js/utilities.js"></script>
+
+<script type="text/javascript" src="js/page-search.js"></script>
+<script type="text/javascript" src="js/header-search.js"></script>
+
+ 
+<!-- Scripts -->

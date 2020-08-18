@@ -1,0 +1,27 @@
+.search-page {
+    display: grid;
+  
+    grid-template-rows:
+      [nav-start] min-content [nav-end top-content-start] min-content [hero-end content-start] repeat(7, min-content)
+      [content-end footer-start] min-content [footer-end];
+  
+    grid-template-columns: $page-container
+
+
+  
+  
+  
+  }
+  
+  .search-hero{
+      grid-column: 1 / -1;
+      //background-color: $color-secondary;
+      grid-row: nav-start / hero-end;
+      height: 15vh;
+      
+  }
+  .search-content {
+      height: 90vh;
+      grid-column: 1 / -1;
+  }
+  
