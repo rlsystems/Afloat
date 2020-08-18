@@ -2336,7 +2336,8 @@ p {
       text-transform: uppercase;
       color: currentColor;
       transition: all .5s;
-      display: block; }
+      display: block;
+      outline: none; }
       .destination-slider__nav__slide span {
         display: block;
         cursor: pointer;
