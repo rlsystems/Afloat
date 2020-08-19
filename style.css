@@ -126,6 +126,8 @@ p {
   grid-template-columns: minmax(6rem, 1fr) minmax(min-content, max-content) minmax(6rem, 1fr);
   align-items: center;
   column-gap: 25px; }
+  .page-divider--full {
+    grid-column: full-start / full-end; }
   @media only screen and (max-width: 50em) {
     .page-divider {
       font-size: 3rem; } }
@@ -137,12 +139,14 @@ p {
     content: "";
     height: 1px;
     display: block;
-    background-color: #e6e6e6; }
+    background-color: currentColor; }
   .page-divider::after {
     content: "";
     height: 1px;
     display: block;
-    background-color: #e6e6e6; }
+    background-color: currentColor; }
+  .page-divider--dark {
+    color: #9ea0a4; }
 
 .list-svg {
   display: grid;
@@ -438,6 +442,29 @@ p {
   color: rgba(255, 255, 255, 0.8) !important; }
   .btn-white::after {
     border-color: rgba(255, 255, 255, 0.8) !important; }
+
+.btn-underline {
+  color: #142838;
+  text-decoration: none;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.32rem;
+  letter-spacing: .1rem; }
+  .btn-underline::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 0%;
+    bottom: -0.5rem;
+    left: 0;
+    background-color: currentColor;
+    transition: all 0.3s; }
+  .btn-underline:hover {
+    color: #40739c; }
+    .btn-underline:hover::after {
+      width: 100%; }
 
 .select-box {
   position: relative;
@@ -2422,6 +2449,143 @@ p {
     margin-bottom: 3rem;
     transform: translateX(-1rem); }
 
+.destination-tours {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  justify-items: center;
+  background-color: #f8f8f8;
+  padding: 3rem 0;
+  padding-bottom: 8rem;
+  position: relative;
+  z-index: 0; }
+  .destination-tours__title {
+    grid-column: center-start / center-end;
+    font-size: 4.5rem;
+    text-align: center;
+    color: #142838;
+    font-family: "Old Standard TT", serif;
+    letter-spacing: 0.2rem;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: minmax(6rem, 1fr) minmax(min-content, max-content) minmax(6rem, 1fr);
+    align-items: center;
+    column-gap: 25px; }
+    .destination-tours__title::before {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor; }
+    .destination-tours__title::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor; }
+  .destination-tours__intro-text {
+    grid-column: center-start / center-end;
+    padding: 0 6rem;
+    padding-bottom: 4rem;
+    font-size: 1.4rem;
+    text-align: center;
+    z-index: 10; }
+  .destination-tours__slider {
+    grid-column: 1 / -1;
+    max-width: 75%;
+    margin: auto;
+    height: 52rem;
+    z-index: 10; }
+    .destination-tours__slider .slick-slide {
+      margin: 0rem 0.5rem; }
+    .destination-tours__slider__slide {
+      display: grid !important;
+      align-content: center;
+      background-color: #fff;
+      position: relative;
+      z-index: 0;
+      grid-template-rows: min-content min-content;
+      cursor: pointer; }
+      .destination-tours__slider__slide:after {
+        content: "";
+        grid-row: 1 / 1;
+        grid-column: 1 / -1;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-image: linear-gradient(to top, rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.5));
+        opacity: 0;
+        transition: opacity 0.3s; }
+      .destination-tours__slider__slide:hover:after {
+        opacity: 1; }
+      .destination-tours__slider__slide:hover img {
+        height: 42rem; }
+      .destination-tours__slider__slide:hover .destination-tours__slider__slide__hover-group {
+        opacity: 1; }
+      .destination-tours__slider__slide__hover-group {
+        grid-column: 1 / -1;
+        grid-row: 1 / 1;
+        margin-bottom: 1.4rem;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+        align-items: center;
+        transition: opacity 0.3s 0.1s;
+        opacity: 0; }
+        .destination-tours__slider__slide__hover-group__cta {
+          display: block;
+          font-size: 2rem;
+          color: #fff;
+          letter-spacing: 0.15rem;
+          margin: 0.3rem 2rem;
+          font-weight: 400; }
+        .destination-tours__slider__slide__hover-group__count {
+          display: block;
+          font-size: 1.4rem;
+          color: #fff;
+          text-transform: uppercase;
+          letter-spacing: 0.3rem;
+          margin-bottom: 2rem; }
+      .destination-tours__slider__slide__img {
+        grid-column: 1 / -1;
+        grid-row: 1 / span 1;
+        width: 100%;
+        height: 38rem;
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+        z-index: 0;
+        transition: height 0.3s; }
+      .destination-tours__slider__slide__lower-section {
+        grid-column: 1 / -1;
+        grid-row: 2 / span 1;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        min-height: 15rem; }
+        .destination-tours__slider__slide__lower-section__title {
+          margin: 1rem 0rem;
+          font-size: 1.6rem;
+          text-transform: uppercase;
+          letter-spacing: 0.3rem;
+          color: #142838; }
+        .destination-tours__slider__slide__lower-section__text {
+          font-size: 1.3rem;
+          margin-bottom: 2rem; }
+  .destination-tours__all {
+    grid-column: center-start / center-end;
+    margin-top: 8rem; }
+  .destination-tours__btn--left {
+    position: absolute;
+    z-index: 10;
+    top: 17rem;
+    left: -7rem; }
+  .destination-tours__btn--right {
+    position: absolute;
+    z-index: 10;
+    top: 17rem;
+    right: -7rem; }
+
 .header {
   grid-column: full-start / -1;
   grid-row: nav-start / nav-end;
@@ -3066,9 +3230,7 @@ p {
     grid-column: full-start / -1;
     background-color: #1e1e1e; }
   .destination-page__section-tours {
-    grid-column: full-start / -1;
-    background-color: lightblue;
-    height: 50vh; }
+    grid-column: full-start / -1; }
   .destination-page__section-cruises {
     grid-column: full-start / -1;
     height: 50vh; }

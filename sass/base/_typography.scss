@@ -121,11 +121,17 @@ p {
     padding: 0 6rem;
     margin: 4rem 0;
 
+    &--full {
+        grid-column: full-start / full-end;
+
+    }
+
     font-family: $font-secondary;
     color: $color-grey-light-2;
     font-size: 4rem;
     letter-spacing: 0.3rem;
     font-weight: 300;
+
 
     display: grid;
     grid-template-columns: minmax(6rem, 1fr) minmax(min-content, max-content) minmax(6rem, 1fr); //FIX THIS
@@ -146,14 +152,20 @@ p {
         content: "";
         height: 1px;
         display: block;
-        background-color: $color-grey-light-1a;
+        background-color: currentColor;
     }
 
     &::after {
         content: "";
         height: 1px;
         display: block;
-        background-color: $color-grey-light-1a;
+        background-color: currentColor;
+    }
+
+    
+    &--dark {
+        color: $color-grey-1;
+       
     }
 }
 
