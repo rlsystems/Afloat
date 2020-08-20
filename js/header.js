@@ -202,6 +202,8 @@ $('.product-nav__sticky-wrapper').hover(
 //Product Nav -- Scroll
 var navbar = document.querySelector('.product-nav__sticky-wrapper');
 var subnavTitle = document.querySelector('.product-nav__caption__title');
+
+
 var offsetY = navbar.offsetTop;
 
 window.onscroll = function () { myFunction() };

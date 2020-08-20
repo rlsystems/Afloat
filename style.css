@@ -231,6 +231,12 @@ p {
   margin-right: 0.07em;
   margin-bottom: -0.07em; }
 
+.star-gold {
+  fill: #fec951; }
+
+.star-grey {
+  fill: #c2c6c9; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -2270,25 +2276,25 @@ p {
     right: 0;
     z-index: 40; }
 
-.destination-slider {
+.destination-hero {
   overflow-x: hidden;
   display: grid;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   grid-template-rows: 1fr min-content 1fr; }
-  .destination-slider__bg {
+  .destination-hero__bg {
     grid-column: 1 / -1;
     grid-row: 1 / -1; }
-    .destination-slider__bg__slide {
+    .destination-hero__bg__slide {
       height: 100vh;
       position: relative; }
-      .destination-slider__bg__slide img {
+      .destination-hero__bg__slide img {
         background-position: center center;
         background-repeat: no-repeat;
         object-fit: cover;
         height: 100%;
         width: 100%;
         z-index: 0; }
-      .destination-slider__bg__slide:after {
+      .destination-hero__bg__slide:after {
         content: "";
         height: 100%;
         width: 100%;
@@ -2297,18 +2303,18 @@ p {
         top: 0;
         left: 0;
         z-index: 2; }
-  .destination-slider__content {
+  .destination-hero__content {
     grid-column: 6 / -1;
     grid-row: 2 / span 1;
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.6rem;
     margin-right: 15vw; }
-    .destination-slider__content__slide__subtitle {
+    .destination-hero__content__slide__subtitle {
       text-transform: uppercase;
       font-size: 1.5rem;
       letter-spacing: .4rem;
       padding-left: .5rem; }
-    .destination-slider__content__slide__title {
+    .destination-hero__content__slide__title {
       font-family: "Old Standard TT", serif;
       font-size: 7rem;
       letter-spacing: 1rem;
@@ -2316,9 +2322,9 @@ p {
       font-weight: 200;
       margin-top: .5rem;
       line-height: 7rem; }
-    .destination-slider__content__slide__text {
+    .destination-hero__content__slide__text {
       line-height: 3rem; }
-    .destination-slider__content__slide__cta {
+    .destination-hero__content__slide__cta {
       display: grid;
       grid-template-columns: max-content max-content;
       grid-gap: 6rem;
@@ -2326,28 +2332,28 @@ p {
       font-weight: 800;
       letter-spacing: .3rem;
       font-size: 1.32rem; }
-      .destination-slider__content__slide__cta__explore:link, .destination-slider__content__slide__cta__explore:visited {
+      .destination-hero__content__slide__cta__explore:link, .destination-hero__content__slide__cta__explore:visited {
         display: inline-block;
         text-decoration: none;
         color: currentColor;
         display: flex;
         transition: all .3s; }
-        .destination-slider__content__slide__cta__explore:link svg, .destination-slider__content__slide__cta__explore:visited svg {
+        .destination-hero__content__slide__cta__explore:link svg, .destination-hero__content__slide__cta__explore:visited svg {
           margin-left: 1rem;
           height: 2rem;
           width: 2rem;
           fill: currentColor; }
-      .destination-slider__content__slide__cta__explore:hover, .destination-slider__content__slide__cta__explore:active {
+      .destination-hero__content__slide__cta__explore:hover, .destination-hero__content__slide__cta__explore:active {
         color: #fff; }
-      .destination-slider__content__slide__cta__more:link, .destination-slider__content__slide__cta__more:visited {
+      .destination-hero__content__slide__cta__more:link, .destination-hero__content__slide__cta__more:visited {
         display: inline-block;
         text-decoration: none;
         color: #9ea0a4;
         transition: all .3s;
         display: flex; }
-      .destination-slider__content__slide__cta__more:hover, .destination-slider__content__slide__cta__more:active {
+      .destination-hero__content__slide__cta__more:hover, .destination-hero__content__slide__cta__more:active {
         color: #fff; }
-  .destination-slider__nav {
+  .destination-hero__nav {
     grid-column: 6 / -1;
     grid-row: 3 / span 1;
     color: rgba(255, 255, 255, 0.8);
@@ -2356,7 +2362,7 @@ p {
     display: flex;
     align-items: center;
     margin-top: 12rem; }
-    .destination-slider__nav__slide {
+    .destination-hero__nav__slide {
       text-align: center;
       letter-spacing: .3rem;
       font-size: 1.4rem;
@@ -2365,15 +2371,15 @@ p {
       transition: all .5s;
       display: block;
       outline: none; }
-      .destination-slider__nav__slide span {
+      .destination-hero__nav__slide span {
         display: block;
         cursor: pointer;
         transition: all .3s; }
-        .destination-slider__nav__slide span:hover {
+        .destination-hero__nav__slide span:hover {
           color: #fff; }
-    .destination-slider__nav .slick-list {
+    .destination-hero__nav .slick-list {
       margin: 0 1.5rem; }
-    .destination-slider__nav .slick-current {
+    .destination-hero__nav .slick-current {
       color: #fff; }
 
 .destination-breadcrumb {
@@ -2585,6 +2591,127 @@ p {
     z-index: 10;
     top: 17rem;
     right: -7rem; }
+
+.destination-cruises {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  justify-items: center;
+  grid-template-rows: repeat(3, min-content);
+  padding: 3rem 0;
+  padding-bottom: 8rem;
+  position: relative;
+  z-index: 0; }
+  .destination-cruises__title {
+    grid-column: center-start / center-end;
+    font-size: 4.5rem;
+    text-align: center;
+    color: #142838;
+    font-family: "Old Standard TT", serif;
+    letter-spacing: 0.2rem;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: minmax(6rem, 1fr) minmax(min-content, max-content) minmax(6rem, 1fr);
+    align-items: center;
+    column-gap: 25px; }
+    .destination-cruises__title::before {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor; }
+    .destination-cruises__title::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor; }
+  .destination-cruises__intro-text {
+    grid-column: center-start / center-end;
+    padding: 0 6rem;
+    padding-bottom: 4rem;
+    font-size: 1.4rem;
+    text-align: center;
+    z-index: 10; }
+  .destination-cruises__grid {
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    width: 100%;
+    column-gap: 3rem;
+    row-gap: 6rem; }
+    .destination-cruises__grid__item {
+      display: grid;
+      row-gap: 2rem;
+      grid-template-columns: 1fr;
+      cursor: pointer; }
+      .destination-cruises__grid__item:hover .destination-cruises__grid__item__cta {
+        opacity: 1; }
+      .destination-cruises__grid__item:hover::after {
+        opacity: 1; }
+      .destination-cruises__grid__item__cta {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        align-self: center;
+        justify-self: center;
+        z-index: 3;
+        opacity: 0; }
+      .destination-cruises__grid__item:after {
+        content: "";
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-image: linear-gradient(to top, rgba(30, 30, 30, 0.4), rgba(30, 30, 30, 0.4));
+        opacity: 0;
+        transition: opacity 0.3s; }
+      .destination-cruises__grid__item__img {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+        z-index: 0;
+        transition: all 0.2s; }
+      .destination-cruises__grid__item__lower-section {
+        grid-row: 2 / span 1;
+        display: grid;
+        grid-template-columns: minmax(min-content/max-content)/1fr;
+        row-gap: 0.5rem;
+        position: relative; }
+        .destination-cruises__grid__item__lower-section__price {
+          z-index: 10;
+          background-color: rgba(255, 255, 255, 0.95);
+          padding: 0.75rem 1.75rem;
+          padding-bottom: 1rem;
+          box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+          position: absolute;
+          top: -5rem;
+          right: 1rem;
+          font-size: 1.6rem;
+          font-weight: 600;
+          color: #142838; }
+        .destination-cruises__grid__item__lower-section__name {
+          grid-column: 1 / -1;
+          font-size: 1.6rem;
+          font-weight: 600;
+          letter-spacing: 0.05rem;
+          color: #142838; }
+        .destination-cruises__grid__item__lower-section__length {
+          grid-column: 1 / span 1;
+          font-size: 1.3rem;
+          text-transform: uppercase;
+          letter-spacing: 0.2rem; }
+        .destination-cruises__grid__item__lower-section__stars {
+          grid-column: 2 / span 1;
+          display: flex;
+          justify-content: flex-end; }
+          .destination-cruises__grid__item__lower-section__stars svg {
+            height: 1.5rem;
+            width: 1.5rem; }
+  .destination-cruises__all {
+    grid-column: center-start / center-end;
+    margin-top: 8rem; }
 
 .header {
   grid-column: full-start / -1;
@@ -3232,5 +3359,4 @@ p {
   .destination-page__section-tours {
     grid-column: full-start / -1; }
   .destination-page__section-cruises {
-    grid-column: full-start / -1;
-    height: 50vh; }
+    grid-column: full-start / -1; }

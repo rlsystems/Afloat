@@ -1,4 +1,4 @@
-.destination-slider {
+.destination-hero {
     overflow-x: hidden;
     display: grid;
     grid-template-columns: $page-container;
@@ -9,7 +9,7 @@
     &__bg {
         grid-column: 1 / -1;
         grid-row: 1 / -1;
-
+ 
         &__slide {
             height: 100vh;
             position: relative;

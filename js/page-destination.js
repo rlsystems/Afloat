@@ -1,4 +1,4 @@
-$('#destination-slider__bg').slick({
+$('#destination-hero__bg').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
@@ -8,20 +8,20 @@ $('#destination-slider__bg').slick({
     arrows: false
   });
 
-  //destination-slider-content
-  $('#destination-slider__content').slick({
+  //destination-hero-content
+  $('#destination-hero__content').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
-    asNavFor: '#destination-slider__bg',
+    asNavFor: '#destination-hero__bg',
     centerMode: false,
     arrows: false,
     draggable: false,
     fade: true
   });
 
-  //destination-slider__nav
-  $('#destination-slider__nav').slick({
+  //destination-hero__nav
+  $('#destination-hero__nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: false,
@@ -29,7 +29,7 @@ $('#destination-slider__bg').slick({
     centerPadding: 0,
     focusOnSelect:true,
     arrows: true,
-    asNavFor: '#destination-slider__content, #destination-slider__bg',
+    asNavFor: '#destination-hero__content, #destination-hero__bg',
 
   });
 
