@@ -4,35 +4,32 @@
     grid-template-columns: $page-container;
     grid-template-rows: 1fr min-content 1fr;
 
-    
-
     &__bg {
         grid-column: 1 / -1;
         grid-row: 1 / -1;
- 
+
         &__slide {
             height: 100vh;
             position: relative;
-           
-    
+
             img {
-    
                 background-position: center center;
                 background-repeat: no-repeat;
                 object-fit: cover;
-               
+
                 height: 100%;
-                width: 100%;        
-                z-index: 0;      
+                width: 100%;
+                z-index: 0;
             }
-    
-    
-            &:after { //gradient overlay
+
+            &:after {
+                //gradient overlay
                 content: "";
                 height: 100%;
                 width: 100%;
-                background-image: linear-gradient(to left, rgba($color-black, 0.7), transparent), linear-gradient(to right, rgba($color-black, 0.35), transparent 30%);
-    
+                background-image: linear-gradient(to left, rgba($color-black, 0.7), transparent),
+                    linear-gradient(to right, rgba($color-black, 0.35), transparent 30%);
+
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -43,9 +40,9 @@
 
     &__content {
         grid-column: 6 / -1;
-        grid-row: 2 / span 1;     
+        grid-row: 2 / span 1;
 
-        color: rgba($color-white, .8) ;
+        color: rgba($color-white, 0.8);
         font-size: 1.6rem;
         margin-right: 15vw;
 
@@ -53,37 +50,33 @@
             &__subtitle {
                 text-transform: uppercase;
                 font-size: 1.5rem;
-                letter-spacing: .4rem;
-                padding-left: .5rem;
-                
+                letter-spacing: 0.4rem;
+                padding-left: 0.5rem;
             }
-    
+
             &__title {
-                    font-family: $font-secondary;
-                    font-size: 7rem;
-                    letter-spacing: 1rem;
-                    text-transform: uppercase;
-                    font-weight: 200;
-                    margin-top: .5rem;
-                    line-height: 7rem;
-                   
+                font-family: $font-secondary;
+                font-size: 7rem;
+                letter-spacing: 1rem;
+                text-transform: uppercase;
+                font-weight: 200;
+                margin-top: 0.5rem;
+                line-height: 7rem;
             }
-    
+
             &__text {
                 line-height: 3rem;
             }
-    
+
             &__cta {
-    
                 display: grid;
                 grid-template-columns: max-content max-content;
                 grid-gap: 6rem;
 
                 text-transform: uppercase;
                 font-weight: 800;
-                letter-spacing: .3rem;
+                letter-spacing: 0.3rem;
                 font-size: 1.32rem;
-
 
                 &__explore:link,
                 &__explore:visited {
@@ -92,7 +85,7 @@
                     color: currentColor;
 
                     display: flex;
-                    transition: all .3s;
+                    transition: all 0.3s;
                     svg {
                         margin-left: 1rem;
                         height: 2rem;
@@ -106,13 +99,12 @@
                     color: $color-white;
                 }
 
-
                 &__more:link,
                 &__more:visited {
                     display: inline-block;
                     text-decoration: none;
                     color: $color-grey-1;
-                    transition: all .3s;
+                    transition: all 0.3s;
                     display: flex;
                 }
 
@@ -122,15 +114,13 @@
                 }
             }
         }
-
-        
     }
 
     &__nav {
         grid-column: 6 / -1;
-        grid-row: 3 / span 1;     
+        grid-row: 3 / span 1;
 
-        color: rgba($color-white, .8) ;
+        color: rgba($color-white, 0.8);
         font-size: 2rem;
         margin-right: 15vw;
         display: flex;
@@ -140,11 +130,11 @@
 
         &__slide {
             text-align: center;
-            letter-spacing: .3rem;
+            letter-spacing: 0.3rem;
             font-size: 1.4rem;
             text-transform: uppercase;
             color: currentColor;
-            transition: all .5s;
+            transition: all 0.5s;
 
             display: block;
             outline: none;
@@ -152,36 +142,33 @@
             span {
                 display: block;
                 cursor: pointer;
-                transition: all .3s;
+                transition: all 0.3s;
                 &:hover {
                     color: $color-white;
                 }
             }
-
         }
-        .slick-list{
+        .slick-list {
             margin: 0 1.5rem;
         }
 
         .slick-current {
             color: $color-white;
         }
-   
     }
-    
 }
 
 .destination-breadcrumb {
     grid-row: nav-end / span 1;
     grid-column: full-start / span 4;
-    align-self: start; 
+    align-self: start;
     margin-top: 4rem;
-    color: rgba($color-white, .8);
+    color: rgba($color-white, 0.8);
     font-size: 1.6rem;
-    letter-spacing: .3rem;
+    letter-spacing: 0.3rem;
     font-weight: 500;
     z-index: 10;
-    margin-left: 10vw;  
+    margin-left: 10vw;
     user-select: none;
 
     &__path {
@@ -190,28 +177,27 @@
         &::after {
             content: "";
             position: absolute;
-            bottom: -.3rem;
+            bottom: -0.3rem;
             left: 0;
             width: 100%;
             height: 1px;
-            background-color: rgba($color-white, .8);
+            background-color: rgba($color-white, 0.8);
         }
     }
-    
 }
 
 .destination-nav {
     user-select: none;
     grid-row: nav-end / span 1;
-    grid-column: full-start / span 2;
+    grid-column: full-start / span 4;
     align-self: end;
-    color: rgba($color-white, .8);
+    color: rgba($color-white, 0.8);
     font-size: 1.6rem;
-    letter-spacing: .3rem;
+    letter-spacing: 0.3rem;
     font-weight: 300;
     line-height: 3rem;
     z-index: 10;
-        margin-left: 10vw;
+    margin-left: 10vw;
 
     &__title {
         font-weight: 800;
@@ -226,21 +212,19 @@
             left: 0;
             width: 5rem;
             height: 1px;
-            background-color: rgba($color-white, .8);
+            background-color: rgba($color-white, 0.8);
         }
     }
     &__list {
         list-style: none;
 
         &__item {
-
-
             &__link:link,
             &__link:visited {
                 text-decoration: none;
                 color: currentColor;
                 position: relative;
-               
+
                 &::after {
                     content: "";
                     position: absolute;
@@ -249,22 +233,18 @@
                     bottom: -0.5rem;
                     left: 0;
                     background-color: $color-grey-light-1;
-                    transition: all .3s;
+                    transition: all 0.3s;
                 }
-                
             }
 
             &__link:hover,
             &__link:active {
                 color: rgba($color-white, 1);
                 &::after {
-
                     width: 100%;
-                   
                 }
             }
         }
-
     }
 
     &__arrow {
@@ -272,5 +252,113 @@
         margin-bottom: 3rem;
         transform: translateX(-1rem);
     }
+}
 
+.destination-play {
+    grid-row: nav-end / span 1;
+    grid-column: full-start / span 4;
+    align-self: center;
+    transform: translateY(-5rem);
+
+    justify-self: start;
+    transform-origin: center;
+
+    z-index: 10;
+    margin-left: 9vw;
+    user-select: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__button {
+        height: 7rem;
+        width: 7rem;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+
+        &::after {
+            content: "";
+
+            border: 0.5rem solid rgba($color-white, 0.3);
+            background-color: rgba($color-white, 0.1);
+        }
+
+        & svg {
+            height: 2rem;
+            width: 2rem;
+            fill: rgba($color-white, 0.6);
+            transition: fill  .3s;
+        }
+
+        &:hover {
+
+            & svg {
+                fill: rgba($color-white, 0.9);
+
+            }
+        }
+    }
+}
+
+.video-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba($color-black, 0.7);
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+
+    &__content {
+        @include absCenter;
+        width: 65%;
+        background-color: $color-black;
+        box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.25);
+        transition: all 0.4s 0.2s; //last one is delay
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+
+       
+    }
+
+    //open states
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close {
+        position: fixed;
+        top: 5rem;
+        right: 8rem;
+
+        & svg {
+            height: 8rem;
+            width: 8rem;
+            fill: $color-white;
+        }
+    }
 }

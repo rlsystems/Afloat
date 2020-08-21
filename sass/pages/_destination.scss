@@ -15,10 +15,13 @@
     &__section-tours {
         grid-column: full-start / -1;
 
-
     }
 
     &__section-cruises {
+        grid-column: full-start / -1;
+    }
+
+    &__section-accommodations {
         grid-column: full-start / -1;
     }
 }

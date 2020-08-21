@@ -188,7 +188,7 @@ for (i = 0; i < accDestinations.length; i++) {
 
 //Product Nav
 //Product Nav -- Hover
-$('.product-nav__sticky-wrapper').hover(
+$('#template-nav').hover(
   function () { },
   function () {
     if ($(".burger-menu").hasClass('burger-menu--active') != true) {
@@ -236,7 +236,6 @@ function myFunction() {
         $('#product-nav').append(newTitle);
       }
     }
-
 
 
   }

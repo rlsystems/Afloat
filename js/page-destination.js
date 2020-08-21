@@ -43,3 +43,17 @@ $('#destination-hero__bg').slick({
     nextArrow: '<button class="btn-circle btn-dark btn-circle--right destination-tours__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
   
   });
+
+
+
+
+  $('.destination-play__button').on('click', function () {
+    $('#destination-video')[0].play();
+  })
+  // $('#myModal').on('hidden.bs.modal', function () {
+  //   $('#video1')[0].pause();
+  // })
+
+  $('.video-popup__close').on('click', function () {
+    $('#destination-video')[0].pause();
+  })
