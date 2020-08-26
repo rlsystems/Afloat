@@ -63,6 +63,14 @@ body {
     background-color: #c2c6c9;
     margin: 1.5rem 0;
     z-index: 9; }
+  .heading-3--underline-white::after {
+    content: "";
+    height: 1px;
+    width: 8rem;
+    display: block;
+    background-color: #fff;
+    margin: 1.5rem 0;
+    z-index: 9; }
 
 .heading-4 {
   font-size: 1.8rem;
@@ -2577,7 +2585,7 @@ p {
     max-width: 75%;
     margin: auto;
     height: 52rem;
-    z-index: 10; }
+    z-index: 50; }
     .destination-tours__slider .slick-slide {
       margin: 0rem 0.5rem; }
     .destination-tours__slider__slide {
@@ -2915,6 +2923,73 @@ p {
   .destination-accommodations__all {
     grid-column: center-start / center-end;
     margin-top: 4rem; }
+
+.destination-intro {
+  height: 50rem;
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  background-color: #838f94;
+  position: relative; }
+  .destination-intro::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to left, #1e1e1e 30%, transparent), url(img/bg/topo-1-inverse.png);
+    mix-blend-mode: exclusion;
+    opacity: .35;
+    top: 0;
+    left: 0; }
+  .destination-intro__content {
+    height: 10rem;
+    grid-column: full-start / col-start 8;
+    margin-left: 10vw;
+    margin-top: 6rem;
+    grid-row: 1 / span 1;
+    color: #fff;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12rem; }
+    .destination-intro__content__title {
+      color: currentColor;
+      font-size: 3rem;
+      letter-spacing: 0.3rem;
+      font-weight: 700; }
+    .destination-intro__content__text {
+      grid-column: 1 / span 1;
+      position: relative; }
+    .destination-intro__content__stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(max-content, 20rem));
+      grid-template-rows: repeat(3, min-content);
+      row-gap: 3rem;
+      column-gap: 5rem;
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1; }
+      .destination-intro__content__stats__item__title {
+        font-family: "Old Standard TT", serif;
+        font-size: 1.3rem;
+        letter-spacing: .2rem;
+        font-weight: 300;
+        display: inline-block; }
+        .destination-intro__content__stats__item__title::after {
+          content: "";
+          height: 1px;
+          width: 100%;
+          display: block;
+          background-color: rgba(255, 255, 255, 0.3);
+          z-index: 9; }
+      .destination-intro__content__stats__item__text {
+        font-size: 1.8rem;
+        letter-spacing: .2rem;
+        font-weight: 700; }
+  .destination-intro__map {
+    grid-row: 1 / span 1;
+    grid-column: col-start 7 / full-end;
+    z-index: 1; }
+    .destination-intro__map img {
+      object-fit: cover; }
 
 .header {
   grid-column: full-start / -1;
@@ -3559,6 +3634,9 @@ p {
     grid-row: nav-start / hero-end;
     grid-column: full-start / -1;
     background-color: #1e1e1e; }
+  .destination-page__section-intro {
+    grid-column: full-start / -1;
+    grid-row: content-start / span 1; }
   .destination-page__section-tours {
     grid-column: full-start / -1; }
   .destination-page__section-cruises {

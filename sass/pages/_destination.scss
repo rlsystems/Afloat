@@ -12,9 +12,15 @@
         background-color: $color-black;
     }
 
+    &__section-intro {
+        grid-column: full-start / -1;
+        grid-row: content-start / span 1;
+
+    }
+
+
     &__section-tours {
         grid-column: full-start / -1;
-
     }
 
     &__section-cruises {

@@ -47,6 +47,19 @@
             z-index: 9;
         }
     }
+
+    &--underline-white {
+        &::after {
+            content: "";
+            height: 1px;
+            width: 8rem;
+            
+            display: block;
+            background-color: $color-white;
+            margin: 1.5rem 0;
+            z-index: 9;
+        }
+    }
 }
 
 .heading-4 {
