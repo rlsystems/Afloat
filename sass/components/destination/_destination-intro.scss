@@ -1,33 +1,50 @@
 .destination-intro {
-    height: 50rem;
+    //height: 100rem;
     display: grid;
     grid-template-columns: $page-container;
-    background-color: $color-blue-grey-1;
-
-    //background-image: linear-gradient(to right, rgba(  $color-blue-grey-1, 1), transparent), url(img/bg/topo-1.png);
-   // background-image: url(img/bg/topo-1-inverse.png);
-    //background-blend-mode: screen;
+    background-image: linear-gradient(to bottom, rgba($color-blue-grey-1, 1) 30%, $color-white);
+    //background-color: $color-blue-grey-1;
 
     position: relative;
+
+    row-gap: 2rem;
+    padding-bottom: 6rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to top, rgba($color-black, 1) 30%, transparent),
+            linear-gradient(to left, rgba($color-black, 1) 30%, transparent), url(img/bg/topo-1-inverse.png);
+        //background-image: url(img/bg/topo-1-inverse.png);
+        mix-blend-mode: exclusion;
+        opacity: 0.35;
+        top: 0;
+        left: 0;
+    }
+
     &::after {
         content: "";
         position: absolute;
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(to left, rgba($color-black, 1) 30%, transparent), url(img/bg/topo-1-inverse.png);
-        //background-image: url(img/bg/topo-1-inverse.png);
-        mix-blend-mode: exclusion;
-        opacity: .35;
-        top: 0;
+        background-image: linear-gradient(to top, rgba($color-white, 1), transparent 30%);
+        //mix-blend-mode: exclusion;
+        //opacity: 0.35;
+        bottom: 0;
         left: 0;
-    }   
+    }
+
+    
+
 
     &__content {
-        height: 10rem;
+        //height: 10rem;
         grid-column: full-start / col-start 8;
         margin-left: 10vw;
-        margin-top: 6rem;
-
+        margin-top: 5rem;
+        overflow: hidden;
         grid-row: 1 / span 1;
 
         color: $color-white;
@@ -43,12 +60,12 @@
             font-size: 3rem;
             letter-spacing: 0.3rem;
             font-weight: 700;
+            align-self: center;
         }
 
         &__text {
             grid-column: 1 / span 1;
             position: relative;
-          
         }
 
         &__stats {
@@ -61,12 +78,11 @@
             grid-column: 2 / span 1;
             grid-row: 2 / span 1;
 
-
             &__item {
                 &__title {
                     font-family: $font-secondary;
                     font-size: 1.3rem;
-                    letter-spacing: .2rem;
+                    letter-spacing: 0.2rem;
                     font-weight: 300;
                     display: inline-block;
 
@@ -74,9 +90,9 @@
                         content: "";
                         height: 1px;
                         width: 100%;
-                        
+
                         display: block;
-                        background-color: rgba($color-white, .3);
+                        background-color: rgba($color-white, 0.3);
                         //margin: 1.5rem 0;
                         z-index: 9;
                     }
@@ -84,7 +100,7 @@
 
                 &__text {
                     font-size: 1.8rem;
-                    letter-spacing: .2rem;
+                    letter-spacing: 0.2rem;
                     font-weight: 700;
                 }
             }
@@ -92,13 +108,199 @@
     }
 
     &__map {
-        grid-row: 1 / span 1;
-        grid-column: col-start 7 / full-end;
-        //background-color: brown;
-        //height: 20rem;
+        grid-row: 1 / span 2;
+        grid-column: col-start 6 / full-end; 
         z-index: 1;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        position: relative;
+        //background-color: brown;
+
         & img {
-            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            
+        }
+
+    }
+
+    &__tours {
+        grid-row: 2 / span 1;
+        grid-column: 1 / -1;
+        z-index: 20;
+        color: $color-white;
+        margin: 0 10vw;
+
+        &__title {
+            font-size: 2rem;
+            color: currentColor;
+            letter-spacing: 0.2rem;
+            font-weight: 700;
+            align-self: center;
+            margin-bottom: 2rem;
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            &__subtitle {
+                max-width: 70%;
+            }
+
+            &__all {
+                margin-right: 5rem;
+            }
+        }
+      
+
+        &__slider {
+            //background-color: rgba(brown, 0.5);
+            grid-column: 1 / -1;
+            margin: auto;
+            transform: translateX(-.5rem);
+            z-index: 50;
+
+            .slick-track {
+                height: 56rem;
+            }
+
+            .slick-slide {
+                //padding: 1rem 2rem;
+
+                padding: 0 .5rem;
+            }
+
+            &__slide {
+                display: grid !important;
+                align-content: center;
+                background-color: $color-white;
+
+                position: relative;
+                z-index: 0;
+                //box-shadow: $shadow-dark-bottom;
+                grid-template-rows: min-content min-content;
+
+                cursor: pointer;
+
+                //overlay gradient
+                &:after {
+                    content: "";
+                    grid-row: 1 / 1;
+                    grid-column: 1 / -1;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                    background-image: linear-gradient(to top, rgba($color-black, 0.5), rgba($color-black, 0.5));
+                    opacity: 0;
+
+                    transition: opacity 0.3s;
+                }
+
+                //SLIDE HOVER
+                &:hover {
+                    &:after {
+                        opacity: 1;
+                    }
+
+                    img {
+                        height: 35rem;
+                    }
+
+                    & .destination-intro__tours__slider__slide__hover-group {
+                        opacity: 1;
+                    }
+                }
+
+                &__hover-group {
+                    grid-column: 1 / -1;
+                    grid-row: 1 / 1;
+                    margin-bottom: 1.4rem;
+                    align-self: center;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 5;
+                    align-items: center;
+                    transition: opacity 0.3s 0.1s;
+                    opacity: 0;
+
+                    &__cta {
+                        display: block;
+                        font-size: 2rem;
+                        color: $color-white;
+                        letter-spacing: 0.15rem;
+                        margin: 0.3rem 2rem;
+                        font-weight: 400;
+                    }
+
+                    &__count {
+                        display: block;
+                        font-size: 1.4rem;
+                        color: $color-white;
+                        text-transform: uppercase;
+                        letter-spacing: 0.3rem;
+                        margin-bottom: 2rem;
+                    }
+                }
+
+                &__img {
+                    grid-column: 1 / -1;
+                    grid-row: 1 / span 1;
+                    width: 100%;
+                    height: 30rem;
+                    object-fit: cover;
+                    object-position: center;
+                    position: relative;
+                    z-index: 0;
+                    transition: height 0.3s;
+                }
+
+                &__lower-section {
+                    grid-column: 1 / -1;
+                    grid-row: 2 / span 1;
+
+                    padding: 1rem 2rem;
+
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+
+                    min-height: 15rem;
+                    &__title {
+                        margin: 1rem 0rem;
+                        font-size: 1.6rem;
+                        text-transform: uppercase;
+                        letter-spacing: 0.3rem;
+                        color: $color-secondary;
+                    }
+                    &__text {
+                        font-size: 1.3rem;
+                        margin-bottom: 2rem;
+                        color: $color-grey-2;
+                    }
+                }
+            }
+        }
+
+        &__btn {
+            &--left {
+                position: absolute;
+                z-index: 10;
+                top: 17rem;
+                left: -7rem;
+            }
+            &--right {
+                position: absolute;
+                z-index: 10;
+                top: 17rem;
+                right: -7rem;
+            }
+        }
+
+        &__all {
+
+            text-align: center;
         }
     }
 }

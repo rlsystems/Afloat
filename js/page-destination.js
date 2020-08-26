@@ -45,6 +45,17 @@ $('#destination-hero__bg').slick({
   });
 
 
+  $('#destination-intro__tours__slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: false,
+    prevArrow: '<button class="btn-circle btn-white btn-circle--left destination-intro__tours__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
+    nextArrow: '<button class="btn-circle btn-white btn-circle--right destination-intro__tours__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
+  
+  });
+
+
 
 
   $('.destination-play__button').on('click', function () {
