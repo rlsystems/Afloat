@@ -1,5 +1,44 @@
 
 
+//Page Nav -- Sticky (CAN COMBINE as UTIL)
+var navbar = document.querySelector('#template-nav');
+var subnavTitle = document.querySelector('#template-nav-title');
+
+var offsetY = navbar.offsetTop;
+
+window.onscroll = function () { myFunction() };
+function myFunction() {
+
+  var isElementInView = Utils.isElementInView($('#template-nav'), false);
+    
+  if (isElementInView) {
+    $('#page-nav').remove();
+  } else { //if template nav is out of view
+
+
+    //and if burger menu isnt active
+    if ($(".burger-menu").hasClass('burger-menu--active') != true) {
+
+      var elementExists = document.getElementById("page-nav"); //and not already there
+      if (elementExists == null) {
+        var newNav = $(navbar).clone(true); //clone the nav and append it to header (pass true to clone events also)
+        newNav.attr('id', 'page-nav');
+
+        $(newNav).addClass('product-nav__sticky-wrapper--active');
+        $('#header').append(newNav);
+      }
+
+      var elementExists = document.getElementById("page-nav-title"); //clone / append title
+      if (elementExists == null) {
+        var newTitle = $(subnavTitle).clone(true);
+        newTitle.attr('id', 'page-nav-title')
+        $(newTitle).addClass('product-nav__caption__title--sticky'); //create common style
+        $('#page-nav').append(newTitle);
+      }
+    }
+  }
+}
+
 
 //Product Navigation
 $('.product-nav__tab-list li, #goto-cabins, #goto-itineraries, #goto-prices').click(function () {
@@ -9,7 +48,6 @@ $('.product-nav__tab-list li, #goto-cabins, #goto-itineraries, #goto-prices').cl
 
   $("." + tab_id).addClass('current'); //by class to get both original / clone (sticky) -- class is same name as data-tab id
   $("#" + tab_id).addClass('current'); //by id for tab content
-
 
   //tab jump marks and offsets
   var offset = 0;
@@ -28,10 +66,8 @@ $('.product-nav__tab-list li, #goto-cabins, #goto-itineraries, #goto-prices').cl
     }
   }
 
-  
-
   //if the sticky nav is visible
-  var elementExists = document.getElementById("product-nav");
+  var elementExists = document.getElementById("page-nav");
   if (elementExists != null) {
 
     $([document.documentElement, document.body]).animate({
@@ -42,9 +78,6 @@ $('.product-nav__tab-list li, #goto-cabins, #goto-itineraries, #goto-prices').cl
 //End Product Nav
 
 
-
-
-// });
 
 var years = [2020, 2021, 2022, 2023];
 setYearDetails(2020); //set year selections onload

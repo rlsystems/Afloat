@@ -1,12 +1,8 @@
-//Header --------------
-
-
-//Header Main
+//HEADER --------------
+//Header Main -- Scroll
 const nav = document.querySelector('#header');
 const topOfNav = 180; //change to 0 for absolute top of page
 
-
-//Header Main -- Scroll
 function fixNav() {
   if (window.scrollY >= topOfNav) {
     $('.header__main').addClass('header__main--small-nav header__main--opaque-nav');
@@ -16,19 +12,35 @@ function fixNav() {
 
       $('.header__main').removeClass('header__main--small-nav ');
 
-
+      if ($('.burger-menu').hasClass('burger-menu--active') != true) {
+        $('.header__main').removeClass('header__main--opaque-nav');
+      }
     }
   }
 }
 window.addEventListener('scroll', fixNav);
 
+//Header Main -- Hover
+$('.header__main').hover(
+  function () { $('.header__main').addClass('header__main--opaque-nav'); },
+  function () {
 
+    //if not small and mega active
+    if ($('.header__main').hasClass('header__main--small-nav') != true) {
+
+      if ($('.burger-menu').hasClass('burger-menu--active') != true) {
+        if ($('.nav-mega').hasClass('nav-mega--active') != true) {
+          $('.header__main').removeClass('header__main--opaque-nav');
+        }
+      }
+    }
+  }
+)
 
 
 
 
 //MEGA
-
 //--hover behavior
 $('.nav-mega').hover(
   function () { },
@@ -38,9 +50,8 @@ $('.nav-mega').hover(
     if ($(".burger-menu").hasClass('burger-menu--active') != true) {
 
       //if product-nav then dont do (sticky wrapper)
-      var elementExists = document.getElementById("product-nav");
+      var elementExists = document.getElementById("page-nav");
       if (elementExists == null) {
-
         $('.nav-mega').removeClass('nav-mega--active');
       }
 
@@ -48,10 +59,7 @@ $('.nav-mega').hover(
       if ($('.header__main').hasClass('header__main--small-nav') != true) {
         $('.header__main').removeClass('header__main--opaque-nav');
       }
-
     }
-
-
   }
 )
 
@@ -59,6 +67,7 @@ $('.nav-mega').hover(
 $('#mega--destinations').hover(
   function () { $('.nav-mega').addClass('nav-mega--active'); },
 );
+
 
 
 //Burger Menu
@@ -71,9 +80,9 @@ $(".burger-menu ").on("click", function () {
 
   //hide while burger active
   if ($(".header__collapse").hasClass('header__collapse--active') == true) {
-    $('#product-nav').hide();
+    $('#page-nav').hide();
   } else {
-    $('#product-nav').show();
+    $('#page-nav').show();
   }
 });
 
@@ -87,6 +96,7 @@ $(window).resize(function () {
     $('.nav-mega').removeClass('nav-mega--active');
   }
 });
+
 
 
 //Collapse Menu
@@ -128,6 +138,7 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+
 //Collapse Menu -- accordion behavior
 //--destinations
 var accDestinations = document.getElementsByClassName("header__collapse__accordion--destinations");
@@ -167,9 +178,8 @@ for (i = 0; i < accDestinations.length; i++) {
 //end collapse
 
 
-//Product Nav
-//Product Nav -- Hover
-$('.product-nav__sticky-wrapper').hover(
+//Page Nav-- Hover
+$('#template-nav').hover(
   function () { },
   function () {
     if ($(".burger-menu").hasClass('burger-menu--active') != true) {
@@ -177,54 +187,3 @@ $('.product-nav__sticky-wrapper').hover(
     }
   }
 );
-
-
-
-//Product Nav -- Scroll
-var navbar = document.querySelector('.product-nav__sticky-wrapper');
-var subnavTitle = document.querySelector('.product-nav__caption__title');
-var offsetY = navbar.offsetTop;
-
-window.onscroll = function () { myFunction() };
-function myFunction() {
-
-  var isElementInView = Utils.isElementInView($('#template-nav'), false);
-
-  if (isElementInView) {
-    $('#product-nav').remove();
-  } else { //if template nav is out of view
-
-
-    //and if burger menu isnt active
-    if ($(".burger-menu").hasClass('burger-menu--active') != true) {
-
-      var elementExists = document.getElementById("product-nav"); //and not already there
-      if (elementExists == null) {
-        var newNav = $(navbar).clone(true); //clone the nav and append it to header (pass true to clone events also)
-        newNav.attr('id', 'product-nav');
-
-        $(newNav).addClass('product-nav__sticky-wrapper--active');
-        $('#header').append(newNav);
-      }
-
-      var elementExists = document.getElementById("product-nav-title"); //clone / append title
-      if (elementExists == null) {
-        var newTitle = $(subnavTitle).clone(true);
-        newTitle.attr('id', 'product-nav-title')
-        $(newTitle).addClass('product-nav__caption__title--sticky');
-        $('#product-nav').append(newTitle);
-      }
-    }
-
-
-
-  }
-
-}
-
-
-
-
-
-
-

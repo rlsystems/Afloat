@@ -279,7 +279,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="destination-page__section-hero">
+  <section class="destination-page__section-hero" id="top">
 
     <!-- Destination Hero -->
     <div class="destination-hero">
@@ -478,29 +478,37 @@
     </div>
 
   </div>
-  <nav class="destination-nav">
-    <div class="destination-nav__title">Peru</div>
-    <ul class="destination-nav__list">
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Tours</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Cruises</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Accommodations</a>
-      </div>
 
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Travel Guides</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">Reviews</a>
-      </div>
-      <div class="destination-nav__list__item">
-        <a href="#" class="destination-nav__list__item__link">FAQ</a>
-      </div>
-    </ul>
+  <!-- destination-nav-->
+  <nav class="destination-nav" >
+    <div class="destination-nav__title" id="template-nav-title" href="#top">Peru</div>
+
+    <!-- sticky wrapper -->
+    <div class="destination-nav__sticky-wrapper" id="template-nav">
+      <ul class="destination-nav__list">
+        <div class="destination-nav__list__item">
+          
+          <a href="#tours" class="destination-nav__list__item__link ">Tours</a>
+        </div>
+        <div class="destination-nav__list__item">
+          <a href="#cruises" class="destination-nav__list__item__link ">Cruises</a>
+        </div>
+        <div class="destination-nav__list__item">
+          <a href="#accommodations" class="destination-nav__list__item__link">Accommodations</a>
+        </div>
+  
+        <div class="destination-nav__list__item">
+          <a href="#travel-guides" class="destination-nav__list__item__link">Travel Guides</a>
+        </div>
+        <div class="destination-nav__list__item">
+          <a href="#reviews" class="destination-nav__list__item__link">Reviews</a>
+        </div>
+        <div class="destination-nav__list__item">
+          <a href="#faq" class="destination-nav__list__item__link">FAQ</a>
+        </div>
+      </ul>
+    </div>
+    
     <div class="destination-nav__arrow">
       <button class="btn-circle btn-circle--small btn-white btn-circle--down">
         <svg class="btn-circle--arrow-main">
@@ -536,7 +544,7 @@
     </a>
   </div>
 
-  <div class="destination-page__section-intro">
+  <div class="destination-page__section-intro" id="tours">
     <div class="destination-intro">
       <div class="destination-intro__content">
         <div class=" destination-intro__content__title heading-3 heading-3--underline-white">
@@ -712,7 +720,7 @@
 
 
   <!-- Cruises-->
-  <section class="destination-page__section-cruises">
+  <section class="destination-page__section-cruises" id="cruises">
     <div class="destination-cruises">
       <div class="destination-cruises__title">
         Peru Cruises
@@ -1010,7 +1018,7 @@
   </section>
 
   <!-- Accommodations -->
-  <section class="destination-page__section-accommodations">
+  <section class="destination-page__section-accommodations" id="accommodations">
     <div class="destination-accommodations">
       <div class="destination-accommodations__title">
         Peru Accommodations
@@ -1084,7 +1092,9 @@
     </div>
   </section>
 
-
+  <section class="destination-page__section-travel-guides" id="travel-guides"></section>
+  <section class="destination-page__section-reviews" id="reviews"></section>
+  <section class="destination-page__section-faq" id="faq"></section>
 
   <!-- Footer -->
   <footer class="footer">
@@ -1203,11 +1213,11 @@
 </html>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" />
-</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" /></script>
+
 <!-- <script type="text/javascript" src="js/header.js"></script> -->
 <script type="text/javascript" src="js/utilities.js"></script>
 
 
 <script type="text/javascript" src="js/page-destination.js"></script>
-<script type="text/javascript" src="js/header-destination.js"></script>
+<script type="text/javascript" src="js/header.js"></script>
