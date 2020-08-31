@@ -1,3 +1,16 @@
+//Burger
+//Burger Menu -- resize window
+// $(window).resize(function () {
+//   if ($(window).width() > 1000) {
+//     $('.header__collapse').removeClass('header__collapse--active');
+//     $(".burger-menu-page").removeClass('burger-menu-page--active');
+//   }
+ 
+// });
+
+
+
+
 
 //Page Nav -- Sticky (CAN COMBINE as UTIL)
 var navbar = document.querySelector('#template-nav');
@@ -152,15 +165,6 @@ $('#destination-hero__nav').slick({
 });
 
 
-$('#destination-tours__slider').slick({
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  dots: false,
-  centerMode: false,
-  prevArrow: '<button class="btn-circle btn-dark btn-circle--left destination-tours__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
-  nextArrow: '<button class="btn-circle btn-dark btn-circle--right destination-tours__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
-
-});
 
 
 $('#destination-intro__tours__slider').slick({
@@ -170,7 +174,20 @@ $('#destination-intro__tours__slider').slick({
   centerMode: false,
   prevArrow: '<button class="btn-circle btn-white btn-circle--left destination-intro__tours__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
   nextArrow: '<button class="btn-circle btn-white btn-circle--right destination-intro__tours__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
-
+  responsive: [
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2
+      }
+    }
+  ]
 });
 
 

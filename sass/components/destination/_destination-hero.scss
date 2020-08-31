@@ -6,8 +6,7 @@
 
     @media only screen and (max-width: $bp-large) {
         grid-template-rows: 1fr min-content;
-        row-gap: 2rem;
-        
+        row-gap: 2rem;      
     }
 
     &__play {
@@ -163,11 +162,16 @@
                     letter-spacing: 0.3rem;
                     text-transform: uppercase;
     
-                    @media only screen and (max-width: $bp-medium) {
+                    @media only screen and (max-width: $bp-large) {
                         justify-content: center;
                     }
+
+                    
     
                     &__item {
+
+                        margin-top: 0rem !important;
+
                         &__link:link,
                         &__link:visited {
                             transition: color 0.3s;
@@ -268,7 +272,7 @@
     
                 cursor: pointer;
     
-                @media only screen and (max-width: $bp-medium) {
+                @media only screen and (max-width: $bp-large) {
                     display: none;
                 }
     

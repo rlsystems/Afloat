@@ -55,17 +55,34 @@
 
         column-gap: 12rem;
 
+  
+        @media only screen and (max-width: $bp-large) {
+            grid-column: full-start / -1;
+            margin-right: 8vw;
+            margin-left: 8vw;
+        }
+
+
         &__title {
             color: currentColor;
             font-size: 3rem;
             letter-spacing: 0.3rem;
             font-weight: 700;
             align-self: center;
+            grid-column: 1 / -1; 
+            
         }
 
         &__text {
+
             grid-column: 1 / span 1;
             position: relative;
+
+            @media only screen and (max-width: $bp-large) {
+                grid-column: 1 / -1;    
+                grid-row: 2 / span 1;
+                text-align: justify;
+            }
         }
 
         &__stats {
@@ -78,6 +95,18 @@
             grid-column: 2 / span 1;
             grid-row: 2 / span 1;
 
+            @media only screen and (max-width: $bp-large) {
+                grid-column: 1 / -1;    
+                grid-row: 3 / span 1;
+               
+                grid-template-columns: repeat(3, minmax(max-content, 20rem));
+                margin: 6rem;
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+                justify-self: center;
+                
+            }
+
             &__item {
                 &__title {
                     font-family: $font-secondary;
@@ -85,6 +114,10 @@
                     letter-spacing: 0.2rem;
                     font-weight: 300;
                     display: inline-block;
+
+                    @media only screen and (max-width: $bp-large) {
+                        font-size: 1.5rem;
+                    }
 
                     &::after {
                         content: "";
@@ -114,13 +147,21 @@
         overflow-x: hidden;
         overflow-y: hidden;
         position: relative;
-        //background-color: brown;
+        
+        @media only screen and (max-width: $bp-large) {
+            grid-column: col-start 5 / full-end; 
+        }
 
         & img {
             position: absolute;
             top: 0;
             left: 0;
             z-index: 0;
+
+            @media only screen and (max-width: $bp-large) {
+                transform: scale(.8) translateY(-20rem) translateX(-12rem); 
+                
+            }
             
         }
 
@@ -132,6 +173,11 @@
         z-index: 20;
         color: $color-white;
         margin: 0 10vw;
+
+        @media only screen and (max-width: $bp-large) {
+            margin: 0 8vw;
+        }
+        
 
         &__title {
             font-size: 2rem;
@@ -151,6 +197,9 @@
 
             &__all {
                 margin-right: 5rem;
+                @media only screen and (max-width: $bp-large) {
+                    margin-right: 0;
+                }
             }
         }
       
