@@ -23,7 +23,7 @@ function myFunction() {
         var newNav = $(navbar).clone(true); //clone the nav and append it to header (pass true to clone events also)
         newNav.attr('id', 'page-nav');
 
-        $(newNav).addClass('destination-nav__sticky-wrapper--active');
+        $(newNav).addClass('destination-hero__page-nav__sticky-wrapper--active');
         $('#header').append(newNav);
       }
 
@@ -31,7 +31,7 @@ function myFunction() {
       if (elementExists == null) {
         var newTitle = $(subnavTitle).clone(true);
         newTitle.attr('id', 'page-nav-title')
-        $(newTitle).addClass('destination-nav__title--sticky'); //create common style
+        $(newTitle).addClass('destination-hero__page-nav__title--sticky'); //create common style
         $('#page-nav').append(newTitle);
       }
     }
@@ -42,7 +42,7 @@ function myFunction() {
 
 //SCROLLING
 //Navigation Jump -- add url #anchor modification
-$('.destination-nav__list__item__link, #template-nav-title').click(function (event) {
+$('.destination-hero__page-nav__list__item__link, #template-nav-title').click(function (event) {
   var id = $(this).attr('href');
   var target = $(id).offset().top;
 
@@ -70,7 +70,7 @@ $(window).scroll(function () {
   isSelected($(window).scrollTop())
 });
 
-var sections = $('.destination-nav__list__item__link');
+var sections = $('.destination-hero__page-nav__list__item__link');
 
 function isSelected(scrolledTo) {
   var threshold = 200;
@@ -84,7 +84,7 @@ function isSelected(scrolledTo) {
       var sectionHref = $(section).attr('href');
       var active = $('a[href="' + sectionHref + '"]');
 
-      $('.destination-nav__list__item__link').removeClass("current");
+      $('.destination-hero__page-nav__list__item__link').removeClass("current");
       active.addClass("current");
     }
   };
@@ -165,7 +165,7 @@ $('#destination-intro__tours__slider').slick({
 
 
 
-$('.destination-play__button').on('click', function () {
+$('.destination-hero__play__button').on('click', function () {
   $('#destination-video')[0].play();
 })
 
