@@ -124,7 +124,17 @@ $('#destination-hero__content').slick({
   centerMode: false,
   arrows: false,
   draggable: false,
-  fade: true
+  fade: true,
+  responsive: [
+    {
+      breakpoint: 1000,
+      settings: {
+        arrows: true,
+        draggable: false,
+
+      }
+    }
+  ]
 });
 
 //destination-hero__nav
@@ -137,6 +147,7 @@ $('#destination-hero__nav').slick({
   focusOnSelect: true,
   arrows: true,
   asNavFor: '#destination-hero__content, #destination-hero__bg',
+  
 
 });
 
