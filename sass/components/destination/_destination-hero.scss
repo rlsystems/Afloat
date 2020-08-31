@@ -4,6 +4,85 @@
     grid-template-columns: $page-container;
     grid-template-rows: 1fr min-content 1fr;
 
+    &__play {
+        grid-row: 2 / span 1;
+        grid-column: full-start / span 4;
+        
+        transform: translateY(-5rem);
+    
+        justify-self: start;
+        transform-origin: center;
+        align-self: start;
+        margin-top: 15rem;
+    
+        z-index: 10;
+        margin-left: 9vw;
+        user-select: none;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        &__button {
+            height: 7rem;
+            width: 7rem;
+    
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+    
+            &::after {
+                content: "";
+    
+                border: 0.5rem solid rgba($color-white, 0.3);
+                background-color: rgba($color-white, 0.1);
+            }
+    
+            & svg {
+                height: 2rem;
+                width: 2rem;
+                fill: rgba($color-white, 0.6);
+                transition: fill 0.3s;
+            }
+    
+            &:hover {
+                & svg {
+                    fill: rgba($color-white, 0.9);
+                }
+            }
+        }
+    }
+
+    &__breadcrumb {
+        grid-row: 1 / span 2;
+        grid-column: full-start / span 4;
+        align-self: start;
+        margin-top: 14rem;
+        color: rgba($color-white, 0.8);
+        font-size: 1.6rem;
+        letter-spacing: 0.3rem;
+        font-weight: 500;
+        z-index: 10;
+        margin-left: 10vw;
+        user-select: none;
+    
+        &__path {
+            display: inline-block;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -0.3rem;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: rgba($color-white, 0.8);
+            }
+        }
+    }
+
     &__bg {
         grid-column: 1 / -1;
         grid-row: 1 / -1;
@@ -125,8 +204,8 @@
         margin-right: 15vw;
         display: flex;
         align-items: center;
-
-        margin-top: 12rem;
+        align-self: end;
+        margin-bottom: 5rem;
 
         &__slide {
             text-align: center;
@@ -158,33 +237,7 @@
     }
 }
 
-.destination-breadcrumb {
-    grid-row: nav-end / span 1;
-    grid-column: full-start / span 4;
-    align-self: start;
-    margin-top: 4rem;
-    color: rgba($color-white, 0.8);
-    font-size: 1.6rem;
-    letter-spacing: 0.3rem;
-    font-weight: 500;
-    z-index: 10;
-    margin-left: 10vw;
-    user-select: none;
 
-    &__path {
-        display: inline-block;
-        position: relative;
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: -0.3rem;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: rgba($color-white, 0.8);
-        }
-    }
-}
 
 .destination-nav {
     user-select: none;
@@ -411,54 +464,7 @@
     }
 }
 
-.destination-play {
-    grid-row: nav-end / span 1;
-    grid-column: full-start / span 4;
-    align-self: center;
-    transform: translateY(-5rem);
 
-    justify-self: start;
-    transform-origin: center;
-
-    z-index: 10;
-    margin-left: 9vw;
-    user-select: none;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &__button {
-        height: 7rem;
-        width: 7rem;
-
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s;
-
-        &::after {
-            content: "";
-
-            border: 0.5rem solid rgba($color-white, 0.3);
-            background-color: rgba($color-white, 0.1);
-        }
-
-        & svg {
-            height: 2rem;
-            width: 2rem;
-            fill: rgba($color-white, 0.6);
-            transition: fill 0.3s;
-        }
-
-        &:hover {
-            & svg {
-                fill: rgba($color-white, 0.9);
-            }
-        }
-    }
-}
 
 .video-popup {
     position: fixed;

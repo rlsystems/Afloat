@@ -2289,6 +2289,62 @@ p {
   display: grid;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   grid-template-rows: 1fr min-content 1fr; }
+  .destination-hero__play {
+    grid-row: 2 / span 1;
+    grid-column: full-start / span 4;
+    transform: translateY(-5rem);
+    justify-self: start;
+    transform-origin: center;
+    align-self: start;
+    margin-top: 15rem;
+    z-index: 10;
+    margin-left: 9vw;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .destination-hero__play__button {
+      height: 7rem;
+      width: 7rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s; }
+      .destination-hero__play__button::after {
+        content: "";
+        border: 0.5rem solid rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.1); }
+      .destination-hero__play__button svg {
+        height: 2rem;
+        width: 2rem;
+        fill: rgba(255, 255, 255, 0.6);
+        transition: fill 0.3s; }
+      .destination-hero__play__button:hover svg {
+        fill: rgba(255, 255, 255, 0.9); }
+  .destination-hero__breadcrumb {
+    grid-row: 1 / span 2;
+    grid-column: full-start / span 4;
+    align-self: start;
+    margin-top: 14rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.6rem;
+    letter-spacing: 0.3rem;
+    font-weight: 500;
+    z-index: 10;
+    margin-left: 10vw;
+    user-select: none; }
+    .destination-hero__breadcrumb__path {
+      display: inline-block;
+      position: relative; }
+      .destination-hero__breadcrumb__path::after {
+        content: "";
+        position: absolute;
+        bottom: -0.3rem;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.8); }
   .destination-hero__bg {
     grid-column: 1 / -1;
     grid-row: 1 / -1; }
@@ -2369,7 +2425,8 @@ p {
     margin-right: 15vw;
     display: flex;
     align-items: center;
-    margin-top: 12rem; }
+    align-self: end;
+    margin-bottom: 5rem; }
     .destination-hero__nav__slide {
       text-align: center;
       letter-spacing: 0.3rem;
@@ -2389,30 +2446,6 @@ p {
       margin: 0 1.5rem; }
     .destination-hero__nav .slick-current {
       color: #fff; }
-
-.destination-breadcrumb {
-  grid-row: nav-end / span 1;
-  grid-column: full-start / span 4;
-  align-self: start;
-  margin-top: 4rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.6rem;
-  letter-spacing: 0.3rem;
-  font-weight: 500;
-  z-index: 10;
-  margin-left: 10vw;
-  user-select: none; }
-  .destination-breadcrumb__path {
-    display: inline-block;
-    position: relative; }
-    .destination-breadcrumb__path::after {
-      content: "";
-      position: absolute;
-      bottom: -0.3rem;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-color: rgba(255, 255, 255, 0.8); }
 
 .destination-nav {
   user-select: none;
@@ -2570,39 +2603,6 @@ p {
     margin-top: 2rem;
     margin-bottom: 3rem;
     transform: translateX(-1rem); }
-
-.destination-play {
-  grid-row: nav-end / span 1;
-  grid-column: full-start / span 4;
-  align-self: center;
-  transform: translateY(-5rem);
-  justify-self: start;
-  transform-origin: center;
-  z-index: 10;
-  margin-left: 9vw;
-  user-select: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-  .destination-play__button {
-    height: 7rem;
-    width: 7rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s; }
-    .destination-play__button::after {
-      content: "";
-      border: 0.5rem solid rgba(255, 255, 255, 0.3);
-      background-color: rgba(255, 255, 255, 0.1); }
-    .destination-play__button svg {
-      height: 2rem;
-      width: 2rem;
-      fill: rgba(255, 255, 255, 0.6);
-      transition: fill 0.3s; }
-    .destination-play__button:hover svg {
-      fill: rgba(255, 255, 255, 0.9); }
 
 .video-popup {
   position: fixed;
