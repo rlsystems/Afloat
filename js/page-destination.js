@@ -1,15 +1,18 @@
 //Burger
-//Burger Menu -- resize window
-// $(window).resize(function () {
-//   if ($(window).width() > 1000) {
-//     $('.header__collapse').removeClass('header__collapse--active');
-//     $(".burger-menu-page").removeClass('burger-menu-page--active');
-//   }
- 
-// });
+//Burger Menu -- click
+$(".page-nav__button").on("click", function () {
 
+  $('.page-nav__collapse').toggleClass('page-nav__collapse--active');
 
+});
 
+//Burger Menu -- resize window -- remove collapse menu over 1000
+$(window).resize(function () {
+  if ($(window).width() > 1000) {
+    $('.page-nav__collapse').removeClass('page-nav__collapse--active');
+  }
+
+});
 
 
 //Page Nav -- Sticky (CAN COMBINE as UTIL)
@@ -25,6 +28,7 @@ function myFunction() {
     
   if (isElementInView) {
     $('#page-nav').remove();
+    $('.page-nav__collapse').removeClass('page-nav__collapse--active');
   } else { //if template nav is out of view
 
 
@@ -55,10 +59,10 @@ function myFunction() {
 
 //SCROLLING
 //Navigation Jump -- add url #anchor modification
-$('.destination-hero__page-nav__list__item__link, #template-nav-title').click(function (event) {
+$('.destination-hero__page-nav__list__item__link, #template-nav-title, .page-nav__collapse__list__item').click(function (event) {
   var id = $(this).attr('href');
   var target = $(id).offset().top;
-
+  $('.page-nav__collapse').removeClass('page-nav__collapse--active');
   console.log(id);
 
   if(id != "#tours"){
