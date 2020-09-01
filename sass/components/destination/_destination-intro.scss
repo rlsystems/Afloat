@@ -103,8 +103,15 @@
                 margin: 6rem;
                 margin-top: 3rem;
                 margin-bottom: 3rem;
-                justify-self: center;
-                
+                justify-self: center;           
+            }
+
+            @media only screen and (max-width: $bp-small) {
+                grid-template-columns: repeat(2, minmax(max-content, 20rem));
+
+                grid-template-rows: repeat(3, min-content);
+                grid-auto-flow: dense;
+                column-gap: 3rem;
             }
 
             &__item {
@@ -159,8 +166,11 @@
             z-index: 0;
 
             @media only screen and (max-width: $bp-large) {
-                transform: scale(.8) translateY(-20rem) translateX(-12rem); 
-                
+                transform: scale(.8) translateY(-20rem) translateX(-12rem);      
+            }
+
+            @media only screen and (max-width: $bp-small) {
+                transform: scale(.7) translateY(-32rem) translateX(-22rem);      
             }
             
         }
@@ -191,14 +201,26 @@
         &__content {
             display: flex;
             justify-content: space-between;
+
+            
+
             &__subtitle {
                 max-width: 70%;
+
+                @media only screen and (max-width: $bp-small) {
+                    max-width: 60%;
+                    text-align: justify;
+                }
             }
 
             &__all {
                 margin-right: 5rem;
                 @media only screen and (max-width: $bp-large) {
                     margin-right: 0;
+                }
+
+                @media only screen and (max-width: $bp-small) {
+                    align-self: center;
                 }
             }
         }
@@ -338,12 +360,26 @@
                 z-index: 10;
                 top: 17rem;
                 left: -7rem;
+
+                @media only screen and (max-width: $bp-medium) {
+                    left: -6rem;
+                }
+                @media only screen and (max-width: $bp-small) {
+                    left: -2rem;
+                }
             }
             &--right {
                 position: absolute;
                 z-index: 10;
                 top: 17rem;
                 right: -7rem;
+                @media only screen and (max-width: $bp-medium) {
+                    right: -6rem;
+                }
+
+                @media only screen and (max-width: $bp-small) {
+                    right: -2rem;
+                }
             }
         }
 

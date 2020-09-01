@@ -441,6 +441,8 @@ p {
   .btn-circle:hover::after {
     height: 85%;
     width: 85%; }
+  .btn-circle--solid::after {
+    background-color: rgba(255, 255, 255, 0.95); }
 
 .btn-dark {
   color: #142838; }
@@ -2684,6 +2686,15 @@ p {
   height: 6.5rem;
   cursor: pointer;
   color: #142838; }
+  .page-nav__button svg {
+    height: 2rem;
+    width: 2rem;
+    fill: currentColor;
+    transition: all .2s;
+    opacity: 0; }
+  .page-nav__button--active svg {
+    transform: rotate(90deg);
+    opacity: 1; }
 
 .page-nav__collapse {
   display: none;
@@ -3219,6 +3230,12 @@ p {
           margin-top: 3rem;
           margin-bottom: 3rem;
           justify-self: center; } }
+      @media only screen and (max-width: 37.5em) {
+        .destination-intro__content__stats {
+          grid-template-columns: repeat(2, minmax(max-content, 20rem));
+          grid-template-rows: repeat(3, min-content);
+          grid-auto-flow: dense;
+          column-gap: 3rem; } }
       .destination-intro__content__stats__item__title {
         font-family: "Old Standard TT", serif;
         font-size: 1.3rem;
@@ -3257,6 +3274,9 @@ p {
       @media only screen and (max-width: 62.5em) {
         .destination-intro__map img {
           transform: scale(0.8) translateY(-20rem) translateX(-12rem); } }
+      @media only screen and (max-width: 37.5em) {
+        .destination-intro__map img {
+          transform: scale(0.7) translateY(-32rem) translateX(-22rem); } }
   .destination-intro__tours {
     grid-row: 2 / span 1;
     grid-column: 1 / -1;
@@ -3278,11 +3298,18 @@ p {
       justify-content: space-between; }
       .destination-intro__tours__content__subtitle {
         max-width: 70%; }
+        @media only screen and (max-width: 37.5em) {
+          .destination-intro__tours__content__subtitle {
+            max-width: 60%;
+            text-align: justify; } }
       .destination-intro__tours__content__all {
         margin-right: 5rem; }
         @media only screen and (max-width: 62.5em) {
           .destination-intro__tours__content__all {
             margin-right: 0; } }
+        @media only screen and (max-width: 37.5em) {
+          .destination-intro__tours__content__all {
+            align-self: center; } }
     .destination-intro__tours__slider {
       grid-column: 1 / -1;
       margin: auto;
@@ -3374,11 +3401,23 @@ p {
       z-index: 10;
       top: 17rem;
       left: -7rem; }
+      @media only screen and (max-width: 50em) {
+        .destination-intro__tours__btn--left {
+          left: -6rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .destination-intro__tours__btn--left {
+          left: -2rem; } }
     .destination-intro__tours__btn--right {
       position: absolute;
       z-index: 10;
       top: 17rem;
       right: -7rem; }
+      @media only screen and (max-width: 50em) {
+        .destination-intro__tours__btn--right {
+          right: -6rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .destination-intro__tours__btn--right {
+          right: -2rem; } }
     .destination-intro__tours__all {
       text-align: center; }
 

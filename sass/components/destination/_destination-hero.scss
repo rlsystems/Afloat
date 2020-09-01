@@ -577,14 +577,27 @@
         
         font-size: 1.6rem;
         font-weight: 800;
-
-        //border-bottom: 1px solid rgba($color-grey-light-2, 0.9); 
-
         height:  6.5rem;
 
         cursor: pointer;
 
         color: $color-secondary;
+
+        & svg {
+            height: 2rem;
+            width: 2rem;
+            fill: currentColor;
+            transition: all .2s;
+            opacity: 0;
+        }
+
+        &--active {
+
+            svg {
+                transform: rotate(90deg);
+                opacity: 1;
+            }
+        }
         
     }
 
@@ -635,10 +648,7 @@
                 }
             }
         }
-    
-        // @media only screen and (max-width: $bp-large) {
-        //     display: flex;
-        // }
+
     }
     
 }

@@ -2,6 +2,7 @@
 //Burger Menu -- click
 $(".page-nav__button").on("click", function () {
 
+  $('.page-nav__button').toggleClass('page-nav__button--active');
   $('.page-nav__collapse').toggleClass('page-nav__collapse--active');
 
 });
@@ -10,6 +11,8 @@ $(".page-nav__button").on("click", function () {
 $(window).resize(function () {
   if ($(window).width() > 1000) {
     $('.page-nav__collapse').removeClass('page-nav__collapse--active');
+    $('.page-nav__button').removeClass('page-nav__button--active');
+
   }
 
 });
@@ -25,10 +28,12 @@ window.onscroll = function () { myFunction() };
 function myFunction() {
 
   var isElementInView = Utils.isElementInView($('#template-nav'), false);
-    
+
   if (isElementInView) {
     $('#page-nav').remove();
     $('.page-nav__collapse').removeClass('page-nav__collapse--active');
+    $('.page-nav__button').removeClass('page-nav__button--active');
+
   } else { //if template nav is out of view
 
 
@@ -52,6 +57,7 @@ function myFunction() {
         $('#page-nav').append(newTitle);
       }
     }
+ 
   }
 }
 
@@ -59,10 +65,12 @@ function myFunction() {
 
 //SCROLLING
 //Navigation Jump -- add url #anchor modification
-$('.destination-hero__page-nav__list__item__link, #template-nav-title, .page-nav__collapse__list__item').click(function (event) {
+$('.destination-hero__page-nav__list__item__link, #template-nav-title, .page-nav__collapse__list__item, #down-arrow-button').click(function (event) {
   var id = $(this).attr('href');
   var target = $(id).offset().top;
   $('.page-nav__collapse').removeClass('page-nav__collapse--active');
+  $('.page-nav__button').removeClass('page-nav__button--active');
+
   console.log(id);
 
   if(id != "#tours"){
@@ -189,6 +197,15 @@ $('#destination-intro__tours__slider').slick({
       breakpoint: 800,
       settings: {
         slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        prevArrow: '<button class="btn-circle btn-circle--small btn-circle--solid btn-circle--left destination-intro__tours__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
+        nextArrow: '<button class="btn-circle btn-circle--small btn-circle--solid btn-circle--right destination-intro__tours__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
+ 
       }
     }
   ]
