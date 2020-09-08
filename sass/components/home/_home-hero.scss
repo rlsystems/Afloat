@@ -1,0 +1,87 @@
+.home-hero {
+    //overflow-x: hidden;
+    display: grid;
+    grid-template-columns: $page-container;
+    grid-template-rows: 45vh min-content 1fr;
+    background-image: url(img/slider-images/peru-01.jpg);
+
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+    z-index: 0;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+
+        background-image: linear-gradient(to bottom, rgba(black, 0.3), transparent 20%),
+        linear-gradient(to top, rgba(black, 0.3), transparent 30%),
+        linear-gradient(to top, rgba(black, 0.2), rgba(black, 0.2));    
+    }
+
+    &__bg {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+
+        background-position: center center;
+        background-repeat: no-repeat;
+        object-fit: cover;
+
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        z-index: 1;
+    }
+
+    &__caption {
+        grid-row: 2 / span 1;
+        grid-column: center-start / center-end;
+        z-index: 5;
+        color: rgba($color-white, .95);
+       
+
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+            font-size: 3rem;
+            text-align: center;
+            font-family: $font-secondary;
+            letter-spacing: .4rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-bottom: 5.5rem;
+        }
+
+        &__subtitle {
+            font-size: 1.6rem;
+            text-align: center;
+            letter-spacing: .2rem;
+            font-weight: 400;
+            margin-bottom: 1.8rem;
+        }
+
+        &__arrow {
+            display: flex;
+            justify-content: center;
+           
+        }
+
+    }
+
+    &__search {
+        grid-row: 3 / span 1;
+        grid-column: center-start / center-end;
+        background-color: rgba(royalblue, .5);
+
+        z-index: 5;
+        height: 15rem;
+        align-self: end;
+    }
+}
