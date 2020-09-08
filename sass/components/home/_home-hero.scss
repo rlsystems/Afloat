@@ -43,7 +43,7 @@
         grid-row: 2 / span 1;
         grid-column: center-start / center-end;
         z-index: 5;
-        color: rgba($color-white, .95);
+        color: rgba($color-grey-light-1, .95);
        
 
         display: flex;
@@ -53,7 +53,7 @@
             font-size: 3rem;
             text-align: center;
             font-family: $font-secondary;
-            letter-spacing: .4rem;
+            letter-spacing: .5rem;
             font-weight: 300;
             text-transform: uppercase;
             margin-bottom: 5.5rem;
@@ -63,7 +63,7 @@
             font-size: 1.6rem;
             text-align: center;
             letter-spacing: .2rem;
-            font-weight: 400;
+            font-weight: 300;
             margin-bottom: 1.8rem;
         }
 
@@ -78,10 +78,118 @@
     &__search {
         grid-row: 3 / span 1;
         grid-column: center-start / center-end;
-        background-color: rgba(royalblue, .5);
+        //background-color: rgba(royalblue, .5);
 
         z-index: 5;
         height: 15rem;
         align-self: end;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: 6rem;
+
+        &__form {
+            border: 1px solid rgba($color-white, .6);
+            color:  rgba($color-white, .6);
+            //width: 90rem;
+            height: 7rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 15rem;
+
+            transition: all .2s;
+
+
+            &__form-group {
+                display: flex;
+                align-content: center;
+
+                &__icon {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 4rem;
+                    margin-right: 2rem;
+                    & svg {
+                        fill: rgba($color-white, .6);
+                        height: 2.5rem;
+                        width: 2.5rem;
+                    }
+                }
+
+                &__input-group {
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+
+                    &__label {
+                        letter-spacing: .2rem;
+                        font-size: 1.1rem;
+                        margin-bottom: .3rem;
+                    }
+                    &__input {
+                        letter-spacing: .2rem;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        width: 30rem;
+                        
+    
+                        &::placeholder {
+                            color:  rgba($color-white, .6);
+                            font-family: $font-primary;
+                            letter-spacing: .1rem;
+                            font-size: 1.6rem;
+                            font-weight: 500;
+                            transition: all .2s;
+                        }
+
+                        
+                        &:focus {
+                            &::placeholder {
+                                color:  rgba($color-white, .8);
+                            }
+                        }
+
+                    
+    
+                        &, textarea {
+                            color:  rgba($color-white, .8);
+                            font-family: $font-primary;
+                            letter-spacing: .1rem;
+                            font-size: 1.6rem;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+               
+            }
+
+            &__btn {
+                border: none;
+                background-color: rgba($color-white, .1);
+                color: rgba($color-white, .6);
+
+                border-left: 1px solid rgba($color-white, .3);
+                outline: none;
+                cursor: pointer;
+
+                transition: all .2s;
+                font-family: $font-primary;
+                letter-spacing: .2rem;
+                text-transform: uppercase;
+                font-size: 1.32rem;
+
+                &:hover {
+                    background-color: rgba($color-white, .3);
+                    color: rgba($color-white, .8);
+                }
+
+                &:active {
+                    background-color: rgba($color-white, .6);
+                    color: rgba($color-white, .8);
+                }
+            }
+        }
     }
 }

@@ -3453,14 +3453,14 @@ p {
     grid-row: 2 / span 1;
     grid-column: center-start / center-end;
     z-index: 5;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(248, 248, 248, 0.95);
     display: flex;
     flex-direction: column; }
     .home-hero__caption__title {
       font-size: 3rem;
       text-align: center;
       font-family: "Old Standard TT", serif;
-      letter-spacing: .4rem;
+      letter-spacing: .5rem;
       font-weight: 300;
       text-transform: uppercase;
       margin-bottom: 5.5rem; }
@@ -3468,7 +3468,7 @@ p {
       font-size: 1.6rem;
       text-align: center;
       letter-spacing: .2rem;
-      font-weight: 400;
+      font-weight: 300;
       margin-bottom: 1.8rem; }
     .home-hero__caption__arrow {
       display: flex;
@@ -3476,10 +3476,79 @@ p {
   .home-hero__search {
     grid-row: 3 / span 1;
     grid-column: center-start / center-end;
-    background-color: rgba(65, 105, 225, 0.5);
     z-index: 5;
     height: 15rem;
-    align-self: end; }
+    align-self: end;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 6rem; }
+    .home-hero__search__form {
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.6);
+      height: 7rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 15rem;
+      transition: all .2s; }
+      .home-hero__search__form__form-group {
+        display: flex;
+        align-content: center; }
+        .home-hero__search__form__form-group__icon {
+          display: flex;
+          align-items: center;
+          margin-left: 4rem;
+          margin-right: 2rem; }
+          .home-hero__search__form__form-group__icon svg {
+            fill: rgba(255, 255, 255, 0.6);
+            height: 2.5rem;
+            width: 2.5rem; }
+        .home-hero__search__form__form-group__input-group {
+          display: flex;
+          flex-direction: column;
+          align-self: center; }
+          .home-hero__search__form__form-group__input-group__label {
+            letter-spacing: .2rem;
+            font-size: 1.1rem;
+            margin-bottom: .3rem; }
+          .home-hero__search__form__form-group__input-group__input {
+            letter-spacing: .2rem;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 30rem; }
+            .home-hero__search__form__form-group__input-group__input::placeholder {
+              color: rgba(255, 255, 255, 0.6);
+              font-family: "Raleway", sans-serif;
+              letter-spacing: .1rem;
+              font-size: 1.6rem;
+              font-weight: 500;
+              transition: all .2s; }
+            .home-hero__search__form__form-group__input-group__input:focus::placeholder {
+              color: rgba(255, 255, 255, 0.8); }
+            .home-hero__search__form__form-group__input-group__input, .home-hero__search__form__form-group__input-group__input textarea {
+              color: rgba(255, 255, 255, 0.8);
+              font-family: "Raleway", sans-serif;
+              letter-spacing: .1rem;
+              font-size: 1.6rem;
+              font-weight: 500; }
+      .home-hero__search__form__btn {
+        border: none;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        cursor: pointer;
+        transition: all .2s;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+        font-size: 1.32rem; }
+        .home-hero__search__form__btn:hover {
+          background-color: rgba(255, 255, 255, 0.3);
+          color: rgba(255, 255, 255, 0.8); }
+        .home-hero__search__form__btn:active {
+          background-color: rgba(255, 255, 255, 0.6);
+          color: rgba(255, 255, 255, 0.8); }
 
 .header {
   grid-column: full-start / -1;
