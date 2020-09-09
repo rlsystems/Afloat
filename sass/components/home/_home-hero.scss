@@ -127,6 +127,8 @@
                         margin-bottom: .3rem;
                     }
                     &__input {
+
+                      
                         letter-spacing: .2rem;
                         background-color: transparent;
                         border: none;
@@ -150,8 +152,7 @@
                             }
                         }
 
-                    
-    
+                  
                         &, textarea {
                             color:  rgba($color-white, .8);
                             font-family: $font-primary;
@@ -193,3 +194,37 @@
         }
     }
 }
+
+.ui-autocomplete {
+    position: absolute;
+    top: -5rem;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 32px 0 0;
+    list-style: none;
+    font-size: 24px;
+    text-align: left;
+    background-color: rgba($color-white, .1);
+    border: 1px solid #cccccc;
+
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+
+    color: rgba($color-white, .8);
+
+  }
+  
+  .ui-autocomplete > li > div {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: rgba($color-white, .8);
+    white-space: nowrap;
+  }
+  

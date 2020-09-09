@@ -225,6 +225,14 @@
 }
 
 // Outline Modifiers
+
+.btn-square {
+  &::after {
+    border-radius: 0%;
+  }
+}
+
+
 .btn-dark {
   color: $color-secondary;
   &::after {
