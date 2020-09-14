@@ -4,22 +4,20 @@
   grid-column: 1 / -1;
   
   grid-template-rows:
-    [nav-start] min-content [nav-end top-content-start] calc(80vh - 9rem) [hero-end content-start] repeat(7, min-content)
+    [nav-start] 70vh [hero-end content-start] repeat(7, min-content)
     [content-end footer-start] min-content [footer-end];
 
-  grid-template-columns:
-    [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
-    [center-end] minmax(6rem, 1fr) [full-end]; //140px each column -- 1120px / 8 col
+  grid-template-columns: $page-container;
 
   @media only screen and (max-width: $bp-large) {
     grid-template-rows:
-      [nav-start] 9rem [nav-end top-content-start] calc(50vh - 9rem) [hero-end content-start] repeat(7, min-content)
+      [nav-start] 40vh [hero-end content-start] repeat(7, min-content)
       [content-end footer-start] min-content [footer-end];
   }
 
   @media only screen and (max-width: $bp-medium) {
     grid-template-rows:
-      [nav-start] 9rem [nav-end top-content-start] calc(45vh - 9rem) [hero-end content-start] repeat(7, min-content)
+      [nav-start] 35vh [hero-end content-start] repeat(7, min-content)
       [content-end footer-start] min-content [footer-end];
   }
 
