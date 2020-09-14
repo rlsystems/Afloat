@@ -1,14 +1,17 @@
 .search-page {
   display: grid;
+  grid-row: content-start / content-end;
+  grid-column: 1 / -1;
 
   grid-template-rows:
-    [nav-start] 9rem [nav-end] calc(40vh - 9rem) [hero-end content-start]
+    [nav-start] 40vh [hero-end content-start]
     repeat(5, [row-start] min-content [row-end]) [content-end footer-start] min-content [footer-end];
 
   grid-template-columns: $page-container;
 
   position: relative;
   z-index: 0;
+  
   &__section-hero {
     grid-row: nav-start / hero-end;
     grid-column: full-start / -1;

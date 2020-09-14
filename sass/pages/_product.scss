@@ -1,6 +1,8 @@
 .product-page {
   display: grid;
-
+  grid-row: content-start / content-end;
+  grid-column: 1 / -1;
+  
   grid-template-rows:
     [nav-start] min-content [nav-end top-content-start] calc(80vh - 9rem) [hero-end content-start] repeat(7, min-content)
     [content-end footer-start] min-content [footer-end];
