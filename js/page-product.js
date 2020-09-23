@@ -1,5 +1,6 @@
+jQuery(document).ready(function ($) {
 
-
+  
 //Page Nav -- Sticky (CAN COMBINE as UTIL)
 var navbar = document.querySelector('#template-nav');
 var subnavTitle = document.querySelector('#template-nav-title');
@@ -179,13 +180,13 @@ $('#product-nav__slick').on('init', function (event, slick) {
   variableWidth: true,
   focusOnSelect: true,
   arrows: true,
+  //centerMode: true,
   prevArrow: '<button class="btn-circle btn-circle--small btn-white btn-circle--left product-nav__slick__btn--left"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-left"></use></svg></button>',
   nextArrow: '<button class="btn-circle btn-circle--small btn-white btn-circle--right product-nav__slick__btn--right"><svg class="btn-circle--arrow-main"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg><svg class="btn-circle--arrow-animate"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg></button>',
 }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
   $(this).find('.slick-slide[data-slick-index="' + (+nextSlide - 0) + '"]').addClass('product-slick-enlarge');
   $(this).find('.slick-slide[data-slick-index="' + (+currentSlide - 0) + '"]').removeClass('product-slick-enlarge');
 });
-
 
 //radio select change (all itineraries)
 var selectBoxYear = document.querySelectorAll(".select-box__input");
@@ -272,3 +273,5 @@ items.forEach(item => item.addEventListener('click', toggleAccordion));
 
 
 
+
+});

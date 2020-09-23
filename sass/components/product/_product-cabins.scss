@@ -62,7 +62,7 @@
 
             &--flipped {
                 grid-column: col-start 5 / full-end;
-
+                justify-self: start;
                 //stack
                 @media only screen and (max-width: $bp-medium) {
                     grid-column: full-start / full-end;

@@ -6,6 +6,7 @@
     grid-column: center-start / -1;
     
     user-select: none;
+    z-index: 3;
 
     &__caption {
         color: $color-grey-light-1;
@@ -13,7 +14,6 @@
         display: grid; //for tabs
         grid-template-rows: 1fr min-content [nav-start] 6rem [nav-end];
         max-height: 100%;
-        margin-right: 4rem;
 
         &__title {
             font-size: 6rem;
@@ -237,13 +237,13 @@
 
     &__slick {
         display: grid;
-        align-items: center;
+        align-items: start;
 
         @media only screen and (max-width: $bp-large) {
             display: none;
         }
 
-        height: 50vh;
+        height: 55vh;
         z-index: 20;
 
         .slick-slide {
@@ -251,9 +251,10 @@
         }
 
         &__item {
-            height: 50vh !important;
+            height: 53vh !important;
             width: 40rem !important;
-            margin-right: 4rem !important;
+            padding: 1rem 2rem !important;
+            padding-bottom: 4rem !important;
             color: white; //text
             font-size: 2rem;
             position: relative;
@@ -270,32 +271,44 @@
                 display: block;
                 z-index: 0;
                 transition: all 0.5s;
-            }
+                box-shadow: $shadow-medium-bottom;
+                position: relative;
 
+                
+            }
             &::after {
                 content: "";
-                position: absolute;
+                grid-row: 1 / -1;
+                grid-column: 1 / -1;
                 align-self: center;
                 height: 80%;
                 width: 100%;
+                z-index: 8;
                 opacity: 0;
-                transition: all 0.4s;
+                transition: all 0.5s;
                 background-image: linear-gradient(to right, rgba($color-secondary, 0.6), rgba($color-secondary, 0.6));
             }
+
+           
             &__title {
+                grid-row: 1 / -1;
+                grid-column: 1 / -1;
+                align-self: center;
+                z-index: 10;
                 opacity: 0;
+                height: 80%;
                 width: 100%;
                 font-size: 1.5rem;
                 padding: 1rem 2rem;
                 color: $color-white;
                 letter-spacing: 0.1rem;
+                display: flex;
+                align-items: flex-end;
+                //justify-content: center;
+            
+                transition: all 0.5s;
                 position: absolute;
-                bottom: 0;
-                left: 0;
-                display: block;
-                background-color: rgba($color-secondary, 0.2);
-                transition: opacity 0.2s;
-                transition-delay: 0.5s;
+                background-image: linear-gradient(to top, rgba($color-black, 0.6), rgba($color-black, 0.0) 20%);
             }
         }
 
@@ -303,13 +316,13 @@
             &--left {
                 position: absolute;
                 top: -1rem;
-                left: -8rem;
+                left: -5rem;
                 z-index: 8;
             }
             &--right {
                 position: absolute;
                 top: -1rem;
-                left: 43rem;
+                left: 41rem;
                 z-index: 8;
             }
         }
@@ -319,18 +332,27 @@
 .product-slick-enlarge {
     //applied by js
     .product-nav__slick__item {
-        &__title {
-            opacity: 1;
-            //height: 100%;
-        }
+       
         img {
             height: 100%;
         }
+        &__title {
+            height: 100%;
+            opacity: 1;
+        }
+
+
         &::after {
             height: 100%;
             width: 100%;
             object-fit: cover; //needs to set width and height
         }
+    }
+}
+
+.product-slick-appear-title {
+    .product-nav__slick__item__title {
+        opacity: 1;
     }
 }
 

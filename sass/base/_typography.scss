@@ -255,17 +255,19 @@ p {
 }
 
 .drop-cap-1 {
-    p:first-child:first-letter {
-        font-size: 400%;
-        border: 1px solid #d4d5d7;
-        padding: 0 2rem;
-        display: inline-block;
-        top: 0px;
-        float: left;
-        line-height: 1;
-        margin-right: 1rem;
-        font-weight: 300;
-    }
+        p:first-child:first-letter {
+            font-size: 400%;
+            border: 1px solid #d4d5d7;
+            padding: 0 2rem;
+            display: inline-block;
+            top: 0px;
+            float: left;
+            line-height: 1;
+            margin-right: 1rem;
+            font-weight: 300;
+        }
+    
+    
 }
 
 .drop-cap-2 {
