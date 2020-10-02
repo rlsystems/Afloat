@@ -1,7 +1,6 @@
 
 jQuery(document).ready(function ($) {
 
-  
   //Burger
   //Burger Menu -- click
   $(".page-nav__button").on("click", function () {

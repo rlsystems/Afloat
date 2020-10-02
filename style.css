@@ -324,6 +324,7 @@ p {
   letter-spacing: 0.2rem;
   cursor: pointer;
   outline: none;
+  font-family: "Raleway", sans-serif;
   position: relative; }
   .btn-outline::after {
     content: "";
@@ -1127,8 +1128,8 @@ p {
     .product-nav__slick .slick-slide {
       outline: none; }
     .product-nav__slick__item {
-      height: 53vh !important;
-      width: 40rem !important;
+      height: 45rem !important;
+      width: 45rem !important;
       padding: 1rem 2rem !important;
       padding-bottom: 4rem !important;
       color: white;
@@ -1183,7 +1184,7 @@ p {
     .product-nav__slick__btn--right {
       position: absolute;
       top: -1rem;
-      left: 41rem;
+      left: 46rem;
       z-index: 8; }
 
 .product-slick-enlarge .product-nav__slick__item img {
@@ -1744,7 +1745,7 @@ p {
     width: 0; }
   .accordion button[aria-expanded="true"] + .accordion-content {
     opacity: 1;
-    max-height: 40rem;
+    max-height: 120rem;
     transition: all 0.3s ease-out;
     will-change: opacity, max-height; }
 
@@ -2307,7 +2308,8 @@ p {
 
 .areas-slider {
   max-width: 114rem;
-  margin: 6rem auto; }
+  margin: 6rem auto;
+  margin-bottom: 0rem; }
   @media only screen and (max-width: 75em) {
     .areas-slider {
       margin: 2rem auto; } }

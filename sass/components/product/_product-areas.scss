@@ -11,6 +11,7 @@
 .areas-slider {
   max-width: 114rem;
   margin: 6rem auto;
+  margin-bottom: 0rem;
 
   @media only screen and (max-width: $bp-largest) {
     margin: 2rem auto;

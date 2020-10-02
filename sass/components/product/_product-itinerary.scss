@@ -411,7 +411,7 @@
         }
         + .accordion-content {
             opacity: 1;
-            max-height: 40rem;
+            max-height: 120rem; 
             transition: all 0.3s ease-out;
             will-change: opacity, max-height;
         }
